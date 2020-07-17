@@ -1,0 +1,230 @@
+/* @font-face {
+    font-family: 'test';
+    src: url(../assets/fonts/Jaapokkisubtract-Regular.otf);
+} */
+body {
+    overflow: hidden;
+}
+
+.wrapper {
+    height: auto;
+    width: 100vw;
+    background-color: black;
+    box-sizing: border-box;
+    color: #fafafa;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.page {
+    height: 100vh;
+    width: 100%;
+    padding: 12px;
+}
+.inner-wrapper {
+    margin: 10vh 0 10vh 0;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    height: 20%;
+}
+nav > div {
+    margin: 12px;
+    width: 75px;
+}
+.brand {
+    width: 100%;
+    font-size: 24px;
+    letter-spacing: 9.6px;
+    font-family: 'Jaapokki subtract', sans-serif;
+    font-display: swap;
+}
+/* .fonts-loaded .brand {
+    font-family: 'Jaapokki subtract';
+} */
+
+.ham-line {
+    width: 50%;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+}
+.ham-line:nth-of-type(2) {
+    position: relative;
+    left: -10%;
+}
+
+.home-cont {
+    display: flex;
+    align-items: center;
+    margin: 0 5vw 0 5vw;
+}
+.home-cont .home-heading {
+    align-self: center;
+}
+
+.home-heading {
+    text-align: left;
+    width: 20%;
+    font-size: 88px;
+    font-family: 'Gilroy';
+    font-weight: 900;
+    letter-spacing: 13.2px;
+}
+.section-heading {
+    position: relative;
+    left: 10vw;
+    height: 29px;
+    width: auto;
+    font-size: 24px;
+    font-family: 'Gilroy';
+    font-weight: 900;
+}
+
+.section-info, #about-info {
+    position: relative;
+    left: 20vw;
+    top: 5vh;
+    height: auto;
+    width: 50%;
+    text-align: left;
+    font-size: 16px;
+    font-family: 'Poppins';
+}
+.our-achievements {
+    margin-top: 20vh;
+    display: flex;
+    justify-content: space-around;
+}
+.achievement {
+    height: 144px;
+    width: 144px;
+    border: 4px solid white;
+    border-radius: 50%;
+}
+
+.number {
+    position: relative;
+    top: 30px;
+    left: 25px;
+    font-size: 55px;
+    font-family: 'Poppins';
+    font-weight: 900;
+}
+.info {
+    position: relative;
+    top: 10vh;
+    display: flex;
+    flex-direction: column;
+}
+.heading-text {
+    width: 184px;
+    height: auto;
+    font-size: 20px;
+    font-family: 'Poppins';
+    font-weight: 700;
+}
+.info-text {
+    width: 244px;
+    height: auto;
+    font-size: 14px;
+    font-family: 'Poppins';
+}
+
+.form-wrapper {
+    height: 50%;
+    margin-top: 5vh;
+    display: flex;
+    justify-content: space-around;
+}
+
+.form-element {
+    background: #0d0d0d 0% 0% no-repeat padding-box;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 2.5vh;
+}
+.inputs {
+    height: 60px;
+    width: 30vw;
+}
+.textarea {
+    width: 30vw;
+    height: 200px;
+}
+.button {
+    width: 15vw;
+    height: 60px;
+    color: white;
+}
+
+input {
+    caret-color: #cccccc;
+}
+
+input::placeholder {
+    padding: 10px;
+    font-family: 'Poppins';
+    font-size: 14px;
+}
+input:focus {
+    outline: none;
+}
+
+.form-pic {
+    height: 500px;
+    width: 500px;
+    border-radius: 10px;
+    background-color: #018786;
+}
+
+
+
+
+@media all and (max-width: 500px) {
+    .inner-wrapper {
+        margin: 2vh 0 2vh 0;
+    }
+    .section-info, #about-info {
+        width: 80%;
+        left: 5vw;
+    }
+    .section-heading {
+        left: 5vw;
+    }
+    .achievements {
+        height: 200vh;
+    }
+    .our-achievements {
+        flex-direction: column;
+        align-items: center;
+        align-content: space-around;
+        margin-top: 10vh;
+    }
+    .achievement:not(:first-of-type) {
+        margin-top: 35vh;
+    }
+    .info {
+        top: 50%;
+    }
+    .heading-text {
+        position: relative;
+        left: -5vw;
+    }
+    .info-text {
+        width: 90vw;
+        position: relative;
+        left: -25vw;
+    }
+    .form-pic {
+        display: none;
+    }
+    .inputs, .textarea {
+        width: 75vw;
+    }
+    .button {
+        width: 37.5vw;
+    }
+
+}
