@@ -18,7 +18,6 @@ body {
 }
 .page {
     height: 100vh;
-    width: 100%;
     padding: 12px;
 }
 .inner-wrapper {
@@ -34,7 +33,7 @@ nav > div {
     width: 75px;
 }
 .brand {
-    width: 100%;
+    width: 50%;
     font-size: 24px;
     letter-spacing: 9.6px;
     font-family: 'Jaapokki subtract', sans-serif;
@@ -183,15 +182,20 @@ input:focus {
 
 
 @media all and (max-width: 500px) {
+    .ham {
+        width: 20%;
+        position: relative;
+        left: 7vw;
+    }
     .inner-wrapper {
         margin: 2vh 0 2vh 0;
     }
     .section-info, #about-info {
         width: 80%;
-        left: 5vw;
+        left: 0;
     }
     .section-heading {
-        left: 5vw;
+        left: 0;
     }
     .achievements {
         height: 200vh;
