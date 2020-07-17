@@ -59,21 +59,21 @@ window.addEventListener('keyup', e=> {
 
 })
 
-let startX, startY, distX, distY, swipedir, 
-threshold=150,
-restraint=100,
-allowdTime=300,
+let initialX, initialY, dispX, dispY, swipedir, 
+threshold=100, //Minimum amount of swipe
+restraint=100, //Maximum tolerance of perpendicular swipe
+allowdTime=300,//Maximum time for registering swipe
 elaspedTime,
 startTime;
 
 
 //Code for registering touchswipe
 window.addEventListener('touchstart', e => {
-    var touchObj = e.changedTouches[0]
-    swipedir = 'none'
-    distX=0, distY=0
-    startX = touchObj.pageX
-    startY=touchObj.pageY
+    var screen = e.changedTouches[0]
+    swipeDir = 'none'
+    dispX=0, dispY=0
+    initialX = screen.pageX
+    initialY=screen.pageY
     startTime = new Date().getTime()
     e.preventDefault()
 }, false)
@@ -83,18 +83,18 @@ window.addEventListener('touchmove', e => {
 }, false)
 
 window.addEventListener('touchend', e=> {
-    var touchObj = e.changedTouches[0]
-    distX = touchObj.pageX - startX
-    distY = touchObj.pageY- startY
+    var screen = e.changedTouches[0]
+    dispX = screen.pageX - initialX
+    dispY = screen.pageY- initialY
     elaspedTime = new Date().getTime()- startTime
     if(elaspedTime<=allowdTime) {
-        if(Math.abs(distX)>=threshold && Math.abs(distY)<=restraint) {
-            swipedir= distX<0 ? 'left': 'right'
+        if(Math.abs(dispX)>=threshold && Math.abs(dispY)<=restraint) {
+            swipeDir= dispX<0 ? 'left': 'right'
         }
-        else if(Math.abs(distY)>=threshold && Math.abs(distX)<=restraint) {
-            swipedir= distY<0 ? 'down': 'up'
+        else if(Math.abs(dispY)>=threshold && Math.abs(dispX)<=restraint) {
+            swipeDir= dispY<0 ? 'down': 'up'
         }
     }
     e.preventDefault()
-    scrollSection(swipedir)
+    scrollSection(swipeDir)
 }, false)
