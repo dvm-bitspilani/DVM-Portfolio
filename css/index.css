@@ -69,8 +69,10 @@ nav > div {
 }
 
 .section-nav {
-    position: relative;
-    left: 70vw;
+    right: 5vw;
+    top: 20vh;
+    z-index: 5;
+    position: fixed;
 }
 
 .dot {
