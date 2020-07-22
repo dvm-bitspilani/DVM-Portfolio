@@ -54,17 +54,55 @@
                     </div>
                 </div>
             </section>
-            <section class="page blog_artworks" id="blog_artworks">
-                <div class="inner-wrapper" id="blog-artworks-wrapper">
+            <section class="page blog" id="blog">
+                <div class="inner-wrapper" id="blog-wrapper">
                     <div class="section-heading">
                         Blogs
                     </div>
                 </div>
             </section>
-            <section class="page blog_artworks" id="blog_artworks">
-                <div class="inner-wrapper" id="blog-artworks-wrapper">
+            <section class="page blog" id="blog">
+                <div class="inner-wrapper" id="artworks-wrapper">
                     <div class="section-heading">
                         Artworks
+                    </div>
+                    <div class="artwork-container">
+                        <div class="arrows artwork-arrows">
+                            <div class="left-arrow" onclick="navigateCarousel(-1, 'single')">
+                                <img src="assets/img/universal.svg">
+                            </div>
+                            <div class="right-arrow" onclick="navigateCarousel(1, 'single')">
+                                <img src="assets/img/right-arrow.svg">
+                            </div>
+                        </div>
+                        
+                        <div class="artwork-name">
+                            Name
+                        </div>
+                        <div class="artwork-scroller">
+                            <div class="artwork-scroll-individual scroll-1" id="1" onclick="navigateCarousel(0, 'pill')"></div>
+                            <div class="artwork-scroll-individual scroll-2" id="2" onclick="navigateCarousel(1, 'pill')"></div>
+                            <div class="artwork-scroll-individual scroll-3" id="3" onclick="navigateCarousel(2, 'pill')"></div>
+                            <div class="artwork-scroll-individual scroll-4" id="4" onclick="navigateCarousel(3, 'pill')"></div>
+                            <div class="artwork-scroll-individual scroll-5" id="5" onclick="navigateCarousel(4, 'pill')"></div>
+                            <div class="active-scroll artwork-active-scroll artwork-scroll-individual" id="active-scroll-id"></div>
+                        </div>
+                       
+                        <div class="artwork-carousel">
+                            <div class="artwork-img-container">
+                                <div class="artwork-img">
+                                </div>
+                                <div class="artwork-img">
+                                </div>
+                                <div class="artwork-img">
+                                </div>
+                                <div class="artwork-img">
+                                </div>
+                                <div class="artwork-img">
+                                </div>
+                            </div>
+                        
+                        </div>
                     </div>
                 </div>
             </section>
@@ -140,7 +178,11 @@
                     </div>
                     
                     </div>
+                    <div class="inner-wrapper" id="footer-wrapper">
+                        THIS IS A FOOTER
+                    </div>
                 </div>
+                
             </section>
         </div>
         <script src="js/index.js"></script>
