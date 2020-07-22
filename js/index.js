@@ -44,7 +44,7 @@ const selectDot = pageNo => {
 const scrollSection = (distance, pageNo) => {
     if(scrollDebounce) {
         scrollDebounce=false
-        if(pageNo && distance===null) {
+        if((pageNo && distance===null) || (pageNo===0 && distance===null)) {
             const factor=pageNo
             window.scrollTo({
                 top: fromTop*factor,
