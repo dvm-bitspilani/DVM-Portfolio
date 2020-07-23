@@ -159,13 +159,23 @@ const navigateCarousel = (step, stepType) =>  {
     }
     else
         newLeft=dist
-    const prevLeftCarousel = +(document.getElementsByClassName('artwork-img-container')[0].style.left.split('%')[0])
-    const distCarousel = -(step*100)
+    let prevLeftCarousel = +(document.getElementsByClassName('artwork-img-container')[0].style.left.split('%')[0])
+    let distCarousel = -(step*100)
+    if(prevLeftCarousel<=-100 || step===-1) {
+        if(stepType==='single')
+        distCarousel-=(step*1)
+    }
+    if(prevLeftCarousel===1)
+        prevLeftCarousel-=1
     let newLeftCarousel
     if(stepType==='single')
         newLeftCarousel = prevLeftCarousel+distCarousel
-    else
+    else {
         newLeftCarousel=distCarousel
+        const offset = Math.ceil(newLeftCarousel/100)+1
+        newLeftCarousel+=offset
+    }
+       
     document.getElementById('active-scroll-id').style.transition="left .5s ease-in"
     document.getElementById('active-scroll-id').style.left=`${newLeft}vw`
     document.getElementsByClassName('artwork-img-container')[0].style.left=`${newLeftCarousel}%`
