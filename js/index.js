@@ -143,11 +143,14 @@ window.addEventListener('touchend', e=> {
 //Artwork carousel scroll code starts here--------------
 
 const navigateCarousel = (step, stepType) =>  {
-    if(document.getElementById('active-scroll-id').style.left==='0vw' && step===-1) {
+    if(document.getElementById('active-scroll-id').style.left==='0vw' && stepType==='single') {
+        console.log('return')
         return
     }
         
-    if(document.getElementById('active-scroll-id').style.left==='32vw' && step===1) {
+    if(document.getElementById('active-scroll-id').style.left==='32vw' && stepType==='single') {
+        console.log(step)
+        console.log('return')
         return
     }
     let scrollbarDisp = 8
