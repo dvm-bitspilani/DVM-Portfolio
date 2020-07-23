@@ -44,6 +44,8 @@ const scrollSection = (distance, pageNo) => {
             }
             let scrollAmt = fromTop
             ++currentPage
+            if(currentPage>pages.length-1)
+                currentPage=pages.length-1
             window.scrollBy({
                 top: scrollAmt,
                 left:0,
@@ -52,12 +54,14 @@ const scrollSection = (distance, pageNo) => {
             selectDot(currentPage)
          }
          if(distance<0 || distance==='up') {
-            if(pages[0].getBoundingClientRect().top>-fromTop) {
+            if(pages[0].getBoundingClientRect().top>0) {
                 scrollDebounce=true
                 return
             }
 
              --currentPage
+             if(currentPage<0)
+                currentPage=0
              window.scrollBy({
                 
                 top: -fromTop,
