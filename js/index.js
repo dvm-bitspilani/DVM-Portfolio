@@ -44,8 +44,7 @@ const scrollSection = (distance, pageNo) => {
             }
             let scrollAmt = fromTop
             ++currentPage
-            if(currentPage>pages.length-1)
-                currentPage=pages.length-1
+            console.log(currentPage)
             window.scrollBy({
                 top: scrollAmt,
                 left:0,
