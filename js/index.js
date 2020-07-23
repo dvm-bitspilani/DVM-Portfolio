@@ -9,10 +9,12 @@ font.load().then(() => {
      document.documentElement.className += 'fonts-loaded'
 })
 
-let sectionNo = 0
+let currentPage = 0
+const whereTop = document.getElementsByClassName('page')[0].getBoundingClientRect().top
 let scrollDebounce = true
 document.documentElement.scrollTo(0,0)
 const fromTop = document.getElementsByClassName('page')[1].getBoundingClientRect().top
+currentPage = Math.floor(whereTop/fromTop*-1)
 const pages = document.getElementsByClassName('page')
 
 for(let i=0; i<pages.length; ++i) {
@@ -22,9 +24,50 @@ for(let i=0; i<pages.length; ++i) {
 }
 
 let dots = document.getElementsByClassName('dot')
+//generic function for scrolling the section starts here---------------
+const scrollSection = (distance, pageNo) => {
+    if(scrollDebounce) {
+        scrollDebounce=false
+        if((pageNo && distance===null) || (pageNo===0 && distance===null)) {
+            const factor=pageNo
+            currentPage=pageNo
+            window.scrollTo({
+                top: fromTop*factor,
+                left: 0,
+                behavior: 'smooth'
+            })
+        }
+        if(distance>0 || distance==='down') {
+            if(pages[pages.length-1].getBoundingClientRect().top<=50) {
+                scrollDebounce=true
+                return
+            }
+            let scrollAmt = fromTop
+            ++currentPage
+            window.scrollBy({
+                top: scrollAmt,
+                left:0,
+                behavior: "smooth"
+            })
+            selectDot(currentPage)
+         }
+         if(distance<0 || distance==='up') {
+            if(pages[0].getBoundingClientRect().top>-fromTop) {
+                scrollDebounce=true
+                return
+            }
 
-window.onload = () => {
-    dots[0].classList.add('dot-active')
+             --currentPage
+             window.scrollBy({
+                
+                top: -fromTop,
+                left:0,
+                behavior: "smooth"
+            })
+            selectDot(currentPage)
+         }
+        setTimeout(() => scrollDebounce=true, 500)
+    }
 }
 
 const selectDot = pageNo => {
@@ -38,43 +81,11 @@ const selectDot = pageNo => {
     
 }
 
+selectDot(currentPage)
 
 
-//generic function for scrolling the section starts here---------------
-const scrollSection = (distance, pageNo) => {
-    if(scrollDebounce) {
-        scrollDebounce=false
-        if((pageNo && distance===null) || (pageNo===0 && distance===null)) {
-            const factor=pageNo
-            window.scrollTo({
-                top: fromTop*factor,
-                left: 0,
-                behavior: 'smooth'
-            })
-        }
-        if(distance>0 || distance==='down') {
-            if(pages[pages.length-1].getBoundingClientRect().top<=50) {
-                scrollDebounce=true
-                return
-            }
-            let scrollAmt = fromTop
-            window.scrollBy({
-                top: scrollAmt,
-                left:0,
-                behavior: "smooth"
-            })
-         }
-         if(distance<0 || distance==='up') {
-             window.scrollBy({
-                
-                top: -fromTop,
-                left:0,
-                behavior: "smooth"
-            })
-         }
-        setTimeout(() => scrollDebounce=true, 500)
-    }
-}
+
+
 
 //generic function for scrolling the section ends here---------------
 
@@ -143,11 +154,11 @@ window.addEventListener('touchend', e=> {
 //Artwork carousel scroll code starts here--------------
 
 const navigateCarousel = (step, stepType) =>  {
-    if(document.getElementById('active-scroll-id').style.left==='0vw' && step===-1) {
+    if(document.getElementById('active-scroll-id').style.left==='0vw' && (stepType==='single' && step===-1)) {
         return
     }
         
-    if(document.getElementById('active-scroll-id').style.left==='32vw' && step===1) {
+    if(document.getElementById('active-scroll-id').style.left==='32vw' && (stepType==='single' && step===1)) {
         return
     }
     let scrollbarDisp = 8
