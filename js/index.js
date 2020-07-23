@@ -49,9 +49,13 @@ const scrollSection = (distance, pageNo) => {
                 left:0,
                 behavior: "smooth"
             })
+            selectDot(currentPage)
          }
          if(distance<0 || distance==='up') {
-            console.log(pages[0].getBoundingClientRect().top)
+            if(pages[0].getBoundingClientRect().top>-fromTop) {
+                scrollDebounce=true
+                return
+            }
 
              --currentPage
              window.scrollBy({
@@ -60,6 +64,7 @@ const scrollSection = (distance, pageNo) => {
                 left:0,
                 behavior: "smooth"
             })
+            selectDot(currentPage)
          }
         setTimeout(() => scrollDebounce=true, 500)
     }
@@ -150,13 +155,10 @@ window.addEventListener('touchend', e=> {
 
 const navigateCarousel = (step, stepType) =>  {
     if(document.getElementById('active-scroll-id').style.left==='0vw' && (stepType==='single' && step===-1)) {
-        console.log('return')
         return
     }
         
     if(document.getElementById('active-scroll-id').style.left==='32vw' && (stepType==='single' && step===1)) {
-        console.log(step)
-        console.log('return')
         return
     }
     let scrollbarDisp = 8
