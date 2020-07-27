@@ -9,7 +9,8 @@ font.load().then(() => {
      document.documentElement.className += 'fonts-loaded'
 })
 
-let currentPage = 0
+let currentPage = 0;
+let lastScrollTime=0
 const whereTop = document.getElementsByClassName('page')[0].getBoundingClientRect().top
 let scrollDebounce = true
 document.documentElement.scrollTo(0,0)
@@ -26,8 +27,10 @@ for(let i=0; i<pages.length; ++i) {
 let dots = document.getElementsByClassName('dot')
 //generic function for scrolling the section starts here---------------
 const scrollSection = (distance, pageNo) => {
+    //console.log('scrollSection')
     if(scrollDebounce) {
         scrollDebounce=false
+        //console.log(scrollDebounce)
         if((pageNo && distance===null) || (pageNo===0 && distance===null)) {
             const factor=pageNo
             currentPage=pageNo
@@ -44,8 +47,7 @@ const scrollSection = (distance, pageNo) => {
             }
             let scrollAmt = fromTop
             ++currentPage
-            if(currentPage>pages.length-1)
-                currentPage=pages.length-1
+        //    console.log(currentPage)
             window.scrollBy({
                 top: scrollAmt,
                 left:0,
@@ -90,12 +92,30 @@ selectDot(currentPage)
 
 
 
-
 //generic function for scrolling the section ends here---------------
 
 
 //Below line for touchpad and mousewheel swipe
-window.addEventListener("wheel", e=> scrollSection(e.deltaY))
+let scrollTimer
+
+window.addEventListener("wheel", e=> {
+    let minscrollTime=200
+    var now = new Date().getTime()
+    if(!scrollTimer) {
+        if(now-lastScrollTime>(3*minscrollTime)) {
+            console.log('hi')
+            scrollSection(e.deltaY)
+            lastScrollTime=now
+        }
+        scrollTimer = setTimeout(() => {
+            console.log('hi2')
+            scrollTimer=null
+            lastScrollTime=new Date().getTime()
+            scrollSection(e.deltaY)
+        }, minscrollTime/2)
+    }
+    
+} )
 
 
 //Below line for arrow up and scroll scroll
