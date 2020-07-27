@@ -217,7 +217,44 @@ input:focus {
     border-radius: 10px;
     background-color: #018786;
 }
+.scrolling-wrapper {
+	overflow-x: scroll;
+	overflow-y: hidden;
+	white-space: nowrap;
+}
 
+.scrolling-wrapper .card {
+	display: inline-block;
+}
+
+.card {
+    border: 2px solid red;
+    margin-top: 10vh;
+    margin-left: 5vw;
+	width: 40vw;
+	height: 60vh;
+    background: black;
+}
+
+.card:first-child{
+    margin-left: 10vw;
+}
+
+.cardheading{
+    font-size: 15px;
+    font-family: 'Poppins';
+    font-weight: 600;
+    margin-top: 50vh;
+    text-align: center;
+}
+
+.scrolling-wrapper {
+	-webkit-overflow-scrolling: touch;
+}
+
+.scrolling-wrapper::-webkit-scrollbar {
+	display: none;
+}
 .artwork-container {
     position: relative;
     top: 20vh;
