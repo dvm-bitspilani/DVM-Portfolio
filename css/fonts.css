@@ -2,11 +2,18 @@
     font-family: 'Jaapokki subtract';
     src: url(../assets/fonts/Jaapokkisubtract-Regular.otf);
 }
+
 @font-face {
     font-family: 'Gilroy';
     src: url(../assets/fonts/Gilroy-Light.otf);
 }
+
 @font-face {
     font-family: 'Poppins';
     src: url(../assets/fonts/Poppins/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Ropa';
+    src: url("../assets/fonts/Ropa_Sans/RopaSans-Regular.ttf");
 }

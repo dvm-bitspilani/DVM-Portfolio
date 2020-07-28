@@ -70,7 +70,7 @@ const scrollSection = (distance, pageNo) => {
             })
             selectDot(currentPage)
          }
-        setTimeout(() => scrollDebounce=true, 500)
+        setTimeout(() => scrollDebounce=true, 800)
     }
 }
 
