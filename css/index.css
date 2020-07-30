@@ -248,6 +248,38 @@ input:focus {
     text-align: center;
 }
 
+.topblog{
+    display: block;
+    height: 30vh;
+    width: 40vw;
+}
+
+.bottomblog{
+    display: block;
+    height: 30vh;
+    width: 40vw;
+}
+
+.blogimage{
+    z-index: 100;
+    display: inline-block;
+    height: 30vh;
+    width: 20vw;
+    background-color: green;
+}
+
+.blogtitle{
+    vertical-align: middle;
+    display: inline-block;
+    height: 30vh;
+    width: 20vw;
+    text-align: center;
+    text-justify: auto;
+    font-size: 15px;
+    font-family: 'Poppins';
+    font-weight: 600;
+}
+
 .scrolling-wrapper {
 	-webkit-overflow-scrolling: touch;
 }
