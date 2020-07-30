@@ -28,7 +28,7 @@ let dots = document.getElementsByClassName('dot')
 const scrollSection = (distance, pageNo) => {
     if(scrollDebounce) {
         scrollDebounce=false
-        console.log(distance);
+        console.log(scrollDebounce);
         if((pageNo && distance===null) || (pageNo===0 && distance===null)) {
             const factor=pageNo
             currentPage=pageNo
