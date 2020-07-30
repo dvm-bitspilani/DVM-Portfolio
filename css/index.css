@@ -2,6 +2,10 @@
     font-family: 'test';
     src: url(../assets/fonts/Jaapokkisubtract-Regular.otf);
 } */
+.html{
+    scroll-behavior: smooth;
+}
+
 body {
     overflow: hidden;
 }
@@ -287,6 +291,20 @@ input:focus {
 .scrolling-wrapper::-webkit-scrollbar {
 	display: none;
 }
+.blogbuttonleft{
+    z-index: 10;
+    position: absolute;
+    left: 2vw;
+    top: 462vh;
+}
+
+.blogbuttonright{
+    z-index: 10;
+    position: absolute;
+    right: 2vw;
+    top: 462vh;
+}
+
 .artwork-container {
     position: relative;
     top: 20vh;

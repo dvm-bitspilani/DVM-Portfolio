@@ -199,4 +199,13 @@ const navigateCarousel = (step, stepType) =>  {
         document.getElementById('active-scroll-id').style.transition='0s'
     },600)
 }
+//BUTTONS FOR HORIZONTAL SCROLLING IN BLOGS SECTION
+const buttonRightBlog = document.getElementById('slideRightBlog');
+const buttonLeftBlog = document.getElementById('slideLeftBlog');
 
+buttonRightBlog.onclick = function () {
+  document.getElementById('scrolling-wrapper').scrollLeft += 100;
+};
+buttonLeftBlog.onclick = function () {
+  document.getElementById('scrolling-wrapper').scrollLeft -= 100;
+};
