@@ -42,41 +42,6 @@ body {
     font-family: 'Poppins';
     padding: 12vh;
 }
-nav {
-    display: flex;
-    justify-content: space-between;
-    height: 20%;
-    z-index: 117;
-    position: absolute;
-    width: 100%;
-
-}
-nav > div {
-    margin: 12px;
-    width: 75px;
-}
-.brand {
-    width: 50%;
-    font-size: 24px;
-    letter-spacing: 9.6px;
-    font-family: 'Jaapokki subtract', sans-serif;
-    color: white;
-}
-/* .fonts-loaded .brand {
-    font-family: 'Jaapokki subtract';
-} */
-
-.ham-line {
-    width: 50%;
-    height: 3px;
-    background-color: white;
-    margin: 4px 0;
-    transition: 0.3s;
-}
-.ham-line:nth-of-type(2) {
-    position: relative;
-    left: -10%;
-}
 
 .section-nav {
     right: 5vw;
