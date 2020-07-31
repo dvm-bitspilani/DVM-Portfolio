@@ -17,3 +17,41 @@
     font-family: 'Ropa';
     src: url("../assets/fonts/Ropa_Sans/RopaSans-Regular.ttf");
 }
+
+@font-face {
+    font-family: 'Gilroy-Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Gilroy-Bold ☞'), url('../assets/fonts/Gilroy-Bold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Gilroy-Heavy';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Gilroy-Heavy ☞'), url('../assets/fonts/Gilroy-Heavy.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Gilroy-Light';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Gilroy-Light ☞'), url('../assets/fonts/Gilroy-Light.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Gilroy-Medium';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Gilroy-Medium ☞'), url('../assets/fonts/Gilroy-Medium.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Gilroy-Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Gilroy-Regular ☞'), url('../assets/fonts/Gilroy-Regular.woff') format('woff');
+}

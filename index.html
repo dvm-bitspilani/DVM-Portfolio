@@ -3,23 +3,44 @@
     <head>
         <title>DVM Portfolio</title>
         <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/fonts.css">
-    <script src="./js/fontfaceobserver.standalone.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/fonts.css">
+        <link rel="stylesheet" href="css/nav.css">
+        <script src="./js/fontfaceobserver.standalone.js"></script>
     </head>
     <body>
+        <nav class="navbar">
+            <div class="brand">
+                DVM
+            </div>
+            <div class="ham" onclick="openCloseNav()">
+                <div class="ham-line"></div>
+                <div class="ham-line"></div>
+            </div>
+        </nav>
+        <div id="navContainer">
+            <div class="followContainer">
+                <h3>
+                    Follow
+                </h3>
+                <a href="">Facebook</a>
+                <a href="">Instagram</a>
+                <a href="">LinkedIn</a>
+                <a href="">Behance</a>
+                <a href="">Dribble</a>
+            </div>
+            <div class="elementsContainer">
+                <a href="">About</a>
+                <a href="">Work</a>
+                <a href="">Blogs</a>
+                <a href="">Artworks</a>
+                <a href="">Achievements</a>
+                <a href="">Contact Us</a>
+            </div>
+        </div>
         <div class="wrapper">
             <section class="page home" id="home">
-                <nav class="navbar">
-                    <div class="brand">
-                        DVM
-                    </div>
-                    <div class="ham">
-                        <div class="ham-line"></div>
-                        <div class="ham-line"></div>
-                    </div>
-                </nav>
                 <div class="home-cont">
                     <div class="home-heading">
                         We are DVM
@@ -308,5 +329,6 @@
             </section>
         </div>
         <script src="js/index.js"></script>
+        <script src="js/navbar.js"></script>
     </body>
 </html>

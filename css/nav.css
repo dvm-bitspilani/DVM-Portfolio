@@ -1,0 +1,46 @@
+#navContainer {
+    z-index: 100;
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    color: white;
+    display: none;
+    align-items: center;
+    font-family: Gilroy;
+}
+
+.followContainer {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding-left: 10%;
+    box-sizing: border-box;
+}
+
+.followContainer h3{
+    font-size: 1.4em;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-family: Gilroy-Medium;
+}
+
+.followContainer a{
+    color: white;
+    text-decoration: solid;
+    margin: 1%;
+    margin-left: 0;
+}
+
+.elementsContainer {
+    display: flex;
+    flex-direction: column;
+    font-size: 4.2em;
+    font-family: Gilroy-Heavy;
+}
+
+.elementsContainer a{
+    color: white;
+    text-decoration: solid;
+}
