@@ -204,7 +204,6 @@ input:focus {
 }
 
 .card {
-    border: 2px solid red;
     margin-top: 10vh;
     margin-left: 5vw;
 	width: 40vw;

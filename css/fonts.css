@@ -55,3 +55,8 @@
     font-weight: normal;
     src: local('Gilroy-Regular ☞'), url('../assets/fonts/Gilroy-Regular.woff') format('woff');
 }
+
+@font-face {
+    font-family: 'Open-Light';
+    src: url(../assets/fonts/Open_Sans/OpenSans-Light.ttf);
+}

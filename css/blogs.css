@@ -1,3 +1,7 @@
+html{
+    overflow-x: hidden;
+}
+
 .wrapper {
     height: auto;
     width: 100vw;
@@ -8,15 +12,18 @@
     left: 0;
     top: 0;
 }
+
 nav {
     display: flex;
     justify-content: space-between;
     height: 20%;
 }
+
 nav > div {
     margin: 12px;
     width: 75px;
 }
+
 .brand {
     width: 50%;
     font-size: 24px;
@@ -24,9 +31,6 @@ nav > div {
     font-family: 'Jaapokki subtract', sans-serif;
     font-display: swap;
 }
-/* .fonts-loaded .brand {
-    font-family: 'Jaapokki subtract';
-} */
 
 .ham-line {
     width: 50%;
@@ -34,6 +38,7 @@ nav > div {
     background-color: white;
     margin: 4px 0;
 }
+
 .ham-line:nth-of-type(2) {
     position: relative;
     left: -10%;
@@ -68,13 +73,28 @@ nav > div {
 }
 
 .intro{
-    color: white;
-    font-size: 50px;
-    text-align: center;
-    font-family: 'Poppins';
+    margin-top: 3vh;
+    color: #FFFFFF;
+    font-size: 15px;
+    text-align: left;
+    font-family: 'Open-Light';
+}
+
+.iconholder{
+    background-color: #2C2C2C;
+    margin-right: 2vw;
+    margin-top: 2vh;
+    float: left;
+    display: block;
+    height: 7vh;
+    width: 10vh;
+    font-size: 40px;
+    border-radius: 10%;
 }
 
 .socialmedia{
+    display: block;
+    width: 70vw;
     color: white;
     font-size: 50px;
     text-align: center;
@@ -82,8 +102,22 @@ nav > div {
 }
 
 .content{
+    display: block;
+    position: relative;
+    margin-top: 12vh;
+    color: #FFFFFF;
+    font-size: 15px;
+    text-align: left;
+    font-family: 'Open-Light';
+}
+h1{
     color: white;
-    font-size: 50px;
-    text-align: center;
+    font-size: 20px;
     font-family: 'Poppins';
+}
+.switchblogprev{
+    display: none;
+}
+.switchblognext{
+    display: none;
 }
