@@ -119,6 +119,27 @@ body {
     border-radius: 50%;
 }
 
+.infoContainer{
+    display: flex;
+    position: relative;
+    top: 15vh;
+    padding: 1% 9%;
+    font-family: poppins;
+    font-size: 0.9em;
+}
+
+.infoElements{
+    display: flex;
+    flex-direction: column;
+    padding: 0 3%;
+}
+
+.infoTextContainer{
+    height: 26%;
+    margin: 14% 0;
+    overflow: hidden;
+}
+
 .number {
     position: relative;
     top: 30px;
