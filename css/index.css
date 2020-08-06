@@ -23,6 +23,8 @@ body {
 }
 .page {
     height: 100vh;
+    overflow: hidden;
+    box-sizing: border-box;
     padding: 12px;
 }
 .inner-wrapper {
