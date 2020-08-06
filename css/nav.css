@@ -1,8 +1,11 @@
 nav {
     display: flex;
     justify-content: space-between;
-    height: 20%;
+    align-items: center;
+    height: 11%;
     z-index: 117;
+    padding: 0 2% 0 3%;
+    box-sizing: border-box;
     position: absolute;
     width: 100%;
 

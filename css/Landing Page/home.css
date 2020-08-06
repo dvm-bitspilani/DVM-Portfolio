@@ -1,0 +1,67 @@
+.home{
+    background-image: url(../../assets/img/Background.png);
+    display: flex;
+    align-items: center;
+    padding: 0;
+    justify-content: center;
+}
+
+.home-cont {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    margin: 0 5vw 0 5vw;
+}
+
+.home-cont .home-heading {
+    align-self: center;
+}
+
+.decoGrid{
+    width: 21%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.2;
+    transform: translateX(-65%);
+}
+
+.home-heading {
+    text-align: left;
+    width: 20%;
+    font-size: 88px;
+    font-family: 'Gilroy';
+    font-weight: 900;
+    letter-spacing: 13.2px;
+}
+
+#homeLogoContainer{
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 65px;
+}
+
+#homeLogoContainer img{
+    display: block;
+    height: auto;
+    width: 100%;
+    filter: drop-shadow(-10px 24px 13px #000000)
+}
+
+#homeLogoInner{
+    width: 20%;
+    display: flex;
+    transition: 0.5s;
+}
+
+#particles-js{
+    position: absolute;
+    height: 80vh;
+    width: 100vw;
+}
