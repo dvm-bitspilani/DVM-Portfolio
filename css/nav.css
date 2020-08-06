@@ -2,9 +2,9 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 11%;
     z-index: 117;
     padding: 0 2% 0 3%;
+    margin: 1% 0;
     box-sizing: border-box;
     position: absolute;
     width: 100%;
