@@ -52,12 +52,21 @@ const openCloseNav = () => {
       }
     }, 1000);
     setTimeout(() => {
-      largeLink1.style.opacity = 1;
-      largeLink2.style.opacity = 1;
-      largeLink3.style.opacity = 1;
-      largeLink4.style.opacity = 1;
-      largeLink5.style.opacity = 1;
-      largeLink6.style.opacity = 1;
+      // largeLink1.style.opacity = 1;
+      // largeLink2.style.opacity = 1;
+      // largeLink3.style.opacity = 1;
+      // largeLink4.style.opacity = 1;
+      // largeLink5.style.opacity = 1;
+      // largeLink6.style.opacity = 1;
+
+      let obj = [
+        largeLink1,
+        largeLink2,
+        largeLink3,
+        largeLink4,
+        largeLink5,
+        largeLink6,
+      ];
 
       var textWrapper = document.querySelector(
         ".largeLinkContainer1 .largeLink1"
@@ -107,22 +116,27 @@ const openCloseNav = () => {
         "<a class='letter'>$&</a>"
       );
 
+      var k = "largeLink";
+
       for (let i = 0; i < 6; i++) {
-        anime
-          .timeline({ loop: false })
-          .add({
-            targets: ".largeLinkContainer" + (i + 1).toString() + " .letter",
-            rotateY: [-90, 0],
-            duration: 1300,
-            delay: (el, i) => 45 * i,
-          })
-          .add({
-            targets: ".largeLinkContainer" + (i + 1).toString(),
-            opacity: 1,
-            duration: 1000,
-            easing: "easeOutExpo",
-            delay: 1000,
-          });
+        setTimeout(() => {
+          obj[i].style.opacity = "1";
+          anime
+            .timeline({ loop: false })
+            .add({
+              targets: ".largeLinkContainer" + (i + 1).toString() + " .letter",
+              rotateY: [-90, 0],
+              duration: 1300,
+              delay: (el, i) => 45 * i,
+            })
+            .add({
+              targets: ".largeLinkContainer" + (i + 1).toString(),
+              opacity: 1,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000,
+            });
+        }, i * 100);
       }
     }, 1000);
     hamLine[1].style.left = "0";
