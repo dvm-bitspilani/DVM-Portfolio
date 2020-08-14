@@ -105,11 +105,19 @@ function throttle(callback, limit) {
   };
 }
 
+function debounce(func, delay) {
+  let debounceTimer;
+  return function (e) {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => scrollSection(e.deltaY), delay);
+  };
+}
+
 // window.addEventListener("wheel", (e) =>
 //   throttle(() => scrollSection(e.deltaY), 500)()
 // );
 
-window.addEventListener("wheel", throttle(scrollSection, 500), false);
+window.addEventListener("wheel", debounce(scrollSection, 200), false);
 
 //Below line for arrow up and scroll scroll
 window.addEventListener("keyup", (e) => {
