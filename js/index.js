@@ -31,7 +31,7 @@ for (let i = 0; i < pages.length; ++i) {
 let dots = document.getElementsByClassName("dot");
 //generic function for scrolling the section starts here---------------
 const scrollSection = (distance, pageNo) => {
-  console.log("scrollSection");
+  console.log(distance, pageNo);
   //console.log(scrollDebounce)
   if ((pageNo && distance === null) || (pageNo === 0 && distance === null)) {
     const factor = pageNo;
@@ -55,7 +55,7 @@ const scrollSection = (distance, pageNo) => {
       left: 0,
       behavior: "smooth",
     });
-    selectDot(currentPage);
+    selectDot(currentPage, "dontscroll");
   }
   if (distance < 0 || distance === "up") {
     if (pages[0].getBoundingClientRect().top > 0) {
@@ -70,18 +70,18 @@ const scrollSection = (distance, pageNo) => {
       left: 0,
       behavior: "smooth",
     });
-    selectDot(currentPage);
+    selectDot(currentPage, "dontscroll");
   }
 };
 
-const selectDot = (pageNo) => {
+const selectDot = (pageNo, isScroll) => {
   let newDots = document.getElementsByClassName("dot");
   for (let i = 0; i < newDots.length; ++i) {
     if (newDots[i].classList.contains("dot-active"))
       newDots[i].classList.remove("dot-active");
   }
   newDots[pageNo].classList.add("dot-active");
-  scrollSection(null, pageNo);
+  if (isScroll !== "dontscroll") scrollSection(null, pageNo);
 };
 
 selectDot(currentPage);
@@ -98,8 +98,7 @@ function throttle(callback, limit) {
       //   console.log("hi");
       scrollSection(e.deltaY);
       tick = true;
-      const timer = setTimeout(function () {
-        clearTimeout(timer);
+      setTimeout(function () {
         tick = false;
       }, limit);
     }
