@@ -128,8 +128,52 @@ nav > div {
     font-size: 4.2em;
     font-family: Gilroy-Heavy;
 }
-
 .elementsContainer a{
     color: white;
     text-decoration: solid;
 }
+
+.largeLink1,
+.largeLink2,
+.largeLink3,
+.largeLink4,
+.largeLink5,
+.largeLink6 {
+    cursor: pointer;
+    opacity: 0;
+}
+
+
+/* 
+
+.largeLinkContainer {
+  position: relative;
+  font-weight: 900;
+  font-size: 4em;
+}
+
+.largeLinkContainer .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.largeLinkContainer .largeLink {
+  display: inline-block;
+  line-height: 1em;
+  transform-origin: 0 0;
+} */
+
+.largeLinkContainer1 .letter,
+.largeLinkContainer2 .letter,
+.largeLinkContainer3 .letter,
+.largeLinkContainer4 .letter,
+.largeLinkContainer5 .letter,
+.largeLinkContainer6 .letter {
+    display: inline-block;
+    line-height: 1em;
+    transform-origin: 0 0;
+  }
