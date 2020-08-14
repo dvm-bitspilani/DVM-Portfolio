@@ -307,7 +307,6 @@ const navigateCarousel = (step, stepType) => {
   //-----------------------------------------
 
   container.onmouseenter = onMouseEnterHandler;
-  console.log(container.onmouseenter)
   container.onmouseleave = onMouseLeaveHandler;
   container.onmousemove = onMouseMoveHandler;
 })();
