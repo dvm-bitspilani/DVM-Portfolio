@@ -10,6 +10,7 @@ font.load().then(() => {
 });
 
 let currentPage = 0;
+let lastScrollTime = 0;
 const whereTop = document
   .getElementsByClassName("page")[0]
   .getBoundingClientRect().top;
@@ -26,113 +27,50 @@ for (let i = 0; i < pages.length; ++i) {
         <div class="dot" onclick="selectDot(${i})"></div>
     `;
 }
-let loaded = () => {
-  let heading = document.getElementsByClassName("home-heading")[0];
-  let logo = document.getElementById("homeLogoContainer");
-  let rightStrip = document.getElementsByClassName("section-nav")[0];
-  let ham = document.getElementsByClassName("ham")[0];
-
-  setTimeout(() => {
-    logo.style.opacity = "1";
-    logo.style.transition = "all 0.3s ease-out";
-    logo.style.transform = "scale(1) rotate(0deg)";
-  }, 700);
-
-  var textWrapper = document.querySelector(".brand .letters");
-  textWrapper.innerHTML = textWrapper.textContent.replace(
-    /\S/g,
-    "<span class='letter'>$&</span>"
-  );
-
-  anime
-    .timeline({ loop: true })
-    .add({
-      targets: ".brand .letter",
-      scale: [0.3, 1],
-      opacity: [0, 1],
-      translateZ: 0,
-      easing: "easeOutExpo",
-      duration: 600,
-      delay: (el, i) => 70 * (i + 1),
-    })
-    .add({
-      targets: ".brand .line",
-      scaleX: [0, 1],
-      opacity: [0.5, 1],
-      easing: "easeOutExpo",
-      duration: 700,
-      offset: "-=875",
-      delay: (el, i, l) => 80 * (l - i),
-    })
-    .add({
-      targets: ".brand",
-      opacity: 0,
-      duration: 1000,
-      easing: "easeOutExpo",
-      delay: 1000,
-    });
-
-  setTimeout(() => {
-    heading.style.opacity = "1";
-    heading.style.transition = "all 0.3s ease-out";
-    heading.style.transform = "scale(1) rotate(0deg)";
-  }, 1100);
-
-  setTimeout(() => {
-    rightStrip.style.transition = "all 0.3s ease-out";
-    rightStrip.style.transform = "translateX(0)";
-    ham.style.transition = "all 0.3s ease-out";
-    ham.style.transform = "translateY(0)";
-  }, 1400);
-
-};
 
 let dots = document.getElementsByClassName("dot");
 //generic function for scrolling the section starts here---------------
 const scrollSection = (distance, pageNo) => {
-  if (scrollDebounce) {
-    scrollDebounce = false;
-    console.log(scrollDebounce);
-    if ((pageNo && distance === null) || (pageNo === 0 && distance === null)) {
-      const factor = pageNo;
-      currentPage = pageNo;
-      window.scrollTo({
-        top: fromTop * factor,
-        left: 0,
-        behavior: "smooth",
-      });
+  console.log("scrollSection");
+  //console.log(scrollDebounce)
+  if ((pageNo && distance === null) || (pageNo === 0 && distance === null)) {
+    const factor = pageNo;
+    currentPage = pageNo;
+    window.scrollTo({
+      top: fromTop * factor,
+      left: 0,
+      behavior: "smooth",
+    });
+  }
+  if (distance > 0 || distance === "down") {
+    if (pages[pages.length - 1].getBoundingClientRect().top <= 50) {
+      scrollDebounce = true;
+      return;
     }
-    if (distance > 0 || distance === "down") {
-      if (pages[pages.length - 1].getBoundingClientRect().top <= 50) {
-        scrollDebounce = true;
-        return;
-      }
-      let scrollAmt = fromTop;
-      ++currentPage;
-      if (currentPage > pages.length - 1) currentPage = pages.length - 1;
-      window.scrollBy({
-        top: scrollAmt,
-        left: 0,
-        behavior: "smooth",
-      });
-      selectDot(currentPage);
+    let scrollAmt = fromTop;
+    ++currentPage;
+    //    console.log(currentPage)
+    window.scrollBy({
+      top: scrollAmt,
+      left: 0,
+      behavior: "smooth",
+    });
+    selectDot(currentPage);
+  }
+  if (distance < 0 || distance === "up") {
+    if (pages[0].getBoundingClientRect().top > 0) {
+      scrollDebounce = true;
+      return;
     }
-    if (distance < 0 || distance === "up") {
-      if (pages[0].getBoundingClientRect().top > 0) {
-        scrollDebounce = true;
-        return;
-      }
 
-      --currentPage;
-      if (currentPage < 0) currentPage = 0;
-      window.scrollBy({
-        top: -fromTop,
-        left: 0,
-        behavior: "smooth",
-      });
-      selectDot(currentPage);
-    }
-    setTimeout(() => (scrollDebounce = true), 800);
+    --currentPage;
+    if (currentPage < 0) currentPage = 0;
+    window.scrollBy({
+      top: -fromTop,
+      left: 0,
+      behavior: "smooth",
+    });
+    selectDot(currentPage);
   }
 };
 
@@ -151,7 +89,28 @@ selectDot(currentPage);
 //generic function for scrolling the section ends here---------------
 
 //Below line for touchpad and mousewheel swipe
-window.addEventListener("wheel", (e) => scrollSection(e.deltaY));
+
+function throttle(callback, limit) {
+  //  console.log(event);
+  var tick = false;
+  return (e) => {
+    if (!tick) {
+      //   console.log("hi");
+      scrollSection(e.deltaY);
+      tick = true;
+      const timer = setTimeout(function () {
+        clearTimeout(timer);
+        tick = false;
+      }, limit);
+    }
+  };
+}
+
+// window.addEventListener("wheel", (e) =>
+//   throttle(() => scrollSection(e.deltaY), 500)()
+// );
+
+window.addEventListener("wheel", throttle(scrollSection, 500), false);
 
 //Below line for arrow up and scroll scroll
 window.addEventListener("keyup", (e) => {
@@ -272,21 +231,12 @@ const navigateCarousel = (step, stepType) => {
     document.getElementById("active-scroll-id").style.transition = "0s";
   }, 600);
 };
-//BUTTONS FOR HORIZONTAL SCROLLING IN BLOGS SECTION
-const buttonRightBlog = document.getElementById("slideRightBlog");
-const buttonLeftBlog = document.getElementById("slideLeftBlog");
 
-buttonRightBlog.onclick = function () {
-  document.getElementById("scrolling-wrapper").scrollLeft += 100;
-};
-buttonLeftBlog.onclick = function () {
-  document.getElementById("scrolling-wrapper").scrollLeft -= 100;
-};
-
-(function () {
+    //-----------------------------------------
+(function() {
   // Init
   var container = document.getElementById("homeLogoContainer"),
-    inner = document.getElementById("homeLogoInner");
+      inner = document.getElementById("homeLogoInner");
 
   // Mouse
   var mouse = {
@@ -294,18 +244,18 @@ buttonLeftBlog.onclick = function () {
     _y: 0,
     x: 0,
     y: 0,
-    updatePosition: function (event) {
+    updatePosition: function(event) {
       var e = event || window.event;
       this.x = e.clientX - this._x;
       this.y = (e.clientY - this._y) * -1;
     },
-    setOrigin: function (e) {
+    setOrigin: function(e) {
       this._x = e.offsetLeft + Math.floor(e.offsetWidth / 2);
       this._y = e.offsetTop + Math.floor(e.offsetHeight / 2);
     },
-    show: function () {
+    show: function() {
       return "(" + this.x + ", " + this.y + ")";
-    },
+    }
   };
 
   // Track the mouse position relative to the center of the container.
@@ -315,21 +265,21 @@ buttonLeftBlog.onclick = function () {
 
   var counter = 0;
   var updateRate = 10;
-  var isTimeToUpdate = function () {
+  var isTimeToUpdate = function() {
     return counter++ % updateRate === 0;
   };
 
   //-----------------------------------------
 
-  var onMouseEnterHandler = function (event) {
+  var onMouseEnterHandler = function(event) {
     update(event);
   };
 
-  var onMouseLeaveHandler = function () {
+  var onMouseLeaveHandler = function() {
     inner.style = "";
   };
 
-  var onMouseMoveHandler = function (event) {
+  var onMouseMoveHandler = function(event) {
     if (isTimeToUpdate()) {
       update(event);
     }
@@ -337,15 +287,15 @@ buttonLeftBlog.onclick = function () {
 
   //-----------------------------------------
 
-  var update = function (event) {
+  var update = function(event) {
     mouse.updatePosition(event);
     updateTransformStyle(
-      2 * (mouse.y / inner.offsetHeight).toFixed(2),
-      2 * (mouse.x / inner.offsetWidth).toFixed(2)
+        2 * (mouse.y / inner.offsetHeight).toFixed(2),
+        2 * (mouse.x / inner.offsetWidth ).toFixed(2)
     );
   };
 
-  var updateTransformStyle = function (x, y) {
+  var updateTransformStyle = function(x, y) {
     var style = "rotateX(" + x + "deg) rotateY(" + y + "deg)";
     inner.style.transform = style;
     inner.style.webkitTransform = style;
