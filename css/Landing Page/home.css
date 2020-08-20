@@ -1,5 +1,5 @@
 .home{
-    background-image: url(../../assets/img/Background.png);
+    background-image: url("../../assets/img/Background Grid.png");
     display: flex;
     align-items: center;
     padding: 0;
@@ -45,23 +45,31 @@
     justify-content: center;
     align-items: center;
     perspective: 65px;
+    user-select: none;
 }
 
 #homeLogoContainer img{
     display: block;
     height: auto;
     width: 100%;
-    filter: drop-shadow(-10px 24px 13px #000000)
+    filter: drop-shadow(-10px 24px 13px #000000);
+    -webkit-user-drag: none;
 }
 
 #homeLogoInner{
     width: 20%;
     display: flex;
     transition: 0.5s;
+    z-index: 2;
 }
 
 #particles-js{
     position: absolute;
     height: 80vh;
     width: 100vw;
+}
+
+.homeBack{
+    position: absolute;
+    transform: scale(0.75);
 }
