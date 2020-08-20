@@ -1,45 +1,50 @@
-<<<<<<< HEAD
+*{
+    user-select: none;
+    -webkit-user-drag: none;
+}
 .home{
     background-image: url("../../assets/img/Background Grid.png");
     display: flex;
     align-items: center;
     padding: 0;
     justify-content: center;
+    cursor: none;
+}
+
+.home *{
+    cursor: none;
 }
 
 .home-cont {
-  display: flex;
-  align-items: center;
-  position: absolute;
-  left: 0;
-  margin: 0 5vw 0 5vw;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    margin: 0 5vw 0 5vw;
 }
 
 .home-cont .home-heading {
-  align-self: center;
+    align-self: center;
 }
 
-.decoGrid {
-  width: 21%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 0.2;
-  transform: translateX(-65%);
+.decoGrid{
+    width: 21%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.2;
+    transform: translateX(-65%);
 }
 
 .home-heading {
-  text-align: left;
-  width: 40%;
-  transform: scale(0.4) rotate(7deg);
-  opacity: 0;
-  font-size: 88px;
-  font-family: "Gilroy";
-  font-weight: 900;
-  letter-spacing: 13.2px;
+    text-align: left;
+    width: 20%;
+    font-size: 88px;
+    font-family: 'Gilroy';
+    font-weight: 900;
+    letter-spacing: 13.2px;
 }
 
-<<<<<<< HEAD
 #homeLogoContainer{
     position: absolute;
     left: 0;
@@ -77,36 +82,3 @@
     position: absolute;
     transform: scale(0.75);
 }
-=======
-#homeLogoContainer {
-  position: absolute;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  transform: scale(0.5) rotate(20deg);
-  opacity: 0;
-  justify-content: center;
-  align-items: center;
-  perspective: 65px;
-}
-
-#homeLogoContainer img {
-  display: block;
-  height: auto;
-  width: 100%;
-  filter: drop-shadow(-10px 24px 13px #000000);
-}
-
-#homeLogoInner {
-  width: 20%;
-  display: flex;
-  transition: 0.5s;
-}
-
-#particles-js {
-  position: absolute;
-  height: 80vh;
-  width: 100vw;
-}
->>>>>>> 8cbc977b8ba471bb625a58bb16eaeeaada69027d
