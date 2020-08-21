@@ -372,6 +372,7 @@ const navigateCarousel = (step, stepType) => {
   container.onmousemove = onMouseMoveHandler;
 })();
 
+const cursor = document.getElementById('cursor')
 //-----------------
 window.addEventListener("DOMContentLoaded", () => {
 
@@ -398,8 +399,8 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   function updateSpotlight(e) {
-
     spotlight.style.backgroundImage = `radial-gradient(circle at ${e.pageX / window.innerWidth * 100}% ${e.pageY / window.innerHeight * 100}%, ${spotlightSize}`;
-
+    cursor.style.left = `${e.pageX / window.innerWidth * 100}%`
+    cursor.style.top = `${e.pageY / window.innerHeight * 100}%`
   }
 });
