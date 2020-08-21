@@ -378,7 +378,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const spotlight = document.querySelector('.spotlight');
 
-  let spotlightSize = 'transparent 49px, rgba(0, 0, 0, 0.85) 92px)';
+  let spotlightSize = 'transparent -17px, rgba(0, 0, 0, 0.9) 72px)';
 
   window.addEventListener('mousemove', e => updateSpotlight(e));
 
@@ -392,7 +392,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener('mouseup', e => {
 
-    spotlightSize = 'transparent 49px, rgba(0, 0, 0, 0.85) 92px)';
+    spotlightSize = 'ttransparent -17px, rgba(0, 0, 0, 0.9) 72px)';
 
     updateSpotlight(e);
 
