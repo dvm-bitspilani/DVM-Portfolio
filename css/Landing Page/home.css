@@ -84,7 +84,53 @@
     transition: 0.5s;
     z-index: 2;
 }
-
+.homeSideIcons{
+    width: 30%;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    content: ' ';
+    height: 40vh;
+    background: transparent;
+}
+.xoxo{
+    height: 100%;
+    width: fit-content;
+    margin: 2%;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    
+    flex-direction: column;
+}
+.xoxo>div{
+    flex-grow: 1;
+    display: flex;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Jaapokki subtract' ,sans-serif;
+    font-size: 1.2em;
+    font-weight: lighter;
+}
+.x{
+    animation: example 2s ease-in-out infinite;
+}
+@keyframes example{
+    0%{transform:rotateZ(0deg);}
+    50%{transform:rotateZ(180deg)}
+    100%{transform: rotateZ(360deg);}
+}
+.o{
+    animation: example2 1s ease-in-out infinite;
+}
+@keyframes example2{
+    0%{transform:scale(1,1);}
+    50%{transform:scale(0,0)}
+    100%{transform: scale(1,1);}
+    
+}
 #particles-js{
     position: absolute;
     height: 80vh;
