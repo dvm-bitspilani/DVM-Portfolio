@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>DVM Portfolio</title>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/fonts.css">
@@ -13,436 +14,442 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 </head>
+
 <body onload=loaded()>
-<nav class="navbar">
-    <!-- <div class="brand">
+    <nav class="navbar">
+        <!-- <div class="brand">
         DVM
     </div> -->
 
-    <h1 class="brand">
-        <span class="text-wrapper">
-          <!-- <span class="line line1"></span> -->
-          <span class="letters">DVM</span>
-          <!-- <span class="line line2"></span> -->
-        </span>
-      </h1>
+        <h1 class="brand">
+            <span class="text-wrapper">
+                <!-- <span class="line line1"></span> -->
+                <span class="letters">DVM</span>
+                <!-- <span class="line line2"></span> -->
+            </span>
+        </h1>
 
-    <div class="ham" onclick="openCloseNav()">
-        <div class="ham-line"></div>
-        <div class="ham-line"></div>
-    </div>
-</nav>
-<div id="navContainer">
-    <div class="followContainer">
-        <h3 class="smallLinksHeader">
-            Follow
-        </h3>
-        <a href="" class="smallLinks">Facebook</a>
-        <a href="" class="smallLinks">Instagram</a>
-        <a href="" class="smallLinks">LinkedIn</a>
-        <a href="" class="smallLinks">Behance</a>
-        <a href="" class="smallLinks">Dribble</a>
-    </div>
-    <div class="elementsContainer">
-        <div class="largeLinkContainer1">
-            <span class="text-wrapper">
-              <a class="largeLink1">About</a>
-            </span>
+        <div class="ham" onclick="openCloseNav()">
+            <div class="ham-line"></div>
+            <div class="ham-line"></div>
         </div>
-        <div class="largeLinkContainer2">
-            <span class="text-wrapper">
-              <a class="largeLink2">Work</a>
-            </span>
+    </nav>
+    <div id="navContainer">
+        <div class="followContainer">
+            <h3 class="smallLinksHeader">
+                Follow
+            </h3>
+            <a href="" class="smallLinks">Facebook</a>
+            <a href="" class="smallLinks">Instagram</a>
+            <a href="" class="smallLinks">LinkedIn</a>
+            <a href="" class="smallLinks">Behance</a>
+            <a href="" class="smallLinks">Dribble</a>
         </div>
-        <div class="largeLinkContainer3">
-            <span class="text-wrapper">
-              <a class="largeLink3">Blogs</a>
-            </span>
-        </div>
-        <div class="largeLinkContainer4">
-            <span class="text-wrapper">
-              <a class="largeLink4">Artworks</a>
-            </span>
-        </div>
-        <div class="largeLinkContainer5">
-            <span class="text-wrapper">
-              <a class="largeLink5">Achievements</a>
-            </span>
-        </div>
-        <div class="largeLinkContainer6">
-            <span class="text-wrapper">
-              <a class="largeLink6">Contact Us</a>
-            </span>
-        </div>
-        <!-- <a href="">About</a>
+        <div class="elementsContainer">
+            <div class="largeLinkContainer1">
+                <span class="text-wrapper">
+                    <a class="largeLink1">About</a>
+                </span>
+            </div>
+            <div class="largeLinkContainer2">
+                <span class="text-wrapper">
+                    <a class="largeLink2">Work</a>
+                </span>
+            </div>
+            <div class="largeLinkContainer3">
+                <span class="text-wrapper">
+                    <a class="largeLink3">Blogs</a>
+                </span>
+            </div>
+            <div class="largeLinkContainer4">
+                <span class="text-wrapper">
+                    <a class="largeLink4">Artworks</a>
+                </span>
+            </div>
+            <div class="largeLinkContainer5">
+                <span class="text-wrapper">
+                    <a class="largeLink5">Achievements</a>
+                </span>
+            </div>
+            <div class="largeLinkContainer6">
+                <span class="text-wrapper">
+                    <a class="largeLink6">Contact Us</a>
+                </span>
+            </div>
+            <!-- <a href="">About</a>
         <a href="">Work</a>
         <a href="">Blogs</a>
         <a href="">Artworks</a>
         <a href="">Achievements</a>
         <a href="">Contact Us</a> -->
+        </div>
     </div>
-</div>
-<div class="wrapper">
-    <section class="page home" id="home">
-        <div class="home-cont">
-            <!--            <div class="home-heading">-->
-            <!--                DVM-->
-            <!--            </div>-->
-            <div class="section-nav">
-            </div>
-        </div>
-        <!--        <div id="particles-js"></div>-->
-        <div id="homeLogoContainer">
-            <div class="spotlight">
-                <div id="cursor"></div>
-            </div>
-            <div id="homeLogoInner">
-                <img src="assets/img/DVM-Logo.svg">
-            </div>
-            <div class="homeBack">
-                <img src="assets/img/Background%20Box.png">
-            </div>
-            <div class="homeSideIcons">
-                <div class="xoxo">
-                    <div class="x">X</div>
-                    <div class="o">O</div>
-                    <div class="x">X</div>
-                    <div class="o">O</div>
-                </div>
-                <div class="xoxo">
-                    <div class="o">O</div>
-                    <div class="x">X</div>
-                    <div class="o">O</div>
-                    <div class="x">X</div>
+    <div class="wrapper">
+        <section class="page home" id="home">
+            <div class="home-cont">
+                <!--            <div class="home-heading">-->
+                <!--                DVM-->
+                <!--            </div>-->
+                <div class="section-nav">
                 </div>
             </div>
-        </div>
-    </section>
-    <section class="page about" id="about">
-        <div class="inner-wrapper" id="about-wrapper">
-            <div class="section-heading">
-                ABOUT US
-            </div>
-            <div class="section-info" id="about-info">
-                The only department in campus that is responsible for creating up to date apps that are to be used by
-                more than 20 thousand students. We are DVM sed do eiusmod tempor incididunt ut labore et dolore magna
-                aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
-                id est laborum.
-            </div>
-            <div class="infoContainer">
-                <div class="infoElements">
-                    <img src="assets/img/code.svg">
-                    <div class="infoTextContainer">
-                        The only department in campus that is responsible for creating up to date apps that are to be
-                        used by more than 20 thousand students. We are DVM sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <!--        <div id="particles-js"></div>-->
+            <div id="homeLogoContainer">
+                <div class="spotlight">
+                    <div id="cursor"></div>
+                </div>
+                <div id="homeLogoInner">
+                    <img src="assets/img/DVM-Logo.svg">
+                </div>
+                <div class="homeBack">
+                    <img src="assets/img/Background%20Box.png">
+                </div>
+                <div class="homeSideIcons">
+                    <div class="xoxo">
+                        <div class="x">X</div>
+                        <div class="o">O</div>
+                        <div class="x">X</div>
+                        <div class="o">O</div>
                     </div>
-                </div>
-                <div class="infoElements">
-                    <img src="assets/img/design.svg">
-                    <div class="infoTextContainer">
-                        The only department in campus that is responsible for creating up to date apps that are to be
-                        used by more than 20 thousand students. We are DVM sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </div>
-                </div>
-                <div class="infoElements">
-                    <img src="assets/img/animate.svg">
-                    <div class="infoTextContainer">
-                        The only department in campus that is responsible for creating up to date apps that are to be
-                        used by more than 20 thousand students. We are DVM sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <div class="xoxo">
+                        <div class="o">O</div>
+                        <div class="x">X</div>
+                        <div class="o">O</div>
+                        <div class="x">X</div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section class="page projects" id="projects_oasis">
-        <div class="inner-wrapper" id="projects-oasis-wrapper">
-            <div>
-                <div class="appInfoContainer">
-                    <img src="assets/img/mobilePlaceholder.PNG" alt="mobile">
-                    <div class="appTextContainer">
-                        <div class="infoHead">
-                            <h4>Android app design and development</h4>
-                            <p>used by more than 10 thousand students</p>
-                        </div>
-                        <a href="" class="project appInfo">
-                            View Projects
-                            <div class="projectArrow"></div>
-                        </a>
-                    </div>
-                </div>
-                <div class="webInfoContainer">
-                    <img src="assets/img/desktopPlaceholder.PNG" alt="mobile">
-                    <div class="webTextContainer">
-                        <div class="infoHead">
-                            <h4>Android app design and development</h4>
-                            <p>used by more than 10 thousand students</p>
-                        </div>
-                        <a href="" class="project appInfo">
-                            View Projects
-                            <div class="projectArrow"></div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="page projects" id="projects_apogee">
-        <div class="inner-wrapper" id="projects-apogee-wrapper">
-            <div>
-                <div class="appInfoContainer">
-                    <img src="assets/img/mobilePlaceholder.PNG" alt="mobile">
-                    <div class="appTextContainer">
-                        <div class="infoHead">
-                            <h4>Android app design and development</h4>
-                            <p>used by more than 10 thousand students</p>
-                        </div>
-                        <a href="" class="project appInfo">
-                            View Projects
-                            <div class="projectArrow"></div>
-                        </a>
-                    </div>
-                </div>
-                <div class="webInfoContainer">
-                    <img src="assets/img/desktopPlaceholder.PNG" alt="mobile">
-                    <div class="webTextContainer">
-                        <div class="infoHead">
-                            <h4>Android app design and development</h4>
-                            <p>used by more than 10 thousand students</p>
-                        </div>
-                        <a href="" class="project appInfo">
-                            View Projects
-                            <div class="projectArrow"></div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-    </section>
-    <section class="page blog" id="blog">
-        <div class="inner-wrapper" id="blog-wrapper">
-            <div class="section-heading">
-                Blogs
-            </div>
+        </section>
+        <section class="page about" id="about">
+            <div class="inner-wrapper" id="about-wrapper">
+                <div class="backContentWrapper">
+                    <div class="backContent">
+                        <div class="about-heading">We are DVM</div>
+                        <div class="about-info-1">
+                            "There is no one who loves pain itself, who seeks after it and wants to have it, simply
+                            because
+                            it is pain..." Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et dui quis
+                            enim
+                            <br><br>
+                            Duis eu purus in odio fermentum placerat sed nec felis. Sed tincidunt nulla eu neque
+                            vehicula,
+                            
+                            Pellentesque hendrerit, metus et faucibus imperdiet, magna erat sodales orci, nec molestie
+                            justo
 
-            <div class="scrolling-wrapper" id="scrolling-wrapper">
+                        </div>
+                    </div>
+                    <div class="about-picture">
 
-                <button id="slideLeftBlog" type="button" class="blogbuttonleft"></button>
-                <button id="slideRightBlog" type="button" class="blogbuttonright"></button>
-                <div class="card">
-                    <div class="topblog">
-                        <div class="blogimage"></div>
-                        <div class="blogtitle">
-                            FIRST BLOG
-                        </div>
-                    </div>
-                    <div class="bottomblog">
-                        <div class="blogtitle">
-                            FIRST BLOG
-                        </div>
-                        <div class="blogimage"></div>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="topblog">
-                        <div class="blogimage"></div>
-                        <div class="blogtitle">
-                            FIRST BLOG
+                <div class="frontContent">
+                    <div class="frontContentWrapper">
+                        <div class="about-info-2">
+                            "There is no one who loves pain itself, who seeks after it and wants to have it, simply
+                            because
+                            <br><br>
+                            it is pain..." Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et dui quis
+                            enim
+                            
+                            Duis eu purus in odio fermentum placerat sed nec felis. Sed tincidunt nulla eu neque
+                            vehicula,
+                            
+                            Pellentesque hendrerit, metus et faucibus imperdiet, magna erat sodales orci, nec molestie
+                            justo
+
                         </div>
-                    </div>
-                    <div class="bottomblog">
-                        <div class="blogtitle">
-                            FIRST BLOG
+                        <div class="about-icons">
+                            <div class="icon"></div>
+                            <div class="icon"></div>
+                            <div class="icon"></div>
+                            <div class="icon"></div>
                         </div>
-                        <div class="blogimage"></div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="topblog">
-                        <div class="blogimage"></div>
-                        <div class="blogtitle">
-                            FIRST BLOG
-                        </div>
-                    </div>
-                    <div class="bottomblog">
-                        <div class="blogtitle">
-                            FIRST BLOG
-                        </div>
-                        <div class="blogimage"></div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="topblog">
-                        <div class="blogimage"></div>
-                        <div class="blogtitle">
-                            FIRST BLOG
-                        </div>
-                    </div>
-                    <div class="bottomblog">
-                        <div class="blogtitle">
-                            FIRST BLOG
-                        </div>
-                        <div class="blogimage"></div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="topblog">
-                        <div class="blogimage"></div>
-                        <div class="blogtitle">
-                            FIRST BLOG
-                        </div>
-                    </div>
-                    <div class="bottomblog">
-                        <div class="blogtitle">
-                            FIRST BLOG
-                        </div>
-                        <div class="blogimage"></div>
                     </div>
                 </div>
             </div>
-    </section>
-    <section class="page blog" id="blog">
-        <div class="inner-wrapper" id="artworks-wrapper">
-            <div class="section-heading">
-                Artworks
+        </section>
+        <section class="page projects" id="projects_oasis">
+            <div class="inner-wrapper" id="projects-oasis-wrapper">
+                <div>
+                    <div class="appInfoContainer">
+                        <img src="assets/img/mobilePlaceholder.PNG" alt="mobile">
+                        <div class="appTextContainer">
+                            <div class="infoHead">
+                                <h4>Android app design and development</h4>
+                                <p>used by more than 10 thousand students</p>
+                            </div>
+                            <a href="" class="project appInfo">
+                                View Projects
+                                <div class="projectArrow"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="webInfoContainer">
+                        <img src="assets/img/desktopPlaceholder.PNG" alt="mobile">
+                        <div class="webTextContainer">
+                            <div class="infoHead">
+                                <h4>Android app design and development</h4>
+                                <p>used by more than 10 thousand students</p>
+                            </div>
+                            <a href="" class="project appInfo">
+                                View Projects
+                                <div class="projectArrow"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="artwork-container">
-                <div class="arrows artwork-arrows">
-                    <div class="left-arrow" onclick="navigateCarousel(-1, 'single')">
-                        <img src="assets/img/universal.svg">
+        </section>
+        <section class="page projects" id="projects_apogee">
+            <div class="inner-wrapper" id="projects-apogee-wrapper">
+                <div>
+                    <div class="appInfoContainer">
+                        <img src="assets/img/mobilePlaceholder.PNG" alt="mobile">
+                        <div class="appTextContainer">
+                            <div class="infoHead">
+                                <h4>Android app design and development</h4>
+                                <p>used by more than 10 thousand students</p>
+                            </div>
+                            <a href="" class="project appInfo">
+                                View Projects
+                                <div class="projectArrow"></div>
+                            </a>
+                        </div>
                     </div>
-                    <div class="right-arrow" onclick="navigateCarousel(1, 'single')">
-                        <img src="assets/img/right-arrow.svg">
+                    <div class="webInfoContainer">
+                        <img src="assets/img/desktopPlaceholder.PNG" alt="mobile">
+                        <div class="webTextContainer">
+                            <div class="infoHead">
+                                <h4>Android app design and development</h4>
+                                <p>used by more than 10 thousand students</p>
+                            </div>
+                            <a href="" class="project appInfo">
+                                View Projects
+                                <div class="projectArrow"></div>
+                            </a>
+                        </div>
                     </div>
+                </div>
+        </section>
+        <section class="page blog" id="blog">
+            <div class="inner-wrapper" id="blog-wrapper">
+                <div class="section-heading">
+                    Blogs
                 </div>
 
-                <div class="artwork-name">
-                    Name
-                </div>
-                <div class="artwork-scroller">
-                    <div class="artwork-scroll-individual scroll-1" id="1" onclick="navigateCarousel(0, 'pill')"></div>
-                    <div class="artwork-scroll-individual scroll-2" id="2" onclick="navigateCarousel(1, 'pill')"></div>
-                    <div class="artwork-scroll-individual scroll-3" id="3" onclick="navigateCarousel(2, 'pill')"></div>
-                    <div class="artwork-scroll-individual scroll-4" id="4" onclick="navigateCarousel(3, 'pill')"></div>
-                    <div class="artwork-scroll-individual scroll-5" id="5" onclick="navigateCarousel(4, 'pill')"></div>
-                    <div class="active-scroll artwork-active-scroll artwork-scroll-individual"
-                         id="active-scroll-id"></div>
-                </div>
+                <div class="scrolling-wrapper" id="scrolling-wrapper">
 
-                <div class="artwork-carousel">
-                    <div class="artwork-img-container">
-                        <div class="artwork-img">
+                    <button id="slideLeftBlog" type="button" class="blogbuttonleft"></button>
+                    <button id="slideRightBlog" type="button" class="blogbuttonright"></button>
+                    <div class="card">
+                        <div class="topblog">
+                            <div class="blogimage"></div>
+                            <div class="blogtitle">
+                                FIRST BLOG
+                            </div>
                         </div>
-                        <div class="artwork-img">
+                        <div class="bottomblog">
+                            <div class="blogtitle">
+                                FIRST BLOG
+                            </div>
+                            <div class="blogimage"></div>
                         </div>
-                        <div class="artwork-img">
+                    </div>
+                    <div class="card">
+                        <div class="topblog">
+                            <div class="blogimage"></div>
+                            <div class="blogtitle">
+                                FIRST BLOG
+                            </div>
                         </div>
-                        <div class="artwork-img">
+                        <div class="bottomblog">
+                            <div class="blogtitle">
+                                FIRST BLOG
+                            </div>
+                            <div class="blogimage"></div>
                         </div>
-                        <div class="artwork-img">
+                    </div>
+                    <div class="card">
+                        <div class="topblog">
+                            <div class="blogimage"></div>
+                            <div class="blogtitle">
+                                FIRST BLOG
+                            </div>
+                        </div>
+                        <div class="bottomblog">
+                            <div class="blogtitle">
+                                FIRST BLOG
+                            </div>
+                            <div class="blogimage"></div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="topblog">
+                            <div class="blogimage"></div>
+                            <div class="blogtitle">
+                                FIRST BLOG
+                            </div>
+                        </div>
+                        <div class="bottomblog">
+                            <div class="blogtitle">
+                                FIRST BLOG
+                            </div>
+                            <div class="blogimage"></div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="topblog">
+                            <div class="blogimage"></div>
+                            <div class="blogtitle">
+                                FIRST BLOG
+                            </div>
+                        </div>
+                        <div class="bottomblog">
+                            <div class="blogtitle">
+                                FIRST BLOG
+                            </div>
+                            <div class="blogimage"></div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <section class="page blog" id="blog">
+            <div class="inner-wrapper" id="artworks-wrapper">
+                <div class="section-heading">
+                    Artworks
+                </div>
+                <div class="artwork-container">
+                    <div class="arrows artwork-arrows">
+                        <div class="left-arrow" onclick="navigateCarousel(-1, 'single')">
+                            <img src="assets/img/universal.svg">
+                        </div>
+                        <div class="right-arrow" onclick="navigateCarousel(1, 'single')">
+                            <img src="assets/img/right-arrow.svg">
                         </div>
                     </div>
 
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="page achievements" id="achievements">
-        <div class="inner-wrapper" id="achievements-wrapper">
-            <div class="section-heading">
-                Achievements
-            </div>
-            <div class="our-achievements">
-                <div class="achievement">
-                    <div class="number">10+</div>
-                    <div class="info">
-                        <div class="info-heading">
-                            <div class="info-line"></div>
-                            <div class="heading-text">Apps on Playstore</div>
+                    <div class="artwork-name">
+                        Name
+                    </div>
+                    <div class="artwork-scroller">
+                        <div class="artwork-scroll-individual scroll-1" id="1" onclick="navigateCarousel(0, 'pill')">
                         </div>
-                        <div class="info-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed ultricies odio, a
-                            imperdiet lorem. Curabitur semper vehicula ex sed lobortis. Suspendisse lobortis libero
-                            nulla, in tristique risus
+                        <div class="artwork-scroll-individual scroll-2" id="2" onclick="navigateCarousel(1, 'pill')">
                         </div>
-                    </div>
-                </div>
-                <div class="achievement">
-                    <div class="number">10+</div>
-                    <div class="info">
-                        <div class="info-heading">
-                            <div class="info-line"></div>
-                            <div class="heading-text">Apps on Playstore</div>
+                        <div class="artwork-scroll-individual scroll-3" id="3" onclick="navigateCarousel(2, 'pill')">
                         </div>
-                        <div class="info-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed ultricies odio, a
-                            imperdiet lorem. Curabitur semper vehicula ex sed lobortis. Suspendisse lobortis libero
-                            nulla, in tristique risus
+                        <div class="artwork-scroll-individual scroll-4" id="4" onclick="navigateCarousel(3, 'pill')">
                         </div>
-                    </div>
-                </div>
-                <div class="achievement">
-                    <div class="number">10+</div>
-                    <div class="info">
-                        <div class="info-heading">
-                            <div class="info-line"></div>
-                            <div class="heading-text">Apps on Playstore</div>
+                        <div class="artwork-scroll-individual scroll-5" id="5" onclick="navigateCarousel(4, 'pill')">
                         </div>
-                        <div class="info-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed ultricies odio, a
-                            imperdiet lorem. Curabitur semper vehicula ex sed lobortis. Suspendisse lobortis libero
-                            nulla, in tristique risus
-                        </div>
+                        <div class="active-scroll artwork-active-scroll artwork-scroll-individual"
+                            id="active-scroll-id"></div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="page contact" id="contact">
-        <div class="inner-wrapper" id="contact-wrapper">
-            <div class="section-heading">
-                Contact Us
-            </div>
-            <div class="form-wrapper">
-                <div class="form">
-                    <div>
-                        <input class="form-element inputs" type="text" name="name" placeholder="Name">
-                    </div>
-                    <div>
-                        <input class="form-element inputs" type="email" name="email" placeholder="Email">
-                    </div>
-                    <div id="message-textarea">
-                        <input class="form-element textarea" type="text" name="message" placeholder="Message">
-                    </div>
-                    <div id="submit-button">
-                        <button class="form-element button">SUBMIT</button>
-                    </div>
-                </div>
 
-                <div class="form-pic">
+                    <div class="artwork-carousel">
+                        <div class="artwork-img-container">
+                            <div class="artwork-img">
+                            </div>
+                            <div class="artwork-img">
+                            </div>
+                            <div class="artwork-img">
+                            </div>
+                            <div class="artwork-img">
+                            </div>
+                            <div class="artwork-img">
+                            </div>
+                        </div>
 
+                    </div>
                 </div>
             </div>
-            <div class="inner-wrapper" id="footer-wrapper">
-                THIS IS A FOOTER
+        </section>
+        <section class="page achievements" id="achievements">
+            <div class="inner-wrapper" id="achievements-wrapper">
+                <div class="section-heading">
+                    Achievements
+                </div>
+                <div class="our-achievements">
+                    <div class="achievement">
+                        <div class="number">10+</div>
+                        <div class="info">
+                            <div class="info-heading">
+                                <div class="info-line"></div>
+                                <div class="heading-text">Apps on Playstore</div>
+                            </div>
+                            <div class="info-text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed ultricies odio, a
+                                imperdiet lorem. Curabitur semper vehicula ex sed lobortis. Suspendisse lobortis libero
+                                nulla, in tristique risus
+                            </div>
+                        </div>
+                    </div>
+                    <div class="achievement">
+                        <div class="number">10+</div>
+                        <div class="info">
+                            <div class="info-heading">
+                                <div class="info-line"></div>
+                                <div class="heading-text">Apps on Playstore</div>
+                            </div>
+                            <div class="info-text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed ultricies odio, a
+                                imperdiet lorem. Curabitur semper vehicula ex sed lobortis. Suspendisse lobortis libero
+                                nulla, in tristique risus
+                            </div>
+                        </div>
+                    </div>
+                    <div class="achievement">
+                        <div class="number">10+</div>
+                        <div class="info">
+                            <div class="info-heading">
+                                <div class="info-line"></div>
+                                <div class="heading-text">Apps on Playstore</div>
+                            </div>
+                            <div class="info-text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed ultricies odio, a
+                                imperdiet lorem. Curabitur semper vehicula ex sed lobortis. Suspendisse lobortis libero
+                                nulla, in tristique risus
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
+        <section class="page contact" id="contact">
+            <div class="inner-wrapper" id="contact-wrapper">
+                <div class="section-heading">
+                    Contact Us
+                </div>
+                <div class="form-wrapper">
+                    <div class="form">
+                        <div>
+                            <input class="form-element inputs" type="text" name="name" placeholder="Name">
+                        </div>
+                        <div>
+                            <input class="form-element inputs" type="email" name="email" placeholder="Email">
+                        </div>
+                        <div id="message-textarea">
+                            <input class="form-element textarea" type="text" name="message" placeholder="Message">
+                        </div>
+                        <div id="submit-button">
+                            <button class="form-element button">SUBMIT</button>
+                        </div>
+                    </div>
 
-    </section>
-</div>
-<script src="js/index.js"></script>
-<script src="js/navbar.js"></script>
+                    <div class="form-pic">
+
+                    </div>
+                </div>
+                <div class="inner-wrapper" id="footer-wrapper">
+                    THIS IS A FOOTER
+                </div>
+            </div>
+
+        </section>
+    </div>
+    <script src="js/index.js"></script>
+    <script src="js/navbar.js"></script>
 </body>
+
 </html>
