@@ -372,18 +372,19 @@ const navigateCarousel = (step, stepType) => {
   container.onmousemove = onMouseMoveHandler;
 })();
 
+const cursor = document.getElementById('cursor')
 //-----------------
 window.addEventListener("DOMContentLoaded", () => {
 
   const spotlight = document.querySelector('.spotlight');
 
-  let spotlightSize = 'transparent 49px, rgba(0, 0, 0, 0.85) 92px)';
+  let spotlightSize = 'transparent -17px, rgba(0, 0, 0, 0.9) 72px)';
 
   window.addEventListener('mousemove', e => updateSpotlight(e));
 
   window.addEventListener('mousedown', e => {
 
-    spotlightSize = 'transparent 130px, rgba(0, 0, 0, 0.95) 150px)';
+    spotlightSize = 'transparent , rgba(0, 0, 0, 0.9) )';
 
     updateSpotlight(e);
 
@@ -391,15 +392,15 @@ window.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener('mouseup', e => {
 
-    spotlightSize = 'transparent 49px, rgba(0, 0, 0, 0.85) 92px)';
+    spotlightSize = 'transparent -17px, rgba(0, 0, 0, 0.9) 72px)';
 
     updateSpotlight(e);
 
   });
 
   function updateSpotlight(e) {
-
     spotlight.style.backgroundImage = `radial-gradient(circle at ${e.pageX / window.innerWidth * 100}% ${e.pageY / window.innerHeight * 100}%, ${spotlightSize}`;
-
+    cursor.style.left = `${e.pageX / window.innerWidth * 100}%`
+    cursor.style.top = `${e.pageY / window.innerHeight * 100}%`
   }
 });
