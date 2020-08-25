@@ -279,6 +279,8 @@ input:focus {
     background-color: #018786;
 }
 .scrolling-wrapper {
+    width: 80vw;
+    margin-left: 10vw;
 	overflow-x: scroll;
 	overflow-y: hidden;
 	white-space: nowrap;
@@ -296,7 +298,7 @@ input:focus {
 }
 
 .card:first-child{
-    margin-left: 10vw;
+    margin-left: 0vw;
 }
 
 .blogimage{
