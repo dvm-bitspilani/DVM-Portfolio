@@ -291,53 +291,47 @@ input:focus {
 .card {
     margin-top: 10vh;
     margin-left: 5vw;
-	width: 40vw;
-	height: 60vh;
-    background: black;
+	width: 30vw;
+    height: 40vh;
 }
 
 .card:first-child{
     margin-left: 10vw;
 }
 
-.cardheading{
-    font-size: 15px;
-    font-family: 'Poppins';
-    font-weight: 600;
-    margin-top: 50vh;
-    text-align: center;
-}
-
-.topblog{
-    display: block;
-    height: 30vh;
-    width: 40vw;
-}
-
-.bottomblog{
-    display: block;
-    height: 30vh;
-    width: 40vw;
-}
 
 .blogimage{
-    z-index: 100;
-    display: inline-block;
+    float: right;
     height: 30vh;
     width: 20vw;
-    background-color: green;
+    background-color: white;
 }
 
-.blogtitle{
-    vertical-align: middle;
-    display: inline-block;
-    height: 30vh;
-    width: 20vw;
-    text-align: center;
-    text-justify: auto;
+
+.blogtitle{   
+    position: relative;
+    z-index: 20;
+    margin-top: 17vh;
+    margin-left: 0vw;
+    height: 20vh;
+    width: 19vw;
+    background-color: #2C2C2C;
+}
+
+.blogtitletitle{
+    padding-left: 3vw;
+    padding-top: 4vh;
     font-size: 15px;
     font-family: 'Poppins';
     font-weight: 600;
+}
+
+.blogby{
+    padding-left: 3vw;
+    color: #FFFFFF;
+    font-size: 13px;
+    font-family: 'Poppins';
+    opacity: 0.5;
 }
 
 .scrolling-wrapper {
@@ -347,19 +341,7 @@ input:focus {
 .scrolling-wrapper::-webkit-scrollbar {
 	display: none;
 }
-.blogbuttonleft{
-    z-index: 10;
-    position: absolute;
-    left: 2vw;
-    top: 462vh;
-}
 
-.blogbuttonright{
-    z-index: 10;
-    position: absolute;
-    right: 2vw;
-    top: 462vh;
-}
 
 .artwork-container {
     position: relative;
