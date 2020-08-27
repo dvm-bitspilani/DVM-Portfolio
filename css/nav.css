@@ -8,7 +8,6 @@ nav {
     box-sizing: border-box;
     position: absolute;
     width: 100%;
-    cursor: none;
 }
 nav > div {
     margin: 12px;

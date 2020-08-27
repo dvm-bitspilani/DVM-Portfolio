@@ -1,0 +1,136 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    width: 100vw;
+    overflow-x: hidden;
+    margin: 0;
+    user-select: none;
+    cursor: default;
+}
+
+.background{
+    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+    background-attachment: fixed;
+    position: fixed;
+    top: 0;
+    z-index: -1;
+    /* display: block; */
+    width: 100vw;
+    height: 100vh;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.landingSection {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.landingSection h1{
+    font-family: poppins-semibold;
+    font-size: 8em;
+}
+
+.cross {
+    position: absolute;
+    bottom: 5%;
+    font-family: gilroy-bold;
+    font-size: 1.5em;
+    padding: 5px;
+    background: #ffffff14;
+    border-radius: 50px;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.crossLine {
+    position: absolute;
+    width: 60%;
+    background: white;
+    height: 2px;
+    border-radius: 50px;
+}
+
+.artworkWrapper {
+    width: 100%;
+    background: black;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10% 2%;
+    box-sizing: border-box;
+    color: white;
+    font-family: poppins;
+}
+
+.column {
+
+}
+
+.artworkContainer {
+
+}
+
+.artworkImage {
+    filter: grayscale(1);
+    transition: all 0.5s;
+    width: 100%;
+    overflow: hidden;
+}
+
+.artworkImage:hover {
+    filter: grayscale(0);
+    transform: scale(1.05);
+}
+
+.artworkImage img {
+    transition:  all 0.5s;
+}
+
+.artworkImage img:hover {
+    transform: scale(1.15);
+}
+
+.artworkSomething {
+    font-style: oblique;
+    padding: 4% 0;
+}
+
+.artworkName{
+    font-size: 1.5em;
+    padding: 0 0 10%;
+}
+
+.artworkName::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background: white;
+    width: 0%;
+    transition: 0.3s;
+}
+
+.artworkName:hover:after {
+    content: '';
+    display: block;
+    height: 2px;
+    background: white;
+    width: 10%;
+    margin-left: 0;
+}
+
+::-webkit-scrollbar{
+    width: 0;
+}
