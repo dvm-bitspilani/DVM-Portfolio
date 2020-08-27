@@ -10,8 +10,12 @@ body{
     cursor: default;
 }
 
+*{
+    overflow-x: hidden;
+}
+
 .background{
-    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+    background-image: linear-gradient(to top left, #a18cd1 50%, #fbc2eb 50%);
     background-attachment: fixed;
     position: fixed;
     top: 0;
@@ -23,7 +27,23 @@ body{
 
 .wrapper {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
+}
+
+.aboutArtwork {
+    font-family: Poppins;
+    color: white;
+    width: 100%;
+    padding: 0 8% 5%;
+}
+
+.aboutArtwork h1 {
+
+}
+
+.aboutArtwork p {
+
 }
 
 .landingSection {
@@ -54,6 +74,7 @@ body{
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    transition: 0.5s;
 }
 
 .cross:hover{
@@ -67,9 +88,10 @@ body{
     background: white;
     height: 2px;
     border-radius: 50px;
+    transition: 0.5s;
 }
 
-.cross:hover + .crossLine {
+.cross:hover .crossLine {
     background: black;
 }
 
@@ -82,6 +104,7 @@ body{
     box-sizing: border-box;
     color: white;
     font-family: poppins;
+    flex-wrap: wrap;
 }
 
 .column {
@@ -142,4 +165,22 @@ body{
 
 ::-webkit-scrollbar{
     width: 0;
+}
+
+@media all and (max-width: 500px)  {
+    .landingSection h1{
+        font-size: 3em;
+    }
+    .artworkWrapper{
+        font-size: 0.9em;
+    }
+    .column{
+        padding: 5% 9%;
+    }
+    .artworkImage img{
+        width: 100%;
+    }
+    .artworkContainer {
+        font-size: 0.8em;
+    }
 }
