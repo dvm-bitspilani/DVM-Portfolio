@@ -183,4 +183,7 @@ body{
     .artworkContainer {
         font-size: 0.8em;
     }
+    #navContainer{
+        display: none;
+    }
 }
