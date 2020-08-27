@@ -56,12 +56,21 @@ body{
     cursor: pointer;
 }
 
+.cross:hover{
+    background: white;
+}
+
+
 .crossLine {
     position: absolute;
     width: 60%;
     background: white;
     height: 2px;
     border-radius: 50px;
+}
+
+.cross:hover + .crossLine {
+    background: black;
 }
 
 .artworkWrapper {
