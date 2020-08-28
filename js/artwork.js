@@ -10,27 +10,27 @@ el.addEventListener("onmouseover", (e) => {
     console.log(`translate(${-e.offsetX/100}px , ${-e.offsetY/100}px)`)
 });
 
-var container = document.querySelector(".artworkContainer"),
-    inner = document.querySelector(".artworkImage");
+let inner = document.querySelectorAll(".artworkImage");
 
-(function() {
+inner.forEach((inner) => (function() {
     // Init
 
 
     // Mouse
-    var mouse = {
+    let mouse = {
         _x: 0,
         _y: 0,
         x: 0,
         y: 0,
         updatePosition: function(event) {
-            var e = event || window.event;
+            let e = event || window.event;
             this.x = e.clientX - this._x;
-            this.y = (e.clientY - this._y/2) ;
+            this.y = e.offsetY - this._y ;
+            // console.log(this)
         },
         setOrigin: function(e) {
             this._x = e.offsetLeft + Math.floor(e.offsetWidth / 2);
-            this._y = e.offsetTop + Math.floor(e.offsetHeight / 2);
+            this._y =  Math.floor(e.offsetHeight / 2);
         },
         show: function() {
             return "(" + this.x + ", " + this.y + ")";
@@ -38,27 +38,27 @@ var container = document.querySelector(".artworkContainer"),
     };
 
     // Track the mouse position relative to the center of the container.
-    mouse.setOrigin(container);
+    mouse.setOrigin(inner);
 
     //-----------------------------------------
 
-    var counter = 0;
-    var updateRate = 10;
-    var isTimeToUpdate = function() {
+    let counter = 0;
+    let updateRate = 10;
+    let isTimeToUpdate = function() {
         return counter++ % updateRate === 0;
     };
 
     //-----------------------------------------
 
-    var onMouseEnterHandler = function(event) {
+    let onMouseEnterHandler = function(event) {
         update(event);
     };
 
-    var onMouseLeaveHandler = function() {
+    let onMouseLeaveHandler = function() {
         inner.style = "";
     };
 
-    var onMouseMoveHandler = function(event) {
+    let onMouseMoveHandler = function(event) {
         if (isTimeToUpdate()) {
             update(event);
         }
@@ -66,7 +66,7 @@ var container = document.querySelector(".artworkContainer"),
 
     //-----------------------------------------
 
-    var update = function(event) {
+    let update = function(event) {
         mouse.updatePosition(event);
         updateTransformStyle(
             2 * (mouse.x / inner.offsetWidth ).toFixed(2),
@@ -74,14 +74,15 @@ var container = document.querySelector(".artworkContainer"),
         );
     };
 
-    var updateTransformStyle = function(x, y) {
-        let style = "translateX(" + -15*x + "px) translateY(" + -15*y + "px)";
+    let updateTransformStyle = function(x, y) {
+        let style = "translateX(" + -20*x + "px) translateY(" + -20*y + "px)";
         inner.style.transform = style;
     };
 
     //-----------------------------------------
 
-    container.onmouseenter = onMouseEnterHandler;
-    container.onmouseleave = onMouseLeaveHandler;
-    container.onmousemove = onMouseMoveHandler;
-})();
+    inner.onmouseenter = onMouseEnterHandler;
+    inner.onmouseleave = onMouseLeaveHandler;
+    inner.onmousemove = onMouseMoveHandler;
+})())
+
