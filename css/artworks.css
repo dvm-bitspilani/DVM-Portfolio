@@ -10,10 +10,6 @@ body{
     cursor: default;
 }
 
-*{
-    overflow-x: hidden;
-}
-
 .background{
     background-image: linear-gradient(to top left, #a18cd1 50%, #fbc2eb 50%);
     background-attachment: fixed;
