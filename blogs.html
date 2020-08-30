@@ -5,21 +5,82 @@
         <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/blogs.css">
+    <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="./js/fontfaceobserver.standalone.js"></script>
     </head>
     <body>
+        <nav class="navbar">
+            <!-- <div class="brand">
+            DVM
+        </div> -->
+    
+            <h1 class="brand">
+                <span class="text-wrapper">
+                    <!-- <span class="line line1"></span> -->
+                    <span class="letters">DVM</span>
+                    <!-- <span class="line line2"></span> -->
+                </span>
+            </h1>
+    
+            <div class="ham" onclick="openCloseNav()">
+                <div class="ham-line"></div>
+                <div class="ham-line"></div>
+            </div>
+        </nav>
+        <div id="navContainer">
+            <div class="followContainer">
+                <h3 class="smallLinksHeader">
+                    Follow
+                </h3>
+                <a href="" class="smallLinks">Facebook</a>
+                <a href="" class="smallLinks">Instagram</a>
+                <a href="" class="smallLinks">LinkedIn</a>
+                <a href="" class="smallLinks">Behance</a>
+                <a href="" class="smallLinks">Dribble</a>
+            </div>
+            <div class="elementsContainer">
+                <div class="largeLinkContainer1">
+                    <span class="text-wrapper">
+                        <a class="largeLink1">About</a>
+                    </span>
+                </div>
+                <div class="largeLinkContainer2">
+                    <span class="text-wrapper">
+                        <a class="largeLink2">Work</a>
+                    </span>
+                </div>
+                <div class="largeLinkContainer3">
+                    <span class="text-wrapper">
+                        <a class="largeLink3">Blogs</a>
+                    </span>
+                </div>
+                <div class="largeLinkContainer4">
+                    <span class="text-wrapper">
+                        <a class="largeLink4">Artworks</a>
+                    </span>
+                </div>
+                <div class="largeLinkContainer5">
+                    <span class="text-wrapper">
+                        <a class="largeLink5">Achievements</a>
+                    </span>
+                </div>
+                <div class="largeLinkContainer6">
+                    <span class="text-wrapper">
+                        <a class="largeLink6">Contact Us</a>
+                    </span>
+                </div>
+                <!-- <a href="">About</a>
+            <a href="">Work</a>
+            <a href="">Blogs</a>
+            <a href="">Artworks</a>
+            <a href="">Achievements</a>
+            <a href="">Contact Us</a> -->
+            </div>
+        </div>
         <div class="wrapper">
-            <nav class="navbar">
-                <div class="brand">
-                    DVM
-                </div>
-                <div class="ham">
-                    <div class="ham-line"></div>
-                    <div class="ham-line"></div>
-                </div>
-            </nav>
+            
             <div class="activeblog">
                 <div class="blogtitle">
                     How to start coding and which language is the best
@@ -47,23 +108,38 @@ Aenean urna metus, tempus sed efficitur a, lobortis nec nulla. Fusce nec tincidu
 
 Morbi tincidunt, lacus at efficitur vehicula, neque urna ultricies sapien, et luctus lorem metus in justo. Nullam in lectus magna. Ut scelerisque a tellus et dapibus. Vestibulum sodales placerat erat, a viverra felis convallis sed. Phasellus ullamcorper odio erat, eu feugiat ante malesuada ac. Fusce eu arcu enim. Aliquam pulvinar neque quis purus congue, vitae finibus risus faucibus. Mauris efficitur ut mauris placerat sollicitudin. Donec justo lectus, facilisis nec erat rhoncus, suscipit molestie ipsum. In at lorem ante. Cras nulla sapien, vulputate id pulvinar ut, porttitor nec quam. Sed pharetra, augue at luctus vulputate, ante mi volutpat nunc, vitae posuere ligula enim nec nisi. Curabitur odio arcu, cursus a malesuada nec, pharetra ac purus. Donec imperdiet risus ut sollicitudin rhoncus. Maecenas tempus efficitur mauris, sit amet vulputate velit euismod pretium. Phasellus egestas lacus at justo fermentum vulputate.
                 </div>
-                <button class="switchblogprev" id="prevblog">
-                </button>
-                <button class="switchblognext" id="nextblog">
-                </button>
+                <a href="#">
+                    <div class="leftblog">
+                        <div class="circle">
+                            <div class="arrow"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="rightblog">
+                        <div class="circle">
+                            <div class="arrow"><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </a>
             </div>
-            <div class="recent blogs">
-                <div class="first">
-
+            <div class="recentBlogs">
+                <div class="recentBlogHeading"><a href="#" class="linktoallblogs">Recent Blogs</a></div>
+                <div class="recentBlogsPost">
+                    <div class="otherPostImage"></div>
+                    <div class="otherPostHeading">otherPostHeading</div>
                 </div>
-                <div class="second">
-                    
+                <div class="recentBlogsPost">
+                    <div class="otherPostImage"></div>
+                    <div class="otherPostHeading">otherPostHeading</div>
                 </div>
-                <div class="third">
-                    
+                <div class="recentBlogsPost">
+                    <div class="otherPostImage"></div>
+                    <div class="otherPostHeading">otherPostHeading</div>
                 </div>
             </div>
         </div>
         <script src="js/blogs.js"></script>
+        <script src="js/navbar.js"></script>
     </body>
 </html>

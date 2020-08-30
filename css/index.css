@@ -278,12 +278,19 @@ input:focus {
     border-radius: 10px;
     background-color: #018786;
 }
+
+#blog-wrapper{
+    height:100vh;
+}
 .scrolling-wrapper {
+    height: 80vh;
     width: 80vw;
 	overflow-x: scroll;
-	overflow-y: hidden;
-	white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.2s;
+    transform: scale(0.98);
 }
+
 
 .scrolling-wrapper .card {
 	display: inline-block;
@@ -292,8 +299,16 @@ input:focus {
 .card {
     margin-top: 5vh;
     margin-left: 2.5vw;
-	width: 30vw;
-    height: 40vh;
+	width: 40vw;
+    height: 50vh;
+    cursor: pointer;
+    transition: all 0.2s;
+    transform: scale(0.98);
+}
+
+.card.active{
+    cursor: grabbing;
+    transform: scale(0.8);
 }
 
 .card:first-child{
@@ -302,8 +317,8 @@ input:focus {
 
 .blogimage{
     float: right;
-    height: 30vh;
-    width: 20vw;
+    height: 50vh;
+    width: 30vw;
     background-color: white;
 }
 
@@ -334,55 +349,23 @@ input:focus {
     font-family: 'Poppins';
     opacity: 0.5;
 }
-
-.recentblog{
-    margin-top: 5vh;
-    transform: scale(1.3);
-    transform-origin: top;
-}
-
-.recentblogimage{
-    margin-left: 40vw;
-    height: 35vh;
-    width: 40vw;
-    background-color: white;
-}
-
-
-.recentblogtitle{   
-    position: relative;
-    margin-left: 20vw;
-    margin-top: -30vh;
-    z-index: 20;
-    height: 35vh;
-    width: 30vw;
-    background-color: #2C2C2C;
-}
-
-.recentblogtitletitle{
-    padding-left: 3vw;
-    padding-top: 4vh;
-    font-size: 15px;
-    font-family: 'Poppins';
-    font-weight: 600;
-}
-
-.recentblogby{
-    padding-top: .5vh;
-    padding-left: 3vw;
+.blogDragDiv{
+    z-index: 100;
+    position:absolute;
+    transform:translate(-50%,-50%);
+    height:100px;
+    width:100px;
+    border-radius:50%;
+    border:1px solid white;
     color: #FFFFFF;
     font-size: 13px;
     font-family: 'Poppins';
-    opacity: 0.5;
-}
-
-.recentblogbrief{
-    padding-top: .5vh;
-    padding-left: 3vw;
-    padding-right: 3vw;
-    color: #FFFFFF;
-    font-size: 13px;
-    font-family: 'Poppins';
+    align-items: center;
+    text-align: center;   
+    justify-content: center;
+    display: none;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
 }
 
 .scrolling-wrapper {
