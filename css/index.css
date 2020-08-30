@@ -503,7 +503,16 @@ input:focus {
   background: #018786;
   white-space: normal;
 }
-
+.show-all-projects{
+  position: relative;
+  display: flex;
+  right: 10vw;
+  width: 10vw;
+  left: 80vw;
+  word-wrap: none;
+  font-size: 16px;
+  font-family: "Gilroy";
+}
 .project-heading{
   font: italic normal 600 60px/129px Gilroy;
   letter-spacing: 6.72px;
