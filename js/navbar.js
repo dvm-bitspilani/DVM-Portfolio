@@ -12,7 +12,6 @@ const openCloseNav = () => {
   let largeLink5 = document.getElementsByClassName("largeLink5")[0];
   let largeLink6 = document.getElementsByClassName("largeLink6")[0];
   if (isOpened) {
-    navContainer.style.display = "flex";
     navContainer.style.transition = "all 0.5s ease-out";
     navContainer.style.transform = "translateX(100vw)";
     setTimeout(() => {
@@ -29,6 +28,9 @@ const openCloseNav = () => {
         i.style.transform = "translateY(20px)";
       }
     }, 500);
+    setTimeout(() => {
+      navContainer.style.display = "none";
+    }, 501)
     isOpened = false;
     hamLine[1].style.left = "";
     hamLine[1].style.marginTop = "";
@@ -36,9 +38,10 @@ const openCloseNav = () => {
     hamLine[1].style.transform = "";
   } else {
     navContainer.style.display = "flex";
-    navContainer.style.transition = "all 0.5s ease-out";
-    navContainer.style.transform = "translateX(0vw)";
-
+    setTimeout(() => {
+      navContainer.style.transition = "all 0.5s ease-out";
+      navContainer.style.transform = "translateX(0vw)";
+    }, 1)
     setTimeout(() => {
       smallLinksHeader.style.opacity = "1";
       smallLinksHeader.style.transition = "all 0.5s ease-out";
