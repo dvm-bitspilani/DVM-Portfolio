@@ -487,22 +487,40 @@ input:focus {
   background: #018786;
   white-space: normal;
 }
-
-.appInfoContainer {
+.show-all-projects{
+  position: relative;
+  display: flex;
+  right: 10vw;
+  width: 10vw;
+  left: 80vw;
+  word-wrap: none;
+  font-size: 16px;
+  font-family: "Gilroy";
+}
+.project-heading{
+  font: italic normal 600 60px/129px Gilroy;
+  letter-spacing: 6.72px;
+  color: #FFFFFF;
+  width: 100%;
+  text-align: center;
+}
+.project-info{
+  display: flex;
+  justify-content: space-evenly;
+  width: auto;
+  height: 70vh;
+  padding-bottom: 2vh;
+}
+.projectsFirstContainer {
   display: flex;
   overflow: hidden;
   padding-left: 8%;
   font-family: Poppins, Gilroy;
-  justify-content: space-between;
+  justify-content: flex-start;
+  height: 70vh;
 }
 
-.appInfoContainer img {
-  height: 50vh;
-}
-
-.appTextContainer {
-  padding-top: 1%;
-  width: 50%;
+.projectsFirstContainer img {
   height: 50vh;
 }
 
@@ -511,8 +529,7 @@ input:focus {
   opacity: 0;
 }
 
-.project1,
-.project2 {
+.project-view-more {
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -523,6 +540,13 @@ input:focus {
   opacity: 0;
 }
 
+.project{
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  width: 100vw;
+}
+
 .mobile1,
 .mobile2,
 .mobile3,
@@ -530,24 +554,25 @@ input:focus {
   opacity: 0;
 }
 
-.webInfoContainer {
+.projectsSecondContainer {
   display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  margin-right: 14%;
-  margin-top: -4%;
-  padding-left: 13%;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: 5%;
+  padding-bottom: 5%;
+  height: 70vh;
   font-family: Poppins, Gilroy;
 }
 
-.webTextContainer {
-  width: 50%;
-  height: 50vh;
-}
 
-.webInfoContainer img {
-  margin-top: -4%;
-  height: 52vh;
+.projectsSecondContainer img {
+  margin-top: 4%;
+  height: 30vh;
+  
+}
+.projectsSecondTextContainer {
+  padding-top: 1%;
+  
 }
 
 .projectArrow {
