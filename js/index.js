@@ -142,7 +142,6 @@ let loaded = () => {
     ham.style.transition = "all 0.3s ease-out";
     ham.style.transform = "translateY(0)";
   }, 1400);
-
 };
 
 selectDot(currentPage);
@@ -293,11 +292,11 @@ const navigateCarousel = (step, stepType) => {
   }, 600);
 };
 
-    //-----------------------------------------
-(function() {
+//-----------------------------------------
+(function () {
   // Init
   var container = document.getElementById("homeLogoContainer"),
-      inner = document.getElementById("homeLogoInner");
+    inner = document.getElementById("homeLogoInner");
 
   // Mouse
   var mouse = {
@@ -305,18 +304,18 @@ const navigateCarousel = (step, stepType) => {
     _y: 0,
     x: 0,
     y: 0,
-    updatePosition: function(event) {
+    updatePosition: function (event) {
       var e = event || window.event;
       this.x = e.clientX - this._x;
       this.y = (e.clientY - this._y) * -1;
     },
-    setOrigin: function(e) {
+    setOrigin: function (e) {
       this._x = e.offsetLeft + Math.floor(e.offsetWidth / 2);
       this._y = e.offsetTop + Math.floor(e.offsetHeight / 2);
     },
-    show: function() {
+    show: function () {
       return "(" + this.x + ", " + this.y + ")";
-    }
+    },
   };
 
   // Track the mouse position relative to the center of the container.
@@ -326,21 +325,21 @@ const navigateCarousel = (step, stepType) => {
 
   var counter = 0;
   var updateRate = 10;
-  var isTimeToUpdate = function() {
+  var isTimeToUpdate = function () {
     return counter++ % updateRate === 0;
   };
 
   //-----------------------------------------
 
-  var onMouseEnterHandler = function(event) {
+  var onMouseEnterHandler = function (event) {
     update(event);
   };
 
-  var onMouseLeaveHandler = function() {
+  var onMouseLeaveHandler = function () {
     inner.style = "";
   };
 
-  var onMouseMoveHandler = function(event) {
+  var onMouseMoveHandler = function (event) {
     if (isTimeToUpdate()) {
       update(event);
     }
@@ -348,15 +347,15 @@ const navigateCarousel = (step, stepType) => {
 
   //-----------------------------------------
 
-  var update = function(event) {
+  var update = function (event) {
     mouse.updatePosition(event);
     updateTransformStyle(
-        2 * (mouse.y / inner.offsetHeight).toFixed(2),
-        2 * (mouse.x / inner.offsetWidth ).toFixed(2)
+      2 * (mouse.y / inner.offsetHeight).toFixed(2),
+      2 * (mouse.x / inner.offsetWidth).toFixed(2)
     );
   };
 
-  var updateTransformStyle = function(x, y) {
+  var updateTransformStyle = function (x, y) {
     var style = "rotateX(" + x + "deg) rotateY(" + y + "deg)";
     inner.style.transform = style;
     inner.style.webkitTransform = style;
@@ -372,36 +371,33 @@ const navigateCarousel = (step, stepType) => {
   container.onmousemove = onMouseMoveHandler;
 })();
 
-const cursor = document.getElementById('cursor')
+const cursor = document.getElementById("cursor");
 //-----------------
 window.addEventListener("DOMContentLoaded", () => {
+  const spotlight = document.querySelector(".spotlight");
 
-  const spotlight = document.querySelector('.spotlight');
+  let spotlightSize = "transparent -17px, rgba(0, 0, 0, 0.9) 72px)";
 
-  let spotlightSize = 'transparent -17px, rgba(0, 0, 0, 0.9) 72px)';
+  window.addEventListener("mousemove", (e) => updateSpotlight(e));
 
-  window.addEventListener('mousemove', e => updateSpotlight(e));
-
-  window.addEventListener('mousedown', e => {
-
-    spotlightSize = 'transparent , rgba(0, 0, 0, 0.9) )';
+  window.addEventListener("mousedown", (e) => {
+    spotlightSize = "transparent , rgba(0, 0, 0, 0.9) )";
 
     updateSpotlight(e);
-
   });
 
-  window.addEventListener('mouseup', e => {
-
-    spotlightSize = 'transparent -17px, rgba(0, 0, 0, 0.9) 72px)';
+  window.addEventListener("mouseup", (e) => {
+    spotlightSize = "transparent -17px, rgba(0, 0, 0, 0.9) 72px)";
 
     updateSpotlight(e);
-
   });
 
   function updateSpotlight(e) {
-    spotlight.style.backgroundImage = `radial-gradient(circle at ${e.pageX / window.innerWidth * 100}% ${e.pageY / window.innerHeight * 100}%, ${spotlightSize}`;
-    cursor.style.left = `${e.pageX / window.innerWidth * 100}%`
-    cursor.style.top = `${e.pageY / window.innerHeight * 100}%`
+    spotlight.style.backgroundImage = `radial-gradient(circle at ${
+      (e.pageX / window.innerWidth) * 100
+    }% ${(e.pageY / window.innerHeight) * 100}%, ${spotlightSize}`;
+    cursor.style.left = `${(e.pageX / window.innerWidth) * 100}%`;
+    cursor.style.top = `${(e.pageY / window.innerHeight) * 100}%`;
   }
 });
 
