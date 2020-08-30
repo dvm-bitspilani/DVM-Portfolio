@@ -1,0 +1,113 @@
+.html{
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    margin: 0;
+}
+
+.wrapper {
+    background-color: black;
+    box-sizing: border-box;
+    color: #fafafa;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding-top: 20vh;
+    padding-bottom: 5vh;
+}
+.contentWrapper{
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: 100vw;
+}
+.heading{
+    color: white;
+    font-size: 50px;
+    font-family: 'Poppins';
+    text-align: center;
+
+}
+.leftwrapper{
+    margin-top: 10vh;
+    height: auto;
+    width: 25%;
+    padding-left: 20vw;
+    display: flex;
+    flex-direction: column;
+}
+.rightwrapper{
+    margin-top: 50vh;
+    height: auto;
+    width: 25%;
+    padding-left: 10vw;
+    display: flex;
+    flex-direction: column;
+}
+.blogimage{
+    margin-top: 8vh;
+    position: relative;
+    z-index: 10;
+    height: auto;
+    width: 10vw;
+    background:transparent;
+}
+.blogimages{
+    width: 20vw;
+}
+.bloginfo{
+    width: 15vw;
+    font-family: 'Poppins';
+}
+.blogtitle{
+    margin-top: 2vh;
+    font-size: 15px;
+
+}
+.blogtitle::after {
+    position: absolute;
+    margin-top: 1.5vh;
+    margin-left: 10px;
+    content: '';
+    height: 1px;
+    width: 5vw;
+    background: white;
+    transition: 0.5s;
+}
+.blogtitle:hover:after {
+    width: 10vw;
+}
+.blogby{
+    margin-top: 2vh;
+    font-size: 10px;
+    opacity: 0.5;
+}
+.blogbrief{
+    margin-top: 2vh;
+    font-size: 13px;
+}
+.simpleParallax{
+    width: 20vw;
+    height: 70vh;
+}
+.blogMore{
+    
+    z-index: 100;
+    position:absolute;
+    transform:translate(-50%,-50%);
+    height:100px;
+    width:100px;
+    border-radius:50%;
+    border:1px solid white;
+    color: #FFFFFF;
+    font-size: 13px;
+    font-family: 'Poppins';
+    align-items: center;
+    text-align: center;   
+    justify-content: center;
+    display: none;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
+}
