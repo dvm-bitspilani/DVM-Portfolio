@@ -2,12 +2,12 @@ var image = document.getElementsByClassName('blogimages');
 new simpleParallax(image, {
 	scale: 2
 });
-document.querySelectorAll('.simpleParallax').forEach(item => {
+document.querySelectorAll('.blog').forEach(item => {
     item.addEventListener("mouseover",function(){
         document.getElementById("blogMore").style.display =  "flex";
     })
 })
-document.querySelectorAll('.simpleParallax').forEach(item => {
+document.querySelectorAll('.blog').forEach(item => {
     item.addEventListener("mouseout",function(){
         document.getElementById("blogMore").style.display =  "none";
     })
