@@ -11,8 +11,26 @@ body{
 }
 .navbar{
     height: 20vh;
-    background-color:white;
+    background-color:black;
+    margin-top: 0;
     width: 100vw;
+}
+.backArrow {
+  background-image: url(../assets/img/arrow_forward-24px.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 4px;
+  height: 28px;
+  width: 28px;
+  margin-left: 5%;
+  border: 1px white solid;
+  border-radius: 50%;
+  transition: 0.1s;
+  transform: rotate(180deg);
+  position: relative;
+  right: 5vh;
+  
+  content: '';
 }
 .wrapper{
     height: 80vh;
@@ -20,6 +38,7 @@ body{
     padding: 0;
     margin: 0;
     overflow: hidden;
+    margin-top: 20vh;
 }
 .inner{
     display: flex;
@@ -63,9 +82,7 @@ body{
     display: flex;
     
 }
-.backend{
-    width: 128vw;
-}
+
 .single_project{
     margin: 0 12vw 0 12vw;
     height:46vh;
@@ -89,4 +106,49 @@ body{
     font-family: 'Poppins', sans-serif;
     color: white;
     font-weight: 900;
+}
+.scrollbar_wrapper{
+    top: 83vh;
+    position: fixed;
+    height: 17vh;
+    width:50vw;
+    margin:0 25vw 0 25vw;
+    
+    display: flex;
+    justify-content: space-between;
+}
+.scrollbar_wrapper>div{
+    height: 5vh;
+    margin-bottom: 12vh;
+}
+#left_arrow,#right_arrow{
+    margin-top:calc(2.5vh - 0.5vw);
+    content: '';
+    width: 2vw;
+}
+#dotted_line_wrapper{
+    width: 47vw;
+    
+}
+#dotted_line{
+    width: 47vw;
+    height: calc(2.5vh - 1.75px);
+    border-bottom: 3.5px #fcfafa5e dotted;
+}
+#left_arrow {
+  width: 0; 
+  height: 0; 
+  border-left: 0.5vw solid transparent;
+  border-top: 0.5vw solid transparent;
+  border-bottom: 0.5vw solid transparent; 
+  
+  border-right:0.5vw solid white; 
+}
+#right_arrow{
+  width: 0; 
+  height: 0; 
+  border-top: 0.5vw solid transparent;
+  border-bottom: 0.5vw solid transparent;
+  border-right: 0.5vw solid transparent;
+  border-left: 0.5vw solid white;
 }
