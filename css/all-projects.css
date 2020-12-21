@@ -59,7 +59,7 @@ body{
     
     height: 76vh;
     padding: 7vh 18vw 10vh 18vw;
-    
+    width: auto;
     display: flex;
     
 }
@@ -71,7 +71,10 @@ body{
     height:46vh;
     width: 40vw;
     padding: 0;
-    background-color: darkslategrey;
+    background-image:url('./../content-projects/Android/3.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     border-radius: 5px;
 }
 .project_name{
