@@ -1,0 +1,89 @@
+body{
+    margin: 0;
+}
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+.navbar{
+    height: 20vh;
+    background-color:white;
+    width: 100vw;
+}
+.wrapper{
+    height: 80vh;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+.inner{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 80vh;
+    background-color: black;
+    content: '';
+    position: absolute;
+    overflow: auto;
+}
+.teams{
+    word-wrap: none;
+    width: 15vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    bottom: 7vh;
+    right: 0vw;
+
+}
+
+.team-name{
+    cursor: pointer;
+    word-break: keep-all;
+    
+    color: #FFFFFF80;
+    font: normal normal 500 .85em Poppins;
+    font-family: 'Poppins', sans-serif;
+}
+.highlighted{
+    color: white;
+    font-weight: 700;
+}
+.projects{
+    
+    height: 76vh;
+    padding: 7vh 18vw 10vh 18vw;
+    
+    display: flex;
+    
+}
+.backend{
+    width: 128vw;
+}
+.single_project{
+    margin: 0 12vw 0 12vw;
+    height:46vh;
+    width: 40vw;
+    padding: 0;
+    background-color: darkslategrey;
+    border-radius: 5px;
+}
+.project_name{
+    
+    height: 23vh;
+    width: 25vw;
+    position: relative;
+    top: 15vh;
+    left: -5vw;
+    font-size: 4em;
+    
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-weight: 900;
+}
