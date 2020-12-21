@@ -1,8 +1,15 @@
-html{
+.html{
+    scroll-behavior: smooth;
+}
+
+body {
     overflow-x: hidden;
+    margin: 0;
 }
 
 .wrapper {
+    display: flex;
+    flex-direction: row;
     height: auto;
     width: 100vw;
     background-color: black;
@@ -11,45 +18,10 @@ html{
     position: absolute;
     left: 0;
     top: 0;
+    padding-top: 20vh;
+    padding-bottom: 5vh;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    height: 20%;
-}
-
-nav > div {
-    margin: 12px;
-    width: 75px;
-}
-
-.brand {
-    width: 50%;
-    font-size: 24px;
-    letter-spacing: 9.6px;
-    font-family: 'Jaapokki subtract', sans-serif;
-    font-display: swap;
-}
-
-.ham-line {
-    width: 50%;
-    height: 3px;
-    background-color: white;
-    margin: 4px 0;
-}
-
-.ham-line:nth-of-type(2) {
-    position: relative;
-    left: -10%;
-}
-
-.section-nav {
-    right: 5vw;
-    top: 20vh;
-    z-index: 5;
-    position: fixed;
-}
 
 .activeblog{
     align-items: center;
@@ -90,6 +62,7 @@ nav > div {
     width: 10vh;
     font-size: 40px;
     border-radius: 10%;
+    opacity: 0.5;
 }
 
 .socialmedia{
@@ -115,9 +88,78 @@ h1{
     font-size: 20px;
     font-family: 'Poppins';
 }
-.switchblogprev{
-    display: none;
+
+.leftblog{
+    margin-top: 2vh;
+    float: left;
 }
-.switchblognext{
-    display: none;
+
+.rightblog{
+    margin-top: 2vh;
+    float: right;
+}
+.circle{
+    transform-origin: 50% 50%;
+    border: white 2px solid;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+   
+}
+
+.arrow{
+    padding-top: 8px;
+    padding-left: 10px;
+}
+
+
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+
+
+.recentBlogs{
+    height: auto;
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    padding-left: 2vw;
+    padding-top: 12vh;
+}
+.recentBlogHeading{
+    color: white;
+    font-size: 20px;
+    font-family: 'Poppins';
+}
+.linktoallblogs:after {
+    position: absolute;
+    margin-top: 4vh;
+    margin-left: -8.5vw;
+    content: '';
+    height: 2px;
+    width: 5vw;
+    background: white;
+    transition: 0.5s;
+  }
+  .linktoallblogs:hover:after {
+    width: 10vw;
+  }
+
+.otherPostImage{
+    width: 20vw;
+    height: 20vh;
+    background-color: white;
+}
+.otherPostHeading{
+    margin-top: 2vh;
+    color: white;
+    font-size: 17px;
+    font-family: 'Poppins';
+}
+
+.recentBlogsPost{
+    margin-top: 4vh;
 }

@@ -59,7 +59,7 @@ nav > div {
 
 .ham{
     cursor: pointer;
-    transform: translateY(-100px)
+    /* transform: translateY(-100px) */
 }
 
 .ham-line {
