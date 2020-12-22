@@ -48,7 +48,18 @@ body{
     background-color: black;
     content: '';
     position: absolute;
-    overflow: auto;
+    overflow-y: scroll;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.inner::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.inner {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 .teams{
     word-wrap: none;
@@ -80,9 +91,15 @@ body{
     padding: 7vh 18vw 10vh 18vw;
     width: auto;
     display: flex;
-    
+    cursor: grab;
+    overflow: hidden;
+    transition: .5s ease;
 }
-
+.projects.active{
+    transform: scale(1.05);
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+}
 .single_project{
     margin: 0 12vw 0 12vw;
     height:46vh;

@@ -92,6 +92,8 @@ main_arr = [
 
 ]
 
+document.getElementsByClassName('projects')[0].scrollRight = 150
+
 team(2)
 
 function team(input) {
@@ -105,7 +107,7 @@ function team(input) {
 function team_projects(input) {
     var window_width = window.innerWidth
     console.log(window_width)
-
+    document.getElementsByClassName('projects')[0].scrollRight = 150
     document.getElementsByClassName('projects')[0].innerHTML = ''
     var no_of_projects = main_arr[input].length
     var total_width = (64 * no_of_projects)
@@ -124,3 +126,32 @@ function team_projects(input) {
         document.getElementsByClassName('single_project')[i].appendChild(name_div)
     }
 }
+
+const slider = document.querySelector('.projects');
+const inner = document.querySelector('.inner')
+let isDown = false;
+let startX;
+let scrollLeft;
+
+slider.addEventListener('mousedown', (e) => {
+    isDown = true;
+    slider.classList.add('active');
+    startX = e.pageX - inner.offsetLeft;
+    scrollLeft = inner.scrollLeft;
+});
+slider.addEventListener('mouseleave', () => {
+    isDown = false;
+    slider.classList.remove('active');
+});
+slider.addEventListener('mouseup', () => {
+    isDown = false;
+    slider.classList.remove('active');
+});
+slider.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - inner.offsetLeft;
+    const walk = (x - startX) * 2; //scroll-fast
+    inner.scrollLeft = scrollLeft - walk;
+    console.log(walk);
+});
