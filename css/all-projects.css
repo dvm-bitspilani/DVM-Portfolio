@@ -139,13 +139,13 @@ body{
     margin-bottom: 12vh;
 }
 #left_arrow,#right_arrow{
-    margin-top:calc(2.5vh - 0.5vw);
+    margin-top:calc(2.5vh - 0.3vw);
     content: '';
     width: 2vw;
 }
 #dotted_line_wrapper{
     width: 47vw;
-    
+    height: 7vh;
 }
 #dotted_line{
     width: 47vw;
@@ -155,29 +155,29 @@ body{
 #left_arrow {
   width: 0; 
   height: 0; 
-  border-left: 0.5vw solid transparent;
-  border-top: 0.5vw solid transparent;
-  border-bottom: 0.5vw solid transparent; 
+  border-left: 0.3vw solid transparent;
+  border-top: 0.3vw solid transparent;
+  border-bottom: 0.3vw solid transparent; 
   
-  border-right:0.5vw solid white; 
+  border-right:0.3vw solid white; 
 }
 #right_arrow{
   width: 0; 
   height: 0; 
-  border-top: 0.5vw solid transparent;
-  border-bottom: 0.5vw solid transparent;
-  border-right: 0.5vw solid transparent;
-  border-left: 0.5vw solid white;
+  border-top: 0.3vw solid transparent;
+  border-bottom: 0.3vw solid transparent;
+  border-right: 0.3vw solid transparent;
+  border-left: 0.3vw solid white;
 }
 
 #slider{
     cursor: grab;
     position: absolute;
     user-select: none;
-    height: 1.5vw;
+    height: 1vw;
     width: 2vw;
     background-color: white;
-    top:calc(2.5vh - .75vw);
+    top:calc(2.5vh - .5vw);
     transition: transform 0.2s ease;
     border-radius: 2px;
 }
