@@ -169,3 +169,20 @@ body{
   border-right: 0.5vw solid transparent;
   border-left: 0.5vw solid white;
 }
+
+#slider{
+    cursor: grab;
+    position: absolute;
+    user-select: none;
+    height: 1.5vw;
+    width: 2vw;
+    background-color: white;
+    top:calc(2.5vh - .75vw);
+    transition: transform 0.2s ease;
+    border-radius: 2px;
+}
+#slider.active{
+    transform: scale(1.3);
+    cursor:grabbing;
+}
+

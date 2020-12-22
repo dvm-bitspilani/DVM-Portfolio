@@ -127,6 +127,8 @@ function team_projects(input) {
     }
 }
 
+// Drag Scroll
+
 const slider = document.querySelector('.projects');
 const inner = document.querySelector('.inner')
 let isDown = false;
@@ -155,3 +157,37 @@ slider.addEventListener('mousemove', (e) => {
     inner.scrollLeft = scrollLeft - walk;
     console.log(walk);
 });
+
+// Slider 
+
+let x = 0;
+
+const ele = document.getElementById('slider');
+const left_limit = document.getElementById('dotted_line_wrapper').offsetLeft
+const right_limit = document.getElementById('dotted_line_wrapper').offsetLeft + document.getElementById('dotted_line_wrapper').offsetWidth - document.getElementById('slider').offsetWidth
+const mouseDownHandler = function (e) {
+    x = e.clientX;
+    ele.classList.add('active')
+    document.addEventListener('mousemove', mouseMoveHandler);
+    document.addEventListener('mouseup', mouseUpHandler);
+};
+
+const mouseMoveHandler = function (e) {
+    const dx = e.clientX - x;
+    if ((ele.offsetLeft + dx) > right_limit || (ele.offsetLeft + dx) < left_limit) {
+        return
+    }
+    ele.style.left = `${ele.offsetLeft + dx}px`;
+
+    x = e.clientX;
+};
+
+const mouseUpHandler = function () {
+    ele.classList.remove('active')
+    document.removeEventListener('mousemove', mouseMoveHandler);
+    document.removeEventListener('mouseup', mouseUpHandler);
+};
+
+ele.addEventListener('mousedown', mouseDownHandler);
+
+
