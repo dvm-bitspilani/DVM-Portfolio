@@ -105,7 +105,7 @@ const slide_bar_scroll_dist = document.getElementById('dotted_line_wrapper').off
 
 
 let scroll_dist
-
+let number_of_projects
 
 function team(input) {
     for (var i = 0; i < 5; i++) {
@@ -125,6 +125,7 @@ function team_projects(input) {
     document.getElementsByClassName('projects')[0].scrollRight = 150
     document.getElementsByClassName('projects')[0].innerHTML = ''
     var no_of_projects = main_arr[input].length
+    number_of_projects = no_of_projects
     var total_width = (64 * no_of_projects)
 
     document.getElementsByClassName('projects')[0].style.width = total_width + 'vw'
@@ -216,7 +217,7 @@ const mouseMoveHandler = function (e) {
     ele.style.left = `${ele_offset}px`;
 
     inner.scrollLeft = (ele_offset / slide_bar_scroll_dist) * scroll_dist
-
+    console.log(ele.style.left, ele.offsetLeft)
     x = e.clientX;
 };
 
@@ -227,9 +228,36 @@ const mouseUpHandler = function () {
     document.removeEventListener('mouseup', mouseUpHandler);
 };
 
-ele.addEventListener('mousedown', mouseDownHandler);
+ele.addEventListener('mousedown', mouseDownHandler)
 
+// Left and Right Arrow Buttons
 
+function left_right(input) {
+
+    var mulitplying_factor = slide_bar_scroll_dist / (number_of_projects - 1)
+
+    if (input == 'l') {
+        var floor = Math.floor(ele.offsetLeft / mulitplying_factor)
+
+        move(floor, mulitplying_factor)
+    }
+    else {
+        var ceil = Math.ceil(ele.offsetLeft / mulitplying_factor)
+        move(ceil, mulitplying_factor)
+    }
+}
+
+function move(to_position, mulitplying_factor) {
+    ele.classList.add('active')
+    slider.classList.add('active');
+    setTimeout(() => {
+        ele.style.left = `${left_limit + to_position * mulitplying_factor}px`
+        inner.scrollLeft = ((left_limit + to_position * mulitplying_factor) / slide_bar_scroll_dist) * scroll_dist
+        ele.classList.remove('active')
+        slider.classList.remove('active');
+    }, 200)
+
+}
 // Starting off with Frontend Displayed
 
 team(2)
