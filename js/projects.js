@@ -161,6 +161,9 @@ slider.addEventListener('mousedown', (e) => {
     isDown = true;
     slider.classList.add('active');
     ele.classList.add('active')
+    for (var i = 0; i < number_of_projects; i++) {
+        document.getElementsByClassName('single_project')[i].classList.add('active')
+    }
     startX = e.pageX - inner.offsetLeft;
     scrollLeft = inner.scrollLeft;
 });
@@ -168,11 +171,15 @@ slider.addEventListener('mouseleave', () => {
     isDown = false;
     slider.classList.remove('active');
     ele.classList.remove('active')
+
 });
 slider.addEventListener('mouseup', () => {
     isDown = false;
     slider.classList.remove('active');
     ele.classList.remove('active')
+    for (var i = 0; i < number_of_projects; i++) {
+        document.getElementsByClassName('single_project')[i].classList.remove('active')
+    }
 });
 slider.addEventListener('mousemove', (e) => {
     if (!isDown) return;
@@ -203,6 +210,9 @@ const mouseDownHandler = function (e) {
     x = e.clientX;
     ele.classList.add('active')
     slider.classList.add('active');
+    for (var i = 0; i < number_of_projects; i++) {
+        document.getElementsByClassName('single_project')[i].classList.add('active')
+    }
     document.addEventListener('mousemove', mouseMoveHandler);
     document.addEventListener('mouseup', mouseUpHandler);
 };
@@ -217,13 +227,15 @@ const mouseMoveHandler = function (e) {
     ele.style.left = `${ele_offset}px`;
 
     inner.scrollLeft = (ele_offset / slide_bar_scroll_dist) * scroll_dist
-    console.log(ele.style.left, ele.offsetLeft)
     x = e.clientX;
 };
 
 const mouseUpHandler = function () {
     ele.classList.remove('active')
     slider.classList.remove('active');
+    for (var i = 0; i < number_of_projects; i++) {
+        document.getElementsByClassName('single_project')[i].classList.remove('active')
+    }
     document.removeEventListener('mousemove', mouseMoveHandler);
     document.removeEventListener('mouseup', mouseUpHandler);
 };
@@ -234,30 +246,73 @@ ele.addEventListener('mousedown', mouseDownHandler)
 
 function left_right(input) {
 
-    var mulitplying_factor = slide_bar_scroll_dist / (number_of_projects - 1)
+    var mulitplying_factor = parseFloat(slide_bar_scroll_dist / (number_of_projects - 1)).toFixed(2)
+    var distance_from_left = parseFloat(parseFloat(ele.style.left) - left_limit).toFixed(2)
+    console.log('Distance fro left', distance_from_left)
+    console.log('MF', mulitplying_factor)
+    console.log('total_dist', slide_bar_scroll_dist)
 
     if (input == 'l') {
-        var floor = Math.floor(ele.offsetLeft / mulitplying_factor)
+        var temp = distance_from_left / mulitplying_factor
+        if (Number.isInteger(temp)) {
+            if (temp == 0) {
+                move(0, mulitplying_factor)
+            }
+            else {
+                move(temp - 1, mulitplying_factor)
+            }
+        }
+        else {
+            var floor = Math.floor(temp)
 
-        move(floor, mulitplying_factor)
+            move(floor, mulitplying_factor)
+        }
     }
     else {
-        var ceil = Math.ceil(ele.offsetLeft / mulitplying_factor)
-        move(ceil, mulitplying_factor)
+        var temp = distance_from_left / mulitplying_factor
+
+
+        if (Number.isInteger(temp)) {
+            if (temp == number_of_projects - 1) {
+                move(0, mulitplying_factor)
+                return
+            }
+
+            else {
+                move(temp + 1, mulitplying_factor)
+            }
+        }
+        else {
+            var ceil = Math.ceil(temp)
+
+            move(ceil, mulitplying_factor)
+        }
+
     }
 }
 
 function move(to_position, mulitplying_factor) {
+    ele.classList.add('left')
     ele.classList.add('active')
     slider.classList.add('active');
+    inner.classList.add('active')
+    for (var i = 0; i < number_of_projects; i++) {
+        document.getElementsByClassName('single_project')[i].classList.add('active')
+    }
+    ele.style.left = `${left_limit + to_position * mulitplying_factor}px`
+    inner.scrollLeft = ((left_limit + to_position * mulitplying_factor) / slide_bar_scroll_dist) * scroll_dist
     setTimeout(() => {
-        ele.style.left = `${left_limit + to_position * mulitplying_factor}px`
-        inner.scrollLeft = ((left_limit + to_position * mulitplying_factor) / slide_bar_scroll_dist) * scroll_dist
+        for (var i = 0; i < number_of_projects; i++) {
+            document.getElementsByClassName('single_project')[i].classList.remove('active')
+        }
+
+        ele.classList.remove('left')
         ele.classList.remove('active')
         slider.classList.remove('active');
-    }, 200)
+        inner.classList.remove('active')
+    }, 500)
 
 }
 // Starting off with Frontend Displayed
 
-team(2)
+team(0)
