@@ -102,10 +102,13 @@ const ele = document.getElementById('slider');
 const left_limit = document.getElementById('dotted_line_wrapper').offsetLeft
 const right_limit = document.getElementById('dotted_line_wrapper').offsetLeft + document.getElementById('dotted_line_wrapper').offsetWidth - document.getElementById('slider').offsetWidth
 const slide_bar_scroll_dist = document.getElementById('dotted_line_wrapper').offsetWidth - document.getElementById('slider').offsetWidth
-
+const white = document.getElementById('white')
+const grey = document.getElementById('grey')
 
 let scroll_dist
 let number_of_projects
+let timer_scroll
+let timer_color
 
 function team(input) {
     for (var i = 0; i < 5; i++) {
@@ -141,11 +144,18 @@ function team_projects(input) {
         name_div.innerHTML = main_arr[input][i].name
         document.getElementsByClassName('single_project')[i].appendChild(name_div)
     }
+
+    clearInterval(timer_color)
+    clearTimeout(timer_scroll)
+
     setTimeout(function () {
         scroll_dist = document.querySelector('.projects').offsetWidth - window.innerWidth
         console.log(scroll_dist)
         inner.scrollLeft = 0
         ele.style.left = `${left_limit}px`
+        white.style.width = '0%'
+        grey.style.width = '100%'
+        timer()
     }, 500)
 
 }
@@ -186,6 +196,8 @@ slider.addEventListener('mousemove', (e) => {
     e.preventDefault();
     const x = e.pageX - inner.offsetLeft;
     const walk = (x - startX) * 2; //scroll-fast
+    clearInterval(timer_color)
+    clearTimeout(timer_scroll)
     inner.scrollLeft = scrollLeft - walk;
     var slider_offset = (inner.scrollLeft / scroll_dist) * slide_bar_scroll_dist
 
@@ -199,7 +211,9 @@ slider.addEventListener('mousemove', (e) => {
     else {
         ele.style.left = `${right_limit}px`
     }
-
+    white.style.width = '0%'
+    grey.style.width = '100%'
+    timer()
 });
 
 // Slider 
@@ -224,9 +238,14 @@ const mouseMoveHandler = function (e) {
     if ((ele_offset) > right_limit || (ele_offset) < left_limit) {
         return
     }
+    clearInterval(timer_color)
+    clearTimeout(timer_scroll)
     ele.style.left = `${ele_offset}px`;
 
     inner.scrollLeft = (ele_offset / slide_bar_scroll_dist) * scroll_dist
+    white.style.width = '0%'
+    grey.style.width = '100%'
+    timer()
     x = e.clientX;
 };
 
@@ -296,11 +315,19 @@ function move(to_position, mulitplying_factor) {
     ele.classList.add('active')
     slider.classList.add('active');
     inner.classList.add('active')
+
+
     for (var i = 0; i < number_of_projects; i++) {
         document.getElementsByClassName('single_project')[i].classList.add('active')
     }
+
+    clearInterval(timer_color)
+    clearTimeout(timer_scroll)
     ele.style.left = `${left_limit + to_position * mulitplying_factor}px`
     inner.scrollLeft = ((left_limit + to_position * mulitplying_factor) / slide_bar_scroll_dist) * scroll_dist
+    white.style.width = '0%'
+    grey.style.width = '100%'
+    timer()
     setTimeout(() => {
         for (var i = 0; i < number_of_projects; i++) {
             document.getElementsByClassName('single_project')[i].classList.remove('active')
@@ -313,6 +340,22 @@ function move(to_position, mulitplying_factor) {
     }, 500)
 
 }
+
+// Timer Function
+
+function timer() {
+    timer_color = setInterval(() => {
+        white.style.width = `${parseInt(white.style.width) + 1}%`
+
+        grey.style.width = `${parseInt(grey.style.width) - 1}%`
+    }, 50)
+    timer_scroll = setTimeout(() => {
+        left_right('r')
+    }, 5000)
+}
+
+
 // Starting off with Frontend Displayed
 
 team(0)
+
