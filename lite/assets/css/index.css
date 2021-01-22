@@ -1,0 +1,151 @@
+/* Whole website maintains 5vw padding on left, right */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;     
+}
+
+::-webkit-scrollbar{
+    width:0;
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    left: 100vw;
+    width: 100vw;
+    height: 100vh;
+    background-color: thistle;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s cubic-bezier(0.895, 0.03, 0.685, 0.22) all;
+}
+
+.nav-is-active{
+    left: 0;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: antiquewhite;
+    padding: 0 5vw;
+    height: 65px;
+}
+
+.page {
+    height: 100vh;
+    padding: 0.1px 5vw;
+    padding-bottom: 10vh;
+}
+
+.pageHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    z-index: 2;
+    margin-top: 10vh;
+}
+
+.pageTitle {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.pageContent {
+    margin-top: 5vh;
+    color: white;
+    z-index: 2;
+    line-height: 4vh;
+}
+
+#landing {
+    height: calc(100vh - 65px);
+    /* Height of header is 65 px */
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 0;
+}
+
+#landing>#centralArt {
+    width: 80vw;
+    background-color: yellowgreen;
+}
+
+#landing>#scroller {
+    width: 5vw;
+    margin-left: 5vw;
+    background-color: turquoise;
+}
+
+#about {
+    background-color: black;
+    overflow-x: hidden;
+    padding: 0 5vw;
+}
+
+.watermark {
+    position: absolute;
+    display: block;
+    margin-left: -5vw;
+    width: 100%;
+    /* 5vw padding on either sides */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    font-size: 21vw;
+    letter-spacing: 1vw;
+    white-space: nowrap;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.1);
+    user-select: none;
+    z-index: 0;
+}
+
+#project1 {
+    background-color: burlywood;
+}
+
+#project2 {
+    background-color: wheat;
+}
+
+#blog {
+    background-color: blueviolet;
+}
+
+#artwork {
+    background-color: violet;
+}
+
+#contact {
+    background-color: teal;
+}
+
+footer {
+    background-color: rgb(59, 57, 58);
+    min-height: 40vh;
+    padding: 10vh 5vw;
+}

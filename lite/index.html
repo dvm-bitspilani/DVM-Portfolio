@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./assets/css/hamburgers.css" rel="stylesheet">
+    <link href="./assets/css/index.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="./assets/css/fullpage.min.css">
+    <script type="text/javascript" src="./assets/js/fullpage.min.js"></script> -->
+    <title>DVM Portfolio</title>
+</head>
+
+<body>
+    <nav>
+        <!-- nav goes here -->
+        <!-- trigger it's display on hamburger -->
+        Hey I'm Navigation pane! Your personal guidance companion :)
+    </nav>
+    <header class="">
+        <div id="logo">
+            <img src="logo/link/here" alt="DVM logo">
+        </div>
+        <!-- https://github.com/jonsuh/hamburgers -->
+        <button class="hamburger hamburger--arrow-r" type="button">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
+    </header>
+    <div id="fullpage">
+        <section class="page section" id="landing">
+            <div id="centralArt">
+
+            </div>
+
+            <div id="scroller">
+
+            </div>
+        </section>
+
+        <section class="page section" id="about">
+            <div class="watermark">
+                About Us
+            </div>
+            <div class="pageHeader">
+                <div class="pageTitle">We are DVM</div>
+                <!-- <div class="showMoreButton">Show All -></div> -->
+            </div>
+            <div class="pageContent">
+                Line<br />
+                Line<br />
+                Line<br />
+                Line<br />
+                Line<br />
+                Line<br />
+                Line<br />
+                Line<br />
+                Line<br />
+            </div>
+        </section>
+
+        <section class="page section projectPage" id="project1">
+            <div class="pageHeader">
+                <div class="pageTitle">Selected Projects</div>
+                <div class="showMoreButton">Show All -></div>
+            </div>
+            <div class="pageContent">
+                Line<br />
+                Line<br />
+                Line<br />
+                Line<br />
+                Line<br />
+                Line<br />
+                Line<br />
+                Line<br />
+                Line<br />
+            </div>
+        </section>
+
+        <section class="page section projectPage" id="project2">
+            <div class="pageHeader">
+                <div class="pageTitle">Selected Projects</div>
+                <div class="showMoreButton">Show All -></div>
+            </div>
+            <div class="pageContent">
+                Line<br />
+                Line<br />
+                Line<br />
+                Line<br />
+                Line<br />
+                Line<br />
+                Line<br />
+                Line<br />
+                Line<br />
+            </div>
+        </section>
+
+        <section class="page section" id="blog">
+            <div class="pageHeader">
+                <div class="pageTitle">Blogs</div>
+                <div class="showMoreButton">Show All -></div>
+            </div>
+            <div class="pageContent">
+                Line<br />
+                Line<br />
+                Line<br />
+                Line<br />
+                Line<br />
+                Line<br />
+                Line<br />
+                Line<br />
+                Line<br />
+            </div>
+        </section>
+
+        <section class="page section" id="artwork">
+            <div class="pageHeader">
+                <div class="pageTitle">Artwork</div>
+                <div class="showMoreButton">Show All -></div>
+            </div>
+            <div class="pageContent">
+                Line<br />
+                Line<br />
+                Line<br />
+                Line<br />
+                Line<br />
+                Line<br />
+                Line<br />
+                Line<br />
+                Line<br />
+            </div>
+        </section>
+
+        <section class="page section" id="contact">
+            <div class="pageHeader">
+                <div class="pageTitle">Contact Us</div>
+                <!-- <div class="showMoreButton">Show All -></div> -->
+            </div>
+            <div class="pageContent">
+                Line<br />
+                Line<br />
+                Line<br />
+                Line<br />
+                Line<br />
+                Line<br />
+                Line<br />
+                Line<br />
+                Line<br />
+            </div>
+        </section>
+
+        <footer>
+            Made with ❤️ by DVM
+        </footer>
+
+    </div>
+
+    <script>
+        var hamburger = document.querySelector(".hamburger");
+        var nav = document.querySelector("nav");
+
+        hamburger.addEventListener("click", function () {
+            hamburger.classList.toggle("is-active");
+            nav.classList.toggle("nav-is-active");
+        });
+        // var myFullpage = new fullpage('#fullpage', {
+        //     paddingTop: "65px",
+        // });
+    </script>
+</body>
+
+</html>

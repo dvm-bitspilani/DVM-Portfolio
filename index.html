@@ -1,427 +1,115 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>DVM Portfolio</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/Landing%20Page/home.css">
-    <link rel="icon" href="assets/img/1x/Asset 2.png">
-    <script src="./js/fontfaceobserver.standalone.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.9/fullpage.min.css"
+    integrity="sha512-8M8By+q+SldLyFJbybaHoAPD6g07xyOcscIOQEypDzBS+sTde5d6mlK2ANIZPnSyxZUqJfCNuaIvjBUi8/RS0w=="
+    crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.9/fullpage.min.js"
+    integrity="sha512-Gx/C4x1qubng2MWpJIxTPuWch9O88dhFFfpIl3WlqH0jPHtCiNdYsmJBFX0q5gIzFHmwkPzzYTlZC/Q7zgbwCw=="
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body onload=loaded()>
-    <nav class="navbar">
-        <!-- <div class="brand">
-        DVM
-    </div> -->
+<body>
 
-        <h1 class="brand">
-            <span class="text-wrapper">
-                <!-- <span class="line line1"></span> -->
-                <span class="letters">DVM</span>
-                <!-- <span class="line line2"></span> -->
-            </span>
-        </h1>
+  <!-- <header id="header">
+    <section class="header">
+      <section class="hamburger">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </section>
+    </section>
+  </header> -->
 
-        <div class="ham" onclick="openCloseNav()">
-            <div class="ham-line"></div>
-            <div class="ham-line"></div>
+  <nav>
+    <!-- whole nav goes here -->
+  </nav>
+
+
+  <div id="fullpage">
+    <div class="section">
+      <div class="innerSectionContainer">
+        <header>
+          <div class="logo">
+            <!-- <img src="./assets/images/logo.png" alt="DVM logo" srcset=""> -->
+            DVM
+          </div>
+          <div class="hamburger" id="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+        </header>
+        <div class="pageContent" id="home">
+          Hello
         </div>
-    </nav>
-    <div id="navContainer">
-        <div class="followContainer">
-            <h3 class="smallLinksHeader">
-                Follow
-            </h3>
-            <a href="" class="smallLinks">Facebook</a>
-            <a href="" class="smallLinks">Instagram</a>
-            <a href="" class="smallLinks">LinkedIn</a>
-            <a href="" class="smallLinks">Behance</a>
-            <a href="" class="smallLinks">Dribble</a>
-        </div>
-        <div class="elementsContainer">
-            <div class="largeLinkContainer1">
-                <span class="text-wrapper">
-                    <a class="largeLink1">About</a>
-                </span>
-            </div>
-            <div class="largeLinkContainer2">
-                <span class="text-wrapper">
-                    <a class="largeLink2">Work</a>
-                </span>
-            </div>
-            <div class="largeLinkContainer3">
-                <span class="text-wrapper">
-                    <a class="largeLink3">Blogs</a>
-                </span>
-            </div>
-            <div class="largeLinkContainer4">
-                <span class="text-wrapper">
-                    <a class="largeLink4">Artworks</a>
-                </span>
-            </div>
-            <div class="largeLinkContainer5">
-                <span class="text-wrapper">
-                    <a class="largeLink5">Achievements</a>
-                </span>
-            </div>
-            <div class="largeLinkContainer6">
-                <span class="text-wrapper">
-                    <a class="largeLink6">Contact Us</a>
-                </span>
-            </div>
-            <!-- <a href="">About</a>
-        <a href="">Work</a>
-        <a href="">Blogs</a>
-        <a href="">Artworks</a>
-        <a href="">Achievements</a>
-        <a href="">Contact Us</a> -->
-        </div>
+      </div>
     </div>
-    <div class="wrapper">
-        <section class="page home" id="home">
-            <div class="home-cont">
-                <!--            <div class="home-heading">-->
-                <!--                DVM-->
-                <!--            </div>-->
-                <div class="section-nav">
-                </div>
-            </div>
-            <!--        <div id="particles-js"></div>-->
-            <div id="homeLogoContainer">
-                <div class="spotlight">
-                    <div id="cursor"></div>
-                </div>
-                <div id="homeLogoInner">
-                    <img src="assets/img/DVM-Logo.svg">
-                </div>
-                <div class="homeBack">
-                    <img src="assets/img/Background%20Box.png">
-                </div>
-                <div class="homeSideIcons">
-                    <div class="xoxo">
-                        <div class="x">X</div>
-                        <div class="o">O</div>
-                        <div class="x">X</div>
-                        <div class="o">O</div>
-                    </div>
-                    <div class="xoxo">
-                        <div class="o">O</div>
-                        <div class="x">X</div>
-                        <div class="o">O</div>
-                        <div class="x">X</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="page about" id="about">
-            <div class="inner-wrapper" id="about-wrapper">
-                <div class="backContentWrapper">
-                    <div class="backContent">
-                        <!-- <div class="about-heading">We are DVM</div> -->
-                        <h1 class="ml6">
-                            <span class="text-wrapper">
-                                <span class="letters">We are DVM</span>
-                            </span>
-                        </h1>
-                        <div class="about-info-1">
-                            "There is no one who loves pain itself, who seeks after it and wants to have it, simply
-                            because
-                            it is pain..." Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et dui quis
-                            enim
-                            <br><br>
-                            Duis eu purus in odio fermentum placerat sed nec felis. Sed tincidunt nulla eu neque
-                            vehicula,
-
-                            Pellentesque hendrerit, metus et faucibus imperdiet, magna erat sodales orci, nec molestie
-                            justo
-
-                        </div>
-                    </div>
-                    <div class="about-picture">
-
-                    </div>
-                </div>
-                <div class="frontContent">
-                    <div class="frontContentWrapper">
-                        <div class="about-info-2">
-                            "There is no one who loves pain itself, who seeks after it and wants to have it, simply
-                            because
-                            <br><br>
-                            it is pain..." Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et dui quis
-                            enim
-
-                            Duis eu purus in odio fermentum placerat sed nec felis. Sed tincidunt nulla eu neque
-                            vehicula,
-
-                            Pellentesque hendrerit, metus et faucibus imperdiet, magna erat sodales orci, nec molestie
-                            justo
-
-                        </div>
-                        <div class="about-icons">
-                            <div class="icon"></div>
-                            <div class="icon"></div>
-                            <div class="icon"></div>
-                            <div class="icon"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="page projects-page" id="projects_oasis">
-            <div class="inner-wrapper" id="projects-oasis-wrapper">
-                <div>
-                    <div class="section-heading ">Selected Projects</div>
-                    <div class="show-all-projects">
-                        <div style="display: flex; justify-content: center; align-items: center; margin-right: 10px;">
-                            Show All</div>
-                        <div class="projectArrow"></div>
-                    </div>
-                    <div class="project">
-                        <div class="project-heading">Oasis'19</div>
-                        <div class="project-info">
-                            <div class="projectsFirstContainer">
-                                <img src="assets/img/mobilePlaceholder.PNG" alt="mobile" class="mobile1">
-
-                            </div>
-                            <div class="projectsSecondContainer">
-                                <div class="projectsSecondTextContainer">
-                                    <div class="infoHead1">
-                                        <h4>Android app design and development</h4>
-                                        <p>used by more than 10 thousand students</p>
-                                    </div>
-                                    <a href="" class="project-view-more">
-                                        View Projects
-                                        <div class="projectArrow"></div>
-                                    </a>
-                                </div>
-                                <img src="assets/img/desktopPlaceholder.PNG" alt="mobile" class="mobile2">
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="page projects-page" id="projects_apogee">
-            <div class="inner-wrapper" id="projects-apogee-wrapper">
-                <div>
-                    <div class="project">
-                        <div class="project-heading">Apogee'19</div>
-                        <div class="project-info">
-                            <div class="projectsFirstContainer">
-                                <img src="assets/img/mobilePlaceholder.PNG" alt="mobile" class="mobile1">
-
-                            </div>
-                            <div class="projectsSecondContainer">
-                                <div class="projectsSecondTextContainer">
-                                    <div class="infoHead1">
-                                        <h4>Android app design and development</h4>
-                                        <p>used by more than 10 thousand students</p>
-                                    </div>
-                                    <a href="" class="project-view-more">
-                                        View Projects
-                                        <div class="projectArrow"></div>
-                                    </a>
-                                </div>
-                                <img src="assets/img/desktopPlaceholder.PNG" alt="mobile" class="mobile2">
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        </section>
-        <section class="page blog" id="blog">
-            <div class="inner-wrapper" id="blog-wrapper">
-                <div class="section-heading">
-                    Blogs
-                </div>
-                <div class="blogDragDiv" id="blogDragDiv">
-                    drag
-                </div>
-                <div class="scrolling-wrapper" id="scrolling-wrapper">
-
-                    <div class="card" style="margin-left: 0">
-                        <div class="blogimage"></div>
-                        <div class="blogtitle">
-                            <div class="blogtitletitle">asfdg<br>asdfg</div>
-                            <div class="blogby">name surname</div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="blogimage"></div>
-                        <div class="blogtitle">
-                            <div class="blogtitletitle">asfdg<br>asdfg</div>
-                            <div class="blogby">name surname</div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="blogimage"></div>
-                        <div class="blogtitle">
-                            <div class="blogtitletitle">asfdg<br>asdfg</div>
-                            <div class="blogby">name surname</div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="blogimage"></div>
-                        <div class="blogtitle">
-                            <div class="blogtitletitle">asfdg<br>asdfg</div>
-                            <div class="blogby">name surname</div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="blogimage"></div>
-                        <div class="blogtitle">
-                            <div class="blogtitletitle">asfdg<br>asdfg</div>
-                            <div class="blogby">name surname</div>
-                        </div>
-                    </div>
-                </div>
-        </section>
-        <section class="page blog" id="blog">
-            <div class="inner-wrapper" id="artworks-wrapper">
-                <div class="section-heading">
-                    Artworks
-                </div>
-                <div class="artwork-container">
-                    <div class="arrows artwork-arrows">
-                        <div class="left-arrow" onclick="navigateCarousel(-1, 'single')">
-                            <img src="assets/img/universal.svg">
-                        </div>
-                        <div class="right-arrow" onclick="navigateCarousel(1, 'single')">
-                            <img src="assets/img/right-arrow.svg">
-                        </div>
-                    </div>
-
-                    <div class="artwork-name">
-                        Name
-                    </div>
-                    <div class="artwork-scroller">
-                        <div class="artwork-scroll-individual scroll-1" id="1" onclick="navigateCarousel(0, 'pill')">
-                        </div>
-                        <div class="artwork-scroll-individual scroll-2" id="2" onclick="navigateCarousel(1, 'pill')">
-                        </div>
-                        <div class="artwork-scroll-individual scroll-3" id="3" onclick="navigateCarousel(2, 'pill')">
-                        </div>
-                        <div class="artwork-scroll-individual scroll-4" id="4" onclick="navigateCarousel(3, 'pill')">
-                        </div>
-                        <div class="artwork-scroll-individual scroll-5" id="5" onclick="navigateCarousel(4, 'pill')">
-                        </div>
-                        <div class="active-scroll artwork-active-scroll artwork-scroll-individual"
-                            id="active-scroll-id"></div>
-                    </div>
-
-                    <div class="artwork-carousel">
-                        <div class="artwork-img-container">
-                            <div class="artwork-img">
-                            </div>
-                            <div class="artwork-img">
-                            </div>
-                            <div class="artwork-img">
-                            </div>
-                            <div class="artwork-img">
-                            </div>
-                            <div class="artwork-img">
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--        <section class="page achievements" id="achievements">-->
-        <!--            <div class="inner-wrapper" id="achievements-wrapper">-->
-        <!--                <div class="section-heading">-->
-        <!--                    Achievements-->
-        <!--                </div>-->
-        <!--                <div class="our-achievements">-->
-        <!--                    <div class="achievement">-->
-        <!--                        <div class="number">10+</div>-->
-        <!--                        <div class="info">-->
-        <!--                            <div class="info-heading">-->
-        <!--                                <div class="info-line"></div>-->
-        <!--                                <div class="heading-text">Apps on Playstore</div>-->
-        <!--                            </div>-->
-        <!--                            <div class="info-text">-->
-        <!--                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed ultricies odio, a-->
-        <!--                                imperdiet lorem. Curabitur semper vehicula ex sed lobortis. Suspendisse lobortis libero-->
-        <!--                                nulla, in tristique risus-->
-        <!--                            </div>-->
-        <!--                        </div>-->
-        <!--                    </div>-->
-        <!--                    <div class="achievement">-->
-        <!--                        <div class="number">10+</div>-->
-        <!--                        <div class="info">-->
-        <!--                            <div class="info-heading">-->
-        <!--                                <div class="info-line"></div>-->
-        <!--                                <div class="heading-text">Apps on Playstore</div>-->
-        <!--                            </div>-->
-        <!--                            <div class="info-text">-->
-        <!--                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed ultricies odio, a-->
-        <!--                                imperdiet lorem. Curabitur semper vehicula ex sed lobortis. Suspendisse lobortis libero-->
-        <!--                                nulla, in tristique risus-->
-        <!--                            </div>-->
-        <!--                        </div>-->
-        <!--                    </div>-->
-        <!--                    <div class="achievement">-->
-        <!--                        <div class="number">10+</div>-->
-        <!--                        <div class="info">-->
-        <!--                            <div class="info-heading">-->
-        <!--                                <div class="info-line"></div>-->
-        <!--                                <div class="heading-text">Apps on Playstore</div>-->
-        <!--                            </div>-->
-        <!--                            <div class="info-text">-->
-        <!--                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed ultricies odio, a-->
-        <!--                                imperdiet lorem. Curabitur semper vehicula ex sed lobortis. Suspendisse lobortis libero-->
-        <!--                                nulla, in tristique risus-->
-        <!--                            </div>-->
-        <!--                        </div>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-        <!--            </div>-->
-        <!--        </section>-->
-        <section class="page contact" id="contact">
-            <div class="inner-wrapper" id="contact-wrapper">
-                <div class="section-heading">
-                    Contact Us
-                </div>
-                <div class="form-wrapper">
-                    <div class="form">
-                        <div>
-                            <input class="form-element inputs" type="text" name="name" placeholder="Name">
-                        </div>
-                        <div>
-                            <input class="form-element inputs" type="email" name="email" placeholder="Email">
-                        </div>
-                        <div id="message-textarea">
-                            <input class="form-element textarea" type="text" name="message" placeholder="Message">
-                        </div>
-                        <div id="submit-button">
-                            <button class="form-element button">SUBMIT</button>
-                        </div>
-                    </div>
-
-                    <div class="form-pic">
-
-                    </div>
-                </div>
-                <div class="inner-wrapper" id="footer-wrapper">
-                    THIS IS A FOOTER
-                </div>
-            </div>
-
-        </section>
+    <div class="section">
+      <div class="innerSectionContainer">
+        <div class="pageContent">
+          Hello
+        </div>
+      </div>
     </div>
-    <script src="js/navbar.js"></script>
-    <script src="js/index.js"></script>
-    <script src="js/animations.js"></script>
+    <div class="section">
+      <div class="innerSectionContainer">
+        <div class="pageContent">
+          Hello
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="innerSectionContainer">
+        <div class="pageContent">
+          Hello
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    new fullpage('#fullpage', {
+      //options here
+      autoScrolling: true,
+      keyboardScrolling: true,
+      verticalCentered: true,
+      navigation: true,
+      scrollingSpeed: 500,
+      fixedElements: '#header',
+      responsiveWidth: 800,
+    });
+
+
+
+    //methods
+    // fullpage_api.setAllowScrolling(false);
+
+    const navToggle = () => {
+      let nav = document.getElementsByTagName("nav")[0];
+      let navDots = document.getElementById("fp-nav");
+      let body = document.getElementsByTagName('body')[0];
+      if (nav.classList.contains("navOpen")) {
+        fullpage_api.setAllowScrolling(true);
+        fullpage_api.setKeyboardScrolling(true);
+      }
+      else {
+        fullpage_api.setAllowScrolling(false);
+        fullpage_api.setKeyboardScrolling(false);
+      }
+      nav.classList.toggle("navOpen");
+      navDots.classList.toggle("fpNavNone");
+      body.classList.toggle("bodyOverflow");
+    }
+
+    document.getElementById("hamburger").addEventListener("click", navToggle);
+  </script>
 </body>
 
 </html>
