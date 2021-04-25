@@ -1,68 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Projects</title>
-        <link rel="stylesheet" href="css/fonts.css">
-        <link rel="stylesheet" href="css/projects.css">
-    </head>
-    <body>
-        <nav class="navbar">
-            <div class="brand">
-                DVM
-            </div>
-            <div class="ham">
-                <div class="ham-line"></div>
-                <div class="ham-line"></div>
-            </div>
-        </nav>
-        <div class="projectContainer">
-            <div class="stepContainer">
-                <div class="step" style="transform: scale(-1)">
-                    <img src="assets/img/arrow_forward-24px.svg">
-                </div>
-                <div class="currentStep">
-                    01
-                </div>
-                <div class="step">
-                    <img src="assets/img/arrow_forward-24px.svg">
-                </div>
-                <div class="stepTextContainer">
-                    ABOUT<br/>
-                    APOGEE'20
-                </div>
-                <div class="bulletStepIndicator">
-                    <div class="bullet selected"></div>
-                    <div class="bullet"></div>
-                    <div class="bullet"></div>
-                    <div class="bullet"></div>
-                    <div class="bullet"></div>
-                </div>
-            </div>
-            <div class="textContainer">
-                <div class="textHead">
-                    <h3>Official website</h3>
-                    <h1>APOGEE'20</h1>
-                    <div class="detailsContainer">
-                        <div class="blankSpace"></div>
-                        <p>
-                            The only department in campus that is responsible for creating up to date apps that are to be used
-                            by more than 20 thousand students. We are DVM sed do eiusmod tempor incididunt ut labore et dolore
-                            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                            ea The only department in campus that is responsible for creating up to date apps that are to be
-                            used by more than 20 thousand students.<br><br> We are DVM sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                            aliquip ex ea
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="imageContainer">
-                <div class="laptopImageContainer">
-                    <img src="assets/img/oasisBack.png" >
-                </div>
-                <div class="mobileImageContainer"></div>
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Projects</title>
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/project.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="icon" href="assets/img/1x/Asset 5.png" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <!-- <div class="brand">
+        DVM
+    </div> -->
+
+      <h1 class="brand">
+        <span class="text-wrapper">
+          <!-- <span class="line line1"></span> -->
+          <span class="letters">DVM</span>
+          <!-- <span class="line line2"></span> -->
+        </span>
+      </h1>
+
+      <div class="ham" onclick="openCloseNav()">
+        <div class="ham-line"></div>
+        <div class="ham-line"></div>
+      </div>
+    </nav>
+    <div id="navContainer">
+      <div class="followContainer">
+        <h3 class="smallLinksHeader">Follow</h3>
+        <a href="" class="smallLinks">Facebook</a>
+        <a href="" class="smallLinks">Instagram</a>
+        <a href="" class="smallLinks">LinkedIn</a>
+        <a href="" class="smallLinks">Behance</a>
+        <a href="" class="smallLinks">Dribble</a>
+      </div>
+      <div class="elementsContainer">
+        <div class="largeLinkContainer1">
+          <span class="text-wrapper">
+            <a class="largeLink1">About</a>
+          </span>
         </div>
-    </body>
+        <div class="largeLinkContainer2">
+          <span class="text-wrapper">
+            <a class="largeLink2">Work</a>
+          </span>
+        </div>
+        <div class="largeLinkContainer3">
+          <span class="text-wrapper">
+            <a class="largeLink3">Blogs</a>
+          </span>
+        </div>
+        <div class="largeLinkContainer4">
+          <span class="text-wrapper">
+            <a class="largeLink4">Artworks</a>
+          </span>
+        </div>
+        <div class="largeLinkContainer5">
+          <span class="text-wrapper">
+            <a class="largeLink5">Achievements</a>
+          </span>
+        </div>
+        <div class="largeLinkContainer6">
+          <span class="text-wrapper">
+            <a class="largeLink6">Contact Us</a>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper">
+      <div class="hero">
+        <div class="background"></div>
+        <div class="hero-content">
+          <div class="link">Dummy1</div>
+          <div class="heading">Dummy2</div>
+          <div class="cross" onclick="location.href='#project-about'">
+            <div class="crossLine" style="transform: rotate(45deg)"></div>
+            <div class="crossLine" style="transform: rotate(-45deg)"></div>
+          </div>
+        </div>
+      </div>
+      <div id="project-about">
+        <div class="left-project-about">
+          About APOGEE Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Curabitur hendrerit mi neque, ultricies tincidunt leo vulputate ac.
+          Integer mattis, ligula quis fringilla egestas, quam diam viverra
+          felis, sit amet accumsan quam felis at lectus. Vivamus lectus nulla,
+          euismod et dolor id, consectetur fringilla felis.
+        </div>
+
+        <div class="right-project-about">
+          <div class="smaller-text">
+            About APOGEE Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit. Curabitur hendrerit mi neque, ultricies tincidunt leo
+            vulputate ac. Integer mattis, ligula quis fringilla egestas, quam
+            diam viverra felis, sit amet accumsan quam felis at lectus. Vivamus
+            lectus nulla, euismod et dolor id, consectetur fringilla felis.
+            About APOGEE Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit. Curabitur hendrerit mi neque, ultricies tincidunt leo
+            vulputate ac. Integer mattis, ligula quis fringilla egestas, quam
+            diam viverra felis, sit amet accumsan quam felis at lectus. Vivamus
+            lectus nulla, euismod et dolor id, consectetur fringilla felis.
+          </div>
+          <div class="website-launch"></div>
+        </div>
+      </div>
+      <div>
+        <img class="photo" src="./content-projects/project2/photo1.jpg" />
+      </div>
+      <div class="teams-and-date">
+        <div class="teams-container">
+          <div class="teams-heading">TEAMS INVOLVED</div>
+          <div class="teams">
+            <div class="team">Design</div>
+            <div class="team">AppDev</div>
+            <div class="team">Frontend</div>
+            <div class="team">Backend</div>
+          </div>
+        </div>
+        <div class="date-container">
+          <div class="teams-heading">DATE</div>
+          <div class="team date">2020 - June</div>
+        </div>
+      </div>
+      <div class="photos-container">
+        <div>
+          <img class="main-photo" src="./content-projects/project2/main.png" />
+        </div>
+        <div>
+          <img class="long-1" src="./content-projects/project2/long1.jpg" />
+        </div>
+        <div>
+          <img class="photo" src="./content-projects/project2/photo1.jpg" />
+        </div>
+        <div class="long-photos-container">
+          <div>
+            <img class="long-2" src="./content-projects/project2/long3.jpg" />
+          </div>
+          <div>
+            <img class="long-3" src="./content-projects/project2/long3.jpg" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="js/navbar.js"></script>
+  <script src="js/information.js"></script>
+  <script src="js/project.js"></script>
 </html>

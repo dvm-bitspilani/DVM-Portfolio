@@ -1,0 +1,214 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: gray;
+  width: 100vw;
+  overflow-x: hidden;
+  color: white;
+  margin: 0;
+}
+
+.wrapper {
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.hero {
+  height: 100vh;
+  width: 100vw;
+}
+.background {
+  background-image: linear-gradient(to top left, #a18cd1 50%, #fbc2eb 50%);
+  background-attachment: fixed;
+  position: fixed;
+  top: 0;
+  z-index: -1;
+  /* display: block; */
+  width: 100vw;
+  height: 100vh;
+}
+.hero-content {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+.heading {
+  text-align: center;
+  font: normal normal bold 3em Gilroy ☞;
+  letter-spacing: 0px;
+  color: #ffffff;
+  text-shadow: 0px 3px 6px #00000033;
+  opacity: 1;
+  font-family: poppins-semibold;
+  font-size: 8em;
+}
+.link {
+  font: normal normal bold 3em Gilroy ☞;
+  letter-spacing: 0px;
+  color: #ffffff;
+  text-shadow: 0px 3px 6px #00000033;
+  opacity: 1;
+  font-family: poppins-semibold;
+  font-size: 1.4em;
+  opacity: 0.64;
+  margin-bottom: -5vh;
+}
+.cross {
+  margin-top: 25vh;
+  /* position: absolute; */
+  margin-bottom: 5%;
+  font-family: gilroy-bold;
+  font-size: 1.5em;
+  padding: 5px;
+  background: #ffffff14;
+  border-radius: 50px;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.crossLine {
+  position: absolute;
+  width: 15px;
+  background: white;
+  height: 2px;
+  border-radius: 50px;
+  transition: 0.5s;
+}
+.cross:hover {
+  background: white;
+}
+.cross:hover .crossLine {
+  background: black;
+}
+
+#project-about {
+  width: 100vw;
+  background-color: #1a1a1a;
+  display: flex;
+  padding: 10vh 0;
+}
+.left-project-about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  font: italic normal normal 1.2em Poppins;
+  letter-spacing: 0px;
+  color: #ffffff;
+  width: 50vw;
+  padding: 0 10vw;
+  word-wrap: break-word;
+  height: fit-content;
+}
+.right-project-about {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+}
+.smaller-text {
+  text-align: left;
+  margin-right: 10vw;
+  text-align: left;
+  font: normal normal normal 0.9em Poppins;
+  letter-spacing: 0px;
+  color: #a6a6a6;
+}
+
+.photo {
+  /* background-image: url("../content-projects/project1/photo1.jpg"); */
+  height: auto;
+  width: 100vw;
+  background-size: cover;
+}
+
+.teams-and-date {
+  height: max-content;
+  width: 100vw;
+  background-color: black;
+  padding: 12.5vh 10vw;
+  display: flex;
+}
+.teams-container {
+  width: 40vw;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.teams-heading {
+  text-align: left;
+  font: normal normal 300 0.8em Poppins;
+  letter-spacing: 0px;
+  color: #cdcdcd;
+  opacity: 0.8;
+  margin-bottom: 2vh;
+}
+.teams {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column-gap: 15vw;
+  grid-row-gap: 1vh;
+}
+.team {
+  text-align: left;
+  font: normal normal normal 1em Poppins;
+  letter-spacing: 0px;
+  color: #ffffff;
+  opacity: 1;
+}
+.date-container {
+  width: 20vw;
+  margin-left: 20vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.photos-container {
+  padding-bottom: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: max-content;
+  background-color: black;
+}
+
+.main-photo {
+  width: 80vw;
+  height: auto;
+  background-size: cover;
+  margin-bottom: 8vh;
+}
+.long-1 {
+  width: 80vw;
+  height: auto;
+  background-size: cover;
+  margin-bottom: 15vh;
+}
+.long-photos-container {
+  margin-top: 25vh;
+  display: flex;
+}
+.long-2 {
+  width: 35vw;
+  margin: -7vh 7.5vh 7.5vh 0;
+  height: auto;
+  background-size: cover;
+}
+.long-3 {
+  width: 35vw;
+  margin: 7vh 7.5vh 7.5vh 0;
+  height: auto;
+  background-size: cover;
+}

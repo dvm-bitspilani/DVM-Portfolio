@@ -1,4 +1,4 @@
-// // Teams - 1: Android, 2: Backend, 3: Design, 4: Frontend, 5: Video
+// // Teams - 1: App, 2: Backend, 3: Design, 4: Frontend, 5: Video
 // // Format of date - Year - Month (Name)
 // // Text1 - The text which is in bold letters
 // // Change the page_link if you're making a different page
