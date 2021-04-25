@@ -17,24 +17,144 @@ body {
     background: #1C2227;
 }
 
-.landingSection {
-
-    position: relative;
-
-    /* margin-top: 15vh; */
-
-    top: 15vh;
-
-    font-family: 'Poppins-SemiBold';
-
-    color: white;
+html{
+    scroll-behavior: smooth;
 }
 
-.landingSection h1 {
+body{
+    width: 100vw;
+    overflow-x: hidden;
+    margin: 0;
+    user-select: none;
+    cursor: default;
+}
 
-text-align: center;
+.background{
+    background-image: linear-gradient(to top left, #a18cd1 50%, #fbc2eb 50%);
+    background-attachment: fixed;
+    position: fixed;
+    top: 0;
+    z-index: -1;
+    /* display: block; */
+    width: 100vw;
+    height: 100vh;
+}
 
-font-size: 2.6em;
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.aboutArtwork {
+    font-family: Poppins;
+    color: white;
+    width: 100%;
+    padding: 0 8% 5%;
+}
+
+.aboutArtwork h1 {
+
+}
+
+.aboutArtwork p {
+
+}
+
+.landingSection {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.landingSection h1{
+    font-family: poppins-semibold;
+    font-size: 8em;
+    letter-spacing: 25px;
+}
+
+.cross {
+    position: absolute;
+    bottom: 5%;
+    font-family: gilroy-bold;
+    font-size: 1.5em;
+    padding: 5px;
+    background: #ffffff14;
+    border-radius: 50px;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.cross:hover{
+    background: white;
+}
+
+
+.crossLine {
+    position: absolute;
+    width: 60%;
+    background: white;
+    height: 2px;
+    border-radius: 50px;
+    transition: 0.5s;
+}
+
+.cross:hover .crossLine {
+    background: black;
+}
+
+.artworkWrapper {
+    width: 100%;
+    background: black;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10% 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: poppins;
+    flex-wrap: wrap;
+}
+
+.column {
+
+}
+
+.artworkContainer {
+
+}
+
+
+::-webkit-scrollbar{
+    width: 0;
+}
+
+@media all and (max-width: 500px)  {
+    .landingSection h1{
+        font-size: 3em;
+    }
+    .artworkWrapper{
+        font-size: 0.9em;
+    }
+    .column{
+        padding: 5% 9%;
+    }
+    .artworkImage img{
+        width: 100%;
+    }
+    .artworkContainer {
+        font-size: 0.8em;
+    }
+    #navContainer{
+        display: none;
+    }
 }
 
 .teamContainer {
@@ -44,25 +164,18 @@ font-size: 2.6em;
 .teamName::before {
     content: '';
     width: 10%;
-    background: #CA3446;
+    background: #2196f3;
     height: 3px;
     margin-right: 2%;
 }
 
 .teamName {
-
-display: flex;
-
-color: #CA3446;
-
-align-items: center;
-
-letter-spacing: 2.5px;
-
-
-/* height: 2px; */
-
-/* display: block; */
+display: flex;
+color: #2196f3;
+align-items: center;
+letter-spacing: 2.5px;
+/* height: 2px; */
+/* display: block; */
 }
 
 .teamMembers {
@@ -87,7 +200,7 @@ letter-spacing: 2.5px;
     content: '';
     display: block;
     position: relative;
-    background: #CA3446;
+    background: #2196f3;
     left: 50%;
     width: 1.5px;
     border-radius: 0.75px;
@@ -132,18 +245,13 @@ letter-spacing: 2.5px;
 }
 
 .memberName {
-
-    text-transform: uppercase;
-
-    color: #CA3446;
-
-    letter-spacing: 3px;
-
-    font-size: 1.05em;
-
-    transform: translateY(-40%);
-    transition: 0.1s;
-    opacity: 0;
+text-transform: uppercase;
+color: #2196f3;
+letter-spacing: 3px;
+font-size: 1.05em;
+transform: translateY(-40%);
+transition: 0.1s;
+opacity: 0;
 }
 
 .designation {
