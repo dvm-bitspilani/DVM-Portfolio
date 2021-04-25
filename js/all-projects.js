@@ -1,23 +1,21 @@
 // Array containing the content
-import info from "./information.js";
-console.log(info);
+
 let main_arr = [[], [], [], [], []];
 function get_info() {
   // bake your code here
 
   return new Promise((resolve) => {
-    for (var p = 0; p < info.length; p++) {
+    for (var p = 0; p < information.length; p++) {
       let temp = {
-        img: info[p].main_photo_link,
-        name: info[p].name,
-        url: info[p].page_link,
+        img: information[p].main_photo_link,
+        name: information[p].name,
+        url: information[p].page_link,
       };
-      for (var q = 0; q < info[p].teams.length; q++) {
-        main_arr[info[p].teams[q] - 1].push(temp);
+      for (var q = 0; q < information[p].teams.length; q++) {
+        main_arr[information[p].teams[q] - 1].push(temp);
       }
-      console.log("joijoijo");
+      console.log("filling up");
     }
-    
   });
 }
 
@@ -125,8 +123,7 @@ async function main() {
 
 main();
 
-console.log("hello");
-console.log("DOne");
+console.log("Done");
 const slider = document.querySelector(".projects");
 const inner = document.querySelector(".inner");
 const ele = document.getElementById("slider");

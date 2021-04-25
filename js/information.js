@@ -199,4 +199,4 @@ let information = [
   },
 ];
 
-export default information;
+
