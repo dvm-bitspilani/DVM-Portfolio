@@ -401,16 +401,13 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-document
-  .getElementById("blog-wrapper")
-  .addEventListener("mouseover", function () {
-    document.getElementById("blogDragDiv").style.display = "flex";
-  });
-document
-  .getElementById("blog-wrapper")
-  .addEventListener("mouseout", function () {
-    document.getElementById("blogDragDiv").style.display = "none";
-  });
+document.getElementById("blog-wrapper").addEventListener("mouseover",function(){
+    document.getElementById("blogDragDiv").style.display =  "flex";
+    
+})
+document.getElementById("blog-wrapper").addEventListener("mouseout",function(){
+  document.getElementById("blogDragDiv").style.display =  "none";
+})
 
 var timeout;
 

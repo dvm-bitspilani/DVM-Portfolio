@@ -82,7 +82,30 @@ body {
   font-family: "Gilroy";
   font-weight: 900;
 }
-
+.section-end-heading{
+  position: absolute;
+  letter-spacing: 3px;
+  right: 10vw;
+  height: 29px;
+  width: auto;
+  font-size: 24px;
+  font-family: "Gilroy";
+  font-weight: 900;
+  color: white;
+}
+.section-end-heading::after{
+  position: absolute;
+  margin-top: 4vh;
+  margin-left: -11vw;
+  content: '';
+  height: 2px;
+  width: 5vw;
+  background: white;
+  transition: 0.5s;
+}
+.section-end-heading:hover:after {
+  width: 10vw;
+}
 .section-info {
   position: relative;
   left: 20vw;
@@ -306,12 +329,12 @@ input:focus {
   height: 100vh;
 }
 .scrolling-wrapper {
-  height: 80vh;
-  width: 80vw;
-  overflow-x: scroll;
-  cursor: pointer;
-  transition: all 0.2s;
-  transform: scale(0.98);
+    height: 70vh;
+    width: 80vw;
+	  overflow-x: scroll;
+    cursor: pointer;
+    transition: all 0.2s;
+    transform: scale(0.98);
 }
 
 .scrolling-wrapper .card {
@@ -319,19 +342,20 @@ input:focus {
 }
 
 .card {
-  margin-top: 5vh;
-  margin-left: 2.5vw;
-  width: 40vw;
-  height: 50vh;
-  cursor: pointer;
-  transition: all 0.2s;
-  transform: scale(0.98);
+    margin-top: 5vh;
+    margin-left: 2.5vw;
+	width: 40vw;
+    height: 50vh;
+    cursor: none;
+    transition: all 0.2s;
+    transform: scale(0.98);
 }
 
-.card.active {
-  cursor: grabbing;
-  transform: scale(0.8);
+.card.active{
+    cursor: none;
+    transform: scale(0.8);
 }
+
 
 .card:first-child {
   margin-left: 0vw;
@@ -604,6 +628,9 @@ input:focus {
   }
   .section-heading {
     left: 0;
+  }
+  .section-end-heading{
+    right: 0;
   }
   .achievements {
     height: 200vh;
