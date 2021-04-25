@@ -11,7 +11,7 @@ body{
 }
 .navbar{
     height: 20vh;
-    background-color:#0d0d0d;
+    background-color:#161616;
     margin-top: 0;
     width: 100vw;
 }
@@ -45,7 +45,7 @@ body{
     flex-direction: column;
     width: 100vw;
     height: 80vh;
-    background-color: #0d0d0d;
+    background-color: #161616;
     content: '';
     position: absolute;
     overflow-y: scroll;
@@ -211,6 +211,6 @@ body{
 #grey{
     height: 100%;
     width: 100%;
-    background-color: #222222;
+    background-color: #3c3c3c;
     transition: ease;
 }
