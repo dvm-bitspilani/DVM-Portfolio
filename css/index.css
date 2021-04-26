@@ -7,7 +7,8 @@
 }
 
 body {
-  overflow: hidden;
+  overflow-x: hidden;
+  
   margin: 0;
 }
 
@@ -324,8 +325,8 @@ input:focus {
   background-color: #018786;
 }
 
-#blog-wrapper{
-    height:100vh;
+#blog-wrapper {
+  height: 100vh;
 }
 .scrolling-wrapper {
     height: 70vh;
@@ -335,7 +336,6 @@ input:focus {
     transition: all 0.2s;
     transform: scale(0.98);
 }
-
 
 .scrolling-wrapper .card {
   display: inline-block;
@@ -361,11 +361,11 @@ input:focus {
   margin-left: 0vw;
 }
 
-.blogimage{
-    float: right;
-    height: 50vh;
-    width: 30vw;
-    background-color: white;
+.blogimage {
+  float: right;
+  height: 50vh;
+  width: 30vw;
+  background-color: white;
 }
 
 .blogtitle {
@@ -394,23 +394,23 @@ input:focus {
   font-family: "Poppins";
   opacity: 0.5;
 }
-.blogDragDiv{
-    z-index: 100;
-    position:absolute;
-    transform:translate(-50%,-50%);
-    height:100px;
-    width:100px;
-    border-radius:50%;
-    border:1px solid white;
-    color: #FFFFFF;
-    font-size: 13px;
-    font-family: 'Poppins';
-    align-items: center;
-    text-align: center;   
-    justify-content: center;
-    display: none;
-    transition-duration: 200ms;
-    transition-timing-function: ease-out;
+.blogDragDiv {
+  z-index: 100;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: 1px solid white;
+  color: #ffffff;
+  font-size: 13px;
+  font-family: "Poppins";
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  display: none;
+  transition-duration: 200ms;
+  transition-timing-function: ease-out;
 }
 
 .scrolling-wrapper {
@@ -511,7 +511,7 @@ input:focus {
   background: #018786;
   white-space: normal;
 }
-.show-all-projects{
+.show-all-projects {
   position: relative;
   display: flex;
   right: 10vw;
@@ -521,14 +521,14 @@ input:focus {
   font-size: 16px;
   font-family: "Gilroy";
 }
-.project-heading{
+.project-heading {
   font: italic normal 600 60px/129px Gilroy;
   letter-spacing: 6.72px;
-  color: #FFFFFF;
+  color: #ffffff;
   width: 100%;
   text-align: center;
 }
-.project-info{
+.project-info {
   display: flex;
   justify-content: space-evenly;
   width: auto;
@@ -564,7 +564,7 @@ input:focus {
   opacity: 0;
 }
 
-.project{
+.project {
   display: flex;
   flex-direction: column;
   height: 90vh;
@@ -588,15 +588,12 @@ input:focus {
   font-family: Poppins, Gilroy;
 }
 
-
 .projectsSecondContainer img {
   margin-top: 4%;
   height: 30vh;
-  
 }
 .projectsSecondTextContainer {
   padding-top: 1%;
-  
 }
 
 .projectArrow {
