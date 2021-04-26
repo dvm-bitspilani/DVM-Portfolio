@@ -8,7 +8,34 @@ body {
   color: white;
   margin: 0;
 }
-
+.scroll-indicator {
+  position: fixed;
+  right: 2.5vw;
+  top: 40vh;
+  height: 20vh;
+  width: 0.3vw;
+  display: flex;
+  flex-direction: column;
+  border-radius: 2px;
+  z-index: 3;
+}
+.white-line {
+  content: "";
+  background-color: white;
+  height: 10vh;
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.grey-line {
+  content: "";
+  background-color: white;
+  opacity: 0.15;
+  height: 30vh;
+  width: 100%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
 .wrapper {
   overflow-x: hidden;
   display: flex;
@@ -24,6 +51,7 @@ body {
 .background {
   background-image: linear-gradient(to top left, #a18cd1 50%, #fbc2eb 50%);
   background-attachment: fixed;
+  background-size: cover;
   position: fixed;
   top: 0;
   z-index: -1;
