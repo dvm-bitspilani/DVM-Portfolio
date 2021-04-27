@@ -7,7 +7,13 @@ body {
   overflow-x: hidden;
   color: white;
   margin: 0;
+  /* Firefox */
 }
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
 .scroll-indicator {
   position: fixed;
   right: 2.5vw;

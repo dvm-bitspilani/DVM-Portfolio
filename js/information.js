@@ -27,7 +27,7 @@ let information = [
       "./content-projects/project1/photo1.jpg",
       "./content-projects/project1/photo2.jpg",
     ],
-    page_link: "/project.html?1",
+    page_link: "project.html?id=1",
   },
   {
     name: "Project 2",
@@ -48,7 +48,7 @@ let information = [
       "./content-projects/project2/photo1.jpg",
       "./content-projects/project2/photo2.jpg",
     ],
-    page_link: "/project.html?2",
+    page_link: "project.html?id=2",
   },
   {
     name: "Project 3",
@@ -69,7 +69,7 @@ let information = [
       "./content-projects/project3/photo1.jpg",
       "./content-projects/project3/photo2.jpg",
     ],
-    page_link: "/project.html?3",
+    page_link: "project.html?id=3",
   },
   {
     name: "Project 4",
@@ -90,7 +90,7 @@ let information = [
       "./content-projects/project4/photo1.jpg",
       "./content-projects/project4/photo2.jpg",
     ],
-    page_link: "/project.html?4",
+    page_link: "project.html?id=4",
   },
   {
     name: "Project 5",
@@ -111,7 +111,7 @@ let information = [
       "./content-projects/project5/photo1.jpg",
       "./content-projects/project5/photo2.jpg",
     ],
-    page_link: "/project.html?5",
+    page_link: "project.html?id=5",
   },
   {
     name: "Project 6",
@@ -132,7 +132,7 @@ let information = [
       "./content-projects/project6/photo1.jpg",
       "./content-projects/project6/photo2.jpg",
     ],
-    page_link: "/project.html?6",
+    page_link: "project.html?id=6",
   },
   {
     name: "Project 7",
@@ -153,7 +153,7 @@ let information = [
       "./content-projects/project7/photo1.jpg",
       "./content-projects/project7/photo2.jpg",
     ],
-    page_link: "/project.html?7",
+    page_link: "project.html?id=7",
   },
   {
     name: "Project 8",
@@ -174,7 +174,7 @@ let information = [
       "./content-projects/project8/photo1.jpg",
       "./content-projects/project8/photo2.jpg",
     ],
-    page_link: "/project.html?8",
+    page_link: "project.html?id=8",
   },
   {
     name: "Project 9",
@@ -195,7 +195,7 @@ let information = [
       "./content-projects/project9/photo1.jpg",
       "./content-projects/project9/photo2.jpg",
     ],
-    page_link: "/project.html?9",
+    page_link: "project.html?id=9",
   },
 ];
 

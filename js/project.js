@@ -1,4 +1,14 @@
-const back = document.querySelector(".background");
+let wrapper_height;
+function allImagesLoaded() {
+  console.log("ALL IMAGES LOADED");
+  document.getElementsByClassName("loader")[0].style.display = "none";
+  wrapper_height = document
+    .getElementsByClassName("wrapper")[0]
+    .getBoundingClientRect().height;
+  console.log(wrapper_height);
+}
+
+
 
 const scrollFullPage = () => {
   window.scrollTo(0, back.offsetHeight);
@@ -29,7 +39,7 @@ for (var p = 0; p < info.teams.length; p++) {
   document.getElementsByClassName("teams")[0].appendChild(div);
 }
 
-document.getElementsByClassName("date").innerHTML = info.date;
+document.getElementsByClassName("date")[0].innerHTML = info.date;
 document.getElementsByClassName("main-photo")[0].src = info.main_photo_link;
 document.getElementsByClassName("long-1")[0].src = info.long_photos_link[0];
 document.getElementsByClassName("photo")[0].src = info.photos_link[0];
@@ -37,9 +47,6 @@ document.getElementsByClassName("photo")[1].src = info.photos_link[1];
 document.getElementsByClassName("long-2")[0].src = info.long_photos_link[1];
 document.getElementsByClassName("long-3")[0].src = info.long_photos_link[2];
 
-let wrapper_height = document
-  .getElementsByClassName("wrapper")[0]
-  .getBoundingClientRect().height;
 let scroll_indicator_height = document.getElementsByClassName(
   "scroll-indicator"
 )[0].offsetHeight;
@@ -48,8 +55,11 @@ let white_line = document.getElementsByClassName("white-line")[0];
 let grey_line = document.getElementsByClassName("grey-line")[0];
 console.log(wrapper_height - back.offsetHeight);
 window.onscroll = () => {
-  if (wrapper_height == undefined || scroll_indicator_height == undefined)
+  if (wrapper_height == undefined || scroll_indicator_height == undefined) {
+    console.log("no wrapper");
     return;
+  }
+
   let percentage = window.pageYOffset / (wrapper_height - back.offsetHeight);
   if (percentage > 1) {
     white_line.style.height = `${scroll_indicator_height}px`;
