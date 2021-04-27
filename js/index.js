@@ -30,59 +30,59 @@ for (let i = 0; i < pages.length; ++i) {
 
 let dots = document.getElementsByClassName("dot");
 //generic function for scrolling the section starts here---------------
-const scrollSection = (distance, pageNo) => {
-  console.log("scrollSection");
-  //console.log(scrollDebounce)
-  if ((pageNo && distance === null) || (pageNo === 0 && distance === null)) {
-    const factor = pageNo;
-    currentPage = pageNo;
-    // window.scrollTo({
-    //   top: fromTop * factor,
-    //   left: 0,
-    //   behavior: "smooth",
-    // });
-  }
-  // if (distance > 0 || distance === "down") {
-  //   if (pages[pages.length - 1].getBoundingClientRect().top <= 50) {
-  //     scrollDebounce = true;
-  //     return;
-  //   }
-  //   let scrollAmt = fromTop;
-  //   ++currentPage;
-  //   //    console.log(currentPage)
-  //   window.scrollBy({
-  //     top: scrollAmt,
-  //     left: 0,
-  //     behavior: "smooth",
-  //   });
-  //   selectDot(currentPage);
-  // }
-  // if (distance < 0 || distance === "up") {
-  //   if (pages[0].getBoundingClientRect().top > 0) {
-  //     scrollDebounce = true;
-  //     return;
-  //   }
+// const scrollSection = (distance, pageNo) => {
+//   console.log("scrollSection");
+//   //console.log(scrollDebounce)
+//   if ((pageNo && distance === null) || (pageNo === 0 && distance === null)) {
+//     const factor = pageNo;
+//     currentPage = pageNo;
+//     window.scrollTo({
+//       top: fromTop * factor,
+//       left: 0,
+//       behavior: "smooth",
+//     });
+//   }
+//   if (distance > 0 || distance === "down") {
+//     if (pages[pages.length - 1].getBoundingClientRect().top <= 50) {
+//       scrollDebounce = true;
+//       return;
+//     }
+//     let scrollAmt = fromTop;
+//     ++currentPage;
+//     //    console.log(currentPage)
+//     window.scrollBy({
+//       top: scrollAmt,
+//       left: 0,
+//       behavior: "smooth",
+//     });
+//     selectDot(currentPage);
+//   }
+//   if (distance < 0 || distance === "up") {
+//     if (pages[0].getBoundingClientRect().top > 0) {
+//       scrollDebounce = true;
+//       return;
+//     }
 
-  //   --currentPage;
-  //   if (currentPage < 0) currentPage = 0;
-  //   window.scrollBy({
-  //     top: -fromTop,
-  //     left: 0,
-  //     behavior: "smooth",
-  //   });
-  //   selectDot(currentPage);
-  // }
-};
+//     --currentPage;
+//     if (currentPage < 0) currentPage = 0;
+//     window.scrollBy({
+//       top: -fromTop,
+//       left: 0,
+//       behavior: "smooth",
+//     });
+//     selectDot(currentPage);
+//   }
+// };
 
-const selectDot = (pageNo) => {
-  let newDots = document.getElementsByClassName("dot");
-  for (let i = 0; i < newDots.length; ++i) {
-    if (newDots[i].classList.contains("dot-active"))
-      newDots[i].classList.remove("dot-active");
-  }
-  newDots[pageNo].classList.add("dot-active");
-  scrollSection(null, pageNo);
-};
+// const selectDot = (pageNo) => {
+//   let newDots = document.getElementsByClassName("dot");
+//   for (let i = 0; i < newDots.length; ++i) {
+//     if (newDots[i].classList.contains("dot-active"))
+//       newDots[i].classList.remove("dot-active");
+//   }
+//   newDots[pageNo].classList.add("dot-active");
+//   scrollSection(null, pageNo);
+// };
 
 let loaded = () => {
   let heading = document.getElementsByClassName("home-heading")[0];
@@ -144,7 +144,7 @@ let loaded = () => {
   }, 1400);
 };
 
-selectDot(currentPage);
+// selectDot(currentPage);
 
 //generic function for scrolling the section ends here---------------
 
@@ -170,17 +170,17 @@ function throttle(callback, limit) {
 //   throttle(() => scrollSection(e.deltaY), 500)()
 // );
 
-window.addEventListener("wheel", throttle(scrollSection, 500), false);
+// window.addEventListener("wheel", throttle(scrollSection, 500), false);
 
-//Below line for arrow up and scroll scroll
-window.addEventListener("keyup", (e) => {
-  if (e.keyCode === 40) {
-    scrollSection("down");
-  }
-  if (e.keyCode === 38) {
-    scrollSection("up");
-  }
-});
+// //Below line for arrow up and scroll scroll
+// window.addEventListener("keyup", (e) => {
+//   if (e.keyCode === 40) {
+//     scrollSection("down");
+//   }
+//   if (e.keyCode === 38) {
+//     scrollSection("up");
+//   }
+// });
 
 let initialX,
   initialY,
@@ -194,47 +194,47 @@ let initialX,
   startTime;
 
 //Code for registering touchswipe starts here-----------
-window.addEventListener(
-  "touchstart",
-  (e) => {
-    var screen = e.changedTouches[0];
-    swipeDir = "none";
-    (dispX = 0), (dispY = 0);
-    initialX = screen.pageX;
-    initialY = screen.pageY;
-    startTime = new Date().getTime();
-    e.preventDefault();
-  },
-  { passive: false }
-);
+// window.addEventListener(
+//   "touchstart",
+//   (e) => {
+//     var screen = e.changedTouches[0];
+//     swipeDir = "none";
+//     (dispX = 0), (dispY = 0);
+//     initialX = screen.pageX;
+//     initialY = screen.pageY;
+//     startTime = new Date().getTime();
+//     e.preventDefault();
+//   },
+//   { passive: false }
+// );
 
-window.addEventListener(
-  "touchmove",
-  (e) => {
-    e.preventDefault();
-  },
-  false
-);
+// window.addEventListener(
+//   "touchmove",
+//   (e) => {
+//     e.preventDefault();
+//   },
+//   false
+// );
 
-window.addEventListener(
-  "touchend",
-  (e) => {
-    var screen = e.changedTouches[0];
-    dispX = screen.pageX - initialX;
-    dispY = screen.pageY - initialY;
-    elaspedTime = new Date().getTime() - startTime;
-    if (elaspedTime <= allowdTime) {
-      if (Math.abs(dispX) >= threshold && Math.abs(dispY) <= restraint) {
-        swipeDir = dispX < 0 ? "left" : "right";
-      } else if (Math.abs(dispY) >= threshold && Math.abs(dispX) <= restraint) {
-        swipeDir = dispY < 0 ? "down" : "up";
-      }
-    }
-    e.preventDefault();
-    scrollSection(swipeDir);
-  },
-  false
-);
+// window.addEventListener(
+//   "touchend",
+//   (e) => {
+//     var screen = e.changedTouches[0];
+//     dispX = screen.pageX - initialX;
+//     dispY = screen.pageY - initialY;
+//     elaspedTime = new Date().getTime() - startTime;
+//     if (elaspedTime <= allowdTime) {
+//       if (Math.abs(dispX) >= threshold && Math.abs(dispY) <= restraint) {
+//         swipeDir = dispX < 0 ? "left" : "right";
+//       } else if (Math.abs(dispY) >= threshold && Math.abs(dispX) <= restraint) {
+//         swipeDir = dispY < 0 ? "down" : "up";
+//       }
+//     }
+//     e.preventDefault();
+//     scrollSection(swipeDir);
+//   },
+//   false
+// );
 
 //Code for registering touchswipe ends here-----------
 
@@ -401,13 +401,16 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-document.getElementById("blog-wrapper").addEventListener("mouseover",function(){
-    document.getElementById("blogDragDiv").style.display =  "flex";
-    
-})
-document.getElementById("blog-wrapper").addEventListener("mouseout",function(){
-  document.getElementById("blogDragDiv").style.display =  "none";
-})
+document
+  .getElementById("blog-wrapper")
+  .addEventListener("mouseover", function () {
+    document.getElementById("blogDragDiv").style.display = "flex";
+  });
+document
+  .getElementById("blog-wrapper")
+  .addEventListener("mouseout", function () {
+    document.getElementById("blogDragDiv").style.display = "none";
+  });
 
 var timeout;
 
