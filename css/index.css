@@ -130,26 +130,6 @@ body::-webkit-scrollbar {
     margin-bottom:4vh;
 } */
 
-.ml6 {
-  position: relative;
-  font-weight: 900;
-  font-size: 3.3em;
-}
-
-.ml6 .text-wrapper {
-  position: relative;
-  display: inline-block;
-  padding-top: 0.2em;
-  padding-right: 0.05em;
-  padding-bottom: 0.1em;
-  overflow: hidden;
-}
-
-.ml6 .letters {
-  display: inline-block;
-  line-height: 1em;
-  font: normal normal 600 40px/60px Poppins;
-}
 .about-background-container {
   display: flex;
   width: max-content;
@@ -645,14 +625,29 @@ input:focus {
   margin-left: 5%;
   border: 1px white solid;
   border-radius: 50%;
-  transition: 0.1s;
+  transition: 0.4s;
 }
 
 .projectArrow:hover {
   /* transform: scale(1.1); */
   border: 1px transparent solid;
-  transform: translateX(10px);
+  transform: translateX(20px) scale(1.5);
 }
+
+/* .animate {
+  animation: animate .3s ease-in-out forwards;
+}
+
+@keyframes animate {
+  from {
+    background-color: cornflowerblue;
+    border-radius: 0;
+  }
+  to {
+    background-color: green;
+    border-radius: 100px;
+  }
+} */
 
 @media all and (max-width: 600px) {
   .ham {
