@@ -651,7 +651,7 @@ input:focus {
 
 @media all and (max-width: 600px) {
   .ham {
-    width: 20%;
+    width: 15%;
     position: relative;
     left: 7vw;
   }
@@ -705,9 +705,15 @@ input:focus {
   .section-nav {
     display: none;
   }
+  #about {
+    min-height: 100vh;
+    height: fit-content;
+    margin-bottom: 10vh;
+    padding: 20px;
+  }
   #about-wrapper {
     margin-top: 1vh;
-    height: calc(94vh - 24px);
+    height: calc(100vh - 24px);
   }
   .about-background-container {
     top: calc(120px + 125vh);
@@ -761,6 +767,83 @@ input:focus {
     height: 8vw;
     width: 8vw;
     margin-right: 4vw;
+  }
+  .projects-page {
+    padding: 20px;
+    height: max-content;
+  }
+  .section-heading {
+    font-size: 24px !important;
+    line-height: 122px;
+    font-weight: medium;
+    letter-spacing: 0px;
+    text-transform: uppercase;
+  }
+  .show-all {
+    width: max-content;
+    left: 60vw;
+    opacity: 0.5;
+  }
+  .show-all-text {
+    font: normal normal medium 12px/18px Poppins;
+    letter-spacing: 0px;
+    color: #ffffff;
+    transform: translateX(18px);
+    white-space: nowrap;
+  }
+  .show-all-circle {
+    border: solid 1px white;
+  }
+  .project {
+    width: auto;
+    padding: 0 20px;
+    height: max-content;
+  }
+  .project-heading {
+    font-size: 32px;
+    line-height: 94px;
+    text-align: left;
+  }
+  .project-info {
+    flex-direction: column;
+    height: max-content;
+  }
+  .projectsFirstContainer {
+    padding-left: 0;
+    height: max-content;
+    margin-left: -40px;
+  }
+  .projectsSecondContainer {
+    margin-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    height: max-content;
+  }
+  .projectsSecondTextContainer {
+    padding-top: 4vh;
+  }
+  .projectsSecondContainer img {
+    margin-top: 7vh;
+    margin-left: 10vw;
+    margin-right: -40px;
+  }
+  .infoHead1,
+  .infoHead2 {
+    font: normal normal 600 13px/20px Poppins;
+  }
+  .infoHead1 p,
+  .infoHead2 p {
+    font: normal normal 100 13px/20px Poppins;
+  }
+  .projectArrow {
+    border: 0.5px solid rgba(255, 255, 255, 0.4);
+    height: 20px;
+    width: 20px;
+    margin-left: 4vw;
+  }
+  .project-view-more {
+    font-weight: normal;
+    font-size: 15px;
   }
 }
 

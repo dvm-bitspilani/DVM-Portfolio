@@ -1,7 +1,8 @@
 let isOpened = false;
 const hamLine = document.getElementsByClassName("ham-line");
-
+console.log("Hi");
 const openCloseNav = () => {
+  console.log("hello");
   let navContainer = document.getElementById("navContainer");
   let smallLinksHeader = document.getElementsByClassName("smallLinksHeader")[0];
   let smallLinks = document.getElementsByClassName("smallLinks");
@@ -30,7 +31,7 @@ const openCloseNav = () => {
     }, 500);
     setTimeout(() => {
       navContainer.style.display = "none";
-    }, 501)
+    }, 501);
     isOpened = false;
     hamLine[1].style.left = "";
     hamLine[1].style.marginTop = "";
@@ -41,7 +42,7 @@ const openCloseNav = () => {
     setTimeout(() => {
       navContainer.style.transition = "all 0.5s ease-out";
       navContainer.style.transform = "translateX(0vw)";
-    }, 1)
+    }, 1);
     setTimeout(() => {
       smallLinksHeader.style.opacity = "1";
       smallLinksHeader.style.transition = "all 0.5s ease-out";
