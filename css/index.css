@@ -8,8 +8,11 @@
 
 body {
   overflow-x: hidden;
-  
+
   margin: 0;
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 
 .wrapper {
@@ -82,7 +85,7 @@ body {
   font-family: "Gilroy";
   font-weight: 900;
 }
-.section-end-heading{
+.section-end-heading {
   position: absolute;
   letter-spacing: 3px;
   right: 10vw;
@@ -93,11 +96,11 @@ body {
   font-weight: 900;
   color: white;
 }
-.section-end-heading::after{
+.section-end-heading::after {
   position: absolute;
   margin-top: 4vh;
   margin-left: -11vw;
-  content: '';
+  content: "";
   height: 2px;
   width: 5vw;
   background: white;
@@ -118,7 +121,9 @@ body {
 }
 #about-wrapper {
   position: relative;
+  margin: 5vh 0 5vh 0;
 }
+
 /* .about-heading{
     font: normal normal 600 40px/60px Poppins;
     letter-spacing: 0px;
@@ -140,13 +145,28 @@ body {
   overflow: hidden;
 }
 
-.ml6 .letter {
+.ml6 .letters {
   display: inline-block;
   line-height: 1em;
+  font: normal normal 600 40px/60px Poppins;
 }
-
-.ml6 .letters {
-  opacity: 0;
+.about-background-container {
+  display: flex;
+  width: max-content;
+  flex-direction: row;
+  overflow-x: hidden;
+  transform: translateX(-500px);
+  position: absolute;
+  top: calc(100px + 125vh);
+  height: max-content;
+}
+.about-background {
+  font: normal normal bold 201px/122px Poppins;
+  letter-spacing: 30.15px;
+  color: #ffffff;
+  opacity: 0.05;
+  margin: 0 100px;
+  padding: 20px 0;
 }
 .backContentWrapper {
   width: 100vw;
@@ -171,7 +191,6 @@ body {
   text-align: left;
   margin-right: 25vw;
   font: normal normal normal 16px/25px Poppins;
-  opacity: 0;
 }
 
 .about-picture {
@@ -180,7 +199,6 @@ body {
   background-color: #2c2c2c;
   border-radius: 2px;
   margin-top: 100px;
-  transform: translateX(600px);
 }
 .frontContent {
   width: 50vw;
@@ -207,7 +225,6 @@ body {
   height: auto;
   display: flex;
   margin-top: 4vh;
-  transform: translateX(-1500px);
 }
 .icon {
   margin-right: 2vw;
@@ -329,12 +346,12 @@ input:focus {
   height: 100vh;
 }
 .scrolling-wrapper {
-    height: 70vh;
-    width: 80vw;
-	  overflow-x: scroll;
-    cursor: pointer;
-    transition: all 0.2s;
-    transform: scale(0.98);
+  height: 70vh;
+  width: 80vw;
+  overflow-x: scroll;
+  cursor: pointer;
+  transition: all 0.2s;
+  transform: scale(0.98);
 }
 
 .scrolling-wrapper .card {
@@ -342,20 +359,19 @@ input:focus {
 }
 
 .card {
-    margin-top: 5vh;
-    margin-left: 2.5vw;
-	width: 40vw;
-    height: 50vh;
-    cursor: none;
-    transition: all 0.2s;
-    transform: scale(0.98);
+  margin-top: 5vh;
+  margin-left: 2.5vw;
+  width: 40vw;
+  height: 50vh;
+  cursor: none;
+  transition: all 0.2s;
+  transform: scale(0.98);
 }
 
-.card.active{
-    cursor: none;
-    transform: scale(0.8);
+.card.active {
+  cursor: none;
+  transform: scale(0.8);
 }
-
 
 .card:first-child {
   margin-left: 0vw;
@@ -511,26 +527,55 @@ input:focus {
   background: #018786;
   white-space: normal;
 }
-.show-all-projects {
+.show-all {
   position: relative;
   display: flex;
   right: 10vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 10vw;
   left: 80vw;
   word-wrap: none;
   font-size: 16px;
   font-family: "Gilroy";
+  cursor: pointer;
+}
+.show-all-text {
+  font: normal normal medium 16px/25px Poppins;
+  letter-spacing: 0px;
+  color: #ffffff;
+  transform: translateX(15px);
+}
+.show-all-arrow {
+  width: 40px;
+  height: 28px;
+  transform: translateX(23px);
+  transition: 0.5s ease-in-out;
+}
+.show-all-circle {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  border: solid 2px white;
+}
+.show-all:hover .show-all-arrow {
+  transform: translateX(50px);
+}
+.projects-page .section-heading {
+  font: normal normal 600 40px/60px Poppins;
+  letter-spacing: 0px;
+  color: #ffffff;
 }
 .project-heading {
-  font: italic normal 600 60px/129px Gilroy;
-  letter-spacing: 6.72px;
+  font: normal normal 400 60px/129px Gilroy;
+
   color: #ffffff;
   width: 100%;
   text-align: center;
 }
 .project-info {
   display: flex;
-  justify-content: space-evenly;
   width: auto;
   height: 70vh;
   padding-bottom: 2vh;
@@ -538,19 +583,20 @@ input:focus {
 .projectsFirstContainer {
   display: flex;
   overflow: hidden;
-  padding-left: 8%;
+  padding-left: 10vw;
   font-family: Poppins, Gilroy;
   justify-content: flex-start;
   height: 70vh;
 }
-
+.projects-page h4,
+.projects-page p {
+  margin: 0;
+}
+.projects-page h4 {
+  font: normal normal 600 1.2em Poppins;
+}
 .projectsFirstContainer img {
   height: 50vh;
-}
-
-.infoHead1,
-.infoHead2 {
-  opacity: 0;
 }
 
 .project-view-more {
@@ -558,10 +604,9 @@ input:focus {
   align-items: center;
   text-decoration: none;
   color: white;
-  margin-top: 9%;
+  margin-top: 2vh;
   font-weight: bold;
-  font-size: 1.2em;
-  opacity: 0;
+  font-size: 1em;
 }
 
 .project {
@@ -571,29 +616,23 @@ input:focus {
   width: 100vw;
 }
 
-.mobile1,
-.mobile2,
-.mobile3,
-.mobile4 {
-  opacity: 0;
-}
-
 .projectsSecondContainer {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin-left: 5%;
+  margin-left: 10vw;
   padding-bottom: 5%;
   height: 70vh;
+  padding-right: 10vw;
   font-family: Poppins, Gilroy;
 }
 
 .projectsSecondContainer img {
-  margin-top: 4%;
-  height: 30vh;
+  margin-top: 7vh;
+  margin-left: 10vw;
 }
 .projectsSecondTextContainer {
-  padding-top: 1%;
+  padding-top: 10vh;
 }
 
 .projectArrow {
@@ -610,10 +649,12 @@ input:focus {
 }
 
 .projectArrow:hover {
-  transform: scale(1.1);
+  /* transform: scale(1.1); */
+  border: 1px transparent solid;
+  transform: translateX(10px);
 }
 
-@media all and (max-width: 500px) {
+@media all and (max-width: 600px) {
   .ham {
     width: 20%;
     position: relative;
@@ -629,7 +670,7 @@ input:focus {
   .section-heading {
     left: 0;
   }
-  .section-end-heading{
+  .section-end-heading {
     right: 0;
   }
   .achievements {
@@ -668,6 +709,63 @@ input:focus {
   }
   .section-nav {
     display: none;
+  }
+  #about-wrapper {
+    margin-top: 1vh;
+    height: calc(94vh - 24px);
+  }
+  .about-background-container {
+    top: calc(120px + 125vh);
+  }
+  .about-background {
+    opacity: 0.09;
+    font: normal normal bold 100px/122px Poppins;
+    letter-spacing: 15px;
+  }
+  .backContentWrapper {
+    margin: 10px 2vw;
+    width: auto;
+  }
+  .backContent {
+    width: 100%;
+  }
+  .ml6 {
+    margin: 0;
+  }
+  .ml6 .text-wrapper {
+    padding-top: 0;
+  }
+  .ml6 .letters {
+    font: normal normal 600 24px/35px Poppins;
+  }
+  .frontContent {
+    width: auto;
+    top: 35vh;
+    padding: 0 2vw;
+  }
+  .about-picture {
+    top: 30vh;
+    position: absolute;
+    right: 4vw;
+    width: 40vw;
+    height: 40vw;
+  }
+  .about-info-1,
+  .about-info-2 {
+    width: 100%;
+    height: auto;
+    max-height: 40vh;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .about-icons {
+    margin-top: 2vh;
+    width: auto;
+  }
+  .icon {
+    height: 8vw;
+    width: 8vw;
+    margin-right: 4vw;
   }
 }
 

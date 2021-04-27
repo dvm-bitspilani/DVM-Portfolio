@@ -7,10 +7,24 @@
     <link rel="stylesheet" href="css/project.css" />
     <link rel="stylesheet" href="css/nav.css" />
     <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/loader.css" />
     <link rel="icon" href="assets/img/1x/Asset 5.png" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
   </head>
   <body>
+    <div class="loader">
+      <div class="sk-cube-grid">
+        <div class="sk-cube sk-cube1"></div>
+        <div class="sk-cube sk-cube2"></div>
+        <div class="sk-cube sk-cube3"></div>
+        <div class="sk-cube sk-cube4"></div>
+        <div class="sk-cube sk-cube5"></div>
+        <div class="sk-cube sk-cube6"></div>
+        <div class="sk-cube sk-cube7"></div>
+        <div class="sk-cube sk-cube8"></div>
+        <div class="sk-cube sk-cube9"></div>
+      </div>
+    </div>
     <nav class="navbar">
       <!-- <div class="brand">
         DVM
@@ -72,8 +86,8 @@
       </div>
     </div>
     <div class="scroll-indicator">
-        <div class="white-line"></div>
-        <div class="grey-line"></div>
+      <div class="white-line"></div>
+      <div class="grey-line"></div>
     </div>
     <div class="wrapper">
       <div class="hero">
@@ -113,7 +127,7 @@
         </div>
       </div>
       <div style="background-color: black">
-        <img class="photo" src="./content-projects/project2/photo1.jpg" />
+        <img class="photo" />
       </div>
       <div class="teams-and-date">
         <div class="teams-container">
@@ -127,26 +141,28 @@
       </div>
       <div class="photos-container">
         <div>
-          <img class="main-photo" src="./content-projects/project2/main.png" />
+          <img class="main-photo" />
         </div>
         <div>
-          <img class="long-1" src="./content-projects/project2/long1.jpg" />
+          <img class="long-1" />
         </div>
         <div>
-          <img class="photo" src="./content-projects/project2/photo1.jpg" />
+          <img class="photo" />
         </div>
         <div class="long-photos-container">
           <div>
-            <img class="long-2" src="./content-projects/project2/long3.jpg" />
+            <img class="long-2" />
           </div>
           <div>
-            <img class="long-3" src="./content-projects/project2/long3.jpg" />
+            <img class="long-3" />
           </div>
         </div>
       </div>
     </div>
   </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="js/navbar.js"></script>
   <script src="js/information.js"></script>
   <script src="js/project.js"></script>
+  <script src="js/imageLoaded.js"></script>
 </html>

@@ -1,4 +1,8 @@
 // Array containing the content
+function allImagesLoaded() {
+  console.log("ALL IMAGES LOADED");
+  document.getElementsByClassName("loader")[0].style.display = "none";
+}
 
 let main_arr = [[], [], [], [], []];
 function get_info() {
@@ -174,6 +178,7 @@ function team_projects(input) {
         background +
         "; background-position: center; background - repeat: no - repeat; background - size: cover; "
     );
+    div.setAttribute("onclick", `location.href='${main_arr[input][i].url}'`);
     document.getElementsByClassName("projects")[0].appendChild(div);
 
     var name_div = document.createElement("div");
