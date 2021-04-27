@@ -132,6 +132,39 @@ body::-webkit-scrollbar {
   display: flex;
   padding: 10vh 0;
 }
+.show-all {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  word-wrap: none;
+  font-size: 16px;
+  font-family: "Gilroy";
+  cursor: pointer;
+}
+.show-all-text {
+  font: normal normal medium 16px/25px Poppins;
+  letter-spacing: 0px;
+  color: #ffffff;
+  /* transform: translateX(15px); */
+  font-family: Poppins;
+  margin-right: 10px;
+}
+.show-all-arrow {
+  width: 30px;
+  height: 25px;
+
+  transition: 0.5s ease-in-out;
+}
+.show-all-circle {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: solid 2px white;
+  transform: translateX(-18px);
+}
+.show-all:hover .show-all-arrow {
+  transform: translateX(34px);
+}
 .left-project-about {
   display: flex;
   justify-content: center;
@@ -157,6 +190,10 @@ body::-webkit-scrollbar {
   font: normal normal normal 0.9em Poppins;
   letter-spacing: 0px;
   color: #a6a6a6;
+}
+.website-launch {
+  display: flex;
+  margin-top: 10vh;
 }
 
 .photo {
