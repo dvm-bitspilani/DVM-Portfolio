@@ -181,6 +181,7 @@ body::-webkit-scrollbar {
   height: auto;
   display: flex;
   flex-direction: column;
+  z-index: 1;
 }
 .about-info-1,
 .about-info-2 {
