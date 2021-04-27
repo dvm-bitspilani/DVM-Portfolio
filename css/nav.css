@@ -4,9 +4,12 @@ nav {
   align-items: center;
   z-index: 117;
   padding: 0 2% 0 3%;
-  margin: 1% 0;
+  /* margin: 1% 0; */
+  backdrop-filter: blur(10px);
+  background-color: rgb(0, 0, 0, 0.5);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 4%), 0 4px 6px -2px rgb(0 0 0 / 2%);
   box-sizing: border-box;
-  position: absolute;
+  position: fixed;
   width: 100%;
 }
 nav > div {
@@ -24,6 +27,7 @@ nav > div {
 .brand {
   font-weight: 900;
   /* font-size: 3.5em; */
+  margin: 2vh 0 1vh 0;
 }
 
 .brand .letter {
@@ -67,14 +71,14 @@ nav > div {
 
 .ham-line {
   width: 50%;
-  height: 3px;
+  height: 4px;
   background-color: white;
   margin: 4px 0;
   transition: 0.3s;
 }
 .ham-line:nth-of-type(2) {
   position: relative;
-  left: -10%;
+  left: -5%;
 }
 
 #navContainer {
@@ -83,7 +87,9 @@ nav > div {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  position: absolute;
+  position: fixed;
+  top: 0;
+  left: 0;
   color: white;
   display: none;
   align-items: center;

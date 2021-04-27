@@ -1,14 +1,13 @@
 let wrapper_height;
-function allImagesLoaded() {
-  console.log("ALL IMAGES LOADED");
-  document.getElementsByClassName("loader")[0].style.display = "none";
-  wrapper_height = document
-    .getElementsByClassName("wrapper")[0]
-    .getBoundingClientRect().height;
-  console.log(wrapper_height);
-}
+// function allImagesLoaded() {
+console.log("ALL IMAGES LOADED");
+document.getElementsByClassName("loader")[0].style.display = "none";
+wrapper_height = document
+  .getElementsByClassName("wrapper")[0]
+  .getBoundingClientRect().height;
+console.log(wrapper_height);
 
-
+let back = document.getElementsByClassName("background")[0];
 
 const scrollFullPage = () => {
   window.scrollTo(0, back.offsetHeight);
