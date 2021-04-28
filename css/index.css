@@ -225,6 +225,8 @@ body::-webkit-scrollbar {
   border-radius: 50%;
   content: "";
   background-color: white;
+  opacity: 0;
+  transform: translateX(100px);
 }
 .our-achievements {
   margin-top: 20vh;
@@ -559,13 +561,28 @@ input:focus {
   letter-spacing: 0px;
   color: #ffffff;
 }
-.project-heading {
+.project-heading1,
+.project-heading2 {
   font: normal normal 400 60px/129px Gilroy;
-
   color: #ffffff;
   width: 100%;
   text-align: center;
+  opacity: 0;
+  transform: scale(1.5);
 }
+
+.mobile11,
+.mobile21{
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+.mobile12,
+.mobile22{
+  opacity: 0;
+  transform: translateX(100px);
+}
+
 .project-info {
   display: flex;
   width: auto;
@@ -620,11 +637,14 @@ input:focus {
 }
 
 .projectsSecondContainer img {
-  margin-top: 7vh;
-  margin-left: 10vw;
+  padding-top: 7vh;
+  padding-left: 10vw;
 }
-.projectsSecondTextContainer {
+.projectsSecondTextContainer1,
+.projectsSecondTextContainer2 {
   padding-top: 10vh;
+  opacity: 0;
+  transform: translateY(100px);
 }
 
 .projectArrow {
@@ -811,7 +831,8 @@ input:focus {
     padding: 0 20px;
     height: max-content;
   }
-  .project-heading {
+  .project-heading1,
+  .project-heading2 {
     font-size: 32px;
     line-height: 94px;
     text-align: left;
@@ -831,7 +852,8 @@ input:focus {
     padding-bottom: 0;
     height: max-content;
   }
-  .projectsSecondTextContainer {
+  .projectsSecondTextContainer1,
+  .projectsSecondTextContainer2 {
     padding-top: 4vh;
   }
   .projectsSecondContainer img {
