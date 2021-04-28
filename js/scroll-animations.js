@@ -2,12 +2,12 @@
 
 var done = [false, false, false, false, false]
 
-function inView(element, elementHeight) {
+function inView(element, elementHeight, val) {
     var windowHeight = window.innerHeight;
     var scrollY = window.scrollY || window.pageYOffset;
     var scrollPosition = scrollY + windowHeight;
     var elementPosition = element.getBoundingClientRect().top + scrollY + elementHeight;
-    if (scrollPosition > elementPosition) {
+    if (scrollPosition > elementPosition + val) {
         return true;
     }
     return false;
@@ -17,7 +17,7 @@ function heading_animation(s) {
     this_done = parseInt(s[2])-1;
     var element = document.getElementsByClassName(s)[0];
     var elementHeight = element.clientHeight;
-    if (inView(element, elementHeight) && !done[this_done]) {
+    if (inView(element, elementHeight, 0) && !done[this_done]) {
         done[this_done] = true
         console.log("hello")
         setTimeout(() => {
@@ -57,12 +57,35 @@ function heading_animation(s) {
     }
 }
 
+function left_enter_animation(name){
+    var element = document.getElementsByClassName(`${name}`)[0];
+    var elementHeight = element.clientHeight;
+    if (inView(element, elementHeight, 0)) {
+        element.classList.add('left_animate');
+        element.style.opacity = 1;
+        element.style.transform = 'translateX(0)';
+    }
+}
+
+function right_enter_animation(name){
+    var element = document.getElementsByClassName(`${name}`)[0];
+    var elementHeight = element.clientHeight;
+    if (inView(element, elementHeight, 0)) {
+        element.classList.add('right_animate');
+        element.style.opacity = 1;
+        element.style.transform = 'translateX(0)';
+    }
+}
+
 function animate() {
     heading_animation('ml11')
     heading_animation('ml22')
     heading_animation('ml33')
     heading_animation('ml44')
     heading_animation('ml55')
+    left_enter_animation('about-picture');
+    right_enter_animation('about-info-1');
+    left_enter_animation('about-info-2');
 }
 
 document.addEventListener('scroll', animate);
