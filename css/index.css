@@ -8,7 +8,7 @@
 
 body {
   overflow-x: hidden;
-
+  background-color: black;
   margin: 0;
 }
 body::-webkit-scrollbar {
@@ -95,6 +95,8 @@ body::-webkit-scrollbar {
   font-family: "Gilroy";
   font-weight: 900;
   color: white;
+  transform: translateX(100px);
+  opacity: 0;
 }
 .section-end-heading::after {
   position: absolute;
@@ -291,9 +293,12 @@ body::-webkit-scrollbar {
 
 .form-wrapper {
   height: 50%;
-  margin-top: 5vh;
+  margin-top: 15vh;
+  margin-bottom: 20vh;
   display: flex;
   justify-content: space-around;
+  transform: translateY(100px);
+  opacity: 0;
 }
 
 .form-element {
@@ -359,7 +364,8 @@ input:focus {
   height: 50vh;
   cursor: none;
   transition: all 0.2s;
-  transform: scale(0.98);
+  transform: scale(0.98) translateY(100px);
+  opacity: 0;
 }
 
 .card.active {
@@ -442,6 +448,8 @@ input:focus {
   top: 20vh;
   height: 50%;
   width: 100%;
+  transform: translateY(100px);
+  opacity: 0;
 }
 
 .arrows {

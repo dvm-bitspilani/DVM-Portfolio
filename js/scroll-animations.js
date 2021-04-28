@@ -122,6 +122,37 @@ function left_enter_animate_icons(name, val) {
     }
 }
 
+function bottom_enter_animate_cards(name, val) {
+    var element = document.getElementsByClassName(`${name}`);
+    var elementHeight = element[0].clientHeight;
+    if (inView(element[0], elementHeight, val)) {
+        element[0].classList.add('bottom_animate');
+        element[0].style.opacity = 1;
+        element[0].style.transform = 'translateY(0)';
+        setTimeout(() => {
+            element[1].classList.add('bottom_animate');
+            element[1].style.opacity = 1;
+            element[1].style.transform = 'translateY(0)';
+        }, 100)
+        setTimeout(() => {
+            element[2].classList.add('bottom_animate');
+            element[2].style.opacity = 1;
+            element[2].style.transform = 'translateY(0)';
+        }, 200)
+        setTimeout(() => {
+            element[3].classList.add('bottom_animate');
+            element[3].style.opacity = 1;
+            element[3].style.transform = 'translateY(0)';
+        }, 300)
+        setTimeout(() => {
+            element[4].classList.add('bottom_animate');
+            element[4].style.opacity = 1;
+            element[4].style.transform = 'translateY(0)';
+        }, 400)
+    }
+}
+
+
 function animate() {
     heading_animation('ml11', 0)
     heading_animation('ml22', 0)
@@ -134,12 +165,16 @@ function animate() {
     left_enter_animate_icons('icon', 0)
     scale_enter_animation('project-heading1', 0)
     scale_enter_animation('project-heading2', 0)
-    right_enter_animation('mobile11', 0)
-    right_enter_animation('mobile21', 0)
+    right_enter_animation('mobile11', -100)
+    right_enter_animation('mobile21', -100)
     left_enter_animation('mobile12', -200)
     left_enter_animation('mobile22', -200)
     bottom_enter_animation('projectsSecondTextContainer1', 0)
     bottom_enter_animation('projectsSecondTextContainer2', 0)
+    bottom_enter_animate_cards('card', 0);
+    left_enter_animation('section-end-heading', 0)
+    bottom_enter_animation('artwork-container', -200)
+    bottom_enter_animation('form-wrapper', 100)
 }
 
 document.addEventListener('scroll', animate);
