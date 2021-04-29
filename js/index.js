@@ -142,8 +142,10 @@ const selectDot = (pageNo) => {
   for (let i = 0; i < newDots.length; ++i) {
     if (newDots[i].classList.contains("dot-active"))
       newDots[i].classList.remove("dot-active");
+      newDots[i].classList.add("enlarge");
   }
   newDots[pageNo].classList.add("dot-active");
+  newDots[pageNo].classList.remove("enlarge");
   activeDot = pageNo;
 };
 

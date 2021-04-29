@@ -51,10 +51,15 @@ body::-webkit-scrollbar {
 
 .section-nav {
   right: 0vw;
-  top: 15vh;
+  top: 20vh;
   z-index: 5;
   position: fixed;
   transform: translateX(150px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 60vh;
 }
 
 .dot {
@@ -64,7 +69,6 @@ body::-webkit-scrollbar {
   border: 1px solid white;
   opacity: 1;
   border-radius: 50%;
-  margin-top: 7vh;
   transition: 0.5s ease;
   cursor: pointer;
 }
@@ -75,6 +79,18 @@ body::-webkit-scrollbar {
   border: 3px solid white;
   border-radius: 4px;
 }
+
+.enlarge{
+  transition: 0.1s ease;
+}
+
+.enlarge:hover{
+  width: 10px;
+  height: 10px;
+  background: black;
+  border: 3px solid white;
+}
+
 .section-heading {
   position: relative;
   letter-spacing: 3px;
