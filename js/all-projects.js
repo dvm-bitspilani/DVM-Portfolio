@@ -165,7 +165,17 @@ function team_projects(input) {
   document.getElementsByClassName("projects")[0].innerHTML = "";
   var no_of_projects = main_arr[input].length;
   number_of_projects = no_of_projects;
-  var total_width = 64 * no_of_projects;
+  var total_width, margin, single_width;
+  if (window_width > 600) {
+    total_width = 60 * no_of_projects;
+    margin = 10;
+    single_width = 40;
+  } else {
+    console.log("mobile");
+    total_width = 80 * no_of_projects;
+    margin = 7.5;
+    single_width = 65;
+  }
 
   document.getElementsByClassName("projects")[0].style.width =
     total_width + "vw";
@@ -192,8 +202,13 @@ function team_projects(input) {
   clearTimeout(timer_scroll);
 
   setTimeout(function () {
+    // scroll_dist =
+    //   document.querySelector(".projects").offsetWidth - window.innerWidth;
     scroll_dist =
-      document.querySelector(".projects").offsetWidth - window.innerWidth;
+      (((number_of_projects - 1) * (2 * margin + single_width)) / 100) *
+      innerWidth;
+    console.log(number_of_projects);
+    console.log((number_of_projects - 1) * (2 * margin + single_width));
     console.log(scroll_dist);
     inner.scrollLeft = 0;
     ele.style.left = `${left_limit}px`;
@@ -326,37 +341,37 @@ function left_right(input) {
     if (Number.isInteger(temp)) {
       if (temp == 0) {
         page_number.innerHTML = `1`;
-        move(0, mulitplying_factor);
+        move("l", 0, mulitplying_factor);
       } else {
         page_number.innerHTML = `${temp}`;
-        move(temp - 1, mulitplying_factor);
+        move("l", temp - 1, mulitplying_factor);
       }
     } else {
       var floor = Math.floor(temp);
       page_number.innerHTML = `${floor - 1}`;
-      move(floor, mulitplying_factor);
+      move("l", floor, mulitplying_factor);
     }
   } else {
     var temp = distance_from_left / mulitplying_factor;
 
     if (Number.isInteger(temp)) {
       if (temp == number_of_projects - 1) {
-        move(0, mulitplying_factor);
+        move("r", 0, mulitplying_factor);
         page_number.innerHTML = "1";
         return;
       } else {
         page_number.innerHTML = `${temp + 2}`;
-        move(temp + 1, mulitplying_factor);
+        move("r", temp + 1, mulitplying_factor);
       }
     } else {
       var ceil = Math.ceil(temp);
       page_number.innerHTML = `${ceil + 1}`;
-      move(ceil, mulitplying_factor);
+      move("r", ceil, mulitplying_factor);
     }
   }
 }
 
-function move(to_position, mulitplying_factor) {
+function move(direction, to_position, mulitplying_factor) {
   ele.classList.add("left");
   ele.classList.add("active");
   slider.classList.add("active");
@@ -371,9 +386,21 @@ function move(to_position, mulitplying_factor) {
   clearInterval(timer_color);
   clearTimeout(timer_scroll);
   ele.style.left = `${left_limit + to_position * mulitplying_factor}px`;
-  inner.scrollLeft =
-    ((left_limit + to_position * mulitplying_factor) / slide_bar_scroll_dist) *
-    scroll_dist;
+  // inner.scrollLeft =
+  //   ((left_limit + to_position * mulitplying_factor) / slide_bar_scroll_dist) *
+  //   scroll_dist;
+  if (direction == "l") {
+    inner.scrollLeft =
+      inner.scrollLeft - scroll_dist / (number_of_projects - 1);
+  } else {
+    if (to_position == 0) {
+      inner.scrollLeft = 0;
+    } else {
+      inner.scrollLeft =
+        inner.scrollLeft + scroll_dist / (number_of_projects - 1);
+      console.log(scroll_dist / (number_of_projects - 1));
+    }
+  }
   white.style.width = "0%";
   console.log(to_position);
   grey.style.width = "100%";

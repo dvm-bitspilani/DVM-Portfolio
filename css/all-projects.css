@@ -8,13 +8,15 @@ body {
   flex-direction: column;
   margin: 0;
   padding: 0;
+  /* background-color: #161616; */
+  background-color: #0c0b0b;
 }
-.navbar {
+/* .navbar {
   height: 20vh;
   background-color: #161616;
   margin-top: 0;
   width: 100vw;
-}
+} */
 .backArrow {
   background-image: url(../assets/img/arrow_forward-24px.svg);
   background-position: center;
@@ -45,7 +47,7 @@ body {
   flex-direction: column;
   width: 100vw;
   height: 80vh;
-  background-color: #161616;
+
   content: "";
   position: absolute;
   overflow-y: scroll;
@@ -88,7 +90,7 @@ body {
 }
 .projects {
   height: 76vh;
-  padding: 7vh 18vw 10vh 18vw;
+  padding: 7vh 20vw 10vh 20vw;
   width: auto;
   display: flex;
   cursor: grab;
@@ -100,7 +102,7 @@ body {
   cursor: -webkit-grabbing;
 }
 .single_project {
-  margin: 0 12vw 0 12vw;
+  margin: 0 10vw 0 10vw;
   height: 46vh;
   width: 40vw;
   padding: 0;
@@ -223,4 +225,14 @@ body {
   width: 100%;
   background-color: #3c3c3c;
   transition: ease;
+}
+
+@media all and (max-width: 600px) {
+  .single_project {
+    width: 65vw;
+    margin: 0 7.5vw 0 7.5vw;
+  }
+  .projects {
+    padding: 7vh 10vw 10vh 10vw;
+  }
 }

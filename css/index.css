@@ -49,13 +49,7 @@ body::-webkit-scrollbar {
   padding: 12vh;
 }
 
-.section-nav {
-  right: 0vw;
-  top: 15vh;
-  z-index: 5;
-  position: fixed;
-  transform: translateX(150px);
-}
+
 
 .dot {
   width: 3px;
@@ -695,11 +689,7 @@ input:focus {
 } */
 
 @media all and (max-width: 600px) {
-  .ham {
-    width: 15%;
-    position: relative;
-    left: 7vw;
-  }
+  
   .inner-wrapper {
     margin: 2vh 0 2vh 0;
   }
@@ -747,9 +737,7 @@ input:focus {
   .button {
     width: 37.5vw;
   }
-  .section-nav {
-    display: none;
-  }
+ 
   #about {
     min-height: 100vh;
     height: fit-content;
