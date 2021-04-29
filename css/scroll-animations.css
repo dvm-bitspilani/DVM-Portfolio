@@ -1,0 +1,173 @@
+.ml6 {
+    position: relative;
+    font-weight: 900;
+    font-size: 3.3em;
+  }
+  
+  .ml6 .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.2em;
+    padding-right: 0.05em;
+    padding-bottom: 0.1em;
+    overflow: hidden;
+  }
+  
+  .ml6 .letters {
+    display: inline-block;
+    line-height: 1em;
+    font: normal normal 600 40px/60px Poppins;
+  }
+
+.ml9 {
+    position: relative;
+    font-weight: 200;
+    font-size: 4em;
+    color: black;
+  }
+  .ml9 .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.2em;
+    padding-right: 0.05em;
+    padding-bottom: 0.1em;
+    overflow: hidden;
+  }
+  .ml9 .letter {
+    transform-origin: 50% 100%;
+    display: inline-block;
+    font: normal normal 600 40px/60px Poppins;
+    line-height: 1em;
+  }
+
+
+
+  .ml11,
+  .ml22,
+  .ml33,
+  .ml44,
+  .ml55  {
+    font-weight: 700;
+    font-size: 3.5em;
+    color: black;
+  }
+
+  .ml11 .text-wrapper,
+  .ml22 .text-wrapper,
+  .ml33 .text-wrapper,
+  .ml44 .text-wrapper,
+  .ml55 .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.1em;
+    padding-right: 0.05em;
+    padding-bottom: 0.15em;
+  }
+
+  .ml11 .line,
+  .ml22 .line,
+  .ml33 .line,
+  .ml44 .line,
+  .ml55 .line {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 3px;
+    background-color: #fff;
+    transform-origin: 0 50%;
+    font: normal normal 600 40px/60px Poppins;
+  }
+
+  .ml11 .line1,
+  .ml22 .line1,
+  .ml33 .line1,
+  .ml44 .line1,
+  .ml55 .line1 {
+    top: 0;
+    left: 0;
+  }
+
+  .ml11 .letter,
+  .ml22 .letter,
+  .ml33 .letter,
+  .ml44 .letter,
+  .ml55 .letter {
+    display: inline-block;
+    line-height: 1em;
+    font: normal normal 600 40px/60px Poppins;
+  }
+
+  .left_animate{
+    animation-name: left_enter;
+    animation-timing-function: cubic-bezier(.25,.46,.45,.94);
+    animation-duration: 0.7s;
+    animation-iteration-count: 1;
+  }
+
+  .right_animate{
+    animation-name: right_enter;
+    animation-timing-function: cubic-bezier(.25,.46,.45,.94);
+    animation-duration: 0.7s;
+    animation-iteration-count: 1;
+  }
+
+  .bottom_animate{
+    animation-name: bottom_enter;
+    animation-timing-function: cubic-bezier(.25,.46,.45,.94);
+    animation-duration: 0.7s;
+    animation-iteration-count: 1;
+  }
+
+  .scale_animate{
+    animation-name: scale_enter;
+    animation-timing-function: cubic-bezier(.25,.46,.45,.94);
+    animation-duration: 0.7s;
+    animation-iteration-count: 1;
+  }
+
+
+
+  @keyframes left_enter{
+      0% {
+          opacity: 0;
+          transform: translateX(100px);
+      }
+      100%{
+          opacity: 1;
+          transform: translateX(0);
+      }
+  }
+
+  @keyframes right_enter{
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+  }
+
+  @keyframes bottom_enter{
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+
+  @keyframes scale_enter{
+    0% {
+      opacity: 0;
+      transform: scale(1.5);
+  }
+  100%{
+      opacity: 1;
+      transform: scale(1);
+  }
+  }

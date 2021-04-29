@@ -1,4 +1,4 @@
-@keyframes slideup {
+/* @keyframes slideup {
   0%{
     opacity: 0;
     transform: translateY(30px);
@@ -77,4 +77,4 @@
 .enterFromLeft{
   transition: all 0.4s ease-out;
   transform: translateX(0);
-}
+} */

@@ -8,7 +8,7 @@
 
 body {
   overflow-x: hidden;
-
+  background-color: black;
   margin: 0;
 }
 body::-webkit-scrollbar {
@@ -50,21 +50,21 @@ body::-webkit-scrollbar {
 }
 
 .section-nav {
-  right: 5vw;
-  top: 20vh;
+  right: 0vw;
+  top: 15vh;
   z-index: 5;
   position: fixed;
   transform: translateX(150px);
 }
 
 .dot {
-  width: 15px;
-  height: 15px;
-  background: #ffffff 0% 0% no-repeat padding-box;
-  border: 1px solid #ffffff;
-  opacity: 0.4;
+  width: 3px;
+  height: 3px;
+  background: white 0% 0% no-repeat padding-box;
+  border: 1px solid white;
+  opacity: 1;
   border-radius: 50%;
-  margin-top: 5vh;
+  margin-top: 7vh;
   transition: 0.5s ease;
   cursor: pointer;
 }
@@ -72,7 +72,7 @@ body::-webkit-scrollbar {
 .dot-active {
   height: 152px;
   width: 0px;
-  border: 8px solid #ffffff;
+  border: 3px solid white;
   border-radius: 4px;
 }
 .section-heading {
@@ -95,6 +95,8 @@ body::-webkit-scrollbar {
   font-family: "Gilroy";
   font-weight: 900;
   color: white;
+  transform: translateX(100px);
+  opacity: 0;
 }
 .section-end-heading::after {
   position: absolute;
@@ -130,26 +132,6 @@ body::-webkit-scrollbar {
     margin-bottom:4vh;
 } */
 
-.ml6 {
-  position: relative;
-  font-weight: 900;
-  font-size: 3.3em;
-}
-
-.ml6 .text-wrapper {
-  position: relative;
-  display: inline-block;
-  padding-top: 0.2em;
-  padding-right: 0.05em;
-  padding-bottom: 0.1em;
-  overflow: hidden;
-}
-
-.ml6 .letters {
-  display: inline-block;
-  line-height: 1em;
-  font: normal normal 600 40px/60px Poppins;
-}
 .about-background-container {
   display: flex;
   width: max-content;
@@ -194,6 +176,16 @@ body::-webkit-scrollbar {
   text-align: left;
   margin-right: 25vw;
   font: normal normal normal 16px/25px Poppins;
+  /* transform: translateX(100px); */
+  opacity: 0;
+}
+
+.about-info-1{
+  transform: translateX(-100px);
+}
+
+.about-info-2{
+  transform: translateX(100px);
 }
 
 .about-picture {
@@ -202,6 +194,8 @@ body::-webkit-scrollbar {
   background-color: #2c2c2c;
   border-radius: 2px;
   margin-top: 100px;
+  transform: translateX(100px);
+  opacity: 0;
 }
 .frontContent {
   width: 50vw;
@@ -236,7 +230,10 @@ body::-webkit-scrollbar {
   border-radius: 50%;
   content: "";
   background-color: white;
+  opacity: 0;
+  transform: translateX(100px);
 }
+
 .our-achievements {
   margin-top: 20vh;
   display: flex;
@@ -300,9 +297,12 @@ body::-webkit-scrollbar {
 
 .form-wrapper {
   height: 50%;
-  margin-top: 5vh;
+  margin-top: 15vh;
+  margin-bottom: 20vh;
   display: flex;
   justify-content: space-around;
+  transform: translateY(100px);
+  opacity: 0;
 }
 
 .form-element {
@@ -368,7 +368,8 @@ input:focus {
   height: 50vh;
   cursor: none;
   transition: all 0.2s;
-  transform: scale(0.98);
+  transform: scale(0.98) translateY(100px);
+  opacity: 0;
 }
 
 .card.active {
@@ -451,6 +452,8 @@ input:focus {
   top: 20vh;
   height: 50%;
   width: 100%;
+  transform: translateY(100px);
+  opacity: 0;
 }
 
 .arrows {
@@ -570,13 +573,28 @@ input:focus {
   letter-spacing: 0px;
   color: #ffffff;
 }
-.project-heading {
+.project-heading1,
+.project-heading2 {
   font: normal normal 400 60px/129px Gilroy;
-
   color: #ffffff;
   width: 100%;
   text-align: center;
+  opacity: 0;
+  transform: scale(1.5);
 }
+
+.mobile11,
+.mobile21{
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+.mobile12,
+.mobile22{
+  opacity: 0;
+  transform: translateX(100px);
+}
+
 .project-info {
   display: flex;
   width: auto;
@@ -631,11 +649,14 @@ input:focus {
 }
 
 .projectsSecondContainer img {
-  margin-top: 7vh;
-  margin-left: 10vw;
+  padding-top: 7vh;
+  padding-left: 10vw;
 }
-.projectsSecondTextContainer {
+.projectsSecondTextContainer1,
+.projectsSecondTextContainer2 {
   padding-top: 10vh;
+  opacity: 0;
+  transform: translateY(100px);
 }
 
 .projectArrow {
@@ -648,14 +669,29 @@ input:focus {
   margin-left: 5%;
   border: 1px white solid;
   border-radius: 50%;
-  transition: 0.1s;
+  transition: 0.4s;
 }
 
 .projectArrow:hover {
   /* transform: scale(1.1); */
   border: 1px transparent solid;
-  transform: translateX(10px);
+  transform: translateX(20px) scale(1.5);
 }
+
+/* .animate {
+  animation: animate .3s ease-in-out forwards;
+}
+
+@keyframes animate {
+  from {
+    background-color: cornflowerblue;
+    border-radius: 0;
+  }
+  to {
+    background-color: green;
+    border-radius: 100px;
+  }
+} */
 
 @media all and (max-width: 600px) {
   .ham {
@@ -807,7 +843,8 @@ input:focus {
     padding: 0 20px;
     height: max-content;
   }
-  .project-heading {
+  .project-heading1,
+  .project-heading2 {
     font-size: 32px;
     line-height: 94px;
     text-align: left;
@@ -827,7 +864,8 @@ input:focus {
     padding-bottom: 0;
     height: max-content;
   }
-  .projectsSecondTextContainer {
+  .projectsSecondTextContainer1,
+  .projectsSecondTextContainer2 {
     padding-top: 4vh;
   }
   .projectsSecondContainer img {

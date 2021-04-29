@@ -9,6 +9,15 @@ font.load().then(() => {
   document.documentElement.className += "fonts-loaded";
 });
 
+
+
+
+
+
+
+
+
+
 let currentPage = 0;
 let lastScrollTime = 0;
 const whereTop = document
@@ -20,22 +29,38 @@ const fromTop = document
   .getElementsByClassName("page")[1]
   .getBoundingClientRect().top;
 currentPage = Math.floor((whereTop / fromTop) * -1);
+
+
 const pages = document.getElementsByClassName("page");
+let pagesPositions = []
+let pagesMidPositions = []
 
 for (let i = 0; i < pages.length; ++i) {
   document.getElementsByClassName("section-nav")[0].innerHTML += `
-        <div class="dot" onclick="selectDot(${i})"></div>
+        <div class="dot" onclick="toDot(${i})"></div>
     `;
 }
 
+for(let i = 0; i<pages.length; i++) {
+  pagesPositions.push(pages[i].getBoundingClientRect().top);
+  console.log(pagesPositions[i]);
+}
+
 let dots = document.getElementsByClassName("dot");
+
+
+
+
+
 //generic function for scrolling the section starts here---------------
+
+
 // const scrollSection = (distance, pageNo) => {
 //   console.log("scrollSection");
-//   //console.log(scrollDebounce)
 //   if ((pageNo && distance === null) || (pageNo === 0 && distance === null)) {
 //     const factor = pageNo;
 //     currentPage = pageNo;
+
 //     window.scrollTo({
 //       top: fromTop * factor,
 //       left: 0,
@@ -49,7 +74,6 @@ let dots = document.getElementsByClassName("dot");
 //     }
 //     let scrollAmt = fromTop;
 //     ++currentPage;
-//     //    console.log(currentPage)
 //     window.scrollBy({
 //       top: scrollAmt,
 //       left: 0,
@@ -74,15 +98,58 @@ let dots = document.getElementsByClassName("dot");
 //   }
 // };
 
-// const selectDot = (pageNo) => {
-//   let newDots = document.getElementsByClassName("dot");
-//   for (let i = 0; i < newDots.length; ++i) {
-//     if (newDots[i].classList.contains("dot-active"))
-//       newDots[i].classList.remove("dot-active");
-//   }
-//   newDots[pageNo].classList.add("dot-active");
-//   scrollSection(null, pageNo);
-// };
+let activeDot;
+
+const scrollSection = (pageNo) => {
+  window.scrollTo({
+          top: pagesPositions[pageNo],
+          left: 0,
+          behavior: "smooth",
+        });
+}
+
+const scrollToSection = () => {
+  let currActiveDot = activeDot;
+  let currScroll = document.documentElement.scrollTop;
+  if(currScroll > pagesPositions[pagesPositions.length - 1]){
+    activeDot = pagesPositions.length - 1;
+  }
+  else if(currScroll < pagesPositions[1]){
+    activeDot = 0;
+  }
+  else{
+    for(let i=1;i< pages.length-1; i++){
+      if(currScroll > pagesPositions[i] && currScroll < pagesPositions[i+1]) activeDot = i;
+    }
+  }
+  if(currActiveDot !== activeDot){
+    selectDot(activeDot);
+  }
+}
+
+
+const toDot = (pageNo) => {
+  document.removeEventListener('scroll', scrollToSection);
+  selectDot(pageNo);
+  scrollSection(pageNo);
+  setTimeout(() => {
+    document.addEventListener('scroll', scrollToSection);
+  }, 700)
+}
+
+const selectDot = (pageNo) => {
+  let newDots = document.getElementsByClassName("dot");
+  for (let i = 0; i < newDots.length; ++i) {
+    if (newDots[i].classList.contains("dot-active"))
+      newDots[i].classList.remove("dot-active");
+  }
+  newDots[pageNo].classList.add("dot-active");
+  activeDot = pageNo;
+};
+
+document.addEventListener('scroll', scrollToSection);
+
+
 
 let loaded = () => {
   let heading = document.getElementsByClassName("home-heading")[0];
@@ -141,6 +208,8 @@ let loaded = () => {
     rightStrip.style.transform = "translateX(0)";
     ham.style.transition = "all 0.3s ease-out";
     ham.style.transform = "translateY(0)";
+    activeDot = 0;
+    selectDot(0);
   }, 1400);
 };
 
@@ -150,21 +219,19 @@ let loaded = () => {
 
 //Below line for touchpad and mousewheel swipe
 
-function throttle(callback, limit) {
-  //  console.log(event);
-  var tick = false;
-  return (e) => {
-    if (!tick) {
-      //   console.log("hi");
-      scrollSection(e.deltaY);
-      tick = true;
-      const timer = setTimeout(function () {
-        clearTimeout(timer);
-        tick = false;
-      }, limit);
-    }
-  };
-}
+// function throttle(callback, limit) {
+//   var tick = false;
+//   return (e) => {
+//     if (!tick) {
+//       scrollSection(e.deltaY);
+//       tick = true;
+//       const timer = setTimeout(function () {
+//         clearTimeout(timer);
+//         tick = false;
+//       }, limit);
+//     }
+//   };
+// }
 
 // window.addEventListener("wheel", (e) =>
 //   throttle(() => scrollSection(e.deltaY), 500)()
@@ -291,6 +358,8 @@ const navigateCarousel = (step, stepType) => {
     document.getElementById("active-scroll-id").style.transition = "0s";
   }, 600);
 };
+
+
 
 //-----------------------------------------
 (function () {
