@@ -11,7 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 </head>
-<body>
+<body onload="updateTeam(0)">
 <nav class="navbar">
     <h1 class="brand">
             <span class="text-wrapper">
@@ -86,328 +86,31 @@
                 tincidunt leo vulputate ac.</i>
 
         </div>
+        <div class="departments">
+            <div class="departmentElement selected" onclick="teamChange(this)">
+                Frontend Developers
+            </div>
+            <div class="departmentElement" onclick="teamChange(this)">
+                App Developers
+            </div>
+            <div class="departmentElement" onclick="teamChange(this)">
+                Video Team
+            </div>
+            <div class="departmentElement" onclick="teamChange(this)">
+                Design Team
+            </div>
+            <div class="departmentElement" onclick="teamChange(this)">
+                Backend Developers
+            </div>
+        </div>
         <div class="teamContainer">
-            <h2 class="teamName">
-                FRONTEND DEVELOPERS
-            </h2>
-            <div>
-
-            </div>
-            <div class="teamMembers">
-                <div class="member">
-                    <div class="memberImage">
-                        <img src="assets/members/placeholder.jfif">
-                    </div>
-                    <div class="memberName hide">
-                        Denis Lomov
-                    </div>
-                    <div class="designation hide">
-                        Frontend Developer
-                    </div>
-                    <div class="links hide">
-                        <a href="/a">
-                            <img src="./assets/img/instagram-sketched.png">
-                        </a>
-                        <a href="b">
-                            <img src="./assets/img/twitter.png">
-                        </a>
-                        <a href="c">
-                            <img src="./assets/img/facebook (2).png">
-                        </a>
-                    </div>
-                </div>
-                <div class="member">
-                    <div class="memberImage">
-                        <img src="assets/members/placeholder.jfif">
-                    </div>
-                    <div class="memberName hide">
-                        Denis Lomov
-                    </div>
-                    <div class="designation hide">
-                        Frontend Developer
-                    </div>
-                    <div class="links hide">
-                        <a href="/a">
-                            <img src="./assets/img/instagram-sketched.png">
-                        </a>
-                        <a href="b">
-                            <img src="./assets/img/twitter.png">
-                        </a>
-                        <a href="c">
-                            <img src="./assets/img/facebook (2).png">
-                        </a>
-                    </div>
-                </div>
-                <div class="member">
-                    <div class="memberImage">
-                        <img src="assets/members/placeholder.jfif">
-                    </div>
-                    <div class="memberName hide">
-                        Denis Lomov
-                    </div>
-                    <div class="designation hide">
-                        Frontend Developer
-                    </div>
-                    <div class="links hide">
-                        <a href="/a">
-                            <img src="./assets/img/instagram-sketched.png">
-                        </a>
-                        <a href="b">
-                            <img src="./assets/img/twitter.png">
-                        </a>
-                        <a href="c">
-                            <img src="./assets/img/facebook (2).png">
-                        </a>
-                    </div>
-                </div>
-                <div class="member">
-                    <div class="memberImage">
-                        <img src="assets/members/placeholder.jfif">
-                    </div>
-                    <div class="memberName hide">
-                        Denis Lomov
-                    </div>
-                    <div class="designation hide">
-                        Frontend Developer
-                    </div>
-                    <div class="links hide">
-                        <a href="/a">
-                            <img src="./assets/img/instagram-sketched.png">
-                        </a>
-                        <a href="b">
-                            <img src="./assets/img/twitter.png">
-                        </a>
-                        <a href="c">
-                            <img src="./assets/img/facebook (2).png">
-                        </a>
-                    </div>
-                </div>
-                <div class="member">
-                    <div class="memberImage">
-                        <img src="assets/members/placeholder.jfif">
-                    </div>
-                    <div class="memberName hide">
-                        Denis Lomov
-                    </div>
-                    <div class="designation hide">
-                        Frontend Developer
-                    </div>
-                    <div class="links hide">
-                        <a href="/a">
-                            <img src="./assets/img/instagram-sketched.png">
-                        </a>
-                        <a href="b">
-                            <img src="./assets/img/twitter.png">
-                        </a>
-                        <a href="c">
-                            <img src="./assets/img/facebook (2).png">
-                        </a>
-                    </div>
-                </div>
-                <div class="member">
-                    <div class="memberImage">
-                        <img src="assets/members/placeholder.jfif">
-                    </div>
-                    <div class="memberName hide">
-                        Denis Lomov
-                    </div>
-                    <div class="designation hide">
-                        Frontend Developer
-                    </div>
-                    <div class="links hide">
-                        <a href="/a">
-                            <img src="./assets/img/instagram-sketched.png">
-                        </a>
-                        <a href="b">
-                            <img src="./assets/img/twitter.png">
-                        </a>
-                        <a href="c">
-                            <img src="./assets/img/facebook (2).png">
-                        </a>
-                    </div>
-                </div>
-                <div class="member">
-                    <div class="memberImage">
-                        <img src="assets/members/placeholder.jfif">
-                    </div>
-                    <div class="memberName hide">
-                        Denis Lomov
-                    </div>
-                    <div class="designation hide">
-                        Frontend Developer
-                    </div>
-                    <div class="links hide">
-                        <a href="/a">
-                            <img src="./assets/img/instagram-sketched.png">
-                        </a>
-                        <a href="b">
-                            <img src="./assets/img/twitter.png">
-                        </a>
-                        <a href="c">
-                            <img src="./assets/img/facebook (2).png">
-                        </a>
-                    </div>
-                </div>
-                <div class="member">
-                    <div class="memberImage">
-                        <img src="assets/members/placeholder.jfif">
-                    </div>
-                    <div class="memberName hide">
-                        Denis Lomov
-                    </div>
-                    <div class="designation hide">
-                        Frontend Developer
-                    </div>
-                    <div class="links hide">
-                        <a href="/a">
-                            <img src="./assets/img/instagram-sketched.png">
-                        </a>
-                        <a href="b">
-                            <img src="./assets/img/twitter.png">
-                        </a>
-                        <a href="c">
-                            <img src="./assets/img/facebook (2).png">
-                        </a>
-                    </div>
-                </div>
-                <div class="member">
-                    <div class="memberImage">
-                        <img src="assets/members/placeholder.jfif">
-                    </div>
-                    <div class="memberName hide">
-                        Denis Lomov
-                    </div>
-                    <div class="designation hide">
-                        Frontend Developer
-                    </div>
-                    <div class="links hide">
-                        <a href="/a">
-                            <img src="./assets/img/instagram-sketched.png">
-                        </a>
-                        <a href="b">
-                            <img src="./assets/img/twitter.png">
-                        </a>
-                        <a href="c">
-                            <img src="./assets/img/facebook (2).png">
-                        </a>
-                    </div>
-                </div>
-                <div class="member">
-                    <div class="memberImage">
-                        <img src="assets/members/placeholder.jfif">
-                    </div>
-                    <div class="memberName hide">
-                        Denis Lomov
-                    </div>
-                    <div class="designation hide">
-                        Frontend Developer
-                    </div>
-                    <div class="links hide">
-                        <a href="/a">
-                            <img src="./assets/img/instagram-sketched.png">
-                        </a>
-                        <a href="b">
-                            <img src="./assets/img/twitter.png">
-                        </a>
-                        <a href="c">
-                            <img src="./assets/img/facebook (2).png">
-                        </a>
-                    </div>
-                </div>
-                <div class="member">
-                    <div class="memberImage">
-                        <img src="assets/members/placeholder.jfif">
-                    </div>
-                    <div class="memberName hide">
-                        Denis Lomov
-                    </div>
-                    <div class="designation hide">
-                        Frontend Developer
-                    </div>
-                    <div class="links hide">
-                        <a href="/a">
-                            <img src="./assets/img/instagram-sketched.png">
-                        </a>
-                        <a href="b">
-                            <img src="./assets/img/twitter.png">
-                        </a>
-                        <a href="c">
-                            <img src="./assets/img/facebook (2).png">
-                        </a>
-                    </div>
-                </div>
-                <div class="member">
-                    <div class="memberImage">
-                        <img src="assets/members/placeholder.jfif">
-                    </div>
-                    <div class="memberName hide">
-                        Denis Lomov
-                    </div>
-                    <div class="designation hide">
-                        Frontend Developer
-                    </div>
-                    <div class="links hide">
-                        <a href="/a">
-                            <img src="./assets/img/instagram-sketched.png">
-                        </a>
-                        <a href="b">
-                            <img src="./assets/img/twitter.png">
-                        </a>
-                        <a href="c">
-                            <img src="./assets/img/facebook (2).png">
-                        </a>
-                    </div>
-                </div>
-                <div class="member">
-                    <div class="memberImage">
-                        <img src="assets/members/placeholder.jfif">
-                    </div>
-                    <div class="memberName hide">
-                        Denis Lomov
-                    </div>
-                    <div class="designation hide">
-                        Frontend Developer
-                    </div>
-                    <div class="links hide">
-                        <a href="/a">
-                            <img src="./assets/img/instagram-sketched.png">
-                        </a>
-                        <a href="b">
-                            <img src="./assets/img/twitter.png">
-                        </a>
-                        <a href="c">
-                            <img src="./assets/img/facebook (2).png">
-                        </a>
-                    </div>
-                </div>
-                <div class="member">
-                    <div class="memberImage">
-                        <img src="assets/members/placeholder.jfif">
-                    </div>
-                    <div class="memberName hide">
-                        Denis Lomov
-                    </div>
-                    <div class="designation hide">
-                        Frontend Developer
-                    </div>
-                    <div class="links hide">
-                        <a href="/a">
-                            <img src="./assets/img/instagram-sketched.png">
-                        </a>
-                        <a href="b">
-                            <img src="./assets/img/twitter.png">
-                        </a>
-                        <a href="c">
-                            <img src="./assets/img/facebook (2).png">
-                        </a>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </div>
 
 </div>
 <script src="js/artwork.js"></script>
+<script src="js/team.js"></script>
 <script src="js/navbar.js"></script>
 </body>
 </html>

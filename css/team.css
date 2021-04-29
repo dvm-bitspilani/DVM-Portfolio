@@ -159,7 +159,35 @@ body{
 }
 
 .teamContainer {
+    width: 100%;
+}
 
+.departments{
+
+background: #2C2C2C;
+
+display: flex;
+
+width: 80%;
+
+justify-content: space-between;
+
+margin-bottom: 4%;
+
+/* flex-grow: 1; */
+}
+
+.departmentElement{width: 100%;text-align: center;padding: 2.5% 0;cursor: pointer;}
+
+.selected{
+
+/* padding: 2%; */
+
+color: #070507;
+
+font-weight: bold;
+
+background: white;
 }
 
 .teamName::before {
@@ -338,9 +366,12 @@ transition: 0.3s;
     }
 
     .memberName {
-font-size: 1em;
-transform: translateY(-40%) scale(1);
-}
+
+font-size: 1em;
+
+transform: translateY(-40%) scale(1);
+
+}
 
 
     .designation {
