@@ -9,6 +9,15 @@ font.load().then(() => {
   document.documentElement.className += "fonts-loaded";
 });
 
+
+
+
+
+
+
+
+
+
 let currentPage = 0;
 let lastScrollTime = 0;
 const whereTop = document
@@ -21,6 +30,9 @@ const fromTop = document
   .getBoundingClientRect().top;
 currentPage = Math.floor((whereTop / fromTop) * -1);
 const pages = document.getElementsByClassName("page");
+let pagesPositions = []
+
+
 
 for (let i = 0; i < pages.length; ++i) {
   document.getElementsByClassName("section-nav")[0].innerHTML += `
@@ -29,60 +41,73 @@ for (let i = 0; i < pages.length; ++i) {
 }
 
 let dots = document.getElementsByClassName("dot");
+
+
+
+
+
 //generic function for scrolling the section starts here---------------
-// const scrollSection = (distance, pageNo) => {
-//   console.log("scrollSection");
-//   //console.log(scrollDebounce)
-//   if ((pageNo && distance === null) || (pageNo === 0 && distance === null)) {
-//     const factor = pageNo;
-//     currentPage = pageNo;
-//     window.scrollTo({
-//       top: fromTop * factor,
-//       left: 0,
-//       behavior: "smooth",
-//     });
-//   }
-//   if (distance > 0 || distance === "down") {
-//     if (pages[pages.length - 1].getBoundingClientRect().top <= 50) {
-//       scrollDebounce = true;
-//       return;
-//     }
-//     let scrollAmt = fromTop;
-//     ++currentPage;
-//     //    console.log(currentPage)
-//     window.scrollBy({
-//       top: scrollAmt,
-//       left: 0,
-//       behavior: "smooth",
-//     });
-//     selectDot(currentPage);
-//   }
-//   if (distance < 0 || distance === "up") {
-//     if (pages[0].getBoundingClientRect().top > 0) {
-//       scrollDebounce = true;
-//       return;
-//     }
+const scrollSection = (distance, pageNo) => {
+  console.log("scrollSection");
+  //console.log(scrollDebounce)
+  if ((pageNo && distance === null) || (pageNo === 0 && distance === null)) {
+    const factor = pageNo;
+    currentPage = pageNo;
 
-//     --currentPage;
-//     if (currentPage < 0) currentPage = 0;
-//     window.scrollBy({
-//       top: -fromTop,
-//       left: 0,
-//       behavior: "smooth",
-//     });
-//     selectDot(currentPage);
-//   }
-// };
+    // var dist = document.getElementsByClassName("page")[pageNo].getBoundingClientRect().top;
 
-// const selectDot = (pageNo) => {
-//   let newDots = document.getElementsByClassName("dot");
-//   for (let i = 0; i < newDots.length; ++i) {
-//     if (newDots[i].classList.contains("dot-active"))
-//       newDots[i].classList.remove("dot-active");
-//   }
-//   newDots[pageNo].classList.add("dot-active");
-//   scrollSection(null, pageNo);
-// };
+    window.scrollTo({
+      // top: dist,
+      top: fromTop * factor,
+      left: 0,
+      behavior: "smooth",
+    });
+  }
+  if (distance > 0 || distance === "down") {
+    if (pages[pages.length - 1].getBoundingClientRect().top <= 50) {
+      scrollDebounce = true;
+      return;
+    }
+    let scrollAmt = fromTop;
+    ++currentPage;
+    //    console.log(currentPage)
+    window.scrollBy({
+      top: scrollAmt,
+      left: 0,
+      behavior: "smooth",
+    });
+    selectDot(currentPage);
+  }
+  if (distance < 0 || distance === "up") {
+    if (pages[0].getBoundingClientRect().top > 0) {
+      scrollDebounce = true;
+      return;
+    }
+
+    --currentPage;
+    if (currentPage < 0) currentPage = 0;
+    window.scrollBy({
+      top: -fromTop,
+      left: 0,
+      behavior: "smooth",
+    });
+    selectDot(currentPage);
+  }
+};
+
+
+
+
+
+const selectDot = (pageNo) => {
+  let newDots = document.getElementsByClassName("dot");
+  for (let i = 0; i < newDots.length; ++i) {
+    if (newDots[i].classList.contains("dot-active"))
+      newDots[i].classList.remove("dot-active");
+  }
+  newDots[pageNo].classList.add("dot-active");
+  scrollSection(null, pageNo);
+};
 
 let loaded = () => {
   let heading = document.getElementsByClassName("home-heading")[0];
@@ -193,6 +218,53 @@ let initialX,
   elaspedTime,
   startTime;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //Code for registering touchswipe starts here-----------
 // window.addEventListener(
 //   "touchstart",
@@ -291,6 +363,8 @@ const navigateCarousel = (step, stepType) => {
     document.getElementById("active-scroll-id").style.transition = "0s";
   }, 600);
 };
+
+
 
 //-----------------------------------------
 (function () {
