@@ -80,7 +80,7 @@
         </div>
     </div>
     <div class="artworkWrapper">
-        <div class="aboutArtwork">
+        <div class="aboutArtwork" onclick="console.log('Yo')">
             <h1>About Team</h1>
             <i>About APOGEE Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit mi neque, ultricies
                 tincidunt leo vulputate ac.</i>
@@ -103,6 +103,30 @@
                 Backend Developers
             </div>
         </div>
+
+        <div class="custom-select">
+            <select onchange="console.log('Yo')" >
+                <option value="0" onclick="console.log('Yo')">
+                    Frontend Developers
+                </option>
+                <option value="1" onclick="updateTeam(1)">
+                    Frontend Developers
+                </option>
+                <option value="2" onclick="updateTeam(2)">
+                    Video Team
+                </option>
+                <option value="3" onclick="updateTeam(3)">
+                    Design Team
+                </option>
+                <option value="4" onclick="updateTeam(4)">
+                    Backend Developers
+                </option>
+                <option value="5" onclick="updateTeam(1)">
+                    App Developers
+                </option>
+            </select>
+        </div>
+
         <div class="teamContainer">
             
         </div>
