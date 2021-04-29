@@ -29,6 +29,8 @@ const fromTop = document
   .getElementsByClassName("page")[1]
   .getBoundingClientRect().top;
 currentPage = Math.floor((whereTop / fromTop) * -1);
+
+
 const pages = document.getElementsByClassName("page");
 let pagesPositions = []
 let pagesMidPositions = []
