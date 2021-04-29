@@ -50,7 +50,7 @@ body::-webkit-scrollbar {
 }
 
 .section-nav {
-  right: 5vw;
+  right: 0vw;
   top: 20vh;
   z-index: 5;
   position: fixed;
@@ -230,6 +230,7 @@ body::-webkit-scrollbar {
   opacity: 0;
   transform: translateX(100px);
 }
+
 .our-achievements {
   margin-top: 20vh;
   display: flex;

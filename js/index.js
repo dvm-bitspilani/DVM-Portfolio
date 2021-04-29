@@ -31,13 +31,17 @@ const fromTop = document
 currentPage = Math.floor((whereTop / fromTop) * -1);
 const pages = document.getElementsByClassName("page");
 let pagesPositions = []
-
-
+let pagesMidPositions = []
 
 for (let i = 0; i < pages.length; ++i) {
   document.getElementsByClassName("section-nav")[0].innerHTML += `
-        <div class="dot" onclick="selectDot(${i})"></div>
+        <div class="dot" onclick="toDot(${i})"></div>
     `;
+}
+
+for(let i = 0; i<pages.length; i++) {
+  pagesPositions.push(pages[i].getBoundingClientRect().top);
+  console.log(pagesPositions[i]);
 }
 
 let dots = document.getElementsByClassName("dot");
@@ -47,57 +51,89 @@ let dots = document.getElementsByClassName("dot");
 
 
 //generic function for scrolling the section starts here---------------
-const scrollSection = (distance, pageNo) => {
-  console.log("scrollSection");
-  //console.log(scrollDebounce)
-  if ((pageNo && distance === null) || (pageNo === 0 && distance === null)) {
-    const factor = pageNo;
-    currentPage = pageNo;
 
-    // var dist = document.getElementsByClassName("page")[pageNo].getBoundingClientRect().top;
 
-    window.scrollTo({
-      // top: dist,
-      top: fromTop * factor,
-      left: 0,
-      behavior: "smooth",
-    });
+// const scrollSection = (distance, pageNo) => {
+//   console.log("scrollSection");
+//   if ((pageNo && distance === null) || (pageNo === 0 && distance === null)) {
+//     const factor = pageNo;
+//     currentPage = pageNo;
+
+//     window.scrollTo({
+//       top: fromTop * factor,
+//       left: 0,
+//       behavior: "smooth",
+//     });
+//   }
+//   if (distance > 0 || distance === "down") {
+//     if (pages[pages.length - 1].getBoundingClientRect().top <= 50) {
+//       scrollDebounce = true;
+//       return;
+//     }
+//     let scrollAmt = fromTop;
+//     ++currentPage;
+//     window.scrollBy({
+//       top: scrollAmt,
+//       left: 0,
+//       behavior: "smooth",
+//     });
+//     selectDot(currentPage);
+//   }
+//   if (distance < 0 || distance === "up") {
+//     if (pages[0].getBoundingClientRect().top > 0) {
+//       scrollDebounce = true;
+//       return;
+//     }
+
+//     --currentPage;
+//     if (currentPage < 0) currentPage = 0;
+//     window.scrollBy({
+//       top: -fromTop,
+//       left: 0,
+//       behavior: "smooth",
+//     });
+//     selectDot(currentPage);
+//   }
+// };
+
+let activeDot;
+
+const scrollSection = (pageNo) => {
+  window.scrollTo({
+          top: pagesPositions[pageNo],
+          left: 0,
+          behavior: "smooth",
+        });
+}
+
+const scrollToSection = () => {
+  let currActiveDot = activeDot;
+  let currScroll = document.documentElement.scrollTop;
+  if(currScroll > pagesPositions[pagesPositions.length - 1]){
+    activeDot = pagesPositions.length - 1;
   }
-  if (distance > 0 || distance === "down") {
-    if (pages[pages.length - 1].getBoundingClientRect().top <= 50) {
-      scrollDebounce = true;
-      return;
+  else if(currScroll < pagesPositions[1]){
+    activeDot = 0;
+  }
+  else{
+    for(let i=1;i< pages.length-1; i++){
+      if(currScroll > pagesPositions[i] && currScroll < pagesPositions[i+1]) activeDot = i;
     }
-    let scrollAmt = fromTop;
-    ++currentPage;
-    //    console.log(currentPage)
-    window.scrollBy({
-      top: scrollAmt,
-      left: 0,
-      behavior: "smooth",
-    });
-    selectDot(currentPage);
   }
-  if (distance < 0 || distance === "up") {
-    if (pages[0].getBoundingClientRect().top > 0) {
-      scrollDebounce = true;
-      return;
-    }
-
-    --currentPage;
-    if (currentPage < 0) currentPage = 0;
-    window.scrollBy({
-      top: -fromTop,
-      left: 0,
-      behavior: "smooth",
-    });
-    selectDot(currentPage);
+  if(currActiveDot !== activeDot){
+    selectDot(activeDot);
   }
-};
+}
 
 
-
-
+const toDot = (pageNo) => {
+  document.removeEventListener('scroll', scrollToSection);
+  selectDot(pageNo);
+  scrollSection(pageNo);
+  setTimeout(() => {
+    document.addEventListener('scroll', scrollToSection);
+  }, 700)
+}
 
 const selectDot = (pageNo) => {
   let newDots = document.getElementsByClassName("dot");
@@ -106,8 +142,12 @@ const selectDot = (pageNo) => {
       newDots[i].classList.remove("dot-active");
   }
   newDots[pageNo].classList.add("dot-active");
-  scrollSection(null, pageNo);
+  activeDot = pageNo;
 };
+
+document.addEventListener('scroll', scrollToSection);
+
+
 
 let loaded = () => {
   let heading = document.getElementsByClassName("home-heading")[0];
@@ -166,6 +206,8 @@ let loaded = () => {
     rightStrip.style.transform = "translateX(0)";
     ham.style.transition = "all 0.3s ease-out";
     ham.style.transform = "translateY(0)";
+    activeDot = 0;
+    selectDot(0);
   }, 1400);
 };
 
@@ -175,21 +217,19 @@ let loaded = () => {
 
 //Below line for touchpad and mousewheel swipe
 
-function throttle(callback, limit) {
-  //  console.log(event);
-  var tick = false;
-  return (e) => {
-    if (!tick) {
-      //   console.log("hi");
-      scrollSection(e.deltaY);
-      tick = true;
-      const timer = setTimeout(function () {
-        clearTimeout(timer);
-        tick = false;
-      }, limit);
-    }
-  };
-}
+// function throttle(callback, limit) {
+//   var tick = false;
+//   return (e) => {
+//     if (!tick) {
+//       scrollSection(e.deltaY);
+//       tick = true;
+//       const timer = setTimeout(function () {
+//         clearTimeout(timer);
+//         tick = false;
+//       }, limit);
+//     }
+//   };
+// }
 
 // window.addEventListener("wheel", (e) =>
 //   throttle(() => scrollSection(e.deltaY), 500)()
@@ -217,53 +257,6 @@ let initialX,
   allowdTime = 300, //Maximum time for registering swipe
   elaspedTime,
   startTime;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //Code for registering touchswipe starts here-----------
 // window.addEventListener(
