@@ -139,6 +139,7 @@ body{
 @media all and (max-width: 500px)  {
     .landingSection h1{
         font-size: 3em;
+        text-align: center;
     }
     .artworkWrapper{
         font-size: 0.9em;
@@ -170,30 +171,36 @@ body{
 }
 
 .teamName {
-display: flex;
-color: #2196f3;
-align-items: center;
-letter-spacing: 2.5px;
-/* height: 2px; */
-/* display: block; */
+
+display: flex;
+
+color: #2196f3;
+
+align-items: center;
+
+letter-spacing: 2.5px;
+
+/* height: 2px; */
+
+/* display: block; */
 }
 
 .teamMembers {
 
-    display: flex;
+display: flex;
 
-    padding: 0 10%;
+padding: 0 10%;
 
-    flex-wrap: wrap;
+flex-wrap: wrap;
 
-    justify-content: space-between;
+justify-content: space-around;
 }
 
 .member {
 
-    width: 18%;
+width: 20%;
 
-    margin: 1%;
+margin: 1%;
 }
 
 .member:before{
@@ -219,23 +226,23 @@ body{
 
 .memberImage {
 
-    width: 100%;
+width: 100%;
 
-    height: 265px;
+height: 265px;
 
-    display: flex;
+display: flex;
 
-    justify-content: center;
+justify-content: center;
 
-    align-items: center;
+align-items: center;
 
-    overflow: hidden;
+overflow: hidden;
 
-    -webkit-user-drag: none;
+-webkit-user-drag: none;
 
-    filter: grayscale(100%) brightness(0.5);
+filter: grayscale(100%) brightness(0.5);
 
-    transition: 0.3s;
+transition: 0.3s;
 }
 
 .memberImage img {
@@ -245,33 +252,111 @@ body{
 }
 
 .memberName {
-text-transform: uppercase;
-color: #2196f3;
-letter-spacing: 3px;
-font-size: 1.05em;
-transform: translateY(-40%);
-transition: 0.1s;
-opacity: 0;
+
+    text-transform: uppercase;
+
+    color: #2196f3;
+
+    letter-spacing: 3px;
+
+    font-size: 1.3em;
+
+    font-family: "Poppins-SemiBold";
+
+    transform: translateY(-40%) scale(0.2);
+
+    transform-origin: bottom left;
+
+    transition: 0.3s;
+
 }
 
 .designation {
 
     font-family: 'Poppins';
 
-    transform: translateY(-50%);
+    transform: translateY(0%);
 
     font-size: 0.9em;
 
     color: #e0e0e0;
-    opacity: 0;
 
-    transition: 0.1s;
+    transition: 0.3s;
 }
 
-.member:hover .memberName, .member:hover .designation {
+.hide{
+    opacity: 0;
+}
+
+.links{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    transition: 0.2s;
+    transform: translateY(30%);
+}
+
+.links a{
+    text-decoration: none;
+}
+
+.member:hover .hide {
     opacity: 1;
 }
 
+.member:hover .memberName {
+    transform: translateY(-40%) scale(1);
+}
+
+
+.member:hover .designation {
+    transform: translateY(-50%) scale(1);
+}
+
+
+.member:hover .links {
+    transform: translateY(0%);
+}
+
+
 .member:hover .memberImage {
     filter: grayscale(100%) brightness(1);
+}
+
+
+@media only screen and (max-width: 700px) {
+    .member{
+        width: 40%;
+    }
+
+    .teamMembers{
+        padding: 2%;
+    }
+    
+    .hide{
+        opacity: 1;
+    }
+
+    .memberName {
+font-size: 1em;
+transform: translateY(-40%) scale(1);
+}
+
+
+    .designation {
+        font-size: 0.8em;
+        transform: translateY(-50%) scale(1);
+    }
+
+
+    .links {
+        width: 85%;
+        z-index: 1;
+        transform: translateY(0%) scale(0.9);
+    }   
+
+
+    .memberImage{
+        height: 200px;
+    }
 }
