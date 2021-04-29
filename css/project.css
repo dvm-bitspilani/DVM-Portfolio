@@ -49,6 +49,7 @@ body::-webkit-scrollbar {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100vw;
 }
 .hero {
   height: 100vh;

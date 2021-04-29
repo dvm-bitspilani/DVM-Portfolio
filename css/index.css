@@ -137,10 +137,11 @@ body::-webkit-scrollbar {
   width: max-content;
   flex-direction: row;
   overflow-x: hidden;
+  width: 100vw;
   transform: translateX(-500px);
   position: absolute;
   top: calc(100px + 125vh);
-  height: max-content;
+  height: 223px;
 }
 .about-background {
   font: normal normal bold 201px/122px Poppins;
@@ -149,11 +150,12 @@ body::-webkit-scrollbar {
   opacity: 0.05;
   margin: 0 100px;
   padding: 20px 0;
+  white-space: nowrap;
 }
 .backContentWrapper {
   width: 100vw;
   margin-top: 70px;
-  height: 50vh;
+  /* height: 50vh; */
 
   display: flex;
   justify-content: center;
@@ -163,11 +165,12 @@ body::-webkit-scrollbar {
   height: auto;
   display: flex;
   flex-direction: column;
+  z-index: 1;
 }
 .about-info-1,
 .about-info-2 {
   width: 30vw;
-  height: 50vh;
+  /* height: 50vh; */
   word-wrap: break-word;
   overflow: hidden;
   text-align: left;

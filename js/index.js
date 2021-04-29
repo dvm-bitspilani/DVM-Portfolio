@@ -163,39 +163,39 @@ let loaded = () => {
     logo.style.transform = "scale(1) rotate(0deg)";
   }, 700);
 
-  var textWrapper = document.querySelector(".brand .letters");
-  textWrapper.innerHTML = textWrapper.textContent.replace(
-    /\S/g,
-    "<span class='letter'>$&</span>"
-  );
+  // var textWrapper = document.querySelector(".brand .letters");
+  // textWrapper.innerHTML = textWrapper.textContent.replace(
+  //   /\S/g,
+  //   "<span class='letter'>$&</span>"
+  // );
 
-  anime
-    .timeline({ loop: true })
-    .add({
-      targets: ".brand .letter",
-      scale: [0.3, 1],
-      opacity: [0, 1],
-      translateZ: 0,
-      easing: "easeOutExpo",
-      duration: 600,
-      delay: (el, i) => 70 * (i + 1),
-    })
-    .add({
-      targets: ".brand .line",
-      scaleX: [0, 1],
-      opacity: [0.5, 1],
-      easing: "easeOutExpo",
-      duration: 700,
-      offset: "-=875",
-      delay: (el, i, l) => 80 * (l - i),
-    })
-    .add({
-      targets: ".brand",
-      opacity: 0,
-      duration: 1000,
-      easing: "easeOutExpo",
-      delay: 1000,
-    });
+  // anime
+  //   .timeline({ loop: true })
+  //   .add({
+  //     targets: ".brand .letter",
+  //     scale: [0.3, 1],
+  //     opacity: [0, 1],
+  //     translateZ: 0,
+  //     easing: "easeOutExpo",
+  //     duration: 600,
+  //     delay: (el, i) => 70 * (i + 1),
+  //   })
+  //   .add({
+  //     targets: ".brand .line",
+  //     scaleX: [0, 1],
+  //     opacity: [0.5, 1],
+  //     easing: "easeOutExpo",
+  //     duration: 700,
+  //     offset: "-=875",
+  //     delay: (el, i, l) => 80 * (l - i),
+  //   })
+  //   .add({
+  //     targets: ".brand",
+  //     opacity: 0,
+  //     duration: 1000,
+  //     easing: "easeOutExpo",
+  //     delay: 1000,
+  //   });
 
   setTimeout(() => {
     heading.style.opacity = "1";
