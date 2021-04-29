@@ -141,6 +141,7 @@ const slide_bar_scroll_dist =
   document.getElementById("slider").offsetWidth;
 const white = document.getElementById("white");
 const grey = document.getElementById("grey");
+const page_number = document.getElementById("page-number");
 
 let scroll_dist;
 let number_of_projects;
@@ -197,6 +198,7 @@ function team_projects(input) {
     inner.scrollLeft = 0;
     ele.style.left = `${left_limit}px`;
     white.style.width = "0%";
+    page_number.innerHTML = "1";
     grey.style.width = "100%";
     timer();
   }, 500);
@@ -323,13 +325,15 @@ function left_right(input) {
     var temp = distance_from_left / mulitplying_factor;
     if (Number.isInteger(temp)) {
       if (temp == 0) {
+        page_number.innerHTML = `1`;
         move(0, mulitplying_factor);
       } else {
+        page_number.innerHTML = `${temp}`;
         move(temp - 1, mulitplying_factor);
       }
     } else {
       var floor = Math.floor(temp);
-
+      page_number.innerHTML = `${floor - 1}`;
       move(floor, mulitplying_factor);
     }
   } else {
@@ -338,13 +342,15 @@ function left_right(input) {
     if (Number.isInteger(temp)) {
       if (temp == number_of_projects - 1) {
         move(0, mulitplying_factor);
+        page_number.innerHTML = "1";
         return;
       } else {
+        page_number.innerHTML = `${temp + 2}`;
         move(temp + 1, mulitplying_factor);
       }
     } else {
       var ceil = Math.ceil(temp);
-
+      page_number.innerHTML = `${ceil + 1}`;
       move(ceil, mulitplying_factor);
     }
   }
@@ -369,6 +375,7 @@ function move(to_position, mulitplying_factor) {
     ((left_limit + to_position * mulitplying_factor) / slide_bar_scroll_dist) *
     scroll_dist;
   white.style.width = "0%";
+  console.log(to_position);
   grey.style.width = "100%";
   timer();
   setTimeout(() => {

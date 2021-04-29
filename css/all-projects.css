@@ -203,6 +203,21 @@ body {
   background-color: white;
   transition: ease;
 }
+.page-number-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#page-number {
+  color: white;
+  font: normal normal 900 0.77vw Poppins;
+  font-family: "Poppins", sans-serif;
+}
 #grey {
   height: 100%;
   width: 100%;
