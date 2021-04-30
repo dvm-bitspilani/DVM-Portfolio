@@ -17,6 +17,26 @@ body {
   margin-top: 0;
   width: 100vw;
 } */
+.background-projects-container {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  overflow-x: hidden;
+  width: max-content;
+  transform: translateX(-500px);
+
+  top: calc(30vh);
+  height: max-content;
+}
+.background-projects {
+  font: normal normal bold 201px Poppins;
+  letter-spacing: 30.15px;
+  color: #ffffff;
+  opacity: 0.05;
+  margin: 0 200px;
+  padding: 20px 0;
+  white-space: nowrap;
+}
 .backArrow {
   background-image: url(../assets/img/arrow_forward-24px.svg);
   background-position: center;
@@ -228,6 +248,12 @@ body {
 }
 
 @media all and (max-width: 600px) {
+  .background-projects {
+    opacity: 0.09;
+    font: normal normal bold 100px Poppins;
+    letter-spacing: 10px;
+    margin: 0 100px;
+  }
   .wrapper {
     margin-top: 5vh;
   }
