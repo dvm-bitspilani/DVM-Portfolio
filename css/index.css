@@ -21,6 +21,7 @@ body::-webkit-scrollbar {
   background-color: black;
   box-sizing: border-box;
   color: #fafafa;
+  overflow-x: hidden;
   position: absolute;
   left: 0;
   top: 0;
