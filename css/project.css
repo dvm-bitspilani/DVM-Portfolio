@@ -381,4 +381,7 @@ body::-webkit-scrollbar {
 
     text-align: center;
   }
+  .show-all:hover .show-all-arrow {
+    transform: translateX(0);
+  }
 }
