@@ -387,6 +387,7 @@ input:focus {
 .blogimage {
   float: right;
   height: 50vh;
+  border-radius: 5px;
   width: 30vw;
   background-color: white;
 }
@@ -574,7 +575,10 @@ input:focus {
   background: #018786;
   white-space: normal;
 }
-
+.artwork-img > img {
+  height: 100%;
+  width: 100%;
+}
 .heightClass {
   height: 10vh;
   opacity: 0;
@@ -726,7 +730,7 @@ input:focus {
 .projectArrow:hover {
   /* transform: scale(1.1); */
   border: 1px transparent solid;
-  transform: translateX(20px) scale(1.5);
+  transform: translateX(20px);
 }
 
 /* .animate {
@@ -855,6 +859,7 @@ input:focus {
   .icon {
     /* height: 8vw;
     width: 8vw; */
+    cursor: pointer;
     width: 20px;
     margin-right: 7vw;
   }

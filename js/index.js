@@ -9,14 +9,10 @@ font.load().then(() => {
   document.documentElement.className += "fonts-loaded";
 });
 
-
-
-
-
-
-
-
-
+function allImagesLoaded() {
+  console.log("ALL IMAGES LOADED");
+  document.getElementsByClassName("loader")[0].style.display = "none";
+}
 
 let currentPage = 0;
 let lastScrollTime = 0;
@@ -30,10 +26,9 @@ const fromTop = document
   .getBoundingClientRect().top;
 currentPage = Math.floor((whereTop / fromTop) * -1);
 
-
 const pages = document.getElementsByClassName("page");
-let pagesPositions = []
-let pagesMidPositions = []
+let pagesPositions = [];
+let pagesMidPositions = [];
 
 for (let i = 0; i < pages.length; ++i) {
   document.getElementsByClassName("section-nav")[0].innerHTML += `
@@ -41,19 +36,14 @@ for (let i = 0; i < pages.length; ++i) {
     `;
 }
 
-for(let i = 0; i<pages.length; i++) {
+for (let i = 0; i < pages.length; i++) {
   pagesPositions.push(pages[i].getBoundingClientRect().top);
   console.log(pagesPositions[i]);
 }
 
 let dots = document.getElementsByClassName("dot");
 
-
-
-
-
 //generic function for scrolling the section starts here---------------
-
 
 // const scrollSection = (distance, pageNo) => {
 //   console.log("scrollSection");
@@ -102,56 +92,52 @@ let activeDot;
 
 const scrollSection = (pageNo) => {
   window.scrollTo({
-          top: pagesPositions[pageNo],
-          left: 0,
-          behavior: "smooth",
-        });
-}
+    top: pagesPositions[pageNo],
+    left: 0,
+    behavior: "smooth",
+  });
+};
 
 const scrollToSection = () => {
   let currActiveDot = activeDot;
   let currScroll = document.documentElement.scrollTop;
-  if(currScroll > pagesPositions[pagesPositions.length - 1]){
+  if (currScroll > pagesPositions[pagesPositions.length - 1]) {
     activeDot = pagesPositions.length - 1;
-  }
-  else if(currScroll < pagesPositions[1]){
+  } else if (currScroll < pagesPositions[1]) {
     activeDot = 0;
-  }
-  else{
-    for(let i=1;i< pages.length-1; i++){
-      if(currScroll > pagesPositions[i] && currScroll < pagesPositions[i+1]) activeDot = i;
+  } else {
+    for (let i = 1; i < pages.length - 1; i++) {
+      if (currScroll > pagesPositions[i] && currScroll < pagesPositions[i + 1])
+        activeDot = i;
     }
   }
-  if(currActiveDot !== activeDot){
+  if (currActiveDot !== activeDot) {
     selectDot(activeDot);
   }
-}
-
+};
 
 const toDot = (pageNo) => {
-  document.removeEventListener('scroll', scrollToSection);
+  document.removeEventListener("scroll", scrollToSection);
   selectDot(pageNo);
   scrollSection(pageNo);
   setTimeout(() => {
-    document.addEventListener('scroll', scrollToSection);
-  }, 700)
-}
+    document.addEventListener("scroll", scrollToSection);
+  }, 700);
+};
 
 const selectDot = (pageNo) => {
   let newDots = document.getElementsByClassName("dot");
   for (let i = 0; i < newDots.length; ++i) {
     if (newDots[i].classList.contains("dot-active"))
       newDots[i].classList.remove("dot-active");
-      newDots[i].classList.add("enlarge");
+    newDots[i].classList.add("enlarge");
   }
   newDots[pageNo].classList.add("dot-active");
   newDots[pageNo].classList.remove("enlarge");
   activeDot = pageNo;
 };
 
-document.addEventListener('scroll', scrollToSection);
-
-
+document.addEventListener("scroll", scrollToSection);
 
 let loaded = () => {
   let heading = document.getElementsByClassName("home-heading")[0];
@@ -306,10 +292,6 @@ let initialX,
 // );
 
 //Code for registering touchswipe ends here-----------
-
-
-
-
 
 //-----------------------------------------
 (function () {
