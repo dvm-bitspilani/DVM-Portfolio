@@ -175,6 +175,8 @@ function animate() {
     left_enter_animation('section-end-heading', 0)
     bottom_enter_animation('artwork-container', -200)
     bottom_enter_animation('form-wrapper', 100)
+    left_enter_animation('show-all', 0)
+    left_enter_animation('heightClass', 0)
 }
 
 document.addEventListener('scroll', animate);

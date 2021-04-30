@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width= device-width, initial-scale = 1">
-    <title>Artworks</title>
+    <title>Our Team</title>
     <link href="css/nav.css" rel="stylesheet" type="text/css">
     <link href="css/team.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="css/fonts.css">
@@ -11,7 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 </head>
-<body>
+<body onload="updateTeam(0)">
 <nav class="navbar">
     <h1 class="brand">
             <span class="text-wrapper">
@@ -80,134 +80,61 @@
         </div>
     </div>
     <div class="artworkWrapper">
-        <div class="aboutArtwork">
-            <h1>About Artwork</h1>
+        <div class="aboutArtwork" onclick="console.log('Yo')">
+            <h1>About Team</h1>
             <i>About APOGEE Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit mi neque, ultricies
                 tincidunt leo vulputate ac.</i>
 
         </div>
-        <div class="teamContainer">
-            <h2 class="teamName">
-                FRONTEND DEVELOPERS
-            </h2>
-            <div class="teamMembers">
-                <div class="member">
-                    <div class="memberImage">
-                        <img src="assets/members/placeholder.jfif">
-                    </div>
-                    <div class="memberName">
-                        Denis Lomov
-                    </div>
-                    <div class="designation">
-                        Github • LinkedIn
-                    </div>
-                </div>
-                <div class="member" style="margin-top: 6%;">
-                    <div class="memberImage">
-                        <img src="assets/members/placeholder.jfif">
-                    </div>
-                    <div class="memberName">
-                        Denis Lomov
-                    </div>
-                    <div class="designation">
-                        Github • LinkedIn
-                    </div>
-                </div>
-                <div class="member">
-                    <div class="memberImage">
-                        <img src="assets/members/placeholder.jfif">
-                    </div>
-                    <div class="memberName">
-                        Denis Lomov
-                    </div>
-                    <div class="designation">
-                        Github • LinkedIn
-                    </div>
-                </div>
-                <div class="member" style="margin-top: 6%;">
-                    <div class="memberImage">
-                        <img src="assets/members/placeholder.jfif">
-                    </div>
-                    <div class="memberName">
-                        Denis Lomov
-                    </div>
-                    <div class="designation">
-                        Github • LinkedIn
-                    </div>
-                </div>
-                <div class="member">
-                    <div class="memberImage">
-                        <img src="assets/members/placeholder.jfif">
-                    </div>
-                    <div class="memberName">
-                        Denis Lomov
-                    </div>
-                    <div class="designation">
-                        Github • LinkedIn
-                    </div>
-                </div>
-                <div class="member">
-                    <div class="memberImage">
-                        <img src="assets/members/placeholder.jfif">
-                    </div>
-                    <div class="memberName">
-                        Denis Lomov
-                    </div>
-                    <div class="designation">
-                        Github • LinkedIn
-                    </div>
-                </div>
-                <div class="member" style="margin-top: 6%;">
-                    <div class="memberImage">
-                        <img src="assets/members/placeholder.jfif">
-                    </div>
-                    <div class="memberName">
-                        Denis Lomov
-                    </div>
-                    <div class="designation">
-                        Github • LinkedIn
-                    </div>
-                </div>
-                <div class="member">
-                    <div class="memberImage">
-                        <img src="assets/members/placeholder.jfif">
-                    </div>
-                    <div class="memberName">
-                        Denis Lomov
-                    </div>
-                    <div class="designation">
-                        Github • LinkedIn
-                    </div>
-                </div>
-                <div class="member" style="margin-top: 6%;">
-                    <div class="memberImage">
-                        <img src="assets/members/placeholder.jfif">
-                    </div>
-                    <div class="memberName">
-                        Denis Lomov
-                    </div>
-                    <div class="designation">
-                        Github • LinkedIn
-                    </div>
-                </div>
-                <div class="member">
-                    <div class="memberImage">
-                        <img src="assets/members/placeholder.jfif">
-                    </div>
-                    <div class="memberName">
-                        Denis Lomov
-                    </div>
-                    <div class="designation">
-                        Github • LinkedIn
-                    </div>
-                </div>
-
+        <div class="departments">
+            <div class="departmentElement selected" onclick="teamChange(this)">
+                Frontend Developers
             </div>
+            <div class="departmentElement" onclick="teamChange(this)">
+                App Developers
+            </div>
+            <div class="departmentElement" onclick="teamChange(this)">
+                Video Team
+            </div>
+            <div class="departmentElement" onclick="teamChange(this)">
+                Design Team
+            </div>
+            <div class="departmentElement" onclick="teamChange(this)">
+                Backend Developers
+            </div>
+        </div>
+
+        <div class="custom-select">
+            <select onchange="console.log('Yo')" >
+                <option value="0" onclick="console.log('Yo')">
+                    Frontend Developers
+                </option>
+                <option value="1" onclick="updateTeam(1)">
+                    Frontend Developers
+                </option>
+                <option value="2" onclick="updateTeam(2)">
+                    Video Team
+                </option>
+                <option value="3" onclick="updateTeam(3)">
+                    Design Team
+                </option>
+                <option value="4" onclick="updateTeam(4)">
+                    Backend Developers
+                </option>
+                <option value="5" onclick="updateTeam(1)">
+                    App Developers
+                </option>
+            </select>
+        </div>
+
+        <div class="teamContainer">
+            
         </div>
     </div>
 
 </div>
 <script src="js/artwork.js"></script>
+<script src="js/team.js"></script>
 <script src="js/navbar.js"></script>
 </body>
 </html>

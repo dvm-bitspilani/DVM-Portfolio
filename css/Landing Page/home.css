@@ -142,3 +142,16 @@
     position: absolute;
     transform: scale(0.75);
 }
+
+@media only screen and (max-width: 700px) {
+    .homeBack{
+        transform: scale(1.5);
+    }
+    #homeLogoInner{
+        width: 60%;
+    }
+    .homeSideIcons{
+        transform: rotate(90deg);
+        width: 100%;
+    }
+}
