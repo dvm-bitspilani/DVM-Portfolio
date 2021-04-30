@@ -37,8 +37,10 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("active-scroll-id").style.transform = `translateX(-${leftValue}vw)`;
   element = document.getElementsByClassName("artwork-counter")[0];
   element.innerHTML = "01/0" + arts.length
-  let nameOfClass = "title-"+activeArtwork
-  enter_animation(`${nameOfClass}`);
+  let nameOfTitleClass = "title-"+activeArtwork
+  let nameOfNameClass = "title-"+activeArtwork
+  enter_animation(`${nameOfTitleClass}`);
+  enter_animation(`${nameOfNameClass}`);
 });
 
 const navigateCarousel = (step, stepType) => {
@@ -72,5 +74,7 @@ const navigateCarousel = (step, stepType) => {
   element.innerHTML = `0${activeArtwork+1}/0${arts.length}`
   finalTitle = document.getElementsByClassName(`title-${activeArtwork}`)
   exit_animation(`title-${initialActiveArtwork}`);
+  exit_animation(`name-${initialActiveArtwork}`);
   enter_animation(`title-${activeArtwork}`)
+  enter_animation(`name-${activeArtwork}`)
 }

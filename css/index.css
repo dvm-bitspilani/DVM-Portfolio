@@ -539,31 +539,33 @@ input:focus {
 .artwork-title-container{
   height: 20vh;
   overflow: hidden;
-  /* white-space: wrap; */
-  /* background-color: red; */
   z-index: 10;
   width: 30vw;
-  /* display: flex; */
 }
 
 .artwork-title{
   top: 0;
   width: 30vw;
-  /* background-color: red; */
   font-family: "Poppins";
   height: 20vh;
-  /* display: inline-block; */
   font-size: 7vh;
   display: none;
 }
 
+.artwork-name-container{
+  height: 5vh;
+  overflow: hidden;
+  z-index: 10;
+  width: 20vw;
+}
+
 .artwork-name {
-  position: relative;
-  /* left: 9vw; */
-  /* top: 30vh; */
-  font-size: 49px;
+  top: 0;
+  width: 20vw;
   font-family: "Poppins";
-  font-weight: 600;
+  height: 5vh;
+  font-size: 3vh;
+  /* display: none; */
 }
 
 .artwork-scroller {
