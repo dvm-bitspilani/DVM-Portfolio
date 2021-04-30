@@ -323,6 +323,108 @@ const mouseUpHandler = function () {
 
 ele.addEventListener("mousedown", mouseDownHandler);
 
+// Projects scroll for touch devices
+
+slider.addEventListener("touchstart", (e) => {
+  isDown = true;
+  slider.classList.add("active");
+  ele.classList.add("active");
+  for (var i = 0; i < number_of_projects; i++) {
+    document
+      .getElementsByClassName("single_project")
+      [i].classList.add("active");
+  }
+  startX = e.touches[0].pageX - inner.offsetLeft;
+  scrollLeft = inner.scrollLeft;
+});
+// slider.addEventListener("mouseleave", () => {
+//   isDown = false;
+//   slider.classList.remove("active");
+//   ele.classList.remove("active");
+// });
+slider.addEventListener("touchend", () => {
+  isDown = false;
+  slider.classList.remove("active");
+  ele.classList.remove("active");
+  for (var i = 0; i < number_of_projects; i++) {
+    document
+      .getElementsByClassName("single_project")
+      [i].classList.remove("active");
+  }
+});
+slider.addEventListener("touchmove", (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.touches[0].pageX - inner.offsetLeft;
+  const walk = (x - startX) * 2; //scroll-fast
+  clearInterval(timer_color);
+  clearTimeout(timer_scroll);
+  inner.scrollLeft = scrollLeft - walk;
+  var slider_offset = (inner.scrollLeft / scroll_dist) * slide_bar_scroll_dist;
+
+  if (slider_offset > left_limit && slider_offset < right_limit) {
+    ele.style.left = `${slider_offset}px`;
+  } else if (slider_offset < left_limit) {
+    ele.style.left = `${left_limit}px`;
+  } else {
+    ele.style.left = `${right_limit}px`;
+  }
+  white.style.width = "0%";
+  grey.style.width = "100%";
+  timer();
+});
+
+// Slider for touch devices
+
+const touchDownHandler = function (e) {
+  //console.log("Hello");
+  x = e.touches[0].clientX;
+  //console.log(e);
+  ele.classList.add("active");
+  slider.classList.add("active");
+  for (var i = 0; i < number_of_projects; i++) {
+    document
+      .getElementsByClassName("single_project")
+      [i].classList.add("active");
+  }
+
+  ele.addEventListener("touchmove", touchMoveHandler);
+  ele.addEventListener("touchend", touchUpHandler);
+};
+
+const touchMoveHandler = function (e) {
+  // console.log("mobile moved");
+  const dx = e.touches[0].clientX - x;
+  var ele_offset = ele.offsetLeft + dx;
+  // console.log(e.touches[0].clientX, x);
+  if (ele_offset > right_limit || ele_offset < left_limit) {
+    return;
+  }
+  clearInterval(timer_color);
+  clearTimeout(timer_scroll);
+  ele.style.left = `${ele_offset}px`;
+
+  inner.scrollLeft = (ele_offset / slide_bar_scroll_dist) * scroll_dist;
+  white.style.width = "0%";
+  grey.style.width = "100%";
+  timer();
+  x = e.touches[0].clientX;
+};
+
+const touchUpHandler = function () {
+  ele.classList.remove("active");
+  slider.classList.remove("active");
+  for (var i = 0; i < number_of_projects; i++) {
+    document
+      .getElementsByClassName("single_project")
+      [i].classList.remove("active");
+  }
+  ele.removeEventListener("touchmove", touchMoveHandler);
+  ele.removeEventListener("touchend", touchUpHandler);
+};
+
+ele.addEventListener("touchstart", touchDownHandler);
+
 // Left and Right Arrow Buttons
 
 function left_right(input) {
@@ -332,9 +434,9 @@ function left_right(input) {
   var distance_from_left = parseFloat(
     parseFloat(ele.style.left) - left_limit
   ).toFixed(2);
-  console.log("Distance fro left", distance_from_left);
-  console.log("MF", mulitplying_factor);
-  console.log("total_dist", slide_bar_scroll_dist);
+  // console.log("Distance fro left", distance_from_left);
+  // console.log("MF", mulitplying_factor);
+  // console.log("total_dist", slide_bar_scroll_dist);
 
   if (input == "l") {
     var temp = distance_from_left / mulitplying_factor;
@@ -388,7 +490,7 @@ function move(direction, to_position, mulitplying_factor) {
   ele.style.left = `${left_limit + to_position * mulitplying_factor}px`;
   // inner.scrollLeft =
   //   ((left_limit + to_position * mulitplying_factor) / slide_bar_scroll_dist) *
-  console.log("to position", to_position);
+  // console.log("to position", to_position);
   //   scroll_dist;
   // if (direction == "l") {
   //   inner.scrollLeft =
@@ -404,7 +506,7 @@ function move(direction, to_position, mulitplying_factor) {
   // }
   inner.scrollLeft = (to_position * scroll_dist) / (number_of_projects - 1);
   white.style.width = "0%";
-  console.log(to_position);
+  //console.log(to_position);
   grey.style.width = "100%";
   timer();
   setTimeout(() => {

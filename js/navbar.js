@@ -1,8 +1,8 @@
 let isOpened = false;
 const hamLine = document.getElementsByClassName("ham-line");
-console.log("Hi");
+//console.log("Hi");
 const openCloseNav = () => {
-  console.log("hello");
+  //console.log("hello");
   let navContainer = document.getElementById("navContainer");
   let smallLinksHeader = document.getElementsByClassName("smallLinksHeader")[0];
   let smallLinks = document.getElementsByClassName("smallLinks");
