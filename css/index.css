@@ -237,6 +237,11 @@ body::-webkit-scrollbar {
   transform: translateX(100px);
 }
 
+.icon-container{
+  opacity: 0;
+  transform: translateX(100px);
+}
+
 .our-achievements {
   margin-top: 20vh;
   display: flex;

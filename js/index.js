@@ -12,36 +12,69 @@ font.load().then(() => {
 function allImagesLoaded() {
   console.log("ALL IMAGES LOADED");
   document.getElementsByClassName("loader")[0].style.display = "none";
+  console.log("hellovbu");
+  for (let i = 0; i < pages.length; ++i) {
+    document.getElementsByClassName("section-nav")[0].innerHTML += `
+          <div class="dot" onclick="toDot(${i})"></div>
+      `;
+  }
+  
+  for (let i = 0; i < pages.length; i++) {
+    pagesPositions.push(pages[i].getBoundingClientRect().top);
+    console.log(pagesPositions[i]);
+  }
 }
 
-let currentPage = 0;
-let lastScrollTime = 0;
-const whereTop = document
-  .getElementsByClassName("page")[0]
-  .getBoundingClientRect().top;
-let scrollDebounce = true;
-document.documentElement.scrollTo(0, 0);
-const fromTop = document
-  .getElementsByClassName("page")[1]
-  .getBoundingClientRect().top;
-currentPage = Math.floor((whereTop / fromTop) * -1);
+// let currentPage = 0;
+// let lastScrollTime = 0;
+// const whereTop = document
+//   .getElementsByClassName("page")[0]
+//   .getBoundingClientRect().top;
+// let scrollDebounce = true;
+// document.documentElement.scrollTo(0, 0);
+// const fromTop = document
+//   .getElementsByClassName("page")[1]
+//   .getBoundingClientRect().top;
+// currentPage = Math.floor((whereTop / fromTop) * -1);
 
 const pages = document.getElementsByClassName("page");
 let pagesPositions = [];
-let pagesMidPositions = [];
 
-for (let i = 0; i < pages.length; ++i) {
-  document.getElementsByClassName("section-nav")[0].innerHTML += `
-        <div class="dot" onclick="toDot(${i})"></div>
-    `;
-}
+// for (let i = 0; i < pages.length; ++i) {
+//   document.getElementsByClassName("section-nav")[0].innerHTML += `
+//         <div class="dot" onclick="toDot(${i})"></div>
+//     `;
+// }
 
-for (let i = 0; i < pages.length; i++) {
-  pagesPositions.push(pages[i].getBoundingClientRect().top);
-  console.log(pagesPositions[i]);
-}
+// for (let i = 0; i < pages.length; i++) {
+//   pagesPositions.push(pages[i].getBoundingClientRect().top);
+//   console.log(pagesPositions[i]);
+// }
+
+
+
+// for (let i = 0; i < pages.length; ++i) {
+//   document.getElementsByClassName("section-nav")[0].innerHTML += `
+//         <div class="dot" onclick="toDot(${i})"></div>
+//     `;
+// }
+
+// for (let i = 0; i < pages.length; i++) {
+//   pagesPositions.push(pages[i].getBoundingClientRect().top);
+//   console.log(pagesPositions[i]);
+// }
+
+
+console.log("hello")
 
 let dots = document.getElementsByClassName("dot");
+
+console.log(document.getElementsByClassName('home')[0].getBoundingClientRect().top)
+console.log(document.getElementsByClassName('about')[0].getBoundingClientRect().top)
+console.log(document.getElementsByClassName('projects-page')[0].getBoundingClientRect().top)
+console.log(document.getElementsByClassName('blog')[0].getBoundingClientRect().top)
+console.log(document.getElementsByClassName('artwork')[0].getBoundingClientRect().top)
+console.log(document.getElementsByClassName('contact')[0].getBoundingClientRect().top)
 
 //generic function for scrolling the section starts here---------------
 
@@ -101,6 +134,8 @@ const scrollSection = (pageNo) => {
 const scrollToSection = () => {
   let currActiveDot = activeDot;
   let currScroll = document.documentElement.scrollTop;
+  // console.log(currScroll)
+  // console.log('nijbuneiv')
   if (currScroll > pagesPositions[pagesPositions.length - 1]) {
     activeDot = pagesPositions.length - 1;
   } else if (currScroll < pagesPositions[1]) {
@@ -140,7 +175,7 @@ const selectDot = (pageNo) => {
 document.addEventListener("scroll", scrollToSection);
 
 let loaded = () => {
-  let heading = document.getElementsByClassName("home-heading")[0];
+  // let heading = document.getElementsByClassName("home-heading")[0];
   let logo = document.getElementById("homeLogoContainer");
   let rightStrip = document.getElementsByClassName("section-nav")[0];
   let ham = document.getElementsByClassName("ham")[0];
@@ -185,11 +220,11 @@ let loaded = () => {
   //     delay: 1000,
   //   });
 
-  setTimeout(() => {
-    heading.style.opacity = "1";
-    heading.style.transition = "all 0.3s ease-out";
-    heading.style.transform = "scale(1) rotate(0deg)";
-  }, 1100);
+  // setTimeout(() => {
+  //   heading.style.opacity = "1";
+  //   heading.style.transition = "all 0.3s ease-out";
+  //   heading.style.transform = "scale(1) rotate(0deg)";
+  // }, 1100);
 
   setTimeout(() => {
     rightStrip.style.transition = "all 0.3s ease-out";

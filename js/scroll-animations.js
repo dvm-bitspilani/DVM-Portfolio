@@ -114,11 +114,6 @@ function left_enter_animate_icons(name, val) {
             element[2].style.opacity = 1;
             element[2].style.transform = 'translateX(0)';
         }, 200)
-        setTimeout(() => {
-            element[3].classList.add('left_animate');
-            element[3].style.opacity = 1;
-            element[3].style.transform = 'translateX(0)';
-        }, 300)
     }
 }
 
@@ -162,7 +157,7 @@ function animate() {
     left_enter_animation('about-picture', 0)
     right_enter_animation('about-info-1', 0)
     left_enter_animation('about-info-2', 0)
-    left_enter_animate_icons('icon', 0)
+    left_enter_animate_icons('icon-container', 0)
     scale_enter_animation('project-heading1', 0)
     scale_enter_animation('project-heading2', 0)
     right_enter_animation('mobile11', -100)
