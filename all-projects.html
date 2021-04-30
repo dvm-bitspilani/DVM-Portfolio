@@ -13,6 +13,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <title>All Projects</title>
   </head>
 
@@ -30,15 +31,93 @@
         <div class="sk-cube sk-cube9"></div>
       </div>
     </div>
-    <div class="container">
-      <nav class="navbar">
-        <h1 class="brand">
+    <nav class="navbar">
+      <!-- <div class="brand">
+        DVM
+    </div> -->
+      <div class="section-nav"></div>
+      <h1 class="brand">
+        <span class="text-wrapper">
+          <!-- <span class="line line1"></span> -->
+          <span class="letters">DVM</span>
+          <!-- <span class="line line2"></span> -->
+        </span>
+      </h1>
+
+      <div class="ham" onclick="openCloseNav()">
+        <div class="ham-line"></div>
+        <div class="ham-line"></div>
+      </div>
+    </nav>
+    <div id="navContainer">
+      <div class="followContainer">
+        <h3 class="smallLinksHeader">Follow</h3>
+        <a href="" class="smallLinks"
+          ><div class="smallLinksText">Facebook</div>
+          <div class="smallLinksIcons">
+            <img src="assets/img/facebook (2)-1@2x.png" /></div
+        ></a>
+        <a href="" class="smallLinks"
+          ><div class="smallLinksText">Instagram</div>
+          <div class="smallLinksIcons">
+            <img src="assets/img/instagram-sketched@2x.png" /></div
+        ></a>
+        <a href="" class="smallLinks"
+          ><div class="smallLinksText">Behance</div>
+          <div class="smallLinksIcons">
+            <img src="assets/img/facebook (2)-1@2x.png" /></div
+        ></a>
+        <a href="" class="smallLinks"
+          ><div class="smallLinksText">Dribble</div>
+          <div class="smallLinksIcons">
+            <img src="assets/img/facebook (2)-1@2x.png" /></div
+        ></a>
+        <a href="" class="smallLinks"
+          ><div class="smallLinksText">Twitter</div>
+          <div class="smallLinksIcons">
+            <img src="assets/img/twitter@2x.png" /></div
+        ></a>
+      </div>
+      <div class="elementsContainer">
+        <div class="largeLinkContainer1">
           <span class="text-wrapper">
-            <span class="letters">DVM</span>
+            <a class="largeLink1">About</a>
           </span>
-        </h1>
-        <div class="backArrow"></div>
-      </nav>
+        </div>
+        <div class="largeLinkContainer2">
+          <span class="text-wrapper">
+            <a class="largeLink2">Work</a>
+          </span>
+        </div>
+        <div class="largeLinkContainer3">
+          <span class="text-wrapper">
+            <a class="largeLink3">Blogs</a>
+          </span>
+        </div>
+        <div class="largeLinkContainer4">
+          <span class="text-wrapper">
+            <a class="largeLink4">Artworks</a>
+          </span>
+        </div>
+        <div class="largeLinkContainer5">
+          <span class="text-wrapper">
+            <a class="largeLink5">Achievements</a>
+          </span>
+        </div>
+        <div class="largeLinkContainer6">
+          <span class="text-wrapper">
+            <a class="largeLink6">Contact Us</a>
+          </span>
+        </div>
+        <!-- <a href="">About</a>
+        <a href="">Work</a>
+        <a href="">Blogs</a>
+        <a href="">Artworks</a>
+        <a href="">Achievements</a>
+        <a href="">Contact Us</a> -->
+      </div>
+    </div>
+    <div class="container">
       <div class="wrapper">
         <div class="inner">
           <div class="projects" onmouseover="mouseUpHandler()"></div>
@@ -50,6 +129,9 @@
                 <div class="slider_arrow"></div>
                 <div id="slider">
                   <div id="white" style="width: 0%"></div>
+                  <div class="page-number-container">
+                    <div id="page-number"></div>
+                  </div>
                   <div id="grey" style="width: 100%"></div>
                 </div>
                 <div class="slider_arrow"></div>
@@ -71,5 +153,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="js/information.js"></script>
   <script src="js/imageLoaded.js"></script>
+  <script src="js/navbar.js"></script>
   <script src="js/all-projects.js"></script>
 </html>

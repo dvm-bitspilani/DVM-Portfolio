@@ -16,6 +16,13 @@ nav > div {
   margin: 12px;
   width: 75px;
 }
+.section-nav {
+  right: 0vw;
+  top: 15vh;
+  z-index: 5;
+  position: fixed;
+  transform: translateX(150px);
+}
 .brand {
   width: 50%;
   font-size: 30px;
@@ -166,6 +173,14 @@ nav > div {
 }
 
 @media all and (max-width: 600px) {
+  .ham {
+    width: 15%;
+    position: relative;
+    left: 7vw;
+  }
+  .section-nav {
+    display: none;
+  }
   #navContainer {
     flex-direction: column-reverse;
     justify-content: space-evenly;
