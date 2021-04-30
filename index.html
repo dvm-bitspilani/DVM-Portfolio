@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/loader.css">
     <link rel="stylesheet" href="css/scroll-animations.css">
     <link rel="stylesheet" href="css/Landing Page/home.css">
     <link rel="icon" href="assets/img/1x/Asset prev.png">
@@ -18,6 +19,19 @@
 </head>
 
 <body onload=loaded()>
+     <div class="loader">
+      <div class="sk-cube-grid">
+        <div class="sk-cube sk-cube1"></div>
+        <div class="sk-cube sk-cube2"></div>
+        <div class="sk-cube sk-cube3"></div>
+        <div class="sk-cube sk-cube4"></div>
+        <div class="sk-cube sk-cube5"></div>
+        <div class="sk-cube sk-cube6"></div>
+        <div class="sk-cube sk-cube7"></div>
+        <div class="sk-cube sk-cube8"></div>
+        <div class="sk-cube sk-cube9"></div>
+      </div>
+    </div>
     <nav class="navbar">
         <!-- <div class="brand">
         DVM
@@ -210,7 +224,7 @@
 
 
                     <!-- <div class="section-heading ">Selected Projects</div> -->
-                    <div class="show-all">
+                    <div class="show-all" onclick="location.href='all-projects.html'">
                         <!-- <div style="display: flex; justify-content: center; align-items: center; margin-right: 10px;">
                             Show All</div>
                         <div class="projectArrow"></div> -->
@@ -295,35 +309,35 @@
                 <div class="scrolling-wrapper" id="scrolling-wrapper" style="cursor: none;">
 
                     <div class="card" style="margin-left: 0">
-                        <div class="blogimage"></div>
+                        <div ><img src="assets/img/blogpic.jpg" class="blogimage"></div>
                         <div class="blogtitle">
                             <div class="blogtitletitle">asfdg<br>asdfg</div>
                             <div class="blogby">name surname</div>
                         </div>
                     </div>
                     <div class="card">
-                        <div class="blogimage"></div>
+                        <div ><img src="assets/img/blogpic.jpg" class="blogimage"></div>
                         <div class="blogtitle">
                             <div class="blogtitletitle">asfdg<br>asdfg</div>
                             <div class="blogby">name surname</div>
                         </div>
                     </div>
                     <div class="card">
-                        <div class="blogimage"></div>
+                        <div ><img src="assets/img/blogpic.jpg" class="blogimage"></div>
                         <div class="blogtitle">
                             <div class="blogtitletitle">asfdg<br>asdfg</div>
                             <div class="blogby">name surname</div>
                         </div>
                     </div>
                     <div class="card">
-                        <div class="blogimage"></div>
+                        <div ><img src="assets/img/blogpic.jpg" class="blogimage"></div>
                         <div class="blogtitle">
                             <div class="blogtitletitle">asfdg<br>asdfg</div>
                             <div class="blogby">name surname</div>
                         </div>
                     </div>
                     <div class="card">
-                        <div class="blogimage"></div>
+                        <div ><img src="assets/img/blogpic.jpg" class="blogimage"></div>
                         <div class="blogtitle">
                             <div class="blogtitletitle">asfdg<br>asdfg</div>
                             <div class="blogby">name surname</div>
@@ -393,14 +407,19 @@
                         <div class="artwork-carousel">
                             <div class="artwork-img-container">
                                 <div class="artwork-img">
+                                    <img src="assets/img/projects-background.jpg" >
                                 </div>
                                 <div class="artwork-img">
+                                     <img src="assets/img/projects-background.jpg" >
                                 </div>
                                 <div class="artwork-img">
+                                     <img src="assets/img/projects-background.jpg" >
                                 </div>
                                 <div class="artwork-img">
+                                     <img src="assets/img/projects-background.jpg" >
                                 </div>
                                 <div class="artwork-img">
+                                     <img src="assets/img/projects-background.jpg" >
                                 </div>
                             </div>
                         </div>
@@ -501,6 +520,7 @@
     <script src="js/index.js"></script>
     <script src="js/artworks-section.js"></script>
     <script src="js/scroll-animations.js"></script>
+    <script src='js/imageLoaded.js'></script>
 </body>
 
 </html>
