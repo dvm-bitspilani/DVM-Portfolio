@@ -42,9 +42,10 @@ nav > div {
   margin: 2vh 0 1vh 0;
 }
 
-.brand .letter {
-  display: inline-block;
-  line-height: 1em;
+.brand .letters {
+  /* display: inline-block;
+  line-height: 1em; */
+  cursor: pointer;
 }
 
 .brand .text-wrapper {

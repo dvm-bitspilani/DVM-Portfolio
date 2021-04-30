@@ -49,8 +49,6 @@ body::-webkit-scrollbar {
   padding: 12vh;
 }
 
-
-
 .dot {
   width: 3px;
   height: 3px;
@@ -69,11 +67,11 @@ body::-webkit-scrollbar {
   border-radius: 4px;
 }
 
-.enlarge{
+.enlarge {
   transition: 0.1s ease;
 }
 
-.enlarge:hover{
+.enlarge:hover {
   width: 10px;
   height: 10px;
   background: black;
@@ -452,7 +450,7 @@ input:focus {
   display: none;
 }
 
-#artworks-wrapper{
+#artworks-wrapper {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -465,14 +463,14 @@ input:focus {
   align-items: center;
   justify-content: space-evenly;
   /* top: 20vh; */
-  width:100%;
+  width: 100%;
   height: 100%;
   width: 90vw;
   transform: translateY(100px);
   opacity: 0;
 }
 
-.artwork-left{
+.artwork-left {
   position: relative;
   height: 100%;
   width: 30%;
@@ -483,7 +481,7 @@ input:focus {
   justify-content: space-evenly;
 }
 
-.artwork-right{
+.artwork-right {
   width: 70%;
 }
 
@@ -511,7 +509,7 @@ input:focus {
 }
 
 .left-arrow:hover,
-.right-arrow:hover{
+.right-arrow:hover {
   width: 6vh;
   height: 6vh;
 }
@@ -577,7 +575,7 @@ input:focus {
   white-space: normal;
 }
 
-.heightClass{
+.heightClass {
   height: 10vh;
   opacity: 0;
   transform: translateX(100px);
@@ -747,7 +745,6 @@ input:focus {
 } */
 
 @media all and (max-width: 600px) {
-  
   .inner-wrapper {
     margin: 2vh 0 2vh 0;
   }
@@ -795,7 +792,7 @@ input:focus {
   .button {
     width: 37.5vw;
   }
- 
+
   #about {
     min-height: 100vh;
     height: fit-content;
@@ -868,6 +865,7 @@ input:focus {
     /* line-height: 122px; */
     font-weight: medium;
     letter-spacing: 0px;
+    line-height: 0;
     text-transform: uppercase;
   }
   .show-all {
@@ -889,6 +887,7 @@ input:focus {
     border: solid 1px white;
   }
   .projects-page .section-heading {
+    line-height: 0;
     margin-top: 1vh;
   }
   .project {

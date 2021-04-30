@@ -1,142 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width= device-width, initial-scale = 1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width= device-width, initial-scale = 1" />
     <title>Our Team</title>
-    <link href="css/nav.css" rel="stylesheet" type="text/css">
-    <link href="css/team.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="css/fonts.css">
+    <link href="css/nav.css" rel="stylesheet" type="text/css" />
+    <link href="css/team.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/fonts.css" />
     <script src="./js/fontfaceobserver.standalone.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-</head>
-<body onload="updateTeam(0)">
-<nav class="navbar">
-    <h1 class="brand">
-            <span class="text-wrapper">
-                <span class="letters">DVM</span>
-            </span>
-    </h1>
+  </head>
+  <body onload="updateTeam(0)">
+    <nav class="navbar">
+      <!-- <div class="brand">
+        DVM
+    </div> -->
+      <div class="section-nav"></div>
+      <h1 class="brand">
+        <span class="text-wrapper">
+          <!-- <span class="line line1"></span> -->
+          <span class="letters" onclick="location.href='index.html'">DVM</span>
+          <!-- <span class="line line2"></span> -->
+        </span>
+      </h1>
 
-    <div class="ham" onclick="openCloseNav()" style="transform: none">
+      <div class="ham" onclick="openCloseNav()">
         <div class="ham-line"></div>
         <div class="ham-line"></div>
-    </div>
-</nav>
-<div id="navContainer">
-    <div class="followContainer">
-        <h3 class="smallLinksHeader">
-            Follow
-        </h3>
-        <a href="" class="smallLinks">Facebook</a>
-        <a href="" class="smallLinks">Instagram</a>
-        <a href="" class="smallLinks">LinkedIn</a>
-        <a href="" class="smallLinks">Behance</a>
-        <a href="" class="smallLinks">Dribble</a>
-    </div>
-    <div class="elementsContainer">
+      </div>
+    </nav>
+    <div id="navContainer">
+      <div class="followContainer">
+        <h3 class="smallLinksHeader">Follow</h3>
+        <a href="" class="smallLinks"
+          ><div class="smallLinksText">Facebook</div>
+          <div class="smallLinksIcons">
+            <img src="assets/img/facebook (2)-1@2x.png" /></div
+        ></a>
+        <a href="" class="smallLinks"
+          ><div class="smallLinksText">Instagram</div>
+          <div class="smallLinksIcons">
+            <img src="assets/img/instagram-sketched@2x.png" /></div
+        ></a>
+        <a href="" class="smallLinks"
+          ><div class="smallLinksText">Behance</div>
+          <div class="smallLinksIcons">
+            <img src="assets/img/facebook (2)-1@2x.png" /></div
+        ></a>
+        <a href="" class="smallLinks"
+          ><div class="smallLinksText">Dribble</div>
+          <div class="smallLinksIcons">
+            <img src="assets/img/facebook (2)-1@2x.png" /></div
+        ></a>
+        <a href="" class="smallLinks"
+          ><div class="smallLinksText">Twitter</div>
+          <div class="smallLinksIcons">
+            <img src="assets/img/twitter@2x.png" /></div
+        ></a>
+      </div>
+      <div class="elementsContainer">
         <div class="largeLinkContainer1">
-                    <span class="text-wrapper">
-                        <a class="largeLink1">About</a>
-                    </span>
+          <span class="text-wrapper">
+            <a
+              class="largeLink1"
+              href="/index.html#about"
+              onclick="openCloseNav()"
+              >About</a
+            >
+          </span>
         </div>
         <div class="largeLinkContainer2">
-                    <span class="text-wrapper">
-                        <a class="largeLink2">Work</a>
-                    </span>
+          <span class="text-wrapper">
+            <a class="largeLink2" href="/all-projects.html" target="_blank"
+              >Projects</a
+            >
+          </span>
         </div>
         <div class="largeLinkContainer3">
-                    <span class="text-wrapper">
-                        <a class="largeLink3">Blogs</a>
-                    </span>
+          <span class="text-wrapper">
+            <a class="largeLink3" href="/all-blogs.html" target="_blank"
+              >Blogs</a
+            >
+          </span>
         </div>
         <div class="largeLinkContainer4">
-                    <span class="text-wrapper">
-                        <a class="largeLink4">Artworks</a>
-                    </span>
+          <span class="text-wrapper">
+            <a class="largeLink4" href="/artworks.html" target="_blank"
+              >Artworks</a
+            >
+          </span>
         </div>
         <div class="largeLinkContainer5">
-                    <span class="text-wrapper">
-                        <a class="largeLink5">Achievements</a>
-                    </span>
+          <span class="text-wrapper">
+            <a class="largeLink5" href="/team.html" target="_blank">Team</a>
+          </span>
         </div>
         <div class="largeLinkContainer6">
-                    <span class="text-wrapper">
-                        <a class="largeLink6">Contact Us</a>
-                    </span>
+          <span class="text-wrapper">
+            <a
+              class="largeLink6"
+              href="/index.html#contact"
+              onclick="openCloseNav()"
+              >Contact Us</a
+            >
+          </span>
         </div>
+        <!-- <a href="">About</a>
+        <a href="">Work</a>
+        <a href="">Blogs</a>
+        <a href="">Artworks</a>
+        <a href="">Achievements</a>
+        <a href="">Contact Us</a> -->
+      </div>
     </div>
-</div>
-<div class="wrapper">
-    <div class="background"></div>
-    <div class="landingSection">
-        <h1>
-            WE ARE DVM
-        </h1>
+    <div class="wrapper">
+      <div class="background"></div>
+      <div class="landingSection">
+        <h1>WE ARE DVM</h1>
         <div class="cross" onclick="scrollFullPage()">
-            <div class="crossLine" style="transform: rotate(45deg)"></div>
-            <div class="crossLine" style="transform: rotate(-45deg)"></div>
+          <div class="crossLine" style="transform: rotate(45deg)"></div>
+          <div class="crossLine" style="transform: rotate(-45deg)"></div>
         </div>
-    </div>
-    <div class="artworkWrapper">
+      </div>
+      <div class="artworkWrapper">
         <div class="aboutArtwork" onclick="console.log('Yo')">
-            <h1>About Team</h1>
-            <i>About APOGEE Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit mi neque, ultricies
-                tincidunt leo vulputate ac.</i>
-
+          <h1>About Team</h1>
+          <i
+            >About APOGEE Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit. Curabitur hendrerit mi neque, ultricies tincidunt leo
+            vulputate ac.</i
+          >
         </div>
         <div class="departments">
-            <div class="departmentElement selected" onclick="teamChange(this)">
-                Frontend Developers
-            </div>
-            <div class="departmentElement" onclick="teamChange(this)">
-                App Developers
-            </div>
-            <div class="departmentElement" onclick="teamChange(this)">
-                Video Team
-            </div>
-            <div class="departmentElement" onclick="teamChange(this)">
-                Design Team
-            </div>
-            <div class="departmentElement" onclick="teamChange(this)">
-                Backend Developers
-            </div>
+          <div class="departmentElement selected" onclick="teamChange(this)">
+            Frontend Developers
+          </div>
+          <div class="departmentElement" onclick="teamChange(this)">
+            App Developers
+          </div>
+          <div class="departmentElement" onclick="teamChange(this)">
+            Video Team
+          </div>
+          <div class="departmentElement" onclick="teamChange(this)">
+            Design Team
+          </div>
+          <div class="departmentElement" onclick="teamChange(this)">
+            Backend Developers
+          </div>
         </div>
 
         <div class="custom-select">
-            <select onchange="console.log('Yo')" >
-                <option value="0" onclick="console.log('Yo')">
-                    Frontend Developers
-                </option>
-                <option value="1" onclick="updateTeam(1)">
-                    Frontend Developers
-                </option>
-                <option value="2" onclick="updateTeam(2)">
-                    Video Team
-                </option>
-                <option value="3" onclick="updateTeam(3)">
-                    Design Team
-                </option>
-                <option value="4" onclick="updateTeam(4)">
-                    Backend Developers
-                </option>
-                <option value="5" onclick="updateTeam(1)">
-                    App Developers
-                </option>
-            </select>
+          <select onchange="console.log('Yo')">
+            <option value="0" onclick="console.log('Yo')">
+              Frontend Developers
+            </option>
+            <option value="1" onclick="updateTeam(1)">
+              Frontend Developers
+            </option>
+            <option value="2" onclick="updateTeam(2)">Video Team</option>
+            <option value="3" onclick="updateTeam(3)">Design Team</option>
+            <option value="4" onclick="updateTeam(4)">
+              Backend Developers
+            </option>
+            <option value="5" onclick="updateTeam(1)">App Developers</option>
+          </select>
         </div>
 
-        <div class="teamContainer">
-            
-        </div>
+        <div class="teamContainer"></div>
+      </div>
     </div>
-
-</div>
-<script src="js/artwork.js"></script>
-<script src="js/team.js"></script>
-<script src="js/navbar.js"></script>
-</body>
+    <script src="js/artwork.js"></script>
+    <script src="js/team.js"></script>
+    <script src="js/navbar.js"></script>
+  </body>
 </html>
 
 <!DOCTYPE html>
@@ -212,7 +249,6 @@
 <!--</div>-->
 <!--<div class="wrapper">-->
 <!--    <div class="landingSection">-->
-
 
 <!--</div>-->
 <!--<script src="js/artwork.js"></script>-->
