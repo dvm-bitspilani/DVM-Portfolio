@@ -38,6 +38,10 @@ for (var p = 0; p < info.teams.length; p++) {
   document.getElementsByClassName("teams")[0].appendChild(div);
 }
 
+document
+  .getElementsByClassName("show-all")[0]
+  .setAttribute("onclick", `window.open('${info.link}', '_blank')`);
+document.getElementsByClassName("show-all")[0].setAttribute("target", "_blank");
 document.getElementsByClassName("date")[0].innerHTML = info.date;
 document.getElementsByClassName("main-photo")[0].src = info.main_photo_link;
 document.getElementsByClassName("long-1")[0].src = info.long_photos_link[0];

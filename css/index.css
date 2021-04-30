@@ -21,6 +21,7 @@ body::-webkit-scrollbar {
   background-color: black;
   box-sizing: border-box;
   color: #fafafa;
+  overflow-x: hidden;
   position: absolute;
   left: 0;
   top: 0;
@@ -140,7 +141,7 @@ body::-webkit-scrollbar {
   width: max-content;
   flex-direction: row;
   overflow-x: hidden;
-  width: 100vw;
+
   transform: translateX(-500px);
   position: absolute;
   top: calc(100px + 125vh);
@@ -150,7 +151,7 @@ body::-webkit-scrollbar {
   font: normal normal bold 201px/122px Poppins;
   letter-spacing: 30.15px;
   color: #ffffff;
-  opacity: 0.05;
+  opacity: 0.07;
   margin: 0 100px;
   padding: 20px 0;
   white-space: nowrap;
@@ -224,16 +225,15 @@ body::-webkit-scrollbar {
   width: 30vw;
   height: auto;
   display: flex;
-  margin-top: 4vh;
+  margin-top: 6vh;
 }
 .icon {
-  margin-right: 2vw;
-  width: 3vw;
-  height: 3vw;
-  border-radius: 50%;
+  margin-right: 3vw;
+  width: 21px;
+  /* border-radius: 50%; */
   content: "";
-  background-color: white;
-  opacity: 0;
+  /* background-color: white; */
+  /* opacity: 0; */
   transform: translateX(100px);
 }
 
@@ -805,6 +805,7 @@ input:focus {
   }
   .about-background-container {
     top: calc(120px + 125vh);
+    transform: translateX(-100px);
   }
   .about-background {
     opacity: 0.09;
@@ -848,13 +849,14 @@ input:focus {
     margin-left: 0;
   }
   .about-icons {
-    margin-top: 2vh;
+    margin-top: 5vh;
     width: auto;
   }
   .icon {
-    height: 8vw;
-    width: 8vw;
-    margin-right: 4vw;
+    /* height: 8vw;
+    width: 8vw; */
+    width: 20px;
+    margin-right: 7vw;
   }
   .projects-page {
     padding: 20px;
