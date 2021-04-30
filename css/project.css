@@ -59,6 +59,7 @@ body::-webkit-scrollbar {
   background-image: linear-gradient(to top left, #a18cd1 50%, #fbc2eb 50%);
   background-attachment: fixed;
   background-size: cover;
+  background-position: center;
   position: fixed;
   top: 0;
   z-index: -1;
@@ -206,7 +207,7 @@ body::-webkit-scrollbar {
 
 .teams-and-date {
   height: max-content;
-  width: 100vw;
+  width: 80vw;
   background-color: black;
   padding: 12.5vh 10vw;
   display: flex;
@@ -283,4 +284,101 @@ body::-webkit-scrollbar {
   margin: 7vh 7.5vh 7.5vh 0;
   height: auto;
   background-size: cover;
+}
+.take-back {
+  width: 100vw;
+  background-color: #232323;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+}
+.take-back-content {
+  cursor: pointer;
+  font: normal normal 600 51px/77px Poppins;
+}
+
+@media all and (max-width: 600px) {
+  .hero {
+    background: rgb(0, 0, 0, 0.6);
+  }
+  .scroll-indicator {
+    display: none;
+  }
+  .heading {
+    font-size: 40px;
+  }
+  .link {
+    color: #ffffff;
+    font-size: 12px;
+    opacity: 0.38;
+    margin-bottom: 0;
+  }
+  .cross {
+    margin-top: 45vh;
+  }
+  #project-about {
+    flex-direction: column;
+  }
+  .left-project-about,
+  .right-project-about {
+    width: 80vw;
+    padding: 0 10vw;
+  }
+  .left-project-about {
+    margin-top: 3vh;
+  }
+  .right-project-about {
+    margin-top: 10vh;
+  }
+  .smaller-text {
+    margin-right: 0;
+    font-size: 14px;
+  }
+  .photo {
+    box-shadow: 0px -4px 29px #00000030;
+    mix-blend-mode: exclusion;
+    opacity: 1;
+    min-width: 100vw;
+    width: auto;
+    height: 90vh;
+    background-position: center;
+  }
+  .teams-and-date {
+    width: 90vw;
+    padding: 12.5vh 5vw;
+  }
+  .teams {
+    display: grid;
+    grid-template-columns: auto;
+  }
+  .date-container {
+    width: 45vw;
+    margin-left: 0;
+    align-items: center;
+  }
+  .long-photos-container {
+    margin-top: 15vh;
+  }
+  .long-1 {
+    margin-bottom: 13vh;
+  }
+  .long-2 {
+    width: 40vw;
+    margin: -7vh 2vw 7.5vh 0;
+  }
+  .long-3 {
+    width: 40vw;
+    margin: 2vh 0 7.5vh 0;
+  }
+  .take-back {
+    padding: 0 15vw;
+    width: 70vw;
+  }
+  .take-back-content {
+    font-size: 25px;
+    line-height: 38px;
+
+    text-align: center;
+  }
 }
