@@ -181,83 +181,81 @@
   .ml33 .letter,
   .ml44 .letter,
   .ml55 .letter {
-
     display: inline-block;
     line-height: 1em;
-    font: normal normal 600 40px/60px Poppins;
+    /* font: normal normal 600 40px/60px Poppins; */
+    font-size: 24px;
   }
 
-  .left_animate{
+  .left_animate {
     animation-name: left_enter;
-    animation-timing-function: cubic-bezier(.25,.46,.45,.94);
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
     animation-duration: 1.1s;
     animation-iteration-count: 1;
   }
 
-  .right_animate{
+  .right_animate {
     animation-name: right_enter;
-    animation-timing-function: cubic-bezier(.25,.46,.45,.94);
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
     animation-duration: 1.1s;
     animation-iteration-count: 1;
   }
 
-  .bottom_animate{
+  .bottom_animate {
     animation-name: bottom_enter;
-    animation-timing-function: cubic-bezier(.25,.46,.45,.94);
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
     animation-duration: 1.1s;
     animation-iteration-count: 1;
   }
 
-  .scale_animate{
+  .scale_animate {
     animation-name: scale_enter;
-    animation-timing-function: cubic-bezier(.25,.46,.45,.94);
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
     animation-duration: 1.1s;
     animation-iteration-count: 1;
   }
 
-
-
-  @keyframes left_enter{
-      0% {
-          opacity: 0;
-          transform: translateX(100px);
-      }
-      100%{
-          opacity: 1;
-          transform: translateX(0);
-      }
-  }
-
-  @keyframes right_enter{
+  @keyframes left_enter {
     0% {
-        opacity: 0;
-        transform: translateX(-100px);
+      opacity: 0;
+      transform: translateX(100px);
     }
-    100%{
-        opacity: 1;
-        transform: translateX(0);
+    100% {
+      opacity: 1;
+      transform: translateX(0);
     }
   }
 
-  @keyframes bottom_enter{
+  @keyframes right_enter {
     0% {
-        opacity: 0;
-        transform: translateY(100px);
+      opacity: 0;
+      transform: translateX(-100px);
     }
-    100%{
-        opacity: 1;
-        transform: translateY(0);
+    100% {
+      opacity: 1;
+      transform: translateX(0);
     }
   }
 
-  @keyframes scale_enter{
+  @keyframes bottom_enter {
+    0% {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scale_enter {
     0% {
       opacity: 0;
       transform: scale(1.5);
-  }
-  100%{
+    }
+    100% {
       opacity: 1;
       transform: scale(1);
-
+    }
   }
 }
