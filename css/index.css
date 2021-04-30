@@ -32,9 +32,7 @@ body::-webkit-scrollbar {
   box-sizing: border-box;
   padding: 12px;
 }
-.inner-wrapper {
-  margin: 5vh 0 5vh 0;
-}
+
 #contact-wrapper {
   height: 50vh;
 }
@@ -492,6 +490,13 @@ input:focus {
   justify-content: space-evenly;
 }
 
+
+.artwork-counter{
+  font: normal normal normal 16px/25px Poppins;
+  font-size: 3vh;
+  margin: 2vh 0;
+}
+
 .artwork-right {
   width: 70%;
 }
@@ -531,6 +536,27 @@ input:focus {
   cursor: pointer;
 }
 
+.artwork-title-container{
+  height: 20vh;
+  overflow: hidden;
+  /* white-space: wrap; */
+  /* background-color: red; */
+  z-index: 10;
+  width: 30vw;
+  /* display: flex; */
+}
+
+.artwork-title{
+  top: 0;
+  width: 30vw;
+  /* background-color: red; */
+  font-family: "Poppins";
+  height: 20vh;
+  /* display: inline-block; */
+  font-size: 7vh;
+  display: none;
+}
+
 .artwork-name {
   position: relative;
   /* left: 9vw; */
@@ -543,26 +569,29 @@ input:focus {
 .artwork-scroller {
   display: flex;
   position: relative;
-  /* top: 32vh; */
-  /* left: 9vw; */
+  width: 7.5vw;
+  overflow: hidden;
 }
 
 .artwork-scroll-individual {
   z-index: 2;
-  width: 1vw;
-  border: 2px solid #636363;
+  min-width: 1.5vw;
+  background-color: #2b2b2b;
+  height: 4px;
+  /* border: 0.1vw solid #636363; */
   cursor: pointer;
 }
 
 .active-scroll {
-  width: 1vw;
-  border: 2px solid white;
-  position: absolute;
+  width: 1.5vw;
+  /* border: 2px solid white; */
+  height: 4px;
+  background-color: white;
   left: 0;
 }
 
 .artwork-carousel {
-  height: 70vh;
+  height: 60vh;
   width: 60vw;
   position: relative;
   top: 0vh;
@@ -573,9 +602,11 @@ input:focus {
   position: relative;
   height: 100%;
   left: 0;
-  min-width: 100%;
-  transition: all 0.5s ease-in;
+  /* min-width: 100%; */
+  width: 300vw;
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   white-space: nowrap;
+  display: flex;
 }
 
 .artwork-img {
@@ -584,13 +615,19 @@ input:focus {
   height: 100%;
   background: #018786;
   white-space: normal;
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
+
+.artwork-img:hover{
+  transform: scale(1.4);
+}
+
 .artwork-img > img {
   height: 100%;
   width: 100%;
 }
 .heightClass {
-  height: 10vh;
+  height: 5vh;
   opacity: 0;
   transform: translateX(100px);
 }

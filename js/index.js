@@ -18,7 +18,7 @@ function allImagesLoaded() {
           <div class="dot" onclick="toDot(${i})"></div>
       `;
   }
-  
+
   for (let i = 0; i < pages.length; i++) {
     pagesPositions.push(pages[i].getBoundingClientRect().top);
     console.log(pagesPositions[i]);
