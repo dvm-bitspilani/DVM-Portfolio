@@ -565,7 +565,34 @@ input:focus {
   font-family: "Poppins";
   height: 5vh;
   font-size: 3vh;
-  /* display: none; */
+  display: none;
+}
+
+.artwork-links-container{
+  height: 4vh;
+  overflow: hidden;
+  /* background-color: red; */
+  z-index: 10;
+  width: 20vw;
+}
+
+.artwork-links {
+  top: 0;
+  width: 20vw;
+  font-family: "Poppins";
+  height: 4vh;
+  font-size: 3vh;
+  display: flex;
+
+}
+
+.artwork-links-link{
+  height: 100%;
+  margin-right: 2vw;
+}
+
+.link-icon{
+  cursor: pointer;
 }
 
 .artwork-scroller {

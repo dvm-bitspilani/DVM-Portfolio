@@ -38,9 +38,11 @@ document.addEventListener("DOMContentLoaded", () => {
   element = document.getElementsByClassName("artwork-counter")[0];
   element.innerHTML = "01/0" + arts.length
   let nameOfTitleClass = "title-"+activeArtwork
-  let nameOfNameClass = "title-"+activeArtwork
+  let nameOfNameClass = "name-"+activeArtwork
+  let nameOfLinksClass = "links-"+activeArtwork
   enter_animation(`${nameOfTitleClass}`);
   enter_animation(`${nameOfNameClass}`);
+  enter_animation(`${nameOfLinksClass}`);
 });
 
 const navigateCarousel = (step, stepType) => {
