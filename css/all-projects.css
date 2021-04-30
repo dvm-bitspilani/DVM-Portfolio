@@ -228,11 +228,73 @@ body {
 }
 
 @media all and (max-width: 600px) {
+  .wrapper {
+    margin-top: 5vh;
+  }
+  .project_name {
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: 0px;
+    width: 40vw;
+    height: max-content;
+    top: 40vh;
+    left: -8vw;
+  }
   .single_project {
     width: 65vw;
+    height: 65vh;
     margin: 0 7.5vw 0 7.5vw;
   }
   .projects {
     padding: 7vh 10vw 10vh 10vw;
+  }
+  .teams {
+    bottom: 5vh;
+    right: auto;
+    left: 10vw;
+    flex-direction: row;
+    overflow-x: scroll;
+    width: 80vw;
+    padding-bottom: 2vh;
+  }
+  .team-name {
+    white-space: nowrap;
+    margin-right: 5vw;
+    font-size: 12px;
+  }
+  .scrollbar_wrapper {
+    width: 80vw;
+    margin: 0 10vw;
+  }
+  #left_arrow {
+    border-left: 2vw solid transparent;
+    border-top: 2vw solid transparent;
+    border-bottom: 2vw solid transparent;
+    border-right: 2vw solid white;
+  }
+  #right_arrow {
+    border-top: 2vw solid transparent;
+    border-bottom: 2vw solid transparent;
+    border-right: 2vw solid transparent;
+    border-left: 2vw solid white;
+  }
+  #dotted_line_wrapper {
+    height: 5vh;
+    width: 65vw;
+  }
+  #dotted_line {
+    width: 65vw;
+    height: 3.5vh;
+  }
+  #slider {
+    height: 4vw;
+    width: 8vw;
+    background-color: white;
+    top: calc(3.5vh - 2vw);
+  }
+  #page-number {
+    letter-spacing: 1.65px;
+    font-size: 11px;
+    text-align: center;
   }
 }

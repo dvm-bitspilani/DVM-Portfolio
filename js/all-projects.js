@@ -388,19 +388,21 @@ function move(direction, to_position, mulitplying_factor) {
   ele.style.left = `${left_limit + to_position * mulitplying_factor}px`;
   // inner.scrollLeft =
   //   ((left_limit + to_position * mulitplying_factor) / slide_bar_scroll_dist) *
+  console.log("to position", to_position);
   //   scroll_dist;
-  if (direction == "l") {
-    inner.scrollLeft =
-      inner.scrollLeft - scroll_dist / (number_of_projects - 1);
-  } else {
-    if (to_position == 0) {
-      inner.scrollLeft = 0;
-    } else {
-      inner.scrollLeft =
-        inner.scrollLeft + scroll_dist / (number_of_projects - 1);
-      console.log(scroll_dist / (number_of_projects - 1));
-    }
-  }
+  // if (direction == "l") {
+  //   inner.scrollLeft =
+  //     inner.scrollLeft - scroll_dist / (number_of_projects - 1);
+  // } else {
+  //   if (to_position == 0) {
+  //     inner.scrollLeft = 0;
+  //   } else {
+  //     inner.scrollLeft =
+  //       inner.scrollLeft + scroll_dist / (number_of_projects - 1);
+  //     console.log(scroll_dist / (number_of_projects - 1));
+  //   }
+  // }
+  inner.scrollLeft = (to_position * scroll_dist) / (number_of_projects - 1);
   white.style.width = "0%";
   console.log(to_position);
   grey.style.width = "100%";
