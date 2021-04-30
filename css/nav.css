@@ -22,6 +22,11 @@ nav > div {
   z-index: 5;
   position: fixed;
   transform: translateX(150px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 60vh;
 }
 .brand {
   width: 50%;
