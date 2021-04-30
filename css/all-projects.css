@@ -239,6 +239,7 @@ body {
   color: white;
   font: normal normal 900 0.77vw Poppins;
   font-family: "Poppins", sans-serif;
+  transition: color 0.1s ease-in-out;
 }
 #grey {
   height: 100%;

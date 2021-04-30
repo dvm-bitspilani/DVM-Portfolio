@@ -530,6 +530,11 @@ function timer() {
     white.style.width = `${parseInt(white.style.width) + 1}%`;
 
     grey.style.width = `${parseInt(grey.style.width) - 1}%`;
+    if (parseInt(white.style.width) > 47) {
+      page_number.style.color = "#3c3c3c";
+    } else {
+      page_number.style.color = "#fff";
+    }
   }, 50);
   timer_scroll = setTimeout(() => {
     left_right("r");
