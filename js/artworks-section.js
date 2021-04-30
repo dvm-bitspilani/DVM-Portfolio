@@ -10,6 +10,16 @@ function enter_animation(name) {
   title.style.transform = 'translateX(0)';
 }
 
+function enter_links_animation(name) {
+  title = document.getElementsByClassName(`${name}`)[0];
+  title.style.display = "flex";
+  title.style.transform = "translateX(-100px)";
+  title.style.opacity = "0";
+  title.classList.add('right_animate');
+  title.style.opacity = "1";
+  title.style.transform = 'translateX(0)';
+}
+
 function exit_animation(name) {
   title = document.getElementsByClassName(`${name}`)[0];
   title.style.transform = 'translateX(-100px)';
@@ -42,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let nameOfLinksClass = "links-"+activeArtwork
   enter_animation(`${nameOfTitleClass}`);
   enter_animation(`${nameOfNameClass}`);
-  enter_animation(`${nameOfLinksClass}`);
+  enter_links_animation(`${nameOfLinksClass}`);
 });
 
 const navigateCarousel = (step, stepType) => {
@@ -77,6 +87,8 @@ const navigateCarousel = (step, stepType) => {
   finalTitle = document.getElementsByClassName(`title-${activeArtwork}`)
   exit_animation(`title-${initialActiveArtwork}`);
   exit_animation(`name-${initialActiveArtwork}`);
+  exit_animation(`links-${initialActiveArtwork}`);
   enter_animation(`title-${activeArtwork}`)
   enter_animation(`name-${activeArtwork}`)
+  enter_links_animation(`links-${activeArtwork}`)
 }
