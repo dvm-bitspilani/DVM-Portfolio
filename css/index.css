@@ -387,9 +387,14 @@ input:focus {
 .blogimage {
   float: right;
   height: 50vh;
-  border-radius: 5px;
+
   width: 30vw;
   background-color: white;
+}
+.blogimage > img {
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
 }
 
 .blogtitle {
@@ -622,6 +627,9 @@ input:focus {
 .show-all:hover .show-all-arrow {
   transform: translateX(50px);
 }
+.projects-page {
+  height: max-content;
+}
 .projects-page .section-heading {
   font: normal normal 600 40px/60px Poppins;
   letter-spacing: 0px;
@@ -653,16 +661,18 @@ input:focus {
 .project-info {
   display: flex;
   width: auto;
-  height: 70vh;
+  height: max-content;
   padding-bottom: 2vh;
 }
 .projectsFirstContainer {
   display: flex;
-  overflow: hidden;
-  padding-left: 10vw;
+  /* overflow: hidden; */
+  padding-left: 5vw;
   font-family: Poppins, Gilroy;
   justify-content: flex-start;
-  height: 70vh;
+  width: max-content;
+
+  /* height: 70vh; */
 }
 .projects-page h4,
 .projects-page p {
@@ -672,7 +682,9 @@ input:focus {
   font: normal normal 600 1.2em Poppins;
 }
 .projectsFirstContainer img {
-  height: 50vh;
+  width: auto;
+  height: 45vh;
+  background-position: center;
 }
 
 .project-view-more {
@@ -688,7 +700,7 @@ input:focus {
 .project {
   display: flex;
   flex-direction: column;
-  height: 90vh;
+  height: max-content;
   width: 100vw;
 }
 
@@ -696,22 +708,26 @@ input:focus {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin-left: 10vw;
+  width: 40vw;
   padding-bottom: 5%;
-  height: 70vh;
+  /* height: 70vh; */
   padding-right: 10vw;
   font-family: Poppins, Gilroy;
 }
 
 .projectsSecondContainer img {
-  padding-top: 7vh;
-  padding-left: 10vw;
+  padding-top: 20vh;
+  padding-left: 0;
+  /* height: 30vh; */
 }
+
 .projectsSecondTextContainer1,
 .projectsSecondTextContainer2 {
   padding-top: 10vh;
   opacity: 0;
   transform: translateY(100px);
+  width: 30vw;
+  margin-left: 10vw;
 }
 
 .projectArrow {
@@ -916,21 +932,33 @@ input:focus {
     padding-left: 0;
     height: max-content;
     margin-left: -40px;
+    width: max-content;
+  }
+  .projectsFirstContainer > img {
+    height: 30vh;
   }
   .projectsSecondContainer {
     margin-left: 0;
+    margin-top: 7vh;
     padding-right: 0;
     padding-bottom: 0;
     height: max-content;
+    width: max-content;
   }
   .projectsSecondTextContainer1,
   .projectsSecondTextContainer2 {
     padding-top: 4vh;
+    width: 80vw;
+    margin-left: 0;
   }
   .projectsSecondContainer img {
     margin-top: 7vh;
+    padding-top: 0;
     margin-left: 10vw;
     margin-right: -40px;
+    padding-left: 0;
+    padding-right: 0;
+    /* height: 30vh; */
   }
   .infoHead1,
   .infoHead2 {
