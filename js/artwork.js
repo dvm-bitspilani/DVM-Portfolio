@@ -75,7 +75,9 @@ inner.forEach((inner) => (function() {
     };
 
     let updateTransformStyle = function(x, y) {
-        let style = "translateX(" + -20*x + "px) translateY(" + -20*y + "px)";
+        // console.log(x)
+        let style = "translateX(" + -10*x + "px) translateY(" + -10*y + "px)";
+        inner.children[0].style.transform = "translateX(" + 10* x + "px) translateY(" + 10* y + "px) scale(1.15)"
         inner.style.transform = style;
     };
 

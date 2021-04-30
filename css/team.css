@@ -355,7 +355,8 @@ transition: 0.3s;
 .custom-select {
     display: none;
   position: relative;
-  font-family: Arial;
+  text-transform: uppercase;
+  /* font-family: Arial; */
 }
 
 .custom-select select {
@@ -461,7 +462,7 @@ transition: 0.3s;
 
     .custom-select{
         display: block;
-        width: 80%;
+        width: 90%;
     }
 
 }
