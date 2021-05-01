@@ -157,7 +157,7 @@ const toDot = (pageNo) => {
   scrollSection(pageNo);
   setTimeout(() => {
     document.addEventListener("scroll", scrollToSection);
-  }, 700);
+  }, 800);
 };
 
 const selectDot = (pageNo) => {
