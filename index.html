@@ -587,7 +587,7 @@
                     </span>
                 </h1>
                 <div class="form-wrapper">
-                    <form class="form" method="POST" id="contact-submit">
+                    <div class="form" id="contact-submit">
                         <div>
                             <input class="form-element inputs" type="text" name="name" placeholder="Name">
                         </div>
@@ -598,9 +598,9 @@
                             <textarea class="form-element textarea" type="text" name="message" placeholder="Message" style="resize: none;"></textarea>
                         </div>
                         <div id="submit-button" >
-                            <button class="form-element button" type="submit" >SUBMIT</button>
+                            <button class="form-element button" onclick="submit()" >SUBMIT</button>
                         </div>
-                    </form>
+                    </div>
 
                     <div class="form-pic">
 
@@ -609,7 +609,7 @@
                 
             </div>
             <div  id="footer-wrapper">
-                    Made with ❤️ by DVM
+                    Made with <div class="heart">  ❤️ </div>by DVM
                 </div>
         </section>
     </div>

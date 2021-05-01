@@ -8,6 +8,10 @@ font.load().then(() => {
   //uncomment setTimeout to se it in action locally
   document.documentElement.className += "fonts-loaded";
 });
+window.scrollTo({
+  top: 0,
+  left: 0,
+});
 
 function allImagesLoaded() {
   console.log("ALL IMAGES LOADED");
@@ -23,6 +27,7 @@ function allImagesLoaded() {
     pagesPositions.push(pages[i].getBoundingClientRect().top);
     console.log(pagesPositions[i]);
   }
+  
 }
 
 // let currentPage = 0;
