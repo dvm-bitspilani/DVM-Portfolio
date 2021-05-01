@@ -1049,6 +1049,210 @@ input:focus {
     font-weight: normal;
     font-size: 15px;
   }
+
+
+
+
+
+
+
+
+
+
+  #artworks-wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  .artwork-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    /* top: 20vh; */
+    width: 100%;
+    height: 100%;
+    width: 100vw;
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  
+  .artwork-left {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding-left: 10vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+  }
+  
+  
+  .artwork-counter{
+    font: normal normal normal 16px/25px Poppins;
+    font-size: 2vh;
+    margin: 1vh 0;
+  }
+  
+  .artwork-right {
+    width: 100%;
+  }
+  
+  .arrows {
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - 20vw);
+    height: 10vh;
+  }
+  
+  .artwork-arrows {
+    position: relative;
+    /* top: 30vh; */
+  }
+  
+  .left-arrow,
+  .right-arrow {
+    width: 5vh;
+    height: 5vh;
+    transition: all 0.2s ease;
+  }
+  
+  .left-arrow:hover,
+  .right-arrow:hover {
+    width: 6vh;
+    height: 6vh;
+  }
+  
+  .left-arrow > img,
+  .right-arrow > img {
+    width: 100%;
+    cursor: pointer;
+  }
+  
+  .artwork-title-container{
+    height: 12vh;
+    overflow: hidden;
+    z-index: 10;
+    width: 90vw;
+  }
+  
+  .artwork-title{
+    top: 0;
+    width: 90vw;
+    font-family: "Poppins";
+    height: 20vh;
+    font-size: 4vh;
+    display: none;
+  }
+  
+  .artwork-name-container{
+    height: 6vh;
+    overflow: hidden;
+    z-index: 10;
+    width: 90vw;
+  }
+  
+  .artwork-name {
+    top: 0;
+    width: 90vw;
+    font-family: "Poppins";
+    height: 5vh;
+    font-size: 2vh;
+    display: none;
+  }
+  
+  .artwork-links-container{
+    height: 3.5vh;
+    overflow: hidden;
+    z-index: 10;
+    width: 90vw;
+  }
+  
+  .artwork-links {
+    top: 0;
+    width: 90vw;
+    font-family: "Poppins";
+    height: 3.5vh;
+    font-size: 3vh;
+    display: none;
+  
+  }
+  
+  .artwork-individual-link{
+    height: 100%;
+    margin-right: 10vw;
+  }
+  
+  .link-icon{
+    cursor: pointer;
+  }
+  
+  .artwork-scroller {
+    display: flex;
+    position: relative;
+    width: 30vw;
+    overflow: hidden;
+  }
+  
+  .artwork-scroll-individual {
+    z-index: 2;
+    min-width: 6vw;
+    background-color: #2b2b2b;
+    height: 4px;
+    /* border: 0.1vw solid #636363; */
+    cursor: pointer;
+  }
+  
+  .active-scroll {
+    width: 1.5vw;
+    /* border: 2px solid white; */
+    height: 4px;
+    background-color: white;
+    left: 0;
+  }
+  
+  .artwork-carousel {
+    height: 30vh;
+    width: calc(100% - 24px);
+    position: relative;
+    top: 0vh;
+    overflow: hidden;
+  }
+  .artwork-img-container {
+    position: relative;
+    height: 100%;
+    left: 0;
+    width: calc(500%);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    white-space: nowrap;
+    display: flex;
+  }
+  
+  .artwork-img {
+    display: inline-block;
+    width: calc(100% - 24px);
+    height: 100%;
+    background: #018786;
+    white-space: normal;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .artwork-img:hover{
+    transform: scale(1.4);
+  }
+  
+  .artwork-img > img {
+    height: 100%;
+    width: 100%;
+  }
+
+
 }
 
 .spotlight {

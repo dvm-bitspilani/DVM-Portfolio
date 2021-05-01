@@ -39,11 +39,12 @@ let activeArtwork
 let arts
 let element
 let title
+let scrollDisplacement = window.innerWidth > 600 ? 1.5 : 6;
 
 document.addEventListener("DOMContentLoaded", () => {
   activeArtwork = 0
   arts = document.getElementsByClassName('artwork-img');
-  leftValue = (5-activeArtwork)*1.5
+  leftValue = (5-activeArtwork)*scrollDisplacement
   document.getElementById("active-scroll-id").style.transform = `translateX(-${leftValue}vw)`;
   element = document.getElementsByClassName("artwork-counter")[0];
   element.innerHTML = "01/0" + arts.length
@@ -79,7 +80,7 @@ const navigateCarousel = (step, stepType) => {
     finalLeftCarousel = -100 * step
     activeArtwork = step
   }
-  finalLeftScroll = (5-activeArtwork)*1.5
+  finalLeftScroll = (5-activeArtwork)*scrollDisplacement
   document.getElementsByClassName("artwork-img-container")[0].style.left = `${finalLeftCarousel}%`;
   document.getElementById("active-scroll-id").style.transition ="all .5s cubic-bezier(0.25, 0.46, 0.45, 0.94)";
   document.getElementById("active-scroll-id").style.transform = `translateX(-${finalLeftScroll}vw)`;
