@@ -1,12 +1,11 @@
 let form = document.getElementById("contact-submit");
 let contact_name, email, message;
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  contact_name = form.elements["name"].value;
-  message = form.elements["message"].value;
-  email = form.elements["email"].value;
+function submit() {
+  contact_name = document.getElementsByClassName("form-elements")[0].value;
+  message = document.getElementsByClassName("form-elements")[2].value;
+  email = document.getElementsByClassName("form-elements")[1].value;
 
-  form.elements["name"].value = "";
-  form.elements["email"].value = "";
-  form.elements["message"].value = "";
-});
+  document.getElementsByClassName("form-elements")[0].value = "";
+  document.getElementsByClassName("form-elements")[1].value = "";
+  document.getElementsByClassName("form-elements")[2].value = "";
+}

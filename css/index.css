@@ -49,6 +49,10 @@ body::-webkit-scrollbar {
   font-family: "Poppins";
   margin-top: 20vh;
   padding: 24px;
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: #0d0d0d 0% 0% no-repeat padding-box;
 }
 
@@ -1287,9 +1291,12 @@ textarea:focus {
     height: 100%;
     width: 100%;
   }
-  /* #footer-wrapper {
-    margin-top: 15vh;
-  } */
+  #footer-wrapper {
+    margin-top: 10vh;
+  }
+  .form-wrapper {
+    margin-top: 8vh;
+  }
 }
 
 .spotlight {
@@ -1301,4 +1308,16 @@ textarea:focus {
     transparent 49px,
     rgba(0, 0, 0, 0.85) 92px
   );
+}
+.heart {
+  animation: beat 0.35s infinite alternate;
+  transform-origin: center;
+  margin: 0 10px;
+}
+
+/* Heart beat animation */
+@keyframes beat {
+  to {
+    transform: scale(1.2);
+  }
 }
