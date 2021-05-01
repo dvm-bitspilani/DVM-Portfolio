@@ -406,11 +406,11 @@
                             <div class="artwork-title title-4">TITLE 5 HELLO WORLD</div>
                         </div>
                         <div class="artwork-name-container">
-                            <div class="artwork-name name-0">PRIYANSHU MANAN CHIRAG</div>
-                            <div class="artwork-name name-1">NAME 2 HELLO WORLD</div>
-                            <div class="artwork-name name-2">NAME 3 HELLO WORLD</div>
-                            <div class="artwork-name name-3">NAME 4 HELLO WORLD</div>
-                            <div class="artwork-name name-4">NAME 5 HELLO WORLD</div>
+                            <div class="artwork-name name-0">BY PRIYANSHU MANAN CHIRAG</div>
+                            <div class="artwork-name name-1">BY NAME 2 HELLO WORLD</div>
+                            <div class="artwork-name name-2">BY NAME 3 HELLO WORLD</div>
+                            <div class="artwork-name name-3">BY NAME 4 HELLO WORLD</div>
+                            <div class="artwork-name name-4">BY NAME 5 HELLO WORLD</div>
                         </div>
 
 
@@ -587,7 +587,7 @@
                     </span>
                 </h1>
                 <div class="form-wrapper">
-                    <div class="form">
+                    <form class="form" method="POST" id="contact-submit">
                         <div>
                             <input class="form-element inputs" type="text" name="name" placeholder="Name">
                         </div>
@@ -595,22 +595,22 @@
                             <input class="form-element inputs" type="email" name="email" placeholder="Email">
                         </div>
                         <div id="message-textarea">
-                            <input class="form-element textarea" type="text" name="message" placeholder="Message">
+                            <textarea class="form-element textarea" type="text" name="message" placeholder="Message" style="resize: none;"></textarea>
                         </div>
-                        <div id="submit-button">
-                            <button class="form-element button">SUBMIT</button>
+                        <div id="submit-button" >
+                            <button class="form-element button" type="submit" >SUBMIT</button>
                         </div>
-                    </div>
+                    </form>
 
                     <div class="form-pic">
 
                     </div>
                 </div>
-                <div class="inner-wrapper" id="footer-wrapper">
-                    THIS IS A FOOTER
-                </div>
+                
             </div>
-
+            <div  id="footer-wrapper">
+                    Made with ❤️ by DVM
+                </div>
         </section>
     </div>
     <script src="js/navbar.js"></script>
@@ -618,6 +618,7 @@
     <script src="js/artworks-section.js"></script>
     <script src="js/scroll-animations.js"></script>
     <script src='js/imageLoaded.js'></script>
+    <script src="js/contact-us.js"></script>
 </body>
 
 </html>
