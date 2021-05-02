@@ -11,10 +11,13 @@ font.load().then(() => {
 window.scrollTo({
   top: 0,
   left: 0,
+  behavior: "smooth",
 });
+console.log("scrolled");
 
 function allImagesLoaded() {
   console.log("ALL IMAGES LOADED");
+
   document.getElementsByClassName("loader")[0].style.display = "none";
   console.log("hellovbu");
   for (let i = 0; i < pages.length; ++i) {
@@ -27,7 +30,6 @@ function allImagesLoaded() {
     pagesPositions.push(pages[i].getBoundingClientRect().top);
     console.log(pagesPositions[i]);
   }
-  
 }
 
 // let currentPage = 0;
@@ -56,8 +58,6 @@ let pagesPositions = [];
 //   console.log(pagesPositions[i]);
 // }
 
-
-
 // for (let i = 0; i < pages.length; ++i) {
 //   document.getElementsByClassName("section-nav")[0].innerHTML += `
 //         <div class="dot" onclick="toDot(${i})"></div>
@@ -69,17 +69,29 @@ let pagesPositions = [];
 //   console.log(pagesPositions[i]);
 // }
 
-
-console.log("hello")
+console.log("hello");
 
 let dots = document.getElementsByClassName("dot");
 
-console.log(document.getElementsByClassName('home')[0].getBoundingClientRect().top)
-console.log(document.getElementsByClassName('about')[0].getBoundingClientRect().top)
-console.log(document.getElementsByClassName('projects-page')[0].getBoundingClientRect().top)
-console.log(document.getElementsByClassName('blog')[0].getBoundingClientRect().top)
-console.log(document.getElementsByClassName('artwork')[0].getBoundingClientRect().top)
-console.log(document.getElementsByClassName('contact')[0].getBoundingClientRect().top)
+console.log(
+  document.getElementsByClassName("home")[0].getBoundingClientRect().top
+);
+console.log(
+  document.getElementsByClassName("about")[0].getBoundingClientRect().top
+);
+console.log(
+  document.getElementsByClassName("projects-page")[0].getBoundingClientRect()
+    .top
+);
+console.log(
+  document.getElementsByClassName("blog")[0].getBoundingClientRect().top
+);
+console.log(
+  document.getElementsByClassName("artwork")[0].getBoundingClientRect().top
+);
+console.log(
+  document.getElementsByClassName("contact")[0].getBoundingClientRect().top
+);
 
 //generic function for scrolling the section starts here---------------
 
