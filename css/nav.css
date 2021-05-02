@@ -18,7 +18,7 @@ nav > div {
 }
 .section-nav {
   right: 0vw;
-  top: 15vh;
+  top: 20vh;
   z-index: 5;
   position: fixed;
   transform: translateX(150px);
