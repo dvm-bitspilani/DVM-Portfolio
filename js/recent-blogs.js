@@ -37,12 +37,14 @@ for (var i = 0; i < main_arr.length; i++) {
                   src="${main_arr[i].image_link}"
                 />
               </div>
-              <div class="other-post-heading" >${main_arr[i].name}</div>
-              <div class="other-post-details">
-                  <div class="other-post-author">${main_arr[i].author}</div>
-                  <div class="dot"></div>
-                  <div class="other-post-date">${main_arr[i].date}</div>
-              </div>
+              <div class='other-post-content'>
+                <div class="other-post-heading" >${main_arr[i].name}</div>
+                <div class="other-post-details">
+                    <div class="other-post-author">${main_arr[i].author}</div>
+                    <div class="dot"></div>
+                    <div class="other-post-date">${main_arr[i].date}</div>
+                </div>
+            </div>
             </div>
     `;
 }
