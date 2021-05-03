@@ -173,6 +173,9 @@ a {
 .recent-blog-heading:hover .underline {
   width: 10vw;
 }
+.recent-blogs-post {
+  cursor: pointer;
+}
 .other-post-image {
   width: 20vw;
   height: max-content;
@@ -188,9 +191,26 @@ a {
   margin-top: 1vh;
   cursor: pointer;
   color: white;
-  font: normal normal normal 16px/24px Poppins;
+  font: normal normal 600 16px/24px Poppins;
 }
-
+.other-post-details {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 0.5vh;
+  font: normal normal 200 13px/24px Poppins;
+}
+.other-post-author {
+  color: #707070;
+  margin-right: 12px;
+}
+.dot {
+  background-color: #707070;
+  height: 3px;
+  width: 3px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
 .recent-blogs-post {
   margin-top: 4vh;
 }
