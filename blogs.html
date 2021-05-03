@@ -1,148 +1,259 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>BlogsPage</title>
-        <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/blogs.css">
-    <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/fonts.css">
-        <link rel="icon" href="assets/img/1x/Asset prev.png">
+  <head>
+    <title>BlogsPage</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/blogs.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="icon" href="assets/img/1x/Asset prev.png" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
     <script src="./js/fontfaceobserver.standalone.js"></script>
-    </head>
-    <body>
-       <nav class="navbar">
-        <!-- <div class="brand">
-        DVM
-    </div> -->
-    <div class="section-nav">
-    </div>
-        <h1 class="brand">
-            <span class="text-wrapper">
-                <!-- <span class="line line1"></span> -->
-                <span class="letters" onclick="location.href='index.html'">DVM</span>
-                <!-- <span class="line line2"></span> -->
-            </span>
-        </h1>
+  </head>
 
-        <div class="ham" onclick="openCloseNav()">
-            <div class="ham-line"></div>
-            <div class="ham-line"></div>
-        </div>
+  <body>
+    <nav class="navbar">
+      <!-- <div class="brand">
+            DVM
+        </div> -->
+      <div class="section-nav"></div>
+      <h1 class="brand">
+        <span class="text-wrapper">
+          <!-- <span class="line line1"></span> -->
+          <span class="letters" onclick="location.href='index.html'">DVM</span>
+          <!-- <span class="line line2"></span> -->
+        </span>
+      </h1>
+
+      <div class="ham" onclick="openCloseNav()">
+        <div class="ham-line"></div>
+        <div class="ham-line"></div>
+      </div>
     </nav>
     <div id="navContainer">
-        <div class="followContainer">
-            <h3 class="smallLinksHeader">
-                Follow
-            </h3>
-            <a href="" class="smallLinks"><div class="smallLinksText">Facebook</div><div class="smallLinksIcons"><img src="assets/img/facebook (2)-1@2x.png"></div></a>
-           <a href="" class="smallLinks"><div class="smallLinksText">Instagram</div><div class="smallLinksIcons"><img src="assets/img/instagram-sketched@2x.png"></div></a>
-            <a href="" class="smallLinks"><div class="smallLinksText">Behance</div><div class="smallLinksIcons"><img src="assets/img/facebook (2)-1@2x.png"></div></a>
-            <a href="" class="smallLinks"><div class="smallLinksText">Dribble</div><div class="smallLinksIcons"><img src="assets/img/facebook (2)-1@2x.png"></div></a>
-            <a href="" class="smallLinks"><div class="smallLinksText">Twitter</div><div class="smallLinksIcons"><img src="assets/img/twitter@2x.png"></div></a>
+      <div class="followContainer">
+        <h3 class="smallLinksHeader">Follow</h3>
+        <a href="" class="smallLinks">
+          <div class="smallLinksText">Facebook</div>
+          <div class="smallLinksIcons">
+            <img src="assets/img/facebook (2)-1@2x.png" />
+          </div>
+        </a>
+        <a href="" class="smallLinks">
+          <div class="smallLinksText">Instagram</div>
+          <div class="smallLinksIcons">
+            <img src="assets/img/instagram-sketched@2x.png" />
+          </div>
+        </a>
+        <a href="" class="smallLinks">
+          <div class="smallLinksText">Behance</div>
+          <div class="smallLinksIcons">
+            <img src="assets/img/facebook (2)-1@2x.png" />
+          </div>
+        </a>
+        <a href="" class="smallLinks">
+          <div class="smallLinksText">Dribble</div>
+          <div class="smallLinksIcons">
+            <img src="assets/img/facebook (2)-1@2x.png" />
+          </div>
+        </a>
+        <a href="" class="smallLinks">
+          <div class="smallLinksText">Twitter</div>
+          <div class="smallLinksIcons">
+            <img src="assets/img/twitter@2x.png" />
+          </div>
+        </a>
+      </div>
+      <div class="elementsContainer">
+        <div class="largeLinkContainer1">
+          <span class="text-wrapper">
+            <a class="largeLink1" href="index.html#about" target="_blank"
+              >About</a
+            >
+          </span>
         </div>
-        <div class="elementsContainer">
-            <div class="largeLinkContainer1">
-                <span class="text-wrapper">
-                    <a class="largeLink1" href="index.html#about" target="_blank">About</a>
-                </span>
-            </div>
-            <div class="largeLinkContainer2">
-                <span class="text-wrapper">
-                    <a class="largeLink2" href='all-projects.html' target="_blank">Projects</a>
-                </span>
-            </div>
-            <div class="largeLinkContainer3">
-                <span class="text-wrapper">
-                    <a class="largeLink3" href='all-blogs.html' target="_blank">Blogs</a>
-                </span>
-            </div>
-            <div class="largeLinkContainer4">
-                <span class="text-wrapper">
-                    <a class="largeLink4" href='artworks.html' target="_blank">Artworks</a>
-                </span>
-            </div>
-            <div class="largeLinkContainer5">
-                <span class="text-wrapper">
-                    <a class="largeLink5" href='team.html' target="_blank">Team</a>
-                </span>
-            </div>
-            <div class="largeLinkContainer6">
-                <span class="text-wrapper">
-                    <a class="largeLink6" href="index.html#contact" target="_blank">Contact Us</a>
-                </span>
-            </div>
-            <!-- <a href="">About</a>
-        <a href="">Work</a>
-        <a href="">Blogs</a>
-        <a href="">Artworks</a>
-        <a href="">Achievements</a>
-        <a href="">Contact Us</a> -->
+        <div class="largeLinkContainer2">
+          <span class="text-wrapper">
+            <a class="largeLink2" href="all-projects.html" target="_blank"
+              >Projects</a
+            >
+          </span>
         </div>
+        <div class="largeLinkContainer3">
+          <span class="text-wrapper">
+            <a class="largeLink3" href="all-blogs.html" target="_blank"
+              >Blogs</a
+            >
+          </span>
+        </div>
+        <div class="largeLinkContainer4">
+          <span class="text-wrapper">
+            <a class="largeLink4" href="artworks.html" target="_blank"
+              >Artworks</a
+            >
+          </span>
+        </div>
+        <div class="largeLinkContainer5">
+          <span class="text-wrapper">
+            <a class="largeLink5" href="team.html" target="_blank">Team</a>
+          </span>
+        </div>
+        <div class="largeLinkContainer6">
+          <span class="text-wrapper">
+            <a class="largeLink6" href="index.html#contact" target="_blank"
+              >Contact Us</a
+            >
+          </span>
+        </div>
+        <!-- <a href="">About</a>
+            <a href="">Work</a>
+            <a href="">Blogs</a>
+            <a href="">Artworks</a>
+            <a href="">Achievements</a>
+            <a href="">Contact Us</a> -->
+      </div>
     </div>
-        <div class="wrapper">
-            
-            <div class="activeblog">
-                <div class="blogtitle">
-                    How to start coding and which language is the best
-                </div>
-                <div class="blogimage">
-
-                </div>
-                <div class="intro">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a interdum magna. Donec interdum tellus arcu, elementum maximus elit lobortis sed. Maecenas placerat id ligula eu dignissim. Duis eget malesuada turpis. Nunc tempus laoreet est, id consequat tellus scelerisque id. Ut pulvinar eros augue, et tempor leo facilisis sed. Nulla at metus quis odio pellentesque dignissim ut vitae sapien.
-                </div>
-                <div class="socialmedia">
-                    <div class="iconholder"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                    <div class="iconholder"><i class="fa fa-dribbble" aria-hidden="true"></i></i></div>
-                    <div class="iconholder"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-                </div>
-                <div class="content">
-                    Phasellus non convallis nisi. Aliquam at malesuada ligula. Vivamus blandit leo a neque consequat tempus. Fusce sit amet metus eu turpis imperdiet maximus ut rhoncus mauris. Etiam ullamcorper nulla ac tempor lobortis. Duis mi lacus, convallis ac blandit ac, bibendum commodo nulla. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque fermentum rhoncus metus id molestie.
-
-                    <h1>FIRST HEADING</h1>
-Proin fringilla efficitur felis eu vestibulum. Maecenas cursus imperdiet ante sed tempor. Phasellus eget lacus dui. Nullam accumsan turpis quam, sed sollicitudin mi convallis a. Nulla iaculis arcu sit amet libero vulputate, non cursus tortor mattis. Ut mi nunc, varius vel aliquet vitae, ultricies non tellus. Vivamus ornare, augue in fringilla ornare, magna magna dignissim mi, nec molestie dolor elit at leo. Proin bibendum interdum convallis. Donec gravida sit amet eros in rutrum.
-                    <h1>SECOND HEADING</h1>
-In hac habitasse platea dictumst. Duis ante enim, pretium a ullamcorper suscipit, placerat nec ex. In pharetra erat nisi, eu finibus eros vestibulum a. Mauris cursus interdum purus, in tempor lectus rutrum quis. Integer ac dapibus eros, quis consequat magna. Praesent semper congue cursus. Sed egestas ante dolor, nec aliquet augue commodo dictum.
-                    <h1>THIRD HEADING</h1>
-Aenean urna metus, tempus sed efficitur a, lobortis nec nulla. Fusce nec tincidunt tellus. Duis mollis lectus ex, ut tempor nisi pulvinar nec. Praesent eget tempus sem. Pellentesque rhoncus justo sed leo hendrerit ultricies. Fusce at lorem in velit molestie posuere. Etiam vel ullamcorper leo. Vivamus fringilla ex ut nisi pellentesque, id porta nisl tempor.
-
-Morbi tincidunt, lacus at efficitur vehicula, neque urna ultricies sapien, et luctus lorem metus in justo. Nullam in lectus magna. Ut scelerisque a tellus et dapibus. Vestibulum sodales placerat erat, a viverra felis convallis sed. Phasellus ullamcorper odio erat, eu feugiat ante malesuada ac. Fusce eu arcu enim. Aliquam pulvinar neque quis purus congue, vitae finibus risus faucibus. Mauris efficitur ut mauris placerat sollicitudin. Donec justo lectus, facilisis nec erat rhoncus, suscipit molestie ipsum. In at lorem ante. Cras nulla sapien, vulputate id pulvinar ut, porttitor nec quam. Sed pharetra, augue at luctus vulputate, ante mi volutpat nunc, vitae posuere ligula enim nec nisi. Curabitur odio arcu, cursus a malesuada nec, pharetra ac purus. Donec imperdiet risus ut sollicitudin rhoncus. Maecenas tempus efficitur mauris, sit amet vulputate velit euismod pretium. Phasellus egestas lacus at justo fermentum vulputate.
-                </div>
-                <a href="#">
-                    <div class="leftblog">
-                        <div class="circle">
-                            <div class="arrow"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
-                        </div>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="rightblog">
-                        <div class="circle">
-                            <div class="arrow"><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="recentBlogs">
-                <div class="recentBlogHeading"><a href="#" class="linktoallblogs">Recent Blogs</a></div>
-                <div class="recentBlogsPost">
-                    <div class="otherPostImage"></div>
-                    <div class="otherPostHeading">otherPostHeading</div>
-                </div>
-                <div class="recentBlogsPost">
-                    <div class="otherPostImage"></div>
-                    <div class="otherPostHeading">otherPostHeading</div>
-                </div>
-                <div class="recentBlogsPost">
-                    <div class="otherPostImage"></div>
-                    <div class="otherPostHeading">otherPostHeading</div>
-                </div>
-            </div>
+    <div class="wrapper">
+      <div class="blog-title">
+        How to start coding and which language is the best
+      </div>
+      <div class="blog-details-container">
+        <div class="author-container">
+          <div class="author">by Name Surname</div>
+          <div class="blog-details">4th May 2021 * 3 min read</div>
         </div>
-        <script src="js/blogs.js"></script>
-        <script src="js/navbar.js"></script>
-    </body>
+        <div class="social-media">
+          <!-- <div class="icon-holder"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                <div class="icon-holder"><i class="fa fa-dribbble" aria-hidden="true"></i></i></div>
+                <div class="icon-holder"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+             -->
+          <div><img src="assets/img/facebook (2)-1@2x.png" class="icon" /></div>
+          <div>
+            <img src="assets/img/instagram-sketched@2x.png" class="icon" />
+          </div>
+          <div><img src="assets/img/twitter@2x.png" class="icon" /></div>
+        </div>
+      </div>
+      <div class="blog-image">
+        <img
+          src="content-blogs/blog1/clint-patterson-dYEuFB8KQJk-unsplash@2x.png"
+        />
+      </div>
+      <div class="active-recent">
+        <div class="active-blog">
+          <div class="intro">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a
+            interdum magna. Donec interdum tellus arcu, elementum maximus elit
+            lobortis sed. Maecenas placerat id ligula eu dignissim. Duis eget
+            malesuada turpis. Nunc tempus laoreet est, id consequat tellus
+            scelerisque id. Ut pulvinar eros augue, et tempor leo facilisis sed.
+            Nulla at metus quis odio pellentesque dignissim ut vitae sapien.
+          </div>
+
+          <div class="content">
+            <h1>FIRST HEADING</h1>
+            Proin fringilla efficitur felis eu vestibulum. Maecenas cursus
+            imperdiet ante sed tempor. Phasellus eget lacus dui. Nullam accumsan
+            turpis quam, sed sollicitudin mi convallis a. Nulla iaculis arcu sit
+            amet libero vulputate, non cursus tortor mattis. Ut mi nunc, varius
+            vel aliquet vitae, ultricies non tellus. Vivamus ornare, augue in
+            fringilla ornare, magna magna dignissim mi, nec molestie dolor elit
+            at leo. Proin bibendum interdum convallis. Donec gravida sit amet
+            eros in rutrum.
+            <h1>SECOND HEADING</h1>
+            In hac habitasse platea dictumst. Duis ante enim, pretium a
+            ullamcorper suscipit, placerat nec ex. In pharetra erat nisi, eu
+            finibus eros vestibulum a. Mauris cursus interdum purus, in tempor
+            lectus rutrum quis. Integer ac dapibus eros, quis consequat magna.
+            Praesent semper congue cursus. Sed egestas ante dolor, nec aliquet
+            augue commodo dictum.
+            <h1>THIRD HEADING</h1>
+            Aenean urna metus, tempus sed efficitur a, lobortis nec nulla. Fusce
+            nec tincidunt tellus. Duis mollis lectus ex, ut tempor nisi pulvinar
+            nec. Praesent eget tempus sem. Pellentesque rhoncus justo sed leo
+            hendrerit ultricies. Fusce at lorem in velit molestie posuere. Etiam
+            vel ullamcorper leo. Vivamus fringilla ex ut nisi pellentesque, id
+            porta nisl tempor. Morbi tincidunt, lacus at efficitur vehicula,
+            neque urna ultricies sapien, et luctus lorem metus in justo. Nullam
+            in lectus magna. Ut scelerisque a tellus et dapibus. Vestibulum
+            sodales placerat erat, a viverra felis convallis sed. Phasellus
+            ullamcorper odio erat, eu feugiat ante malesuada ac. Fusce eu arcu
+            enim. Aliquam pulvinar neque quis purus congue, vitae finibus risus
+            faucibus. Mauris efficitur ut mauris placerat sollicitudin. Donec
+            justo lectus, facilisis nec erat rhoncus, suscipit molestie ipsum.
+            In at lorem ante. Cras nulla sapien, vulputate id pulvinar ut,
+            porttitor nec quam. Sed pharetra, augue at luctus vulputate, ante mi
+            volutpat nunc, vitae posuere ligula enim nec nisi. Curabitur odio
+            arcu, cursus a malesuada nec, pharetra ac purus. Donec imperdiet
+            risus ut sollicitudin rhoncus. Maecenas tempus efficitur mauris, sit
+            amet vulputate velit euismod pretium. Phasellus egestas lacus at
+            justo fermentum vulputate.
+          </div>
+        </div>
+        <div class="recent-blogs">
+          <div class="recent-blog-heading">
+            <div class="">Recent Blogs</div>
+            <div class="underline"></div>
+          </div>
+          <div>
+            <div class="recent-blogs-post">
+              <div class="other-post-image">
+                <img
+                  src="content-blogs/blog2/joshua-reddekopp-GkFQEOubrCo-unsplash.png"
+                />
+              </div>
+              <div class="other-post-heading">other-post-heading</div>
+            </div>
+            <div class="recent-blogs-post">
+              <div class="other-post-image">
+                <img
+                  src="content-blogs/blog3/kevin-ku-w7ZyuGYNpRQ-unsplash.png"
+                />
+              </div>
+              <div class="other-post-heading">other-post-heading</div>
+            </div>
+            <div class="recent-blogs-post">
+              <div class="other-post-image">
+                <img
+                  src="content-blogs/blog4/markus-spiske-hvSr_CVecVI-unsplash.png"
+                />
+              </div>
+              <div class="other-post-heading">otherPostHeading</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="left-right-container">
+        <a href="#">
+          <div class="left-blog">
+            <div class="circle">
+              <div class="arrow">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a href="#">
+          <div class="right-blog">
+            <div class="circle">
+              <div class="arrow">
+                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <script src="js/navbar.js"></script>
+    <script src="js/recent-blogs.js"></script>
+  </body>
 </html>
