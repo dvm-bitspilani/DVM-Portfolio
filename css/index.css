@@ -241,7 +241,7 @@ body::-webkit-scrollbar {
   content: "";
   /* background-color: white; */
   /* opacity: 0; */
-  transform: translateX(100px);
+  /* transform: translateX(100px); */
 }
 
 .icon-container {
