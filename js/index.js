@@ -20,11 +20,12 @@ function allImagesLoaded() {
 
   document.getElementsByClassName("loader")[0].style.display = "none";
   console.log("hellovbu");
-  for (let i = 0; i < pages.length; ++i) {
-    document.getElementsByClassName("section-nav")[0].innerHTML += `
-          <div class="dot" onclick="toDot(${i})"></div>
-      `;
-  }
+  // for (let i = 0; i < pages.length; ++i) {
+  //   let nameOfClass = `dot${i}`
+  //   document.getElementsByClassName("section-nav")[0].innerHTML += `
+  //         <div class="dot ${nameOfClass}" onclick="toDot(${i})"></div>
+  //     `;
+  // }
 
   for (let i = 0; i < pages.length; i++) {
     pagesPositions.push(pages[i].getBoundingClientRect().top);
