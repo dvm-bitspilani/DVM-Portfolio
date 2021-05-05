@@ -179,6 +179,9 @@ nav > div {
 }
 
 @media all and (max-width: 600px) {
+  .brand {
+    font-size: 24px;
+  }
   .ham {
     width: 15%;
     position: relative;

@@ -288,11 +288,11 @@ a {
     margin-left: 20px;
   }
   .other-post-heading {
-    font: normal normal 600 12px/26px Poppins;
+    font: normal normal 600 12px/20px Poppins;
     margin-top: 0;
   }
   .other-post-details {
     margin-top: 0;
-    font: normal normal medium 10px/26px Poppins;
+    font: normal normal 200 10px/15px Poppins;
   }
 }
