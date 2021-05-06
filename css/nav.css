@@ -13,18 +13,18 @@ nav {
   width: 100vw;
 }
 nav > div {
-  margin: 3vw;
+  margin: 2vh 3vw;
   width: 75px;
 }
-.navbarTop{
+.navbarTop {
   height: 10vh;
 }
-.navbarSide{
+.navbarSide {
   right: 3vw;
 }
 .section-nav {
   right: 0vw;
-  top: 15vh;
+  top: 20vh;
   z-index: 5;
   position: fixed;
   transform: translateX(150px);
@@ -34,16 +34,16 @@ nav > div {
   align-items: center;
   height: 60vh;
 }
-.dotContainer{
+.dotContainer {
   display: flex;
   align-items: center;
   flex-direction: row-reverse;
   /* width: */
 }
-.dotText{
+.dotText {
   width: 10vw;
   display: flex;
-  justify-content:  flex-end;
+  justify-content: flex-end;
   align-items: center;
   color: white;
   font-family: "Jaapokki subtract", sans-serif;
@@ -52,7 +52,7 @@ nav > div {
   transform: scale(0);
   transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-.dot:hover ~ .dotText{
+.dot:hover ~ .dotText {
   opacity: 1;
   transform: scale(1);
 }
@@ -207,6 +207,9 @@ nav > div {
 }
 
 @media all and (max-width: 600px) {
+  .brand {
+    font-size: 24px;
+  }
   .ham {
     width: 15%;
     position: relative;

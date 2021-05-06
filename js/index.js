@@ -11,7 +11,6 @@ font.load().then(() => {
 window.scrollTo({
   top: 0,
   left: 0,
-  behavior: "smooth",
 });
 console.log("scrolled");
 
@@ -19,7 +18,6 @@ function allImagesLoaded() {
   console.log("ALL IMAGES LOADED");
 
   document.getElementsByClassName("loader")[0].style.display = "none";
-  console.log("hellovbu");
   // for (let i = 0; i < pages.length; ++i) {
   //   let nameOfClass = `dot${i}`
   //   document.getElementsByClassName("section-nav")[0].innerHTML += `
@@ -455,65 +453,65 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-document
-  .getElementById("blog-wrapper")
-  .addEventListener("mouseover", function () {
-    document.getElementById("blogDragDiv").style.display = "flex";
-  });
-document
-  .getElementById("blog-wrapper")
-  .addEventListener("mouseout", function () {
-    document.getElementById("blogDragDiv").style.display = "none";
-  });
+// document
+//   .getElementById("blog-wrapper")
+//   .addEventListener("mouseover", function () {
+//     document.getElementById("blogDragDiv").style.display = "flex";
+//   });
+// document
+//   .getElementById("blog-wrapper")
+//   .addEventListener("mouseout", function () {
+//     document.getElementById("blogDragDiv").style.display = "none";
+//   });
 
-var timeout;
+// var timeout;
 
-let circle = document.getElementById("blogDragDiv");
+// let circle = document.getElementById("blogDragDiv");
 
-var circlepos = { x: 0, y: 0 };
-var mouse = { x: 0, y: 0 };
+// var circlepos = { x: 0, y: 0 };
+// var mouse = { x: 0, y: 0 };
 
-setInterval(followMouse, 50);
+// // setInterval(followMouse, 50);
 
-function followMouse() {
-  var distX = mouse.x - circlepos.x;
-  var distY = mouse.y - circlepos.y;
-  circlepos.x += distX / 2;
-  circlepos.y += distY / 2;
-  circle.style.left = circlepos.x + "px";
-  circle.style.top = circlepos.y + "px";
-}
+// function followMouse() {
+//   var distX = mouse.x - circlepos.x;
+//   var distY = mouse.y - circlepos.y;
+//   circlepos.x += distX / 2;
+//   circlepos.y += distY / 2;
+//   circle.style.left = circlepos.x + "px";
+//   circle.style.top = circlepos.y + "px";
+// }
 
-var prevEvent, currentEvent;
-document.documentElement.onmousemove = function (event) {
-  currentEvent = event;
-  mouse.x = event.pageX;
-  mouse.y = event.pageY - 60;
-};
-var maxSpeed = 0,
-  prevSpeed = 0,
-  maxPositiveAcc = 0,
-  maxNegativeAcc = 0;
-setInterval(function () {
-  if (prevEvent && currentEvent) {
-    var movementX = Math.abs(currentEvent.screenX - prevEvent.screenX);
-    var movementY = Math.abs(currentEvent.screenY - prevEvent.screenY);
-    var movement = Math.sqrt(movementX * movementX + movementY * movementY);
-    var speed = 10 * movement;
-    if (speed > 500) {
-      circle.style.width = "75px";
-      circle.style.height = "75px";
-    } else {
-      circle.style.width = "100px";
-      circle.style.height = "100px";
-    }
-  }
-  prevEvent = currentEvent;
-  prevSpeed = speed;
-}, 100);
+// var prevEvent, currentEvent;
+// document.documentElement.onmousemove = function (event) {
+//   currentEvent = event;
+//   mouse.x = event.pageX;
+//   mouse.y = event.pageY - 60;
+// };
+// var maxSpeed = 0,
+//   prevSpeed = 0,
+//   maxPositiveAcc = 0,
+//   maxNegativeAcc = 0;
+// setInterval(function () {
+//   if (prevEvent && currentEvent) {
+//     var movementX = Math.abs(currentEvent.screenX - prevEvent.screenX);
+//     var movementY = Math.abs(currentEvent.screenY - prevEvent.screenY);
+//     var movement = Math.sqrt(movementX * movementX + movementY * movementY);
+//     var speed = 10 * movement;
+//     if (speed > 500) {
+//       circle.style.width = "75px";
+//       circle.style.height = "75px";
+//     } else {
+//       circle.style.width = "100px";
+//       circle.style.height = "100px";
+//     }
+//   }
+//   prevEvent = currentEvent;
+//   prevSpeed = speed;
+// }, 100);
 
 const slider = document.querySelector(".scrolling-wrapper");
-const blogCard = document.getElementsByClassName("card");
+const blogCard = document.getElementsByClassName("blogimage");
 let isDown = false;
 let startX;
 let scrollLeft;
@@ -523,6 +521,7 @@ slider.addEventListener("mousedown", (e) => {
   for (let index = 0; index < blogCard.length; index++) {
     blogCard[index].classList.add("active");
   }
+  slider.classList.add("active");
   startX = e.pageX - slider.offsetLeft;
   scrollLeft = slider.scrollLeft;
 });
@@ -531,18 +530,48 @@ slider.addEventListener("mouseleave", () => {
   for (let index = 0; index < blogCard.length; index++) {
     blogCard[index].classList.remove("active");
   }
+  slider.classList.remove("active");
 });
 slider.addEventListener("mouseup", () => {
   isDown = false;
   for (let index = 0; index < blogCard.length; index++) {
     blogCard[index].classList.remove("active");
   }
+  slider.classList.remove("active");
 });
 slider.addEventListener("mousemove", (e) => {
   if (!isDown) return;
   e.preventDefault();
   const x = e.pageX - slider.offsetLeft;
-  const walk = (x - startX) * 3; //scroll-fast
+  const walk = (x - startX) * 4; //scroll-fast
+  slider.scrollLeft = scrollLeft - walk;
+  console.log(walk);
+});
+
+// For touch devices
+
+slider.addEventListener("touchstart", (e) => {
+  isDown = true;
+  for (let index = 0; index < blogCard.length; index++) {
+    blogCard[index].classList.add("active");
+  }
+  slider.classList.add("active");
+  startX = e.touches[0].pageX - slider.offsetLeft;
+  scrollLeft = slider.scrollLeft;
+});
+
+slider.addEventListener("touchend", () => {
+  isDown = false;
+  for (let index = 0; index < blogCard.length; index++) {
+    blogCard[index].classList.remove("active");
+  }
+  slider.classList.remove("active");
+});
+slider.addEventListener("touchmove", (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.touches[0].pageX - slider.offsetLeft;
+  const walk = (x - startX) * 4; //scroll-fast
   slider.scrollLeft = scrollLeft - walk;
   console.log(walk);
 });
