@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/all-blogs.css" />
     <link rel="stylesheet" href="css/nav.css" />
     <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/loader.css" />
+
     <link rel="icon" href="assets/img/1x/Asset prev.png" />
 
     <link
@@ -14,8 +16,23 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <script src="./js/fontfaceobserver.standalone.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
+    <div class="loader">
+      <div class="sk-cube-grid">
+        <div class="sk-cube sk-cube1"></div>
+        <div class="sk-cube sk-cube2"></div>
+        <div class="sk-cube sk-cube3"></div>
+        <div class="sk-cube sk-cube4"></div>
+        <div class="sk-cube sk-cube5"></div>
+        <div class="sk-cube sk-cube6"></div>
+        <div class="sk-cube sk-cube7"></div>
+        <div class="sk-cube sk-cube8"></div>
+        <div class="sk-cube sk-cube9"></div>
+      </div>
+    </div>
     <nav class="navbar">
       <!-- <div class="brand">
         DVM
@@ -66,10 +83,7 @@
       <div class="elementsContainer">
         <div class="largeLinkContainer1">
           <span class="text-wrapper">
-            <a
-              class="largeLink1"
-              href="index.html#about"
-              target="_blank"
+            <a class="largeLink1" href="index.html#about" target="_blank"
               >About</a
             >
           </span>
@@ -83,9 +97,7 @@
         </div>
         <div class="largeLinkContainer3">
           <span class="text-wrapper">
-            <a class="largeLink3" onclick="openCloseNav()"
-              >Blogs</a
-            >
+            <a class="largeLink3" onclick="openCloseNav()">Blogs</a>
           </span>
         </div>
         <div class="largeLinkContainer4">
@@ -102,10 +114,7 @@
         </div>
         <div class="largeLinkContainer6">
           <span class="text-wrapper">
-            <a
-              class="largeLink6"
-              href="index.html#contact"
-              target="_blank"
+            <a class="largeLink6" href="index.html#contact" target="_blank"
               >Contact Us</a
             >
           </span>
@@ -123,156 +132,267 @@
       <div class="heading">Blogs</div>
       <div class="contentWrapper" id="wrapper">
         <div class="leftwrapper">
-          <div class="blog" id="firstblog">
+          <div class="blog">
             <div class="blogMore" id="blogMore">More</div>
             <div class="blogimage">
-              <img src="assets\img\blogpic.jpg" class="blogimages" />
+              <img
+                src="assets\img\blogpic.jpg"
+                class="blogimages"
+                onclick="window.open('blogs.html', '_blank')"
+              />
             </div>
             <div class="bloginfo">
-              <div class="blogtitle">this is title</div>
-              <div class="blogby">name surname</div>
+              <div
+                class="blogtitle"
+                onclick="window.open('blogs.html', '_blank')"
+              >
+                Name of the blog goes here in two lines this is two lines
+              </div>
+              <div class="blogby">by Name Surname</div>
+              <div class="blogdate">5th May 2021 * 3 min read</div>
               <div class="blogbrief">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
+                It is a well-known fact that when any discussion on lead
+                generation takes place, quality conquers over the measure.
+                Though it is clearly known fact that people do not like when
+                they are pressurized into buying something, a recent research
+                threw open some startling and revealing information.
               </div>
             </div>
           </div>
-          <div class="blog" id="firstblog">
+          <div class="blog">
             <div class="blogimage">
-              <img src="assets\img\blogpic.jpg" class="blogimages" />
+              <img
+                src="assets\img\blogpic.jpg"
+                class="blogimages"
+                onclick="window.open('blogs.html', '_blank')"
+              />
             </div>
             <div class="bloginfo">
-              <div class="blogtitle">this is title</div>
-              <div class="blogby">name surname</div>
+              <div
+                class="blogtitle"
+                onclick="window.open('blogs.html', '_blank')"
+              >
+                Name of the blog goes here in two lines this is two lines
+              </div>
+              <div class="blogby">by Name Surname</div>
+              <div class="blogdate">5th May 2021 * 3 min read</div>
               <div class="blogbrief">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
+                It is a well-known fact that when any discussion on lead
+                generation takes place, quality conquers over the measure.
+                Though it is clearly known fact that people do not like when
+                they are pressurized into buying something, a recent research
+                threw open some startling and revealing information.
               </div>
             </div>
           </div>
-          <div class="blog" id="firstblog">
+          <div class="blog">
             <div class="blogimage">
-              <img src="assets\img\blogpic.jpg" class="blogimages" />
+              <img
+                src="assets\img\blogpic.jpg"
+                class="blogimages"
+                onclick="window.open('blogs.html', '_blank')"
+              />
             </div>
             <div class="bloginfo">
-              <div class="blogtitle">this is title</div>
-              <div class="blogby">name surname</div>
+              <div
+                class="blogtitle"
+                onclick="window.open('blogs.html', '_blank')"
+              >
+                Name of the blog goes here in two lines this is two lines
+              </div>
+              <div class="blogby">by Name Surname</div>
+              <div class="blogdate">5th May 2021 * 3 min read</div>
               <div class="blogbrief">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
+                It is a well-known fact that when any discussion on lead
+                generation takes place, quality conquers over the measure.
+                Though it is clearly known fact that people do not like when
+                they are pressurized into buying something, a recent research
+                threw open some startling and revealing information.
               </div>
             </div>
           </div>
-          <div class="blog" id="firstblog">
+          <div class="blog">
             <div class="blogimage">
-              <img src="assets\img\blogpic.jpg" class="blogimages" />
+              <img
+                src="assets\img\blogpic.jpg"
+                class="blogimages"
+                onclick="window.open('blogs.html', '_blank')"
+              />
             </div>
             <div class="bloginfo">
-              <div class="blogtitle">this is title</div>
-              <div class="blogby">name surname</div>
+              <div
+                class="blogtitle"
+                onclick="window.open('blogs.html', '_blank')"
+              >
+                Name of the blog goes here in two lines this is two lines
+              </div>
+              <div class="blogby">by Name Surname</div>
+              <div class="blogdate">5th May 2021 * 3 min read</div>
               <div class="blogbrief">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
+                It is a well-known fact that when any discussion on lead
+                generation takes place, quality conquers over the measure.
+                Though it is clearly known fact that people do not like when
+                they are pressurized into buying something, a recent research
+                threw open some startling and revealing information.
               </div>
             </div>
           </div>
-          <div class="blog" id="firstblog">
+          <div class="blog">
             <div class="blogimage">
-              <img src="assets\img\blogpic.jpg" class="blogimages" />
+              <img
+                src="assets\img\blogpic.jpg"
+                class="blogimages"
+                onclick="window.open('blogs.html', '_blank')"
+              />
             </div>
             <div class="bloginfo">
-              <div class="blogtitle">this is title</div>
-              <div class="blogby">name surname</div>
+              <div
+                class="blogtitle"
+                onclick="window.open('blogs.html', '_blank')"
+              >
+                Name of the blog goes here in two lines this is two lines
+              </div>
+              <div class="blogby">by Name Surname</div>
+              <div class="blogdate">5th May 2021 * 3 min read</div>
               <div class="blogbrief">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
+                It is a well-known fact that when any discussion on lead
+                generation takes place, quality conquers over the measure.
+                Though it is clearly known fact that people do not like when
+                they are pressurized into buying something, a recent research
+                threw open some startling and revealing information.
               </div>
             </div>
           </div>
         </div>
         <div class="rightwrapper">
-          <div class="blog" id="firstblog">
+          <div class="blog">
             <div class="blogimage">
-              <img src="assets\img\blogpic.jpg" class="blogimages" />
+              <img
+                src="assets\img\blogpic.jpg"
+                class="blogimages"
+                onclick="window.open('blogs.html', '_blank')"
+              />
             </div>
             <div class="bloginfo">
-              <div class="blogtitle">this is title</div>
-              <div class="blogby">name surname</div>
+              <div
+                class="blogtitle"
+                onclick="window.open('blogs.html', '_blank')"
+              >
+                Name of the blog goes here in two lines this is two lines
+              </div>
+              <div class="blogby">by Name Surname</div>
+              <div class="blogdate">5th May 2021 * 3 min read</div>
               <div class="blogbrief">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
+                It is a well-known fact that when any discussion on lead
+                generation takes place, quality conquers over the measure.
+                Though it is clearly known fact that people do not like when
+                they are pressurized into buying something, a recent research
+                threw open some startling and revealing information.
               </div>
             </div>
           </div>
-          <div class="blog" id="firstblog">
+          <div class="blog">
             <div class="blogimage">
-              <img src="assets\img\blogpic.jpg" class="blogimages" />
+              <img
+                src="assets\img\blogpic.jpg"
+                class="blogimages"
+                onclick="window.open('blogs.html', '_blank')"
+              />
             </div>
             <div class="bloginfo">
-              <div class="blogtitle">this is title</div>
-              <div class="blogby">name surname</div>
+              <div
+                class="blogtitle"
+                onclick="window.open('blogs.html', '_blank')"
+              >
+                Name of the blog goes here in two lines this is two lines
+              </div>
+              <div class="blogby">by Name Surname</div>
+              <div class="blogdate">5th May 2021 * 3 min read</div>
               <div class="blogbrief">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
+                It is a well-known fact that when any discussion on lead
+                generation takes place, quality conquers over the measure.
+                Though it is clearly known fact that people do not like when
+                they are pressurized into buying something, a recent research
+                threw open some startling and revealing information.
               </div>
             </div>
           </div>
-          <div class="blog" id="firstblog">
+          <div class="blog">
             <div class="blogimage">
-              <img src="assets\img\blogpic.jpg" class="blogimages" />
+              <img
+                src="assets\img\blogpic.jpg"
+                class="blogimages"
+                onclick="window.open('blogs.html', '_blank')"
+              />
             </div>
             <div class="bloginfo">
-              <div class="blogtitle">this is title</div>
-              <div class="blogby">name surname</div>
+              <div
+                class="blogtitle"
+                onclick="window.open('blogs.html', '_blank')"
+              >
+                Name of the blog goes here in two lines this is two lines
+              </div>
+              <div class="blogby">by Name Surname</div>
+              <div class="blogdate">5th May 2021 * 3 min read</div>
+
               <div class="blogbrief">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
+                It is a well-known fact that when any discussion on lead
+                generation takes place, quality conquers over the measure.
+                Though it is clearly known fact that people do not like when
+                they are pressurized into buying something, a recent research
+                threw open some startling and revealing information.
               </div>
             </div>
           </div>
-          <div class="blog" id="firstblog">
+          <div class="blog">
             <div class="blogimage">
-              <img src="assets\img\blogpic.jpg" class="blogimages" />
+              <img
+                src="assets\img\blogpic.jpg"
+                class="blogimages"
+                onclick="window.open('blogs.html', '_blank')"
+              />
             </div>
             <div class="bloginfo">
-              <div class="blogtitle">this is title</div>
-              <div class="blogby">name surname</div>
+              <div
+                class="blogtitle"
+                onclick="window.open('blogs.html', '_blank')"
+              >
+                Name of the blog goes here in two lines this is two lines
+              </div>
+              <div class="blogby">by Name Surname</div>
+              <div class="blogdate">5th May 2021 * 3 min read</div>
               <div class="blogbrief">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
+                It is a well-known fact that when any discussion on lead
+                generation takes place, quality conquers over the measure.
+                Though it is clearly known fact that people do not like when
+                they are pressurized into buying something, a recent research
+                threw open some startling and revealing information.
               </div>
             </div>
           </div>
-          <div class="blog" id="firstblog">
+          <div class="blog">
             <div class="blogimage">
-              <img src="assets\img\blogpic.jpg" class="blogimages" />
+              <img
+                src="assets\img\blogpic.jpg"
+                class="blogimages"
+                onclick="window.open('blogs.html', '_blank')"
+              />
             </div>
             <div class="bloginfo">
-              <div class="blogtitle">this is title</div>
-              <div class="blogby">name surname</div>
+              <div
+                class="blogtitle"
+                onclick="window.open('blogs.html', '_blank')"
+              >
+                Name of the blog goes here in two lines this is two lines
+              </div>
+              <div class="blogby">by Name Surname</div>
+              <div class="blogdate">5th May 2021 * 3 min read</div>
               <div class="blogbrief">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
+                It is a well-known fact that when any discussion on lead
+                generation takes place, quality conquers over the measure.
+                Though it is clearly known fact that people do not like when
+                they are pressurized into buying something, a recent research
+                threw open some startling and revealing information.
               </div>
             </div>
           </div>
@@ -282,5 +402,6 @@
     <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
     <script src="js/all-blogs.js"></script>
     <script src="js/navbar.js"></script>
+    <script src="js/imageLoaded.js"></script>
   </body>
 </html>
