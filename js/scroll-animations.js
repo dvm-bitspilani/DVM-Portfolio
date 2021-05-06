@@ -174,7 +174,7 @@ function animate() {
   left_enter_animation("mobile22", -200);
   bottom_enter_animation("projectsSecondTextContainer1", 0);
   bottom_enter_animation("projectsSecondTextContainer2", 0);
-  bottom_enter_animate_cards("card", 0);
+  bottom_enter_animate_cards("card", -20);
   left_enter_animation("section-end-heading", 0);
   bottom_enter_animation("artwork-container", -200);
   bottom_enter_animation("form-wrapper", -40);
