@@ -379,7 +379,7 @@ textarea:focus {
   height: 30vw;
   width: 30vw;
   border-radius: 5px;
-  background-image: url("../assets/img/code.svg");
+  background-image: url("../assets/img/clint-patterson-dYEuFB8KQJk-unsplash@2x.png");
   background-position: center;
   background-size: cover;
 }
@@ -1070,7 +1070,7 @@ textarea:focus {
     width: max-content;
   }
   .projectsFirstContainer > img {
-    height: 30vh;
+    height: 27vh;
   }
   .projectsSecondContainer {
     margin-left: 0;
