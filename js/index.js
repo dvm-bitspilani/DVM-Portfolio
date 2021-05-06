@@ -550,28 +550,28 @@ slider.addEventListener("mousemove", (e) => {
 
 // For touch devices
 
-slider.addEventListener("touchstart", (e) => {
-  isDown = true;
-  for (let index = 0; index < blogCard.length; index++) {
-    blogCard[index].classList.add("active");
-  }
-  slider.classList.add("active");
-  startX = e.touches[0].pageX - slider.offsetLeft;
-  scrollLeft = slider.scrollLeft;
-});
+// slider.addEventListener("touchstart", (e) => {
+//   isDown = true;
+//   for (let index = 0; index < blogCard.length; index++) {
+//     blogCard[index].classList.add("active");
+//   }
+//   slider.classList.add("active");
+//   startX = e.touches[0].pageX - slider.offsetLeft;
+//   scrollLeft = slider.scrollLeft;
+// });
 
-slider.addEventListener("touchend", () => {
-  isDown = false;
-  for (let index = 0; index < blogCard.length; index++) {
-    blogCard[index].classList.remove("active");
-  }
-  slider.classList.remove("active");
-});
-slider.addEventListener("touchmove", (e) => {
-  if (!isDown) return;
-  e.preventDefault();
-  const x = e.touches[0].pageX - slider.offsetLeft;
-  const walk = (x - startX) * 4; //scroll-fast
-  slider.scrollLeft = scrollLeft - walk;
-  console.log(walk);
-});
+// slider.addEventListener("touchend", () => {
+//   isDown = false;
+//   for (let index = 0; index < blogCard.length; index++) {
+//     blogCard[index].classList.remove("active");
+//   }
+//   slider.classList.remove("active");
+// });
+// slider.addEventListener("touchmove", (e) => {
+//   if (!isDown) return;
+//   e.preventDefault();
+//   const x = e.touches[0].pageX - slider.offsetLeft;
+//   const walk = (x - startX) * 3; //scroll-fast
+//   slider.scrollLeft = scrollLeft - walk;
+//   console.log(walk);
+// });
