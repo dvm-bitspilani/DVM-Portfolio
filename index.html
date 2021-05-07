@@ -721,6 +721,11 @@
     <script src="js/scroll-animations.js"></script>
     <script src='js/imageLoaded.js'></script>
     <script src="js/contact-us.js"></script>
+    <script>
+        $(window).on('beforeunload', function(){
+            $(window).scrollTop(0);
+        });
+        </script>
 </body>
 
 </html>
