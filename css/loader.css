@@ -21,6 +21,11 @@
   animation: 0.8s loader-appear forwards,
     3s 0.8s loader-shrink-and-grow infinite;
 }
+/* .loaderContainer1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
 .pentagon {
   display: inline-block;
   color: hsl(260, 100%, 40%);
@@ -33,11 +38,44 @@
   content: "";
   display: block;
   padding-top: 86.602%;
-  /* padding-top: 95.105%; */
   background: currentColor;
   clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-  /* clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%); */
 }
+/* padding-top: 95.105%; */ /*OLD*/
+/* clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%); */ /*OLD*/
+
+/* I tried something */
+/* .pentagon {
+  margin: 0 auto;
+  background-color: hsl(260, 100%, 40%);
+  border-radius: 10px;
+  width: 200px;
+  height: 126px;
+  box-sizing: border-box;
+
+  animation: 3s 0.8s pentagon-rotate infinite ease-in-out;
+}
+
+
+.pentagon:before,
+.pentagon:after {
+  content: "";
+  border: inherit;
+  position: absolute;
+  top: -0.5vh;
+  left: -0.5vh;
+  background-color: hsl(260, 100%, 40%);
+  border-radius: inherit;
+  height: 100%;
+  width: 100%;
+}
+
+.pentagon:before {
+  transform: rotate(60deg);
+}
+.pentagon:after {
+  transform: rotate(-60deg);
+} */
 
 .dvmLogoLoader {
   position: absolute;
@@ -48,7 +86,7 @@
 .dvmLogoLoader > img {
   width: 100px;
   /* box-shadow: 9px 10px 18px 3px rgba(0,0,0,0.75); */
-  filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+  filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
 }
 
 @keyframes bring-logo-up {
