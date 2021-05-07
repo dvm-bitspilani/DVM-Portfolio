@@ -18,5 +18,9 @@ $(document).ready(function () {
     if (imagesLoaded == totalImages) {
       allImagesLoaded();
     }
-  }  
+  }
 });
+
+// $(window).on('load',function(){
+//   pageLoaded();
+// });

@@ -1,23 +1,59 @@
+// window.onload = function(){
+//   window.scrollTo(0, 0);
+// }
+
+
 var font = new FontFaceObserver("Jaapokki subtract");
+var loaderDestroying = false;
+let destroyerTriggerTime = null;
 font.load().then(() => {
   //This is only a demo for preloading fonts. Use ONLY for loader fonts strictly
   // setTimeout(() => {
   //     document.documentElement.className += 'fonts-loaded'
   // },800)
   //this setTimeout emulates FOUT when the font might be loaded.
-  //uncomment setTimeout to se it in action locally
+  //uncomment setTimeout to  se it in action locally
   document.documentElement.className += "fonts-loaded";
 });
 window.scrollTo({
   top: 0,
   left: 0,
 });
-console.log("scrolled");
 
 function allImagesLoaded() {
   console.log("ALL IMAGES LOADED");
+  let loaderContainer = document.querySelector(".loaderContainer");
+  let pentagon = document.querySelector(".pentagon");
 
-  document.getElementsByClassName("loader")[0].style.display = "none";
+  loaderContainer.addEventListener(
+    "animationend",
+    () => {
+      if (
+        destroyerTriggerTime != null &&
+        loaderDestroying
+      ) {
+        document.getElementsByClassName("loader")[0].style.display = "none";
+      }
+    },
+    false
+  );
+
+  loaderContainer.addEventListener(
+    "animationiteration",
+    function () {
+      currentTime = Math.round(Date.now() / 1000);
+      if (!loaderDestroying) {
+        destroyerTriggerTime = Math.round(Date.now() / 1000);
+        console.log(destroyerTriggerTime);
+        loaderDestroying = true;
+        loaderContainer.style.animation = "2s loader-disappear forwards";
+        pentagon.style.animation = "none";
+      }
+    },
+    false
+  );
+
+  // document.getElementsByClassName("loader")[0].style.display = "none";
   // for (let i = 0; i < pages.length; ++i) {
   //   let nameOfClass = `dot${i}`
   //   document.getElementsByClassName("section-nav")[0].innerHTML += `
@@ -27,7 +63,6 @@ function allImagesLoaded() {
 
   for (let i = 0; i < pages.length; i++) {
     pagesPositions.push(pages[i].getBoundingClientRect().top);
-    console.log(pagesPositions[i]);
   }
 }
 
@@ -68,29 +103,9 @@ let pagesPositions = [];
 //   console.log(pagesPositions[i]);
 // }
 
-console.log("hello");
 
 let dots = document.getElementsByClassName("dot");
 
-console.log(
-  document.getElementsByClassName("home")[0].getBoundingClientRect().top
-);
-console.log(
-  document.getElementsByClassName("about")[0].getBoundingClientRect().top
-);
-console.log(
-  document.getElementsByClassName("projects-page")[0].getBoundingClientRect()
-    .top
-);
-console.log(
-  document.getElementsByClassName("blog")[0].getBoundingClientRect().top
-);
-console.log(
-  document.getElementsByClassName("artwork")[0].getBoundingClientRect().top
-);
-console.log(
-  document.getElementsByClassName("contact")[0].getBoundingClientRect().top
-);
 
 //generic function for scrolling the section starts here---------------
 
@@ -148,10 +163,9 @@ const scrollSection = (pageNo) => {
 };
 
 const scrollToSection = () => {
+  console.log("hello");
   let currActiveDot = activeDot;
   let currScroll = document.documentElement.scrollTop;
-  // console.log(currScroll)
-  // console.log('nijbuneiv')
   if (currScroll > pagesPositions[pagesPositions.length - 1]) {
     activeDot = pagesPositions.length - 1;
   } else if (currScroll < pagesPositions[1]) {
@@ -202,52 +216,14 @@ let loaded = () => {
     logo.style.transform = "scale(1) rotate(0deg)";
   }, 700);
 
-  // var textWrapper = document.querySelector(".brand .letters");
-  // textWrapper.innerHTML = textWrapper.textContent.replace(
-  //   /\S/g,
-  //   "<span class='letter'>$&</span>"
-  // );
-
-  // anime
-  //   .timeline({ loop: true })
-  //   .add({
-  //     targets: ".brand .letter",
-  //     scale: [0.3, 1],
-  //     opacity: [0, 1],
-  //     translateZ: 0,
-  //     easing: "easeOutExpo",
-  //     duration: 600,
-  //     delay: (el, i) => 70 * (i + 1),
-  //   })
-  //   .add({
-  //     targets: ".brand .line",
-  //     scaleX: [0, 1],
-  //     opacity: [0.5, 1],
-  //     easing: "easeOutExpo",
-  //     duration: 700,
-  //     offset: "-=875",
-  //     delay: (el, i, l) => 80 * (l - i),
-  //   })
-  //   .add({
-  //     targets: ".brand",
-  //     opacity: 0,
-  //     duration: 1000,
-  //     easing: "easeOutExpo",
-  //     delay: 1000,
-  //   });
-
-  // setTimeout(() => {
-  //   heading.style.opacity = "1";
-  //   heading.style.transition = "all 0.3s ease-out";
-  //   heading.style.transform = "scale(1) rotate(0deg)";
-  // }, 1100);
-
   setTimeout(() => {
     rightStrip.style.transition = "all 0.3s ease-out";
     rightStrip.style.transform = "translateX(0)";
     ham.style.transition = "all 0.3s ease-out";
     ham.style.transform = "translateY(0)";
-    activeDot = 0;
+    // activeDot = 0;
+    console.log("gadhe")
+    window.scrollTo(0, 0)
     selectDot(0);
   }, 1400);
 };
