@@ -1347,16 +1347,7 @@ textarea:focus {
   }
 }
 
-.spotlight {
-  position: absolute;
-  height: 100vh;
-  width: 100%;
-  background-image: radial-gradient(
-    circle,
-    transparent 49px,
-    rgba(0, 0, 0, 0.85) 92px
-  );
-}
+
 .heart {
   animation: beat 0.35s infinite alternate;
   transform-origin: center;
