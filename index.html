@@ -15,28 +15,30 @@
     <link rel="icon" href="assets/img/1x/Asset prev.png">
     <script src="./js/fontfaceobserver.standalone.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>  <!--For text animation in  nav -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!--Jquery for checking if images are loaded-->
 
 </head>
 
 <body onload=loaded()>
     <div class="loader">
         <div class="loaderContainer">
-        <div class="pentagon"></div>
-            <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
-            <defs>
+            <div class="pentagon"></div>
+            <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg"
+                version="1.1">
+                <defs>
                     <filter id="round">
-                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />    
-                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
-                        <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+                            result="goo" />
+                        <feComposite in="SourceGraphic" in2="goo" operator="atop" />
                     </filter>
                 </defs>
             </svg>
-        <div class="dvmLogoLoader">
-            <img src="./assets/img/DVM-Logo.svg" alt="DVM" />
+            <div class="dvmLogoLoader">
+                <img src="./assets/img/DVM-Logo.svg" alt="DVM" />
+            </div>
         </div>
-    </div>
     </div>
     <nav class="navbarTop">
         <!-- <div class="brand">
@@ -159,7 +161,7 @@
             </div>
             <!--        <div id="particles-js"></div>-->
             <div id="homeLogoContainer">
-                
+
                 <div class="spotlight">
                     <div id="cursor"></div>
                 </div>
@@ -191,12 +193,12 @@
                                     O
                                 </text>
                             </svg></div>
-                             <!-- <div class="x">X</div>
+                        <!-- <div class="x">X</div>
                               <div id="div2">O</div>
                              <div class="x">X</div>
                               <div id="div2">O</div> -->
-                    </div> 
-                    
+                    </div>
+
                     <div class="xoxo">
                         <div class="o"> <svg height='30px' width='20px'>
                                 <text x="50%" y="60%" text-anchor="middle">
@@ -218,8 +220,8 @@
                                     X
                                 </text>
                             </svg></div>
-                            
-                             <!-- <div class="x">X</div>
+
+                        <!-- <div class="x">X</div>
                              <div class="o">O</div>
                              <div class="x">X</div>
                              <div class="o">O</div> -->
@@ -420,35 +422,40 @@
                 <div class="scrolling-wrapper" id="scrolling-wrapper">
 
                     <div class="card" style="margin-left: 0">
-                        <div class="blogimage"><img src="assets/img/blogpic.jpg" onclick="window.open('blogs.html','_blank')"></div>
+                        <div class="blogimage"><img src="assets/img/blogpic.jpg"
+                                onclick="window.open('blogs.html','_blank')"></div>
                         <div class="blogtitle" onclick="window.open('blogs.html','_blank')">
                             <div class="blogtitletitle">Blog 1<br>Title</div>
                             <div class="blogby">by Name Surname</div>
                         </div>
                     </div>
                     <div class="card">
-                        <div class="blogimage"><img src="assets/img/blogpic.jpg" onclick="window.open('blogs.html','_blank')"></div>
+                        <div class="blogimage"><img src="assets/img/blogpic.jpg"
+                                onclick="window.open('blogs.html','_blank')"></div>
                         <div class="blogtitle" onclick="window.open('blogs.html','_blank')">
                             <div class="blogtitletitle">Blog 2<br>Title</div>
                             <div class="blogby">by Name Surname</div>
                         </div>
                     </div>
                     <div class="card">
-                        <div class="blogimage"><img src="assets/img/blogpic.jpg" onclick="window.open('blogs.html','_blank')"></div>
+                        <div class="blogimage"><img src="assets/img/blogpic.jpg"
+                                onclick="window.open('blogs.html','_blank')"></div>
                         <div class="blogtitle" onclick="window.open('blogs.html','_blank')">
                             <div class="blogtitletitle">Blog 3<br>Title</div>
                             <div class="blogby">by Name Surname</div>
                         </div>
                     </div>
                     <div class="card">
-                        <div class="blogimage"><img src="assets/img/blogpic.jpg" onclick="window.open('blogs.html','_blank')"></div>
+                        <div class="blogimage"><img src="assets/img/blogpic.jpg"
+                                onclick="window.open('blogs.html','_blank')"></div>
                         <div class="blogtitle" onclick="window.open('blogs.html','_blank')">
                             <div class="blogtitletitle">Blog 4<br>Title</div>
                             <div class="blogby">by Name Surname</div>
                         </div>
                     </div>
                     <div class="card">
-                        <div class="blogimage"><img src="assets/img/blogpic.jpg" onclick="window.open('blogs.html','_blank')"></div>
+                        <div class="blogimage"><img src="assets/img/blogpic.jpg"
+                                onclick="window.open('blogs.html','_blank')"></div>
                         <div class="blogtitle" onclick="window.open('blogs.html','_blank')">
                             <div class="blogtitletitle">Blog 5<br>Title</div>
                             <div class="blogby">by Name Surname</div>
@@ -733,10 +740,10 @@
     <script src='js/imageLoaded.js'></script>
     <script src="js/contact-us.js"></script>
     <script>
-        $(window).on('beforeunload', function(){
+        $(window).on('beforeunload', function () {
             $(window).scrollTop(0);
         });
-        </script>
+    </script>
 </body>
 
 </html>
