@@ -3,11 +3,95 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <link rel="stylesheet" href="css/loader.css" />
+    <link rel="stylesheet" href="css/loader.css" />
+    <style>
+      .pentagon {
+        display: inline-block;
+        color: hsl(260, 100%, 40%);
+        width: 90%;
+        filter: url(#round);
+        animation: 3s 0.8s pentagon-rotate infinite ease-in-out;
+      }
+
+      .pentagon::before {
+        content: "";
+        display: block;
+        padding-top: 86.602%;
+        background: currentColor;
+        clip-path: polygon(
+          25% 0%,
+          75% 0%,
+          100% 50%,
+          75% 100%,
+          25% 100%,
+          0% 50%
+        );
+      }
+
+      .dvmLogoLoader {
+        position: absolute;
+        margin-top: 255px;
+        animation: 0.5s 0.1s bring-logo-up forwards;
+      }
+
+      .dvmLogoLoader > img {
+        width: 100px;
+        /* box-shadow: 9px 10px 18px 3px rgba(0,0,0,0.75); */
+        filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
+      }
+
+      @keyframes bring-logo-up {
+        from {
+          transform: rotateZ(-90deg);
+          margin-left: 100px;
+          margin-top: 255px;
+        }
+
+        to {
+          transform: rotateZ(0deg);
+          margin-left: 0px;
+          margin-top: 0px;
+        }
+      }
+
+      @keyframes pentagon-rotate {
+        to {
+          -ms-transform: rotate(360deg);
+          -moz-transform: rotate(360deg);
+          -webkit-transform: rotate(360deg);
+          -o-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+
+        60% {
+          -ms-transform: rotate(360deg);
+          -moz-transform: rotate(360deg);
+          -webkit-transform: rotate(360deg);
+          -o-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+
+        40% {
+          -ms-transform: rotate(0deg);
+          -moz-transform: rotate(0deg);
+          -webkit-transform: rotate(0deg);
+          -o-transform: rotate(0deg);
+          transform: rotate(0deg);
+        }
+
+        from {
+          -ms-transform: rotate(0deg);
+          -moz-transform: rotate(0deg);
+          -webkit-transform: rotate(0deg);
+          -o-transform: rotate(0deg);
+          transform: rotate(0deg);
+        }
+      }
+    </style>
     <link rel="stylesheet" href="css/all-projects.css" />
     <link rel="stylesheet" href="css/nav.css" />
     <link rel="stylesheet" href="css/fonts.css" />
-   
+
     <link rel="icon" href="assets/img/1x/Asset prev.png" />
 
     <link
@@ -83,31 +167,36 @@
     <div id="navContainer">
       <div class="followContainer">
         <h3 class="smallLinksHeader">Follow</h3>
-        <a href="" class="smallLinks"
-          ><div class="smallLinksText">Facebook</div>
+        <a href="" class="smallLinks">
+          <div class="smallLinksText">Facebook</div>
           <div class="smallLinksIcons">
-            <img src="assets/img/facebook (2)-1@2x.png" /></div
-        ></a>
-        <a href="" class="smallLinks"
-          ><div class="smallLinksText">Instagram</div>
+            <img src="assets/img/facebook (2)-1@2x.png" />
+          </div>
+        </a>
+        <a href="" class="smallLinks">
+          <div class="smallLinksText">Instagram</div>
           <div class="smallLinksIcons">
-            <img src="assets/img/instagram-sketched@2x.png" /></div
-        ></a>
-        <a href="" class="smallLinks"
-          ><div class="smallLinksText">Behance</div>
+            <img src="assets/img/instagram-sketched@2x.png" />
+          </div>
+        </a>
+        <a href="" class="smallLinks">
+          <div class="smallLinksText">Behance</div>
           <div class="smallLinksIcons">
-            <img src="assets/img/facebook (2)-1@2x.png" /></div
-        ></a>
-        <a href="" class="smallLinks"
-          ><div class="smallLinksText">Dribble</div>
+            <img src="assets/img/facebook (2)-1@2x.png" />
+          </div>
+        </a>
+        <a href="" class="smallLinks">
+          <div class="smallLinksText">Dribble</div>
           <div class="smallLinksIcons">
-            <img src="assets/img/facebook (2)-1@2x.png" /></div
-        ></a>
-        <a href="" class="smallLinks"
-          ><div class="smallLinksText">Twitter</div>
+            <img src="assets/img/facebook (2)-1@2x.png" />
+          </div>
+        </a>
+        <a href="" class="smallLinks">
+          <div class="smallLinksText">Twitter</div>
           <div class="smallLinksIcons">
-            <img src="assets/img/twitter@2x.png" /></div
-        ></a>
+            <img src="assets/img/twitter@2x.png" />
+          </div>
+        </a>
       </div>
       <div class="elementsContainer">
         <div class="largeLinkContainer1">
