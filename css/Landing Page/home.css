@@ -100,7 +100,7 @@
   width: fit-content;
   margin: 2%;
   display: flex;
-  justify-items: center;
+  justify-items: space-evenly;
   align-items: center;
 
   flex-direction: column;
@@ -112,13 +112,15 @@
   align-items: center;
   justify-content: center;
   font-family: "Jaapokki subtract", sans-serif;
-  font-size: 1.2em;
+  font-size: 1.5em;
   font-weight: lighter;
+  height: max-content;
 }
 .x {
   /* animation: example 2s ease-in-out infinite; */
   stroke: white;
-
+  /* transform: rotateY(20deg);
+  transform-origin: center; */
   animation: textAnimate 2s infinite alternate;
 }
 @keyframes example {
@@ -134,12 +136,13 @@
 }
 .o {
   /* animation: example2 1s ease-in-out infinite; */
+
+  animation-delay: 0.5s;
   stroke: white;
-  animation-delay: 1s;
   animation: textAnimate 2s infinite alternate;
 }
 @keyframes example2 {
-  0% {
+  /* 0% {
     transform: scale(1, 1);
   }
   50% {
@@ -147,6 +150,15 @@
   }
   100% {
     transform: scale(1, 1);
+  } */
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(360deg);
   }
 }
 
@@ -184,5 +196,27 @@
   .homeSideIcons {
     transform: rotate(90deg);
     width: 100%;
+  }
+}
+
+#div2 {
+  text-align: center;
+
+  color: white;
+  z-index: 2;
+  position: absolute;
+  top: 20vh;
+  animation: animat 1s ease-in-out infinite;
+  transform-origin: center;
+}
+@keyframes animat {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(360deg);
   }
 }
