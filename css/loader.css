@@ -11,7 +11,7 @@
   align-items: center;
 }
 
-.loaderContainer {
+/* .loaderContainer {
   position: relative;
   display: flex;
   justify-content: center;
@@ -20,13 +20,16 @@
   overflow: hidden;
   animation: 0.8s loader-appear forwards,
     3s 0.8s loader-shrink-and-grow infinite;
-}
-/* .loaderContainer1 {
+} */
+.loaderContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-} */
-.pentagon {
+  transition: 0.8s ease;
+  animation: 0.8s loader-appear forwards,
+    3s 0.8s loader-shrink-and-grow infinite;
+}
+/* .pentagon {
   display: inline-block;
   color: hsl(260, 100%, 40%);
   width: 90%;
@@ -40,42 +43,44 @@
   padding-top: 86.602%;
   background: currentColor;
   clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-}
+} */
 /* padding-top: 95.105%; */ /*OLD*/
 /* clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%); */ /*OLD*/
 
 /* I tried something */
-/* .pentagon {
-  margin: 0 auto;
-  background-color: hsl(260, 100%, 40%);
-  border-radius: 10px;
-  width: 200px;
-  height: 126px;
-  box-sizing: border-box;
 
+.pentagon {
+  width: 96.75px;
+  height: 150px;
+  background-image: linear-gradient(90deg, #4400cc, #3800a9);
+  border-radius: 15px;
+  transition: transform 400ms ease;
   animation: 3s 0.8s pentagon-rotate infinite ease-in-out;
 }
-
-
+.pentagon:hover {
+  transform: rotate(30deg);
+}
 .pentagon:before,
 .pentagon:after {
   content: "";
-  border: inherit;
-  position: absolute;
-  top: -0.5vh;
-  left: -0.5vh;
-  background-color: hsl(260, 100%, 40%);
+  display: block;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: inherit;
+  height: inherit;
+  background-image: inherit;
   border-radius: inherit;
-  height: 100%;
-  width: 100%;
 }
-
 .pentagon:before {
   transform: rotate(60deg);
 }
 .pentagon:after {
   transform: rotate(-60deg);
-} */
+  top: -150px;
+}
 
 .dvmLogoLoader {
   position: absolute;
@@ -104,11 +109,11 @@
 
 @keyframes loader-appear {
   from {
-    -ms-transform: scale(0);
-    -moz-transform: scale(0);
-    -webkit-transform: scale(0);
-    -o-transform: scale(0);
-    transform: scale(0);
+    -ms-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -webkit-transform: scale(0.5);
+    -o-transform: scale(0.5);
+    transform: scale(0.5);
   }
   to {
     -ms-transform: scale(1);
