@@ -10,6 +10,8 @@ body {
   overflow-x: hidden;
   background-color: black;
   margin: 0;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 body::-webkit-scrollbar {
   display: none;
@@ -499,6 +501,8 @@ textarea:focus {
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .scrolling-wrapper::-webkit-scrollbar {
@@ -1346,7 +1350,6 @@ textarea:focus {
     width: 59vw;
   }
 }
-
 
 .heart {
   animation: beat 0.35s infinite alternate;
