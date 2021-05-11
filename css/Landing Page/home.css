@@ -85,6 +85,39 @@
   transition: 0.5s;
   z-index: 2;
 }
+.mousey {
+  width: 20px;
+  height: 35px;
+  position: absolute;
+  top: calc(95vh - 35px);
+  border: 2px solid #fff;
+  border-radius: 25px;
+  box-sizing: content-box;
+  display: flex;
+  justify-content: center;
+  opacity: 0.4;
+}
+.scroller {
+  width: 3px;
+  height: 10px;
+  border-radius: 25%;
+  background-color: #fff;
+  animation-name: mouse-scroll;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+@keyframes mouse-scroll {
+  0% {
+    transform: translateY(4px);
+  }
+  90% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(4px);
+  }
+}
 .homeSideIcons {
   width: 30%;
   position: absolute;
@@ -206,6 +239,9 @@
   .homeSideIcons {
     transform: rotate(90deg);
     width: 100%;
+  }
+  .mousey {
+    display: none;
   }
 }
 
