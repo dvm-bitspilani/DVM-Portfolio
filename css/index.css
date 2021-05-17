@@ -12,6 +12,7 @@ body {
   margin: 0;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+  
 }
 body::-webkit-scrollbar {
   display: none;

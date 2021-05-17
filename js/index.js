@@ -2,7 +2,6 @@
 //   window.scrollTo(0, 0);
 // }
 
-
 var font = new FontFaceObserver("Jaapokki subtract");
 var loaderDestroying = false;
 let destroyerTriggerTime = null;
@@ -21,39 +20,41 @@ window.scrollTo({
 });
 
 function allImagesLoaded() {
-  console.log("ALL IMAGES LOADED");
-  let loaderContainer = document.querySelector(".loaderContainer");
-  let pentagon = document.querySelector(".pentagon");
+  // console.log("ALL IMAGES LOADED");
+  // let loaderContainer = document.querySelector(".loaderContainer");
+  // let pentagon = document.querySelector(".pentagon");
 
-  loaderContainer.addEventListener(
-    "animationend",
-    () => {
-      if (
-        destroyerTriggerTime != null &&
-        loaderDestroying
-      ) {
-        document.getElementsByClassName("loader")[0].style.display = "none";
-      }
-    },
-    false
-  );
+  // loaderContainer.addEventListener(
+  //   "animationend",
+  //   () => {
+  //     if (destroyerTriggerTime != null && loaderDestroying) {
+  //       document.getElementsByClassName("loader")[0].style.display = "none";
+  //     }
+  //   },
+  //   false
+  // );
 
-  loaderContainer.addEventListener(
-    "animationiteration",
-    function () {
-      currentTime = Math.round(Date.now() / 1000);
-      if (!loaderDestroying) {
-        destroyerTriggerTime = Math.round(Date.now() / 1000);
-        console.log(destroyerTriggerTime);
-        loaderDestroying = true;
-        loaderContainer.style.animation = "2s loader-disappear forwards";
-        pentagon.style.animation = "none";
-      }
-    },
-    false
-  );
+  // loaderContainer.addEventListener(
+  //   "animationiteration",
+  //   function () {
+  //     currentTime = Math.round(Date.now() / 1000);
+  //     if (!loaderDestroying) {
+  //       destroyerTriggerTime = Math.round(Date.now() / 1000);
+  //       console.log(destroyerTriggerTime);
+  //       loaderDestroying = true;
+  //       loaderContainer.style.animation = "2s loader-disappear forwards";
+  //       pentagon.style.animation = "none";
+  //     }
+  //   },
+  //   false
+  // );
 
-  // document.getElementsByClassName("loader")[0].style.display = "none";
+  document.getElementsByClassName("loader-mask")[0].style.opacity = "1";
+
+  setTimeout(() => {
+    document.getElementsByClassName("loader")[0].style.display = "none";
+    document.getElementsByTagName("body")[0].style.opacity = "1";
+  }, 500);
   // for (let i = 0; i < pages.length; ++i) {
   //   let nameOfClass = `dot${i}`
   //   document.getElementsByClassName("section-nav")[0].innerHTML += `
@@ -103,9 +104,7 @@ let pagesPositions = [];
 //   console.log(pagesPositions[i]);
 // }
 
-
 let dots = document.getElementsByClassName("dot");
-
 
 //generic function for scrolling the section starts here---------------
 
@@ -222,8 +221,8 @@ let loaded = () => {
     ham.style.transition = "all 0.3s ease-out";
     ham.style.transform = "translateY(0)";
     // activeDot = 0;
-    console.log("gadhe")
-    window.scrollTo(0, 0)
+    // console.log("gadhe")
+    window.scrollTo(0, 0);
     selectDot(0);
   }, 1400);
 };
