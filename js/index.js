@@ -2,58 +2,18 @@
 //   window.scrollTo(0, 0);
 // }
 
-var font = new FontFaceObserver("Jaapokki subtract");
-var loaderDestroying = false;
-let destroyerTriggerTime = null;
-font.load().then(() => {
-  //This is only a demo for preloading fonts. Use ONLY for loader fonts strictly
-  // setTimeout(() => {
-  //     document.documentElement.className += 'fonts-loaded'
-  // },800)
-  //this setTimeout emulates FOUT when the font might be loaded.
-  //uncomment setTimeout to  se it in action locally
-  document.documentElement.className += "fonts-loaded";
-});
 window.scrollTo({
   top: 0,
   left: 0,
 });
 
 function allImagesLoaded() {
-  // console.log("ALL IMAGES LOADED");
-  // let loaderContainer = document.querySelector(".loaderContainer");
-  // let pentagon = document.querySelector(".pentagon");
-
-  // loaderContainer.addEventListener(
-  //   "animationend",
-  //   () => {
-  //     if (destroyerTriggerTime != null && loaderDestroying) {
-  //       document.getElementsByClassName("loader")[0].style.display = "none";
-  //     }
-  //   },
-  //   false
-  // );
-
-  // loaderContainer.addEventListener(
-  //   "animationiteration",
-  //   function () {
-  //     currentTime = Math.round(Date.now() / 1000);
-  //     if (!loaderDestroying) {
-  //       destroyerTriggerTime = Math.round(Date.now() / 1000);
-  //       console.log(destroyerTriggerTime);
-  //       loaderDestroying = true;
-  //       loaderContainer.style.animation = "2s loader-disappear forwards";
-  //       pentagon.style.animation = "none";
-  //     }
-  //   },
-  //   false
-  // );
-
-  document.getElementsByClassName("loader-mask")[0].style.opacity = "1";
+  console.log("ALL IMAGES LOADED");
+  document.getElementsByClassName("loader-video")[0].style.opacity = "0";
 
   setTimeout(() => {
     document.getElementsByClassName("loader")[0].style.display = "none";
-    document.getElementsByTagName("body")[0].style.opacity = "1";
+    document.getElementsByClassName("wrapper")[0].style.opacity = "1";
   }, 500);
   // for (let i = 0; i < pages.length; ++i) {
   //   let nameOfClass = `dot${i}`
@@ -484,6 +444,8 @@ window.addEventListener("DOMContentLoaded", () => {
 //   prevEvent = currentEvent;
 //   prevSpeed = speed;
 // }, 100);
+
+// Drag scroll for blogs section on landing
 
 const slider = document.querySelector(".scrolling-wrapper");
 const blogCard = document.getElementsByClassName("blogimage");

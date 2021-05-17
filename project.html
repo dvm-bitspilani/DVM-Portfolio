@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-50M47KHK7T"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-50M47KHK7T"
+    ></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-        gtag('config', 'G-50M47KHK7T');
+      gtag("config", "G-50M47KHK7T");
     </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -26,13 +31,9 @@
   </head>
   <body>
     <div class="loader">
-       <div class="loader-mask"></div>
-      <div class="loaderContainer">
-        <div class="pentagon" id="hexagon"></div>
-        <div class="dvmLogoLoader">
-          <img src="./assets/img/DVM-Logo.svg" alt="DVM" />
-        </div>
-      </div>
+      <video width="320" height="240" autoplay muted loop class="loader-video">
+        <source src="./assets/img/loader.mp4" type="video/mp4" />
+      </video>
     </div>
     <nav class="navbar">
       <!-- <div class="brand">

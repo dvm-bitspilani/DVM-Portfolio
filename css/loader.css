@@ -1,4 +1,4 @@
-body {
+.wrapper {
   transition: opacity 0.4s ease-in;
   opacity: 0;
 }
@@ -40,12 +40,16 @@ body {
 .loaderContainer {
   display: flex;
   /* z-index: 212; */
-  z-index: 210;
+  z-index: 211;
   justify-content: center;
   align-items: center;
   transition: 0.8s ease;
+
   /* animation: 0.8s loader-appear forwards,
     3s 0.8s loader-shrink-and-grow infinite; */
+}
+.loader-video {
+  transition: opacity 0.5s ease-in;
 }
 /* .pentagon {
   display: inline-block;
