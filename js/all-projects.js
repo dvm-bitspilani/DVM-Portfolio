@@ -1,38 +1,13 @@
 // Array containing the content
 
-var loaderDestroying = false;
-let destroyerTriggerTime = null;
-
 function allImagesLoaded() {
   console.log("ALL IMAGES LOADED");
-  let loaderContainer = document.querySelector(".loaderContainer");
-  let pentagon = document.querySelector(".pentagon");
+  document.getElementsByClassName("loader-video")[0].style.opacity = "0";
 
-  loaderContainer.addEventListener(
-    "animationend",
-    () => {
-      if (destroyerTriggerTime != null && loaderDestroying) {
-        document.getElementsByClassName("loader")[0].style.display = "none";
-      }
-    },
-    false
-  );
-
-  loaderContainer.addEventListener(
-    "animationiteration",
-    function () {
-      currentTime = Math.round(Date.now() / 1000);
-      if (!loaderDestroying) {
-        destroyerTriggerTime = Math.round(Date.now() / 1000);
-        console.log(destroyerTriggerTime);
-        loaderDestroying = true;
-        loaderContainer.style.animation = "2s loader-disappear forwards";
-        pentagon.style.animation = "none";
-      }
-    },
-    false
-  );
-  
+  setTimeout(() => {
+    document.getElementsByClassName("loader")[0].style.display = "none";
+    document.getElementsByClassName("wrapper")[0].style.opacity = "1";
+  }, 500);
 }
 
 let main_arr = [[], [], [], [], []];

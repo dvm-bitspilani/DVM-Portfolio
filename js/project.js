@@ -1,41 +1,20 @@
 let wrapper_height;
-var loaderDestroying = false;
-let destroyerTriggerTime = null;
-
 function allImagesLoaded() {
   console.log("ALL IMAGES LOADED");
-  let loaderContainer = document.querySelector(".loaderContainer");
-  let pentagon = document.querySelector(".pentagon");
+  document.getElementsByClassName("loader-video")[0].style.opacity = "0";
 
-  loaderContainer.addEventListener(
-    "animationend",
-    () => {
-      if (destroyerTriggerTime != null && loaderDestroying) {
-        document.getElementsByClassName("loader")[0].style.display = "none";
-      }
-    },
-    false
-  );
+  setTimeout(() => {
+    document.getElementsByClassName("loader")[0].style.display = "none";
+    document.getElementsByClassName("wrapper")[0].style.opacity = "1";
+  }, 500);
 
-  loaderContainer.addEventListener(
-    "animationiteration",
-    function () {
-      currentTime = Math.round(Date.now() / 1000);
-      if (!loaderDestroying) {
-        destroyerTriggerTime = Math.round(Date.now() / 1000);
-        console.log(destroyerTriggerTime);
-        loaderDestroying = true;
-        loaderContainer.style.animation = "2s loader-disappear forwards";
-        pentagon.style.animation = "none";
-      }
-    },
-    false
-  );
   wrapper_height = document
     .getElementsByClassName("wrapper")[0]
     .getBoundingClientRect().height;
   console.log(wrapper_height);
 }
+
+
 let back = document.getElementsByClassName("background")[0];
 
 const scrollFullPage = () => {
@@ -79,9 +58,8 @@ document.getElementsByClassName("photo")[1].src = info.photos_link[1];
 document.getElementsByClassName("long-2")[0].src = info.long_photos_link[1];
 document.getElementsByClassName("long-3")[0].src = info.long_photos_link[2];
 
-let scroll_indicator_height = document.getElementsByClassName(
-  "scroll-indicator"
-)[0].offsetHeight;
+let scroll_indicator_height =
+  document.getElementsByClassName("scroll-indicator")[0].offsetHeight;
 
 let white_line = document.getElementsByClassName("white-line")[0];
 let grey_line = document.getElementsByClassName("grey-line")[0];
