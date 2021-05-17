@@ -1,6 +1,10 @@
+body {
+  transition: opacity 0.4s ease-in;
+  opacity: 0;
+}
 .loader {
   background-color: black;
-  background-image: url("../assets/img/Background Grid.png");
+  /* background-image: url("../assets/img/Background Grid.png"); */
 
   height: 100vh;
   width: 100vw;
@@ -13,14 +17,15 @@
   align-items: center;
 }
 .loader-mask {
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0, 0, 0);
   height: 100vh;
   width: 100vw;
+  opacity: 0;
   position: absolute;
-  z-index: 211;
+  z-index: 21;
   top: 0;
   left: 0;
-  transition: 0.1 ease-in;
+  /* transition: opacity 0.5s ease-in; */
 }
 /* .loaderContainer {
   position: relative;
@@ -34,12 +39,13 @@
 } */
 .loaderContainer {
   display: flex;
-  z-index: 212;
+  /* z-index: 212; */
+  z-index: 210;
   justify-content: center;
   align-items: center;
   transition: 0.8s ease;
-  animation: 0.8s loader-appear forwards,
-    3s 0.8s loader-shrink-and-grow infinite;
+  /* animation: 0.8s loader-appear forwards,
+    3s 0.8s loader-shrink-and-grow infinite; */
 }
 /* .pentagon {
   display: inline-block;
