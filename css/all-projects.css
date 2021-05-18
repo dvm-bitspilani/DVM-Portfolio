@@ -257,6 +257,14 @@ body {
   }
   .wrapper {
     margin-top: 5vh;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .inner {
+    position: inherit;
+    height: max-content;
   }
   .project_name {
     font-size: 24px;
@@ -273,12 +281,16 @@ body {
     margin: 0 7.5vw 0 7.5vw;
   }
   .projects {
-    padding: 7vh 10vw 10vh 10vw;
+    padding: 7vh 10vw 0 10vw;
   }
   .teams {
-    bottom: 5vh;
+    /* bottom: 5vh;
     right: auto;
-    left: 10vw;
+    left: 10vw; */
+    margin-top: 3vh;
+
+    position: inherit;
+
     flex-direction: row;
     overflow-x: scroll;
     width: 80vw;
@@ -292,6 +304,7 @@ body {
   .scrollbar_wrapper {
     width: 80vw;
     margin: 0 10vw;
+    height: 7vh;
   }
   #left_arrow {
     border-left: 2vw solid transparent;
@@ -324,5 +337,4 @@ body {
     font-size: 11px;
     text-align: center;
   }
- 
 }
