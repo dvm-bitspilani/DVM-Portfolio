@@ -9,12 +9,12 @@ window.scrollTo({
 document.getElementsByClassName("loader-video")[0].playbackRate = 1.3;
 function allImagesLoaded() {
   console.log("ALL IMAGES LOADED");
-  // document.getElementsByClassName("loader-video")[0].style.opacity = "0";
+  document.getElementsByClassName("loader-video")[0].style.opacity = "0";
 
-  // setTimeout(() => {
-  //   document.getElementsByClassName("loader")[0].style.display = "none";
-  //   document.getElementsByClassName("wrapper")[0].style.opacity = "1";
-  // }, 500);
+  setTimeout(() => {
+    document.getElementsByClassName("loader")[0].style.display = "none";
+    document.getElementsByClassName("wrapper")[0].style.opacity = "1";
+  }, 500);
 
   // for (let i = 0; i < pages.length; ++i) {
   //   let nameOfClass = `dot${i}`

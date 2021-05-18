@@ -53,11 +53,6 @@ body {
   padding: 0 8% 5%;
 }
 
-.aboutArtwork h1 {
-}
-
-.aboutArtwork p {
-}
 
 .landingSection {
   width: 100vw;
@@ -121,11 +116,6 @@ body {
   flex-wrap: wrap;
 }
 
-.column {
-}
-
-.artworkContainer {
-}
 
 ::-webkit-scrollbar {
   width: 0;
