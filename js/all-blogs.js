@@ -1,3 +1,4 @@
+document.getElementsByClassName("loader-video")[0].playbackRate = 1.3;
 function allImagesLoaded() {
   console.log("ALL IMAGES LOADED");
   document.getElementsByClassName("loader-video")[0].style.opacity = "0";
@@ -7,7 +8,6 @@ function allImagesLoaded() {
     document.getElementsByClassName("wrapper")[0].style.opacity = "1";
   }, 500);
 }
-
 
 var image = document.getElementsByClassName("blogimages");
 new simpleParallax(image, {

@@ -1,4 +1,5 @@
 let wrapper_height;
+document.getElementsByClassName("loader-video")[0].playbackRate = 1.3;
 function allImagesLoaded() {
   console.log("ALL IMAGES LOADED");
   document.getElementsByClassName("loader-video")[0].style.opacity = "0";
@@ -13,7 +14,6 @@ function allImagesLoaded() {
     .getBoundingClientRect().height;
   console.log(wrapper_height);
 }
-
 
 let back = document.getElementsByClassName("background")[0];
 
