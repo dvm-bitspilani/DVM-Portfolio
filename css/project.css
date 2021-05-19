@@ -7,14 +7,35 @@ body {
   overflow-x: hidden;
   color: white;
   margin: 0;
-  
+
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
 body::-webkit-scrollbar {
   display: none;
 }
-
+.top-arrow {
+  background: #ffffff41;
+  position: fixed;
+  display: none;
+  bottom: 4vh;
+  right: 2.5vw;
+  z-index: 3;
+  border: 2px solid transparent;
+  height: 25px;
+  opacity: 0.9;
+  cursor: pointer;
+  padding: 3px;
+  border-radius: 50%;
+  transition: 0.35s ease-in-out;
+}
+.top-arrow > img {
+  width: 25px;
+  transform: rotate(-90deg);
+}
+.top-arrow:hover {
+  border-color: white;
+}
 /* Hide scrollbar for IE, Edge and Firefox */
 .scroll-indicator {
   position: fixed;
@@ -101,7 +122,7 @@ body::-webkit-scrollbar {
 .cross {
   margin-top: 25vh;
   /* position: absolute; */
-  margin-bottom: 5%;
+  margin-bottom: 5vh;
   font-family: gilroy-bold;
   font-size: 1.5em;
   padding: 5px;
@@ -199,11 +220,17 @@ body::-webkit-scrollbar {
   display: flex;
   margin-top: 10vh;
 }
-
+.first-photo-container {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10vh;
+}
 .photo {
   /* background-image: url("../content-projects/project1/photo1.jpg"); */
   height: auto;
-  width: 100vw;
+  width: 80vw;
   background-size: cover;
 }
 
@@ -273,17 +300,20 @@ body::-webkit-scrollbar {
 }
 .long-photos-container {
   margin-top: 25vh;
+  width: 90vw;
   display: flex;
+  padding: 0 5vw;
+  justify-content: space-evenly;
 }
 .long-2 {
   width: 35vw;
-  margin: -7vh 7.5vh 7.5vh 0;
+  margin: -7vh 0 7.5vh 0;
   height: auto;
   background-size: cover;
 }
 .long-3 {
   width: 35vw;
-  margin: 7vh 7.5vh 7.5vh 0;
+  margin: 7vh 0 7.5vh 0;
   height: auto;
   background-size: cover;
 }
@@ -303,6 +333,19 @@ body::-webkit-scrollbar {
 @media all and (max-width: 600px) {
   .hero {
     background: rgb(0, 0, 0, 0.6);
+  }
+  .top-arrow {
+    right: 1vw;
+    height: 7vw;
+    bottom: 3vh;
+    padding: 0.5vw;
+    background-color: transparent;
+  }
+  .top-arrow:hover {
+    border-color: transparent;
+  }
+  .top-arrow > img {
+    width: 7vw;
   }
   .scroll-indicator {
     display: none;
@@ -341,9 +384,8 @@ body::-webkit-scrollbar {
     box-shadow: 0px -4px 29px #00000030;
     mix-blend-mode: exclusion;
     opacity: 1;
-    min-width: 100vw;
-    width: auto;
-    height: 90vh;
+    width: 80vw;
+    height: auto;
     background-position: center;
   }
   .teams-and-date {

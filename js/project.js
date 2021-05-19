@@ -54,9 +54,23 @@ document.getElementsByClassName("date")[0].innerHTML = info.date;
 document.getElementsByClassName("main-photo")[0].src = info.main_photo_link;
 document.getElementsByClassName("long-1")[0].src = info.long_photos_link[0];
 document.getElementsByClassName("photo")[0].src = info.photos_link[0];
-document.getElementsByClassName("photo")[1].src = info.photos_link[1];
-document.getElementsByClassName("long-2")[0].src = info.long_photos_link[1];
-document.getElementsByClassName("long-3")[0].src = info.long_photos_link[2];
+console.log("hey");
+if (info.photos_link[1]) {
+  document.getElementsByClassName("photo")[1].src = info.photos_link[1];
+} else {
+  document.getElementsByClassName("photo")[1].remove();
+}
+if (info.long_photos_link.length > 1) {
+  for (var x = 1; x < info.long_photos_link.length; x++) {
+    document.getElementsByClassName(
+      `long-photos-container`
+    )[0].innerHTML += `<div>
+            <img class="long-${x + 1}" src="${info.long_photos_link[x]}" />
+          </div>`;
+  }
+} else {
+  document.getElementsByClassName("long-photos-container")[0].remove();
+}
 
 let scroll_indicator_height =
   document.getElementsByClassName("scroll-indicator")[0].offsetHeight;
@@ -65,6 +79,9 @@ let white_line = document.getElementsByClassName("white-line")[0];
 let grey_line = document.getElementsByClassName("grey-line")[0];
 console.log(wrapper_height - back.offsetHeight);
 window.onscroll = () => {
+  document.getElementsByClassName("top-arrow")[0].style.display =
+    window.pageYOffset > 100 ? "block" : "none";
+
   if (wrapper_height == undefined || scroll_indicator_height == undefined) {
     console.log("no wrapper");
     return;

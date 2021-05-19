@@ -125,6 +125,8 @@ function left_enter_animate_icons(name, val) {
     }, 200);
   }
 }
+// Change the code below if you want to add or remove blogs 
+// Contact Chirag Wadhwa if you want someone to scream at 
 
 function bottom_enter_animate_cards(name, val) {
   var element = document.getElementsByClassName(`${name}`);

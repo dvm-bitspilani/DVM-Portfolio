@@ -20,7 +20,6 @@ let information = [
     date: "2020 - June",
     long_photos_link: [
       "./content-projects/project1/long1.jpg",
-      "./content-projects/project1/long2.jpg",
       "./content-projects/project1/long3.jpg",
     ],
     photos_link: [
@@ -198,5 +197,3 @@ let information = [
     page_link: "project.html?id=9",
   },
 ];
-
-

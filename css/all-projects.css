@@ -277,17 +277,18 @@ body {
   }
   .single_project {
     width: 65vw;
-    height: 65vh;
+    height: 60vh;
     margin: 0 7.5vw 0 7.5vw;
   }
   .projects {
+    height: 65vh;
     padding: 7vh 10vw 0 10vw;
   }
   .teams {
     /* bottom: 5vh;
     right: auto;
     left: 10vw; */
-    margin-top: 3vh;
+    margin-top: 8vh;
 
     position: inherit;
 
@@ -305,6 +306,7 @@ body {
     width: 80vw;
     margin: 0 10vw;
     height: 7vh;
+    top: 77vh;
   }
   #left_arrow {
     border-left: 2vw solid transparent;
@@ -329,7 +331,7 @@ body {
   #slider {
     height: 4vw;
     width: 8vw;
-    background-color: white;
+    background-color: #3c3c3c;
     top: calc(3.5vh - 2vw);
   }
   #page-number {
