@@ -1,13 +1,22 @@
 // Array containing the content
 document.getElementsByClassName("loader-video")[0].playbackRate = 1.3;
-function allImagesLoaded() {
-  console.log("ALL IMAGES LOADED");
-  document.getElementsByClassName("loader-video")[0].style.opacity = "0";
+let content_loaded = false;
 
-  setTimeout(() => {
-    document.getElementsByClassName("loader")[0].style.display = "none";
-    document.getElementsByClassName("wrapper")[0].style.opacity = "1";
-  }, 500);
+function allImagesLoaded() {
+  if (content_loaded) {
+    console.log("ALL IMAGES LOADED");
+    document.getElementsByClassName("loader-video")[0].style.opacity = "0";
+
+    setTimeout(() => {
+      document.getElementsByClassName("loader")[0].style.display = "none";
+      document.getElementsByClassName("wrapper")[0].style.opacity = "1";
+    }, 500);
+  }
+}
+
+function loaded() {
+  content_loaded = true;
+  allImagesLoaded();
 }
 
 let main_arr = [[], [], [], [], []];
@@ -203,22 +212,30 @@ function team_projects(input) {
     for (var i = 0; i < no_of_projects; i++) {
       var div = document.createElement("div");
       div.setAttribute("class", "single_project");
-      var background = `url( ${main_arr[input][i].img} )`;
-      div.setAttribute(
-        "style",
-        "background-image:" +
-          background +
-          "; background-position: center; background - repeat: no - repeat; background - size: cover; "
-      );
+      // var background = `url( ${main_arr[input][i].img} )`;
+      // div.setAttribute(
+      //   "style",
+      //   "background-image:" +
+      //     background +
+      //     "; background-position: center; background - repeat: no - repeat; background - size: cover; "
+      // );
+      div.innerHTML = `
+        <div class='project_image'>
+          <img src='${main_arr[input][i].img}' />
+        </div>
+        <div class="project_name">
+          ${main_arr[input][i].name}
+        </div>
+      `;
       div.setAttribute("onclick", `location.href='${main_arr[input][i].url}'`);
       document.getElementsByClassName("projects")[0].appendChild(div);
 
-      var name_div = document.createElement("div");
-      name_div.setAttribute("class", "project_name");
-      name_div.innerHTML = main_arr[input][i].name;
-      document
-        .getElementsByClassName("single_project")
-        [i].appendChild(name_div);
+      // var name_div = document.createElement("div");
+      // name_div.setAttribute("class", "project_name");
+      // name_div.innerHTML = main_arr[input][i].name;
+      // document
+      //   .getElementsByClassName("single_project")
+      //   [i].appendChild(name_div);
     }
   }
 
