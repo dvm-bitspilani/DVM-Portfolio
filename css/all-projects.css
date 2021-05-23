@@ -137,7 +137,8 @@ body {
 .single_project.active {
   transform: scale(0.9);
 }
-.project_name {
+.project_name,
+.video_name {
   height: 23vh;
   width: 25vw;
   position: relative;
@@ -148,6 +149,19 @@ body {
   font-family: "Poppins", sans-serif;
   color: white;
   font-weight: 900;
+}
+.video_name {
+  top: -20vh;
+  font-size: 2em;
+  pointer-events: none;
+}
+.video {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  top: 0;
+  transition: 0.3s ease;
+  left: 0;
 }
 .scrollbar_wrapper {
   top: 83vh;
@@ -266,28 +280,33 @@ body {
     position: inherit;
     height: max-content;
   }
-  .project_name {
+  .project_name,
+  .video_name {
     font-size: 24px;
     line-height: 30px;
     letter-spacing: 0px;
-    width: 40vw;
+    width: 55vw;
     height: max-content;
     top: 40vh;
     left: -8vw;
   }
+  .video_name {
+    top: -20vh;
+  }
   .single_project {
     width: 65vw;
-    height: 65vh;
+    height: 60vh;
     margin: 0 7.5vw 0 7.5vw;
   }
   .projects {
+    height: 65vh;
     padding: 7vh 10vw 0 10vw;
   }
   .teams {
     /* bottom: 5vh;
     right: auto;
     left: 10vw; */
-    margin-top: 3vh;
+    margin-top: 8vh;
 
     position: inherit;
 
@@ -305,6 +324,7 @@ body {
     width: 80vw;
     margin: 0 10vw;
     height: 7vh;
+    top: 77vh;
   }
   #left_arrow {
     border-left: 2vw solid transparent;
@@ -329,7 +349,7 @@ body {
   #slider {
     height: 4vw;
     width: 8vw;
-    background-color: white;
+    background-color: #3c3c3c;
     top: calc(3.5vh - 2vw);
   }
   #page-number {

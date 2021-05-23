@@ -185,23 +185,41 @@ function team_projects(input) {
 
   document.getElementsByClassName("projects")[0].style.width =
     total_width + "vw";
-  for (var i = 0; i < no_of_projects; i++) {
-    var div = document.createElement("div");
-    div.setAttribute("class", "single_project");
-    var background = `url( ${main_arr[input][i].img} )`;
-    div.setAttribute(
-      "style",
-      "background-image:" +
-        background +
-        "; background-position: center; background - repeat: no - repeat; background - size: cover; "
-    );
-    div.setAttribute("onclick", `location.href='${main_arr[input][i].url}'`);
-    document.getElementsByClassName("projects")[0].appendChild(div);
+  if (input == 4) {
+    for (var i = 0; i < no_of_projects; i++) {
+      var div = document.createElement("div");
+      div.setAttribute("class", "single_project");
+      document.getElementsByClassName("projects")[0].appendChild(div);
+      let link_final = `https://www.youtube.com/embed/${main_arr[input][i].url}?autoplay=1&mute=1&loop=1&playlist=${main_arr[input][i].url}`;
+      div.innerHTML = `
+        <iframe src="${link_final}" class='video' title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+        </iframe>
+        <div class='video_name'>
+          ${main_arr[input][i].name}
+        </div>
+      `;
+    }
+  } else {
+    for (var i = 0; i < no_of_projects; i++) {
+      var div = document.createElement("div");
+      div.setAttribute("class", "single_project");
+      var background = `url( ${main_arr[input][i].img} )`;
+      div.setAttribute(
+        "style",
+        "background-image:" +
+          background +
+          "; background-position: center; background - repeat: no - repeat; background - size: cover; "
+      );
+      div.setAttribute("onclick", `location.href='${main_arr[input][i].url}'`);
+      document.getElementsByClassName("projects")[0].appendChild(div);
 
-    var name_div = document.createElement("div");
-    name_div.setAttribute("class", "project_name");
-    name_div.innerHTML = main_arr[input][i].name;
-    document.getElementsByClassName("single_project")[i].appendChild(name_div);
+      var name_div = document.createElement("div");
+      name_div.setAttribute("class", "project_name");
+      name_div.innerHTML = main_arr[input][i].name;
+      document
+        .getElementsByClassName("single_project")
+        [i].appendChild(name_div);
+    }
   }
 
   clearInterval(timer_color);
@@ -547,6 +565,18 @@ function timer() {
   }, 5000);
 }
 
-// Starting off with Frontend Displayed
+// Starting off with Frontend Displayed if there's no videos param in the url
 
-team(0);
+let already_called = false;
+
+const params = new URLSearchParams(window.location.search);
+console.log(params);
+for (const param of params) {
+  if (param[0] == "videos") {
+    team(4);
+    already_called = true;
+  }
+}
+if (!already_called) {
+  team(0);
+}

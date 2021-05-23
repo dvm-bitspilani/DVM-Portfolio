@@ -10,7 +10,7 @@
 let information = [
   {
     name: "Project 1",
-    teams: [1, 2, 5],
+    teams: [1, 2],
     main_photo_link: "./content-projects/project1/main.png",
     link: "https://dvm-bitspilani.github.io/DVM-Portfolio/",
     text1:
@@ -20,7 +20,6 @@ let information = [
     date: "2020 - June",
     long_photos_link: [
       "./content-projects/project1/long1.jpg",
-      "./content-projects/project1/long2.jpg",
       "./content-projects/project1/long3.jpg",
     ],
     photos_link: [
@@ -31,7 +30,7 @@ let information = [
   },
   {
     name: "Project 2",
-    teams: [1, 3, 5],
+    teams: [1, 3],
     main_photo_link: "./content-projects/project2/main.png",
     link: "https://dvm-bitspilani.github.io/DVM-Portfolio/",
     text1:
@@ -52,7 +51,7 @@ let information = [
   },
   {
     name: "Project 3",
-    teams: [3, 4, 5],
+    teams: [3, 4],
     main_photo_link: "./content-projects/project3/main.png",
     link: "https://dvm-bitspilani.github.io/DVM-Portfolio/",
     text1:
@@ -136,7 +135,7 @@ let information = [
   },
   {
     name: "Project 7",
-    teams: [4, 5],
+    teams: [4],
     main_photo_link: "./content-projects/project7/main.png",
     link: "https://dvm-bitspilani.github.io/DVM-Portfolio/",
     text1:
@@ -157,7 +156,7 @@ let information = [
   },
   {
     name: "Project 8",
-    teams: [1, 2, 3, 4, 5],
+    teams: [1, 2, 3, 4],
     main_photo_link: "./content-projects/project8/main.png",
     link: "https://dvm-bitspilani.github.io/DVM-Portfolio/",
     text1:
@@ -197,6 +196,22 @@ let information = [
     ],
     page_link: "project.html?id=9",
   },
+  {
+    name: "APOGEE'21 Theme Release",
+    teams: [5],
+    main_photo_link: "",
+    page_link: "z-Pt8nBEa9E",
+  },
+  {
+    name: "OASIS'20 Theme Release",
+    teams: [5],
+    main_photo_link: "",
+    page_link: "EykvH3KETnc",
+  },
+  {
+    name: "APOGEE'21 Curtain Raiser",
+    teams: [5],
+    main_photo_link: "",
+    page_link: "C8Mg71oIA2s",
+  },
 ];
-
-

@@ -125,6 +125,8 @@ function left_enter_animate_icons(name, val) {
     }, 200);
   }
 }
+// Change the code below if you want to add or remove blogs
+// Contact Chirag Wadhwa if you want someone to scream at
 
 function bottom_enter_animate_cards(name, val) {
   var element = document.getElementsByClassName(`${name}`);
@@ -162,23 +164,33 @@ function animate() {
   heading_animation("ml33", 0);
   heading_animation("ml44", 0);
   heading_animation("ml55", 0);
+  heading_animation("ml66", 0);
+
   left_enter_animation("about-picture", 0);
   right_enter_animation("about-info-1", 0);
   left_enter_animation("about-info-2", 0);
   left_enter_animate_icons("icon-container", 0);
   scale_enter_animation("project-heading1", 0);
   scale_enter_animation("project-heading2", 0);
+  right_enter_animation("videoHeading1", 0);
+  bottom_enter_animation("videoHeading2", 0);
+  left_enter_animation("videoHeading3", 0);
+
   right_enter_animation("mobile11", -100);
   right_enter_animation("mobile21", -100);
   left_enter_animation("mobile12", -200);
   left_enter_animation("mobile22", -200);
   bottom_enter_animation("projectsSecondTextContainer1", 0);
   bottom_enter_animation("projectsSecondTextContainer2", 0);
+  right_enter_animation("video1", 0);
+  bottom_enter_animation("video2", 0);
+  left_enter_animation("video3", 0);
   bottom_enter_animate_cards("card", -20);
   left_enter_animation("section-end-heading", 0);
   bottom_enter_animation("artwork-container", -200);
   bottom_enter_animation("form-wrapper", -40);
   left_enter_animation("show-all", 0);
+  left_enter_animation("videosShowAll", 0);
   left_enter_animation("heightClass", 0);
 }
 
