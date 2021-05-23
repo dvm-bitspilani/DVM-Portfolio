@@ -18,7 +18,6 @@ function heading_animation(s, val) {
   var elementHeight = element.clientHeight;
   if (inView(element, elementHeight, val) && !done[this_done]) {
     done[this_done] = true;
-    console.log("hello");
     setTimeout(() => {
       var st = document.getElementsByClassName(s)[0];
       st.style.color = "white";
@@ -173,8 +172,8 @@ function animate() {
   scale_enter_animation("project-heading1", 0);
   scale_enter_animation("project-heading2", 0);
   right_enter_animation("videoHeading1", 0);
-  bottom_enter_animation("videoHeading2", 0);
-  left_enter_animation("videoHeading3", 0);
+  left_enter_animation("videoHeading2", 0);
+  // left_enter_animation("videoHeading3", 0);
 
   right_enter_animation("mobile11", -100);
   right_enter_animation("mobile21", -100);
@@ -183,8 +182,8 @@ function animate() {
   bottom_enter_animation("projectsSecondTextContainer1", 0);
   bottom_enter_animation("projectsSecondTextContainer2", 0);
   right_enter_animation("video1", 0);
-  bottom_enter_animation("video2", 0);
-  left_enter_animation("video3", 0);
+  left_enter_animation("video2", 0);
+  // left_enter_animation("video3", 0);
   bottom_enter_animate_cards("card", -20);
   left_enter_animation("section-end-heading", 0);
   bottom_enter_animation("artwork-container", -200);

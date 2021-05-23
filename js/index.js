@@ -9,9 +9,11 @@ window.scrollTo({
 let video_loaded = false;
 document.getElementsByClassName("loader-video")[0].playbackRate = 1.3;
 function allImagesLoaded() {
-  let logo = document.getElementById("homeLogoContainer");
+  let logo = document.getElementsByClassName("dvm-logo")[0];
   let rightStrip = document.getElementsByClassName("section-nav")[0];
   let ham = document.getElementsByClassName("ham")[0];
+  let brand = document.getElementsByClassName("brand")[0];
+  let purple_circuit = document.getElementsByClassName("purple-circuit")[0];
 
   if (video_loaded) {
     console.log("ALL IMAGES LOADED");
@@ -20,23 +22,27 @@ function allImagesLoaded() {
     setTimeout(() => {
       document.getElementsByClassName("loader")[0].style.display = "none";
       document.getElementsByClassName("wrapper")[0].style.opacity = "1";
+      purple_circuit.style.transition = "all 0.4s ease";
+      purple_circuit.style.transform = "scaleX(1) ";
 
       setTimeout(() => {
         logo.style.opacity = "1";
         logo.style.transition = "all 0.3s ease-out";
         logo.style.transform = "scale(1) rotate(0deg)";
-      }, 700);
+      }, 150);
 
       setTimeout(() => {
-        rightStrip.style.transition = "all 0.3s ease-out";
+        rightStrip.style.transition = "all 0.5s ease-in-out";
         rightStrip.style.transform = "translateX(0)";
-        ham.style.transition = "all 0.3s ease-out";
-        ham.style.transform = "translateY(0)";
+        // brand.style.transition = "all 0.5s ease-in-out";
+        // brand.style.transform = "translateX(0)";
+        // ham.style.transition = "all 0.5s ease-in-out";
+        // ham.style.transform = "translateY(0)";
         // activeDot = 0;
         // console.log("gadhe")
         window.scrollTo(0, 0);
         selectDot(0);
-      }, 1000);
+      }, 400);
     }, 500);
 
     // for (let i = 0; i < pages.length; ++i) {
@@ -147,7 +153,6 @@ const scrollSection = (pageNo) => {
 };
 
 const scrollToSection = () => {
-  console.log("hello");
   let currActiveDot = activeDot;
   let currScroll = document.documentElement.scrollTop;
   if (currScroll > pagesPositions[pagesPositions.length - 1]) {
@@ -489,7 +494,6 @@ slider.addEventListener("mousemove", (e) => {
   const x = e.pageX - slider.offsetLeft;
   const walk = (x - startX) * 4; //scroll-fast
   slider.scrollLeft = scrollLeft - walk;
-  console.log(walk);
 });
 
 // For touch devices

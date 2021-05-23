@@ -1,7 +1,7 @@
 let wrapper_height;
 document.getElementsByClassName("loader-video")[0].playbackRate = 1.3;
 function allImagesLoaded() {
-  console.log("ALL IMAGES LOADED");
+  //console.log("ALL IMAGES LOADED");
   document.getElementsByClassName("loader-video")[0].style.opacity = "0";
 
   setTimeout(() => {
@@ -12,7 +12,7 @@ function allImagesLoaded() {
   wrapper_height = document
     .getElementsByClassName("wrapper")[0]
     .getBoundingClientRect().height;
-  console.log(wrapper_height);
+  //console.log(wrapper_height);
 }
 
 let back = document.getElementsByClassName("background")[0];
@@ -25,7 +25,7 @@ const params = new URLSearchParams(window.location.search);
 let id;
 for (const param of params) {
   id = parseInt(param[1]) - 1;
-  console.log(param[1]);
+  //console.log(param[1]);
 }
 
 const info = information[id];
@@ -54,7 +54,7 @@ document.getElementsByClassName("date")[0].innerHTML = info.date;
 document.getElementsByClassName("main-photo")[0].src = info.main_photo_link;
 document.getElementsByClassName("long-1")[0].src = info.long_photos_link[0];
 document.getElementsByClassName("photo")[0].src = info.photos_link[0];
-console.log("hey");
+//console.log("hey");
 if (info.photos_link[1]) {
   document.getElementsByClassName("photo")[1].src = info.photos_link[1];
 } else {
@@ -77,13 +77,13 @@ let scroll_indicator_height =
 
 let white_line = document.getElementsByClassName("white-line")[0];
 let grey_line = document.getElementsByClassName("grey-line")[0];
-console.log(wrapper_height - back.offsetHeight);
+//console.log(wrapper_height - back.offsetHeight);
 window.onscroll = () => {
   document.getElementsByClassName("top-arrow")[0].style.display =
     window.pageYOffset > 100 ? "block" : "none";
 
   if (wrapper_height == undefined || scroll_indicator_height == undefined) {
-    console.log("no wrapper");
+    //console.log("no wrapper");
     return;
   }
 

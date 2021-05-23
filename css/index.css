@@ -392,7 +392,7 @@ textarea:focus {
 .video-wrapper {
   display: flex;
   flex-direction: row;
-  margin-top: 15vh;
+  margin-top: 10vh;
   padding: 0 5vw;
 }
 .video-row {
@@ -405,10 +405,10 @@ textarea:focus {
 }
 
 .video {
-  width: 100%;
-  height: 25vh;
+  width: 35vw;
+  height: 40vh;
   border: 0;
-  margin: 5vh 0 5vh 0;
+  margin: 2vh 0 2vh 0;
   border-radius: 1px;
 }
 .video-name {
@@ -465,11 +465,15 @@ textarea:focus {
   height: 50vh;
 
   width: 30vw;
-  background-color: white;
+  background-color: transparent;
   transition: 0.4s ease-out;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .blogimage > img {
-  height: 100%;
+  height: auto;
   width: 100%;
   border-radius: 8px;
 }
@@ -607,12 +611,6 @@ textarea:focus {
   transition: all 0.2s ease;
 }
 
-.left-arrow:hover,
-.right-arrow:hover {
-  width: 6vh;
-  height: 6vh;
-}
-
 .left-arrow > img,
 .right-arrow > img {
   width: 100%;
@@ -689,7 +687,7 @@ textarea:focus {
 .artwork-scroller {
   display: flex;
   position: relative;
-  width: 7.5vw;
+  width: max-content;
   overflow: hidden;
 }
 
@@ -1151,6 +1149,9 @@ textarea:focus {
     font-weight: normal;
     font-size: 15px;
   }
+  #video-wrapper {
+    min-height: max-content;
+  }
   .video-wrapper {
     flex-direction: column;
   }
@@ -1159,6 +1160,8 @@ textarea:focus {
   }
   .video {
     margin: 10vh 0 2vh 0;
+    width: 80vw;
+    height: 20vh;
   }
   .video-wrapper {
     margin-top: -5vh;
@@ -1169,9 +1172,10 @@ textarea:focus {
   }
   .artwork {
     margin-bottom: 5vh;
+    height: max-content;
   }
   #artworks-wrapper {
-    height: 100%;
+    height: max-content;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -1185,17 +1189,20 @@ textarea:focus {
     justify-content: space-evenly;
     /* top: 20vh; */
     width: 100%;
-    height: 85%;
-    width: 100vw;
+
     transform: translateY(100px);
     opacity: 0;
   }
-
+  .artwork-left > div {
+    width: 100%;
+    margin-bottom: 3vh;
+    height: max-content;
+  }
   .artwork-left {
     position: relative;
     height: 100%;
-    width: 100%;
-    padding-left: 10vw;
+    width: 85vw;
+    padding: 2vh 7.5vw 5vh 7.5vw;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -1224,6 +1231,7 @@ textarea:focus {
 
   .artwork-arrows {
     position: relative;
+    margin-top: 2vh;
     /* top: 30vh; */
   }
 
@@ -1232,12 +1240,6 @@ textarea:focus {
     width: 5vh;
     height: 5vh;
     transition: all 0.2s ease;
-  }
-
-  .left-arrow:hover,
-  .right-arrow:hover {
-    width: 6vh;
-    height: 6vh;
   }
 
   .left-arrow > img,
@@ -1259,7 +1261,7 @@ textarea:focus {
     width: 90vw;
     font-family: "Poppins";
     /* height: 20vh; */
-    height: 50px;
+    height: max-content;
     /* font-size: 4vh; */
     font-size: 18px;
     line-height: 27px;
@@ -1271,13 +1273,15 @@ textarea:focus {
     overflow: hidden;
     z-index: 10;
     width: 90vw;
+    margin-top: 1vh;
+    margin-bottom: 2vh !important;
   }
 
   .artwork-name {
     top: 0;
     width: 90vw;
     font-family: "Poppins";
-    height: 5vh;
+    height: max-content;
     font-size: 2vh;
     font-size: 12px;
     line-height: 18px;
@@ -1303,7 +1307,7 @@ textarea:focus {
 
   .artwork-individual-link {
     height: 100%;
-    margin-right: 10vw;
+    margin-right: 7vw;
   }
 
   .link-icon {
@@ -1313,7 +1317,7 @@ textarea:focus {
   .artwork-scroller {
     display: flex;
     position: relative;
-    width: 30vw;
+    width: max-content;
     overflow: hidden;
   }
 
@@ -1336,7 +1340,7 @@ textarea:focus {
 
   .artwork-carousel {
     height: 30vh;
-    width: calc(100% - 24px);
+    width: 100%;
     position: relative;
     top: 0vh;
     overflow: hidden;
