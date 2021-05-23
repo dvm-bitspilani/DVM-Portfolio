@@ -6,25 +6,49 @@ window.scrollTo({
   top: 0,
   left: 0,
 });
+let video_loaded = false;
 document.getElementsByClassName("loader-video")[0].playbackRate = 1.3;
 function allImagesLoaded() {
-  console.log("ALL IMAGES LOADED");
-  document.getElementsByClassName("loader-video")[0].style.opacity = "0";
+  let logo = document.getElementById("homeLogoContainer");
+  let rightStrip = document.getElementsByClassName("section-nav")[0];
+  let ham = document.getElementsByClassName("ham")[0];
 
-  setTimeout(() => {
-    document.getElementsByClassName("loader")[0].style.display = "none";
-    document.getElementsByClassName("wrapper")[0].style.opacity = "1";
-  }, 500);
+  if (video_loaded) {
+    console.log("ALL IMAGES LOADED");
+    document.getElementsByClassName("loader-video")[0].style.opacity = "0";
 
-  // for (let i = 0; i < pages.length; ++i) {
-  //   let nameOfClass = `dot${i}`
-  //   document.getElementsByClassName("section-nav")[0].innerHTML += `
-  //         <div class="dot ${nameOfClass}" onclick="toDot(${i})"></div>
-  //     `;
-  // }
+    setTimeout(() => {
+      document.getElementsByClassName("loader")[0].style.display = "none";
+      document.getElementsByClassName("wrapper")[0].style.opacity = "1";
 
-  for (let i = 0; i < pages.length; i++) {
-    pagesPositions.push(pages[i].getBoundingClientRect().top);
+      setTimeout(() => {
+        logo.style.opacity = "1";
+        logo.style.transition = "all 0.3s ease-out";
+        logo.style.transform = "scale(1) rotate(0deg)";
+      }, 700);
+
+      setTimeout(() => {
+        rightStrip.style.transition = "all 0.3s ease-out";
+        rightStrip.style.transform = "translateX(0)";
+        ham.style.transition = "all 0.3s ease-out";
+        ham.style.transform = "translateY(0)";
+        // activeDot = 0;
+        // console.log("gadhe")
+        window.scrollTo(0, 0);
+        selectDot(0);
+      }, 1000);
+    }, 500);
+
+    // for (let i = 0; i < pages.length; ++i) {
+    //   let nameOfClass = `dot${i}`
+    //   document.getElementsByClassName("section-nav")[0].innerHTML += `
+    //         <div class="dot ${nameOfClass}" onclick="toDot(${i})"></div>
+    //     `;
+    // }
+
+    for (let i = 0; i < pages.length; i++) {
+      pagesPositions.push(pages[i].getBoundingClientRect().top);
+    }
   }
 }
 
@@ -166,26 +190,8 @@ document.addEventListener("scroll", scrollToSection);
 
 let loaded = () => {
   // let heading = document.getElementsByClassName("home-heading")[0];
-  let logo = document.getElementById("homeLogoContainer");
-  let rightStrip = document.getElementsByClassName("section-nav")[0];
-  let ham = document.getElementsByClassName("ham")[0];
-
-  setTimeout(() => {
-    logo.style.opacity = "1";
-    logo.style.transition = "all 0.3s ease-out";
-    logo.style.transform = "scale(1) rotate(0deg)";
-  }, 700);
-
-  setTimeout(() => {
-    rightStrip.style.transition = "all 0.3s ease-out";
-    rightStrip.style.transform = "translateX(0)";
-    ham.style.transition = "all 0.3s ease-out";
-    ham.style.transform = "translateY(0)";
-    // activeDot = 0;
-    // console.log("gadhe")
-    window.scrollTo(0, 0);
-    selectDot(0);
-  }, 1400);
+  video_loaded = true;
+  allImagesLoaded();
 };
 
 // selectDot(currentPage);

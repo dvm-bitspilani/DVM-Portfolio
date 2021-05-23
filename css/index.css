@@ -1062,7 +1062,7 @@ textarea:focus {
     font-size: 15px;
   }
   .show-all:hover .show-all-arrow {
-    transform: translateX(0);
+    transform: translateX(18px);
   }
   .show-all-text {
     font: normal normal medium 12px/18px Poppins;
