@@ -33,7 +33,6 @@ function get_info() {
       for (var q = 0; q < information[p].teams.length; q++) {
         main_arr[information[p].teams[q] - 1].push(temp);
       }
-      console.log("filling up");
     }
   });
 }
@@ -136,13 +135,10 @@ function get_info() {
 
 async function main() {
   const main_r = await get_info();
-
-  console.log(main_arr);
 }
 
 main();
 
-console.log("Done");
 const slider = document.querySelector(".projects");
 const inner = document.querySelector(".inner");
 const ele = document.getElementById("slider");
@@ -248,9 +244,7 @@ function team_projects(input) {
     scroll_dist =
       (((number_of_projects - 1) * (2 * margin + single_width)) / 100) *
       innerWidth;
-    console.log(number_of_projects);
-    console.log((number_of_projects - 1) * (2 * margin + single_width));
-    console.log(scroll_dist);
+
     inner.scrollLeft = 0;
     ele.style.left = `${left_limit}px`;
     white.style.width = "0%";
@@ -588,7 +582,6 @@ function timer() {
 let already_called = false;
 
 const params = new URLSearchParams(window.location.search);
-console.log(params);
 for (const param of params) {
   if (param[0] == "videos") {
     team(4);

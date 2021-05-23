@@ -18,7 +18,6 @@ function heading_animation(s, val) {
   var elementHeight = element.clientHeight;
   if (inView(element, elementHeight, val) && !done[this_done]) {
     done[this_done] = true;
-    console.log("hello");
     setTimeout(() => {
       var st = document.getElementsByClassName(s)[0];
       st.style.color = "white";

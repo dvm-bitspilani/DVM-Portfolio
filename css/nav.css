@@ -68,6 +68,7 @@ nav > div {
   font-weight: 900;
   /* font-size: 3.5em; */
   margin: 2vh 0 1vh 0;
+  /* transform: translateX(-200px); */
 }
 
 .brand .letters {
@@ -107,7 +108,7 @@ nav > div {
 
 .ham {
   cursor: pointer;
-  /* transform: translateY(-100px) */
+  /* transform: translateY(-100px); */
 }
 
 .ham-line {

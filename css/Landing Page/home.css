@@ -85,6 +85,13 @@
   transition: 0.5s;
   z-index: 2;
 }
+.dvm-logo {
+  transform: scale(1.2);
+}
+.purple-circuit {
+  transform: scaleX(0);
+  transform-origin: center ;
+}
 .mousey {
   width: 20px;
   height: 35px;
