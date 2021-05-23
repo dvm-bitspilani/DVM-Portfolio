@@ -394,6 +394,7 @@ slider.addEventListener("touchend", () => {
   }
 });
 slider.addEventListener("touchmove", (e) => {
+  console.log("heyyyyy");
   if (!isDown) return;
   e.preventDefault();
   const x = e.touches[0].pageX - inner.offsetLeft;

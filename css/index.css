@@ -392,7 +392,7 @@ textarea:focus {
 .video-wrapper {
   display: flex;
   flex-direction: row;
-  margin-top: 15vh;
+  margin-top: 10vh;
   padding: 0 5vw;
 }
 .video-row {
@@ -405,10 +405,10 @@ textarea:focus {
 }
 
 .video {
-  width: 100%;
-  height: 25vh;
+  width: 35vw;
+  height: 40vh;
   border: 0;
-  margin: 5vh 0 5vh 0;
+  margin: 2vh 0 2vh 0;
   border-radius: 1px;
 }
 .video-name {
@@ -465,11 +465,15 @@ textarea:focus {
   height: 50vh;
 
   width: 30vw;
-  background-color: white;
+  background-color: transparent;
   transition: 0.4s ease-out;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .blogimage > img {
-  height: 100%;
+  height: auto;
   width: 100%;
   border-radius: 8px;
 }
@@ -1151,6 +1155,9 @@ textarea:focus {
     font-weight: normal;
     font-size: 15px;
   }
+  #video-wrapper {
+    min-height: max-content;
+  }
   .video-wrapper {
     flex-direction: column;
   }
@@ -1159,6 +1166,8 @@ textarea:focus {
   }
   .video {
     margin: 10vh 0 2vh 0;
+    width: 80vw;
+    height: 20vh;
   }
   .video-wrapper {
     margin-top: -5vh;

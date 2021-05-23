@@ -154,18 +154,17 @@ body {
   height: 23vh;
   width: 25vw;
   position: relative;
-  top: -30vh;
   left: -5vw;
-  font-size: 3em;
-
   font-family: "Poppins", sans-serif;
   color: white;
   font-weight: 900;
+
+  top: -20vh;
+  font-size: 3em;
+  pointer-events: none;
 }
 .video_name {
-  top: -20vh;
   font-size: 2em;
-  pointer-events: none;
 }
 .video {
   height: 100%;
@@ -302,9 +301,7 @@ body {
     top: -20vh;
     left: -8vw;
   }
-  .video_name {
-    top: -20vh;
-  }
+
   .single_project {
     width: 65vw;
     height: 60vh;
