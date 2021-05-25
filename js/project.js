@@ -15,6 +15,9 @@ function allImagesLoaded() {
   //console.log(wrapper_height);
 }
 
+document.getElementsByClassName("navbar")[0].style.backgroundColor =
+  "transparent";
+document.getElementsByClassName("navbar")[0].style.backdropFilter = "blur(0px)";
 let back = document.getElementsByClassName("background")[0];
 
 const scrollFullPage = () => {
@@ -34,7 +37,20 @@ const teams = ["AppDev", "Backend", "Design", "Frontend", "Video"];
 document.getElementsByClassName(
   "background"
 )[0].style.backgroundImage = `url('${info.main_photo_link}')`;
-document.getElementsByClassName("link")[0].innerHTML = info.link;
+if (info.link !== "") {
+  document.getElementsByClassName("link")[0].innerHTML =
+    info.link.split("://")[1];
+  document
+    .getElementsByClassName("show-all")[0]
+    .setAttribute("onclick", `window.open('${info.link}', '_blank')`);
+} else {
+  if (window.innerWidth > 600) {
+    document.getElementsByClassName("heading")[0].style.transform =
+      "translateY(-8vh)";
+  }
+  document.getElementsByClassName("show-all")[0].style.display = "none";
+}
+
 document.getElementsByClassName("heading")[0].innerHTML = info.name;
 document.getElementsByClassName("left-project-about")[0].innerHTML = info.text1;
 document.getElementsByClassName("smaller-text")[0].innerHTML = info.text2;
@@ -46,9 +62,6 @@ for (var p = 0; p < info.teams.length; p++) {
   document.getElementsByClassName("teams")[0].appendChild(div);
 }
 
-document
-  .getElementsByClassName("show-all")[0]
-  .setAttribute("onclick", `window.open('${info.link}', '_blank')`);
 document.getElementsByClassName("show-all")[0].setAttribute("target", "_blank");
 document.getElementsByClassName("date")[0].innerHTML = info.date;
 document.getElementsByClassName("main-photo")[0].src = info.main_photo_link;
@@ -82,6 +95,11 @@ window.onscroll = () => {
   document.getElementsByClassName("top-arrow")[0].style.display =
     window.pageYOffset > 100 ? "block" : "none";
 
+  if (window.pageYOffset > 50) {
+    document.getElementsByClassName("navbar")[0].style.backgroundColor = "";
+    document.getElementsByClassName("navbar")[0].style.backdropFilter =
+      "blur(10px)";
+  }
   if (wrapper_height == undefined || scroll_indicator_height == undefined) {
     //console.log("no wrapper");
     return;

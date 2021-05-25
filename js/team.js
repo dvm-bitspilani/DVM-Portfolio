@@ -11,9 +11,9 @@ const developers = [
           designation: "Frontend Developer",
           image: "assets/members/placeholder.jfif",
           links: {
-            insta: "",
-            facebook: "",
-            twitter: "",
+            insta: "adfasdf",
+            facebook: "dfdsfsdfds",
+            twitter: "dsfsdfsf",
           },
         },
         {
@@ -96,6 +96,15 @@ const developers = [
   ],
 ];
 
+const social_links = {
+  insta: "./assets/img/instagram-sketched.png",
+  github: "./assets/img/instagram-sketched.png",
+  facebook: "./assets/img/facebook (2).png",
+  twitter: "./assets/img/twitter.png",
+  behance: "./assets/img/twitter.png",
+  dribble: "./assets/img/twitter.png",
+};
+
 const updateTeam = (num) => {
   teamContainer.innerHTML = "";
 
@@ -121,15 +130,7 @@ const updateTeam = (num) => {
                         ${designation}
                     </div>
                     <div class="links hide">
-                        <a href="${links.insta}">
-                            <img src="./assets/img/instagram-sketched.png">
-                        </a>
-                        <a href="${links.twitter}">
-                            <img src="./assets/img/twitter.png">
-                        </a>
-                        <a href="${links.facebook}">
-                            <img src="./assets/img/facebook (2).png">
-                        </a>
+                       ${get_links_url(links)}
                     </div>`;
 
       createDiv.appendChild(member);
@@ -153,6 +154,18 @@ const teamChange = (e) => {
   updateTeam(num);
 };
 
+function get_links_url(links_array) {
+  let final_string = "";
+  for (let links in links_array) {
+    let temp = `
+      <a href="${links_array[links]}">
+          <img src="${social_links[links]}">
+      </a>
+    `;
+    final_string += temp;
+  }
+  return final_string;
+}
 // Select option
 
 var x, i, j, l, ll, selElmnt, a, b, c;

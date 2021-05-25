@@ -59,14 +59,15 @@ body::-webkit-scrollbar {
 }
 
 .dot {
-  width: 3px;
-  height: 3px;
+  width: 4px;
+  height: 4px;
   background: white 0% 0% no-repeat padding-box;
   border: 1px solid white;
   opacity: 1;
   border-radius: 50%;
   transition: 0.5s ease;
   cursor: pointer;
+
   display: flex;
 }
 
@@ -750,18 +751,23 @@ textarea:focus {
   opacity: 0;
   transform: translateX(100px);
 }
-
-.show-all {
-  position: relative;
+.show-all-container {
+  width: 92vw;
+  margin-right: 8vw;
   display: flex;
-  right: 10vw;
+  justify-content: flex-end;
+  align-items: center;
+}
+.show-all {
+  z-index: 150;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   width: max-content;
-  left: 80vw;
   word-wrap: none;
   font-size: 16px;
+
   font-family: "Gilroy";
   cursor: pointer;
   opacity: 0;
@@ -828,11 +834,11 @@ textarea:focus {
 .projectsFirstContainer {
   display: flex;
   /* overflow: hidden; */
-  padding-left: 5vw;
+  margin-left: 10vw;
   font-family: Poppins, Gilroy;
-  justify-content: flex-start;
-  width: max-content;
-
+  width: 40vw;
+  overflow: hidden;
+  justify-content: center;
   /* height: 70vh; */
 }
 .projects-page h4,
@@ -872,7 +878,7 @@ textarea:focus {
   width: 40vw;
   padding-bottom: 5%;
   /* height: 70vh; */
-  padding-right: 10vw;
+  margin-right: 10vw;
   font-family: Poppins, Gilroy;
 }
 
@@ -1053,9 +1059,12 @@ textarea:focus {
     line-height: 0;
     text-transform: uppercase;
   }
+  .show-all-container {
+    width: calc(99vw - 40px);
+    margin-right: 1vw;
+  }
   .show-all {
     width: max-content;
-    left: 60vw;
     opacity: 0.5;
     font-size: 15px;
   }
