@@ -1,3 +1,6 @@
+nav {
+  box-shadow: 0 0 15px -3px rgb(0 0 0 / 4%), 0 0 6px -2px rgb(0 0 0 / 2%) !important;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -77,6 +80,7 @@ body::-webkit-scrollbar {
 .hero {
   height: 100vh;
   width: 100vw;
+  background: rgb(0, 0, 0, 0.6);
 }
 .background {
   background-image: linear-gradient(to top left, #a18cd1 50%, #fbc2eb 50%);

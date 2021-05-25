@@ -12,7 +12,7 @@ let information = [
     name: "Project 1",
     teams: [1, 2],
     main_photo_link: "./content-projects/project1/main.png",
-    link: "https://dvm-bitspilani.github.io/DVM-Portfolio/",
+    link: "",
     text1:
       "About APOGEE Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit mi neque, ultricies tincidunt leo vulputate ac. Integer mattis, ligula quis fringilla egestas, quam diam viverra felis, sit amet accumsan quam felis at lectus. Vivamus lectus nulla, euismod et dolor id, consectetur fringilla felis.",
     text2:
