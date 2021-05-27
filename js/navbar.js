@@ -12,6 +12,8 @@ const openCloseNav = () => {
   let largeLink4 = document.getElementsByClassName("largeLink4")[0];
   let largeLink5 = document.getElementsByClassName("largeLink5")[0];
   let largeLink6 = document.getElementsByClassName("largeLink6")[0];
+  let sectionNav = document.getElementsByClassName("section-nav")[0];
+  let showAll = document.getElementsByClassName("show-all-container");
   if (isOpened) {
     navContainer.style.transition = "all 0.5s ease-out";
     navContainer.style.transform = "translateX(100vw)";
@@ -24,6 +26,10 @@ const openCloseNav = () => {
       largeLink4.style.opacity = 0;
       largeLink5.style.opacity = 0;
       largeLink6.style.opacity = 0;
+      sectionNav.style.display = "";
+      for (var x = 0; x < showAll.length; x++) {
+        showAll[x].style.display = "flex";
+      }
       for (let i of smallLinks) {
         i.style.opacity = "0";
         i.style.transform = "translateY(20px)";
@@ -38,6 +44,10 @@ const openCloseNav = () => {
     hamLine[0].style.transform = "";
     hamLine[1].style.transform = "";
   } else {
+    sectionNav.style.display = "none";
+    for (var x = 0; x < showAll.length; x++) {
+      showAll[x].style.display = "none";
+    }
     navContainer.style.display = "flex";
     setTimeout(() => {
       navContainer.style.transition = "all 0.5s ease-out";
