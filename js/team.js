@@ -97,12 +97,12 @@ const developers = [
 ];
 
 const social_links = {
-  insta: "./assets/img/instagram-sketched.png",
-  github: "./assets/img/instagram-sketched.png",
-  facebook: "./assets/img/facebook (2).png",
-  twitter: "./assets/img/twitter.png",
-  behance: "./assets/img/twitter.png",
-  dribble: "./assets/img/twitter.png",
+  insta: "./assets/icons/instagram-sketched.png",
+  github: "./assets/icons/github.png",
+  facebook: "./assets/icons/facebook (2).png",
+  twitter: "./assets/icons/twitter.png",
+  behance: "./assets/icons/behance.png",
+  dribble: "./assets/icons/dribble.svg",
 };
 
 const updateTeam = (num) => {
