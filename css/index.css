@@ -312,7 +312,18 @@ body::-webkit-scrollbar {
   font-size: 14px;
   font-family: "Poppins";
 }
-
+.random {
+  position: fixed;
+  height: 40vh;
+  top: 30vh;
+  left: 0;
+  right: 0;
+  transition: 1s ease-in-out;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  z-index: 10000000000000;
+}
 #contact {
   height: max-content;
   padding: 12px 0 0 0;

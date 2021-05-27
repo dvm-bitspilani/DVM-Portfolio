@@ -466,6 +466,26 @@ window.addEventListener("DOMContentLoaded", () => {
 
 // Drag scroll for blogs section on landing
 
+function random_function() {
+  console.log("We solemnly swear that we are up to no good");
+  document.getElementsByClassName("random")[0].style.display = "flex";
+  setTimeout(() => {
+    document.getElementsByClassName("random")[0].style.display = "none";
+  }, 2000);
+}
+let touchcount = 0;
+window.addEventListener("touchstart", function (e) {
+  touchcount++;
+  console.log("jij");
+  setTimeout(() => {
+    if (touchcount != 3) {
+      touchcount = 0;
+    }
+  }, 400);
+  if (touchcount == 3) {
+    random_function();
+  }
+});
 const slider = document.querySelector(".scrolling-wrapper");
 const blogCard = document.getElementsByClassName("blogimage");
 let isDown = false;
