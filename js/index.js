@@ -42,6 +42,13 @@ function allImagesLoaded() {
         // console.log("gadhe")
         window.scrollTo(0, 0);
         selectDot(0);
+        const params = new URLSearchParams(window.location.search);
+        console.log(params);
+        for (const param of params) {
+          console.log(param);
+          if (param[0] === "about") toDot(1);
+          else if (param[0] === "contact") toDot(6);
+        }
       }, 400);
     }, 500);
 
