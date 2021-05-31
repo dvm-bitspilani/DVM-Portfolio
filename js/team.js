@@ -86,7 +86,7 @@ const developers = [
           designation: "Frontend Developer",
           image: "assets/members/placeholder.jfif",
           links: {
-            insta: "",
+            behance: "",
             facebook: "",
             twitter: "",
           },

@@ -153,6 +153,8 @@ const slide_bar_scroll_dist =
 const white = document.getElementById("white");
 const grey = document.getElementById("grey");
 const page_number = document.getElementById("page-number");
+let video = false;
+let mobile = false;
 
 let scroll_dist;
 let number_of_projects;
@@ -160,6 +162,8 @@ let timer_scroll;
 let timer_color;
 
 function team(input) {
+  if (input == 4) video = true;
+  else video = false;
   for (var i = 0; i < 5; i++) {
     document.getElementsByClassName("team-name")[i].className = "team-name";
   }
@@ -181,8 +185,10 @@ function team_projects(input) {
     total_width = 60 * no_of_projects;
     margin = 10;
     single_width = 40;
+    mobile = false;
   } else {
     console.log("mobile");
+    mobile = true;
     total_width = 80 * no_of_projects;
     margin = 7.5;
     single_width = 65;
@@ -388,7 +394,6 @@ slider.addEventListener("touchend", () => {
   }
 });
 slider.addEventListener("touchmove", (e) => {
-  console.log("heyyyyy");
   if (!isDown) return;
   e.preventDefault();
   const x = e.touches[0].pageX - inner.offsetLeft;
