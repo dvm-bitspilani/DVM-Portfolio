@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-50M47KHK7T"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
 
-      gtag("config", "G-50M47KHK7T");
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-50M47KHK7T"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+
+        gtag("config", "G-50M47KHK7T");
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width= device-width, initial-scale = 1" />
@@ -29,33 +28,34 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!--Jquery for checking if images are loaded-->
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="loader">
-      <video width="320" height="240" autoplay muted loop class="loader-video">
-        <source src="./assets/img/loader.mp4" type="video/mp4" />
-      </video>
+        <video width="320" height="240" autoplay muted loop class="loader-video">
+      <source src="./assets/img/loader.mp4" type="video/mp4" />
+    </video>
     </div>
     <nav class="navbar">
-      <!-- <div class="brand">
+        <!-- <div class="brand">
         DVM
     </div> -->
-      <div class="section-nav"></div>
-      <h1 class="brand">
-        <span class="text-wrapper">
-          <!-- <span class="line line1"></span> -->
-          <span class="letters" onclick="location.href='index.html'">DVM</span>
-          <!-- <span class="line line2"></span> -->
-        </span>
-      </h1>
+        <div class="section-nav"></div>
+        <h1 class="brand">
+            <span class="text-wrapper">
+        <!-- <span class="line line1"></span> -->
+            <span class="letters" onclick="location.href='index.html'">DVM</span>
+            <!-- <span class="line line2"></span> -->
+            </span>
+        </h1>
 
-      <div class="ham" onclick="openCloseNav()">
-        <div class="ham-line"></div>
-        <div class="ham-line"></div>
-      </div>
+        <div class="ham" onclick="openCloseNav()">
+            <div class="ham-line"></div>
+            <div class="ham-line"></div>
+        </div>
     </nav>
     <div id="navContainer">
-      <div class="followContainer">
+        <div class="followContainer">
             <h3 class="smallLinksHeader">
                 Follow
             </h3>
@@ -66,7 +66,7 @@
             <a href="https://www.instagram.com/dvmbitspilani/" class="smallLinks" target="_blank">
                 <div class="smallLinksText">Instagram</div>
                 <div class="smallLinksIcons"><img src="assets/icons/instagram-sketched@2x.png"></div>
-            </a>           
+            </a>
             <a href="https://github.com/dvm-bitspilani" class="smallLinks" target="_blank">
                 <div class="smallLinksText">Github</div>
                 <div class="smallLinksIcons"><img src="assets/icons/github.png"></div>
@@ -76,231 +76,74 @@
                 <div class="smallLinksIcons"><img src="assets/icons/linkedin.png"></div>
             </a>
         </div>
-      <div class="elementsContainer">
-        <div class="largeLinkContainer1">
-          <span class="text-wrapper">
-            <a class="largeLink1" href="index.html?about" target="_blank"
-              >About</a
-            >
-          </span>
-        </div>
-        <div class="largeLinkContainer2">
-          <span class="text-wrapper">
-            <a class="largeLink2" href="all-projects.html" target="_blank"
-              >Projects</a
-            >
-          </span>
-        </div>
-        <div class="largeLinkContainer3">
-          <span class="text-wrapper">
-            <a class="largeLink3" href="all-blogs.html" target="_blank"
-              >Blogs</a
-            >
-          </span>
-        </div>
-        <div class="largeLinkContainer4">
-          <span class="text-wrapper">
-            <a class="largeLink4" onclick="openCloseNav()">Artworks</a>
-          </span>
-        </div>
-        <div class="largeLinkContainer5">
-          <span class="text-wrapper">
-            <a class="largeLink5" href="team.html" target="_blank">Team</a>
-          </span>
-        </div>
-        <div class="largeLinkContainer6">
-          <span class="text-wrapper">
-            <a class="largeLink6" href="index.html?contact" target="_blank"
-              >Contact Us</a
-            >
-          </span>
-        </div>
-        <!-- <a href="">About</a>
+        <div class="elementsContainer">
+            <div class="largeLinkContainer1">
+                <span class="text-wrapper">
+          <a class="largeLink1" href="index.html?about" target="_blank">About</a>
+        </span>
+            </div>
+            <div class="largeLinkContainer2">
+                <span class="text-wrapper">
+          <a class="largeLink2" href="all-projects.html" target="_blank">Projects</a>
+        </span>
+            </div>
+            <div class="largeLinkContainer3">
+                <span class="text-wrapper">
+          <a class="largeLink3" href="all-blogs.html" target="_blank">Blogs</a>
+        </span>
+            </div>
+            <div class="largeLinkContainer4">
+                <span class="text-wrapper">
+          <a class="largeLink4" onclick="openCloseNav()">Artworks</a>
+        </span>
+            </div>
+            <div class="largeLinkContainer5">
+                <span class="text-wrapper">
+          <a class="largeLink5" href="team.html" target="_blank">Team</a>
+        </span>
+            </div>
+            <div class="largeLinkContainer6">
+                <span class="text-wrapper">
+          <a class="largeLink6" href="index.html?contact" target="_blank">Contact Us</a>
+        </span>
+            </div>
+            <!-- <a href="">About</a>
         <a href="">Work</a>
         <a href="">Blogs</a>
         <a href="">Artworks</a>
         <a href="">Achievements</a>
         <a href="">Contact Us</a> -->
-      </div>
+        </div>
     </div>
     <div class="wrapper">
-      <div class="background"></div>
-      <div class="landingSection">
-        <h1>ARTWORKS</h1>
-        <div class="cross" onclick="scrollFullPage()">
-          <div class="crossLine" style="transform: rotate(45deg)"></div>
-          <div class="crossLine" style="transform: rotate(-45deg)"></div>
+        <div class="background"></div>
+        <div class="landingSection">
+            <h1>ARTWORKS</h1>
+            <div class="cross" onclick="scrollFullPage()">
+                <div class="crossLine" style="transform: rotate(45deg)"></div>
+                <div class="crossLine" style="transform: rotate(-45deg)"></div>
+            </div>
         </div>
-      </div>
-      <div class="artworkWrapper">
-        <div class="aboutArtwork">
-          <h1>About Artwork</h1>
-          <i
-            >About APOGEE Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit. Curabitur hendrerit mi neque, ultricies tincidunt leo
-            vulputate ac.</i
-          >
+        <div class="artworkWrapper">
+            <div class="aboutArtwork">
+                <h1>About Artwork</h1>
+                <i>About APOGEE Lorem ipsum dolor sit amet, consectetur adipiscing
+          elit. Curabitur hendrerit mi neque, ultricies tincidunt leo
+          vulputate ac.</i>
+            </div>
+            <div class="column">
+
+            </div>
+            <div class="column">
+
+            </div>
         </div>
-        <div class="column" >
-          <div class="artworkContainer">
-            <div class="artworkImage">
-              <img src="assets/img/artPlacehoder.png" alt="" />
-            </div>
-            <div class="artworkSomething">something over here</div>
-            <div class="artworkName">Name goes here</div>
-            <div class="artistName">By Name Surname</div>
-            <div class="artistLinksContainer">
-              <div class="artistLinks">
-                <img src="./assets/icons/behance.png" />
-              </div>
-              <div class="artistLinks">
-                <img src="./assets/icons/dribble.svg" />
-              </div>
-              <div class="artistLinks">
-                <img src="./assets/icons/instagram-sketched@2x.png" />
-              </div>
-            </div>
-          </div>
-          <div class="artworkContainer">
-            <div class="artworkImage">
-              <img src="assets/img/artPlacehoder.png" alt="" />
-            </div>
-            <div class="artworkSomething">something over here</div>
-            <div class="artworkName">Name goes here</div>
-            <div class="artistName">By Name Surname</div>
-            <div class="artistLinksContainer">
-              <div class="artistLinks">
-                <img src="./assets/icons/behance.png" />
-              </div>
-              <div class="artistLinks">
-                <img src="./assets/icons/dribble.svg" />
-              </div>
-              <div class="artistLinks">
-                <img src="./assets/icons/instagram-sketched@2x.png" />
-              </div>
-            </div>
-          </div>
-          <div class="artworkContainer">
-            <div class="artworkImage">
-              <img src="assets/img/artPlacehoder.png" alt="" />
-            </div>
-            <div class="artworkSomething">something over here</div>
-            <div class="artworkName">Name goes here</div>
-            <div class="artistName">By Name Surname</div>
-            <div class="artistLinksContainer">
-              <div class="artistLinks">
-                <img src="./assets/icons/behance.png" />
-              </div>
-              <div class="artistLinks">
-                <img src="./assets/icons/dribble.svg" />
-              </div>
-              <div class="artistLinks">
-                <img src="./assets/icons/instagram-sketched@2x.png" />
-              </div>
-            </div>
-          </div>
-          <div class="artworkContainer">
-            <div class="artworkImage">
-              <img src="assets/img/artPlacehoder.png" alt="" />
-            </div>
-            <div class="artworkSomething">something over here</div>
-            <div class="artworkName">Name goes here</div>
-            <div class="artistName">By Name Surname</div>
-            <div class="artistLinksContainer">
-              <div class="artistLinks">
-                <img src="./assets/icons/behance.png" />
-              </div>
-              <div class="artistLinks">
-                <img src="./assets/icons/dribble.svg" />
-              </div>
-              <div class="artistLinks">
-                <img src="./assets/icons/instagram-sketched@2x.png" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="column">
-          <div class="artworkContainer">
-            <div class="artworkImage">
-              <img src="assets/img/artPlacehoder.png" alt="" />
-            </div>
-            <div class="artworkSomething">something over here</div>
-            <div class="artworkName">Name goes here</div>
-            <div class="artistName">By Name Surname</div>
-            <div class="artistLinksContainer">
-              <div class="artistLinks">
-                <img src="./assets/icons/behance.png" />
-              </div>
-              <div class="artistLinks">
-                <img src="./assets/icons/dribble.svg" />
-              </div>
-              <div class="artistLinks">
-                <img src="./assets/icons/instagram-sketched@2x.png" />
-              </div>
-            </div>
-          </div>
-          <div class="artworkContainer">
-            <div class="artworkImage">
-              <img src="assets/img/artPlacehoder.png" alt="" />
-            </div>
-            <div class="artworkSomething">something over here</div>
-            <div class="artworkName">Name goes here</div>
-            <div class="artistName">By Name Surname</div>
-            <div class="artistLinksContainer">
-              <div class="artistLinks">
-                <img src="./assets/icons/behance.png" />
-              </div>
-              <div class="artistLinks">
-                <img src="./assets/icons/dribble.svg" />
-              </div>
-              <div class="artistLinks">
-                <img src="./assets/icons/instagram-sketched@2x.png" />
-              </div>
-            </div>
-          </div>
-          <div class="artworkContainer">
-            <div class="artworkImage">
-              <img src="assets/img/artPlacehoder.png" alt="" />
-            </div>
-            <div class="artworkSomething">something over here</div>
-            <div class="artworkName">Name goes here</div>
-            <div class="artistName">By Name Surname</div>
-            <div class="artistLinksContainer">
-              <div class="artistLinks">
-                <img src="./assets/icons/behance.png" />
-              </div>
-              <div class="artistLinks">
-                <img src="./assets/icons/dribble.svg" />
-              </div>
-              <div class="artistLinks">
-                <img src="./assets/icons/instagram-sketched@2x.png" />
-              </div>
-            </div>
-          </div>
-          <div class="artworkContainer">
-            <div class="artworkImage">
-              <img src="assets/img/artPlacehoder.png" alt="" />
-            </div>
-            <div class="artworkSomething">something over here</div>
-            <div class="artworkName">Name goes here</div>
-            <div class="artistName">By Name Surname</div>
-            <div class="artistLinksContainer">
-              <div class="artistLinks">
-                <img src="./assets/icons/behance.png" />
-              </div>
-              <div class="artistLinks">
-                <img src="./assets/icons/dribble.svg" />
-              </div>
-              <div class="artistLinks">
-                <img src="./assets/icons/instagram-sketched@2x.png" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
+    </div>
+    <script src="js/all-artworks.js"></script>
     <script src="js/artwork.js"></script>
     <script src="js/navbar.js"></script>
     <script src="js/imageLoaded.js"></script>
-  </body>
+</body>
+
 </html>
