@@ -381,6 +381,7 @@ body::-webkit-scrollbar {
   height: max-content;
   color: #cccccc;
   border: 3px solid #0d0d0d;
+  cursor: pointer;
 }
 
 input,
