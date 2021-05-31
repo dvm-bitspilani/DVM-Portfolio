@@ -119,8 +119,11 @@ body {
   color: white;
   font-family: poppins;
   flex-wrap: wrap;
+  font-size: 0.9em;
 }
-
+.aboutArtwork i {
+  opacity: 0.6;
+}
 ::-webkit-scrollbar {
   width: 0;
 }
@@ -286,7 +289,9 @@ body {
   transition: 0.2s;
   transform: translateY(30%);
 }
-
+.links img {
+  width: 20px;
+}
 .links a {
   text-decoration: none;
 }
@@ -436,7 +441,7 @@ body {
     letter-spacing: 0;
   }
   .artworkWrapper {
-    font-size: 0.9em;
+    font-size: 0.7em;
   }
   .column {
     padding: 5% 9%;
