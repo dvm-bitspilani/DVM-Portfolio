@@ -1,4 +1,24 @@
-.html {
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #5a5a5a #050505;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #5a5a5a;
+  border-radius: 20px;
+  border: 3px solid #050505;
+}
+
+html {
   scroll-behavior: smooth;
 }
 
@@ -8,7 +28,7 @@ body {
 }
 
 .wrapper {
-  background-color: black;
+  background-color: #050505;
   box-sizing: border-box;
   color: #fafafa;
   position: absolute;

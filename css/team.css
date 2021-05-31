@@ -124,6 +124,13 @@ body {
 .aboutArtwork i {
   opacity: 0.6;
 }
+.aboutArtwork {
+  margin-left: 1vw;
+  margin-top: -2%;
+}
+.aboutArtwork h1 {
+  margin-left: -1vw;
+}
 ::-webkit-scrollbar {
   width: 0;
 }
