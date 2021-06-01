@@ -16,7 +16,7 @@ function allImagesLoaded() {
 
 function loaded() {
   content_loaded = true;
-  allImagesLoaded();
+   setTimeout(allImagesLoaded, 1000);
 }
 
 let main_arr = [[], [], [], [], []];

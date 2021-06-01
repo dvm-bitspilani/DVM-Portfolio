@@ -202,7 +202,7 @@ document.addEventListener("scroll", scrollToSection);
 let loaded = () => {
   // let heading = document.getElementsByClassName("home-heading")[0];
   video_loaded = true;
-  allImagesLoaded();
+  setTimeout(allImagesLoaded, 1000);
 };
 
 // selectDot(currentPage);
@@ -466,7 +466,6 @@ window.addEventListener("DOMContentLoaded", () => {
 // Drag scroll for blogs section on landing
 
 function random_function() {
-  console.log("We solemnly swear that we are up to no good");
   document.getElementsByClassName("random")[0].style.display = "flex";
   document.getElementsByClassName("random")[0].style.opacity = "1";
   setTimeout(() => {

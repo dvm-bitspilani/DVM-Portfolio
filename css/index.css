@@ -16,7 +16,9 @@ body {
 body::-webkit-scrollbar {
   display: none;
 }
-
+.navbarSide {
+  z-index: 116;
+}
 .wrapper {
   height: auto;
   width: 100vw;
