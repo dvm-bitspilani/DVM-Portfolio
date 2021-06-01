@@ -16,6 +16,9 @@
   justify-content: center;
   align-items: center;
 }
+.loader > img {
+  height: 30vh;
+}
 .loader-mask {
   background: rgba(0, 0, 0);
   height: 100vh;
