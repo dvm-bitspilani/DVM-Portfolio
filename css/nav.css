@@ -2,7 +2,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 117;
+
   padding: 0 3% 0 3%;
   /* margin: 1% 0; */
   backdrop-filter: blur(10px);
@@ -17,8 +17,10 @@ nav {
   margin: 2vh 3vw;
   width: 75px;
 } */
-.navbarTop {
+.navbarTop,
+.navbar {
   height: 10vh;
+  z-index: 117;
 }
 /* .navbarSide {
   right: 3vw;
