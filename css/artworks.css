@@ -221,7 +221,7 @@ body {
   .artworkWrapper {
     font-size: 0.9em;
     width: 100vw;
-    padding: 10% 0%;
+    padding: 20% 0%;
     align-items: center;
     flex-wrap: nowrap;
     flex-direction: column;

@@ -187,11 +187,11 @@ body {
   }
 }
 @media all and (max-width: 600px) {
-  .ham {
+  /* .ham {
     width: 20%;
     position: relative;
     left: 7vw;
-  }
+  } */
   .contentWrapper {
     flex-direction: column;
   }
