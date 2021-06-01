@@ -482,18 +482,20 @@ function random_function() {
   }, 2500);
 }
 let touchcount = 0;
-window.addEventListener("touchstart", function (e) {
-  touchcount++;
-  console.log("jij");
-  setTimeout(() => {
-    if (touchcount != 3) {
-      touchcount = 0;
+document
+  .getElementsByClassName("heart")[0]
+  .addEventListener("touchstart", function (e) {
+    touchcount++;
+    console.log("jij");
+    setTimeout(() => {
+      if (touchcount != 3) {
+        touchcount = 0;
+      }
+    }, 600);
+    if (touchcount == 3) {
+      random_function();
     }
-  }, 600);
-  if (touchcount == 3) {
-    random_function();
-  }
-});
+  });
 const slider = document.querySelector(".scrolling-wrapper");
 const blogCard = document.getElementsByClassName("blogimage");
 let isDown = false;

@@ -124,6 +124,13 @@ body {
 .aboutArtwork i {
   opacity: 0.6;
 }
+.aboutArtwork {
+  margin-left: 1vw;
+  margin-top: -2%;
+}
+.aboutArtwork h1 {
+  margin-left: -1vw;
+}
 ::-webkit-scrollbar {
   width: 0;
 }
@@ -396,19 +403,20 @@ body {
   }
 
   .memberName {
-    font-size: 1em;
+    font-size: 1.3em;
 
     transform: translateY(-40%) scale(1);
   }
 
   .designation {
-    font-size: 0.8em;
+    font-size: 0.9em;
     transform: translateY(-50%) scale(1);
   }
 
   .links {
     width: 85%;
     z-index: 1;
+    justify-content: space-around;
     transform: translateY(0%) scale(0.9);
   }
   .links img {

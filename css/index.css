@@ -2,7 +2,7 @@
     font-family: 'test';
     src: url(../assets/fonts/Jaapokkisubtract-Regular.otf);
 } */
-.html {
+html {
   scroll-behavior: smooth;
 }
 
@@ -20,7 +20,7 @@ body::-webkit-scrollbar {
 .wrapper {
   height: auto;
   width: 100vw;
-  background-color: black;
+  background-color: #050505;
   box-sizing: border-box;
   color: #fafafa;
   overflow-x: hidden;
@@ -28,8 +28,46 @@ body::-webkit-scrollbar {
   left: 0;
   top: 0;
 }
+.arrow-container {
+  width: 18px;
+  opacity: 0.5;
+  position: absolute;
+  top: 90vh;
+  /* cubic-bezier-easing = sine / mehr Beispiele: https://easings.net/ */
+  animation: bounce 1600ms infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  cursor: pointer;
+  height: 20px;
+}
+
+.arrow-down {
+  height: 6px;
+  background: rgb(97, 97, 97);
+  transform: rotate(45deg);
+  transform-origin: 0% 0%;
+  border-radius: 5px;
+}
+.arrow-down:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 100%;
+  border-radius: 5px;
+  background: gray;
+  transform: rotate(-90deg);
+  transform-origin: 0% 100%;
+}
+
+@keyframes bounce {
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
 .page {
-  height: 100vh;
+  min-height: 100vh;
+  height: max-content;
   overflow: hidden;
   box-sizing: border-box;
   padding: 12px;
@@ -512,7 +550,7 @@ textarea:focus {
 .blogimage > img {
   height: auto;
   width: 100%;
-  border-radius: 8px;
+  border-radius: 5px;
 }
 .blogimage.active {
   transform: scale(0.9);
@@ -523,7 +561,7 @@ textarea:focus {
   z-index: 20;
   margin-top: 21vh;
   margin-left: 0vw;
-  height: 14vh;
+  height: max-content;
   width: 19vw;
   border-radius: 3px;
   backdrop-filter: blur(15px);
@@ -544,6 +582,7 @@ textarea:focus {
 .blogby {
   padding-top: 0.5vh;
   padding-left: 3vw;
+  padding-bottom: 3vh;
   color: #ffffff;
   font-size: 13px;
   font-family: "Poppins";
@@ -599,6 +638,7 @@ textarea:focus {
   /* top: 20vh; */
   width: 100%;
   height: 100%;
+  margin-top: 10vh;
   width: 90vw;
   transform: translateY(100px);
   opacity: 0;
@@ -606,7 +646,7 @@ textarea:focus {
 
 .artwork-left {
   position: relative;
-  height: 100%;
+  height: max-content;
   width: 30%;
   padding-left: 10vw;
   display: flex;
@@ -677,7 +717,7 @@ textarea:focus {
   overflow: hidden;
   z-index: 10;
   width: 20vw;
-  margin-bottom: -5vh;
+  /* margin-bottom: -5vh; */
 }
 
 .artwork-name {
@@ -787,6 +827,14 @@ textarea:focus {
   opacity: 0;
   transform: translateX(100px);
 }
+.gear-background-svg {
+  top: 300vh;
+  position: absolute;
+  left: -35vw;
+}
+.gear-background {
+  fill: #1616169c;
+}
 .show-all-container {
   width: 92vw;
   margin-right: 8vw;
@@ -795,7 +843,7 @@ textarea:focus {
   align-items: center;
 }
 .show-all {
-  z-index: 150;
+  z-index: 116;
   position: relative;
   display: flex;
   justify-content: center;
@@ -813,13 +861,14 @@ textarea:focus {
   font: normal normal medium 16px/25px Poppins;
   letter-spacing: 0px;
   color: #ffffff;
-  transform: translateX(15px);
+  /* transform: translateX(15px); */
 }
 .show-all-arrow {
-  width: 40px;
-  height: 28px;
-  transform: translateX(23px);
-  transition: 0.5s ease-in-out;
+  height: 20px;
+  margin-left: 0.6vw;
+  opacity: 0.7;
+  /* transform: translateX(23px);
+  transition: 0.5s ease-in-out; */
 }
 .show-all-circle {
   height: 25px;
@@ -827,9 +876,9 @@ textarea:focus {
   border-radius: 50%;
   border: solid 2px white;
 }
-.show-all:hover .show-all-arrow {
+/* .show-all:hover .show-all-arrow {
   transform: translateX(50px);
-}
+} */
 .projects-page {
   height: max-content;
 }
@@ -841,8 +890,9 @@ textarea:focus {
 }
 .project-heading1,
 .project-heading2 {
-  font: normal normal 400 60px/129px Gilroy;
+  font: normal normal bold 60px/129px Gilroy;
   color: #ffffff;
+
   width: 100%;
   text-align: center;
   opacity: 0;
@@ -866,6 +916,7 @@ textarea:focus {
   width: auto;
   height: max-content;
   padding-bottom: 2vh;
+  color: #ffffffb5;
 }
 .projectsFirstContainer {
   display: flex;
@@ -934,23 +985,20 @@ textarea:focus {
 }
 
 .projectArrow {
-  background-image: url(../assets/img/arrow_forward-24px.svg);
+  /* background-image: url(../assets/img/arrow_forward-24px.svg);
   background-position: center;
   background-repeat: no-repeat;
-  padding: 4px;
-  height: 28px;
-  width: 28px;
-  margin-left: 5%;
-  border: 1px white solid;
-  border-radius: 50%;
-  transition: 0.4s;
+  padding: 4px; */
+  height: 1.5em;
+  /* width: 28px; */
+  margin-left: 1.25vw;
+  padding-top: 0 !important;
 }
 
-.projectArrow:hover {
-  /* transform: scale(1.1); */
+/* .projectArrow:hover {
   border: 1px transparent solid;
   transform: translateX(20px);
-}
+} */
 
 /* .animate {
   animation: animate .3s ease-in-out forwards;
@@ -1019,11 +1067,11 @@ textarea:focus {
   #about {
     min-height: 100vh;
     height: fit-content;
-    margin-bottom: 10vh;
     padding: 20px;
   }
   #about-wrapper {
     margin-top: 1vh;
+    margin-bottom: 0;
     height: calc(100vh - 24px);
   }
   .about-background-container {
@@ -1104,21 +1152,23 @@ textarea:focus {
     opacity: 0.5;
     font-size: 15px;
   }
-  .show-all:hover .show-all-arrow {
+  /* .show-all:hover .show-all-arrow {
     transform: translateX(18px);
-  }
+  } */
   .show-all-text {
     font: normal normal medium 12px/18px Poppins;
     letter-spacing: 0px;
     color: #ffffff;
     /* transform: translateX(18px); */
-    transform: translateX(10px);
+    /* transform: translateX(10px); */
     white-space: nowrap;
   }
   .show-all-arrow {
-    width: 30px;
-    height: 28px;
-    transform: translateX(18px);
+    /* width: 30px; */
+    height: 18px;
+    margin-left: 2vw;
+    opacity: 0.6;
+    /* transform: translateX(18px); */
   }
   .show-all-circle {
     border: solid 1px white;
@@ -1185,10 +1235,9 @@ textarea:focus {
     font: normal normal 100 13px/20px Poppins;
   }
   .projectArrow {
-    border: 0.5px solid rgba(255, 255, 255, 0.4);
-    height: 20px;
-    width: 20px;
-    margin-left: 4vw;
+    height: 22px;
+    margin: 0 !important;
+    margin-left: 3vw !important;
   }
   .project-view-more {
     font-weight: normal;
@@ -1447,6 +1496,14 @@ textarea:focus {
   }
   .blogtitle {
     width: 59vw;
+  }
+  .gear-background-svg {
+    top: 200vh;
+    position: absolute;
+    left: -25vw;
+  }
+  .gear-background {
+    fill: #161616;
   }
 }
 

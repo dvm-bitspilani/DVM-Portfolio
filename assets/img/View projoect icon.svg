@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="43.7" height="34" viewBox="0 0 43.7 34">
+  <g id="View_projoect_icon" data-name="View projoect icon" transform="translate(9.7 -0.488)">
+    <g id="arrow_forward-24px" transform="translate(5 5.397)">
+      <path id="Path_1649" data-name="Path 1649" d="M0,0H24V24H0Z" fill="none"/>
+      <path id="Path_1650" data-name="Path 1650" d="M12,4,10.59,5.41,16.17,11H-14.7v2H16.17l-5.58,5.59L12,20l8-8Z" fill="#fff"/>
+    </g>
+    <g id="Ellipse_8" data-name="Ellipse 8" transform="translate(0 0.488)" fill="none" stroke="#fff" stroke-width="2">
+      <circle cx="17" cy="17" r="17" stroke="none"/>
+      <circle cx="17" cy="17" r="16" fill="none"/>
+    </g>
+  </g>
+</svg>
