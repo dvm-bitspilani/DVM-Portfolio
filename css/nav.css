@@ -192,7 +192,8 @@ nav {
   flex-direction: column;
   /* font-size: 4.2em;
   font-family: Gilroy-Heavy; */
-  font: normal normal bold 75px/90px Gilroy-Medium;
+  /* font: normal normal bold 75px/90px Gilroy-Medium; */
+  font: normal normal bold 10vh Gilroy-Medium;
 }
 .elementsContainer a {
   color: white;
