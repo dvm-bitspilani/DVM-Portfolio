@@ -16,7 +16,7 @@ function allImagesLoaded() {
 
 function loaded() {
   content_loaded = true;
-   setTimeout(allImagesLoaded, 1000);
+  setTimeout(allImagesLoaded, 1000);
 }
 
 let main_arr = [[], [], [], [], []];
@@ -26,7 +26,7 @@ function get_info() {
   return new Promise((resolve) => {
     for (var p = 0; p < information.length; p++) {
       let temp = {
-        img: information[p].main_photo_link,
+        img: information[p].hero_section_image_link,
         name: information[p].name,
         url: information[p].page_link,
       };
