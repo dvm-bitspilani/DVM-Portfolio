@@ -292,7 +292,7 @@ body {
 .links {
   width: 70%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   transition: 0.2s;
   transform: translateY(30%);
 }
