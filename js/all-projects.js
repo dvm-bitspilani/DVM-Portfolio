@@ -19,15 +19,13 @@ function allImagesLoaded() {
     }, 500);
     translate_function();
     first_time = false;
-    console.log(first_time);
   }
 }
 
 function project_image_translate(x) {
   let time = first_time ? 600 + x * 150 : x * 150;
-  console.log(first_time);
+
   setTimeout(() => {
-    console.log("hello", x);
     document.getElementsByClassName("single_project")[x].style.transform =
       "translateY(0)";
   }, time);
@@ -40,8 +38,7 @@ function translate_function() {
 function loaded() {
   console.log("Content Loaded");
   content_loaded = true;
-  
-  // setTimeout(allImagesLoaded, 1000);
+  if (first_time) setTimeout(allImagesLoaded, 1000);
 }
 
 let main_arr = [[], [], [], [], []];
