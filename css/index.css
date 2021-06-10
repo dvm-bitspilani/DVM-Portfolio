@@ -503,23 +503,27 @@ textarea:focus {
 .scrolling-wrapper {
   height: 70vh;
   width: 80vw;
+  display: flex;
   overflow-x: scroll;
   cursor: grab;
   transition: all 0.2s;
   transform: scale(0.98);
 }
 
-.scrolling-wrapper .card {
+/* .scrolling-wrapper .card {
   display: inline-block;
-}
+} */
 
 .card {
   margin-top: 5vh;
   margin-left: 2.5vw;
-  width: 40vw;
+  width: 60vw;
   height: 50vh;
   /* cursor: none; */
-
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
   transition: all 0.2s;
   transform: scale(0.98) translateY(100px);
   opacity: 0;
@@ -538,10 +542,10 @@ textarea:focus {
 }
 
 .blogimage {
-  float: right;
+  /* float: right; */
   height: 50vh;
 
-  width: 30vw;
+  width: 50vw;
   background-color: transparent;
   transition: 0.4s ease-out;
   overflow: hidden;
@@ -558,13 +562,13 @@ textarea:focus {
   transform: scale(0.9);
 }
 .blogtitle {
-  position: relative;
   cursor: pointer;
   z-index: 20;
-  margin-top: 21vh;
-  margin-left: 0vw;
+  margin-right: -15vw;
   height: max-content;
-  width: 19vw;
+  width: 16vw;
+  
+  padding: 3vh 3vw ;
   border-radius: 3px;
   backdrop-filter: blur(15px);
   background-color: rgb(44 44 44 / 70%);
@@ -574,21 +578,30 @@ textarea:focus {
   background-color: rgb(44 44 44 / 86%);
 }
 .blogtitletitle {
-  padding-left: 3vw;
-  padding-top: 3vh;
+  
   font-size: 15px;
+  width: 100%;
+  
   font-family: "Poppins";
   font-weight: 600;
+  white-space: pre-wrap; /* CSS3 */
+  white-space: -moz-pre-wrap; /* Firefox */
+  white-space: -pre-wrap; /* Opera <7 */
+  white-space: -o-pre-wrap; /* Opera 7 */
 }
 
 .blogby {
   padding-top: 0.5vh;
-  padding-left: 3vw;
-  padding-bottom: 3vh;
+  width: 100%;
   color: #ffffff;
   font-size: 13px;
   font-family: "Poppins";
   opacity: 0.5;
+    white-space: pre-wrap; /* CSS3 */
+  white-space: -moz-pre-wrap; /* Firefox */
+  white-space: -pre-wrap; /* Opera <7 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+}
 }
 .blogDragDiv {
   z-index: 100;
@@ -808,10 +821,12 @@ textarea:focus {
 }
 
 .artwork-img {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
-  background: #018786;
+  background: transparent;
   white-space: normal;
   transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
@@ -821,7 +836,6 @@ textarea:focus {
 }
 
 .artwork-img > img {
-  height: 100%;
   width: 100%;
 }
 .heightClass {
@@ -1285,7 +1299,7 @@ textarea:focus {
     justify-content: space-evenly;
     /* top: 20vh; */
     width: 100%;
-
+    margin-top: 5vh;
     transform: translateY(100px);
     opacity: 0;
   }
@@ -1456,7 +1470,7 @@ textarea:focus {
     display: inline-block;
     width: calc(100% - 24px);
     height: 100%;
-    background: #018786;
+    background: transparent;
     white-space: normal;
     transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
@@ -1466,8 +1480,8 @@ textarea:focus {
   }
 
   .artwork-img > img {
-    height: 100%;
     width: 100%;
+    min-height: 100%;
   }
   #footer-wrapper {
     margin-top: 10vh;
@@ -1477,27 +1491,46 @@ textarea:focus {
   }
   .blog {
     height: max-content;
+    min-height: 0;
   }
   #blog-wrapper {
     height: max-content;
-    padding-bottom: 10vh;
+    padding-bottom: 8vh;
+    
   }
   .scrolling-wrapper {
     transform: scale(1);
-    margin-top: 5vh;
-    width: calc(80vw - 24px);
-    padding-right: 10vw;
-    padding-left: 10vw;
+    margin-top: 7vh;
+    width: calc(90vw - 24px);
+    margin-right: 5vw;
+    margin-left: 5vw;
     height: max-content;
   }
   .card {
-    width: 80vw;
+    width: calc(90vw - 24px);
+    margin-left: 8vw;
+    height: max-content;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
   .blogimage {
-    width: 70vw;
+    width: calc(90vw - 24px);
+        height: max-content;
+    margin-bottom: 3vh;
   }
   .blogtitle {
-    width: 59vw;
+    width: max-content;
+    max-width:calc(68vw - 24px);
+    min-width: 50vw;
+    padding: 3vh 6vw;
+    margin-right: 0;
+  }
+  .blogtitletitle{
+    font-size: .9em;
+  }
+  .blogby{
+    font-size: .8em;
   }
   .gear-background-svg {
     top: 200vh;
