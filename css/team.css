@@ -1,5 +1,6 @@
 html {
   scroll-behavior: smooth;
+  scrollbar-width: none;
 }
 
 body {
@@ -8,7 +9,7 @@ body {
   margin: 0;
   user-select: none;
   cursor: default;
-  background: #1c2227;
+  background: #050505;
   -webkit-user-drag: none;
   -webkit-user-select: none;
 }

@@ -5,7 +5,9 @@
 /* html {
   scroll-behavior: smooth;
 } */
-
+html{
+  scrollbar-width: none;
+}
 body {
   overflow-x: hidden;
   background-color: black;

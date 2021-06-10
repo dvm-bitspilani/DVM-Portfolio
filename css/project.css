@@ -3,9 +3,10 @@ nav {
 }
 html {
   scroll-behavior: smooth;
+  scrollbar-width: none;
 }
 body {
-  background-color: gray;
+  background-color: #050505;
   width: 100vw;
   overflow-x: hidden;
   color: white;

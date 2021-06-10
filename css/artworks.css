@@ -1,5 +1,6 @@
 html {
   scroll-behavior: smooth;
+  scrollbar-width: none;
 }
 
 body {
@@ -8,6 +9,11 @@ body {
   margin: 0;
   user-select: none;
   cursor: default;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 
 .background {
