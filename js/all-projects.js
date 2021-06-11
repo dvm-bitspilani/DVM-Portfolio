@@ -1,9 +1,15 @@
 // Array containing the content
 document.getElementsByClassName("loader-video")[0].playbackRate = 1.3;
 let content_loaded = false;
+let video = false;
+let scroll_dist;
+let number_of_projects;
+let timer_scroll;
+let timer_color;
+let first_time = true;
 
 function allImagesLoaded() {
-  if (content_loaded) {
+  if (content_loaded && first_time) {
     console.log("ALL IMAGES LOADED");
     document.getElementsByClassName("loader-video")[0].style.opacity = "0";
 
@@ -11,12 +17,28 @@ function allImagesLoaded() {
       document.getElementsByClassName("loader")[0].style.display = "none";
       document.getElementsByClassName("wrapper")[0].style.opacity = "1";
     }, 500);
+    translate_function();
+    first_time = false;
   }
 }
 
+function project_image_translate(x) {
+  let time = first_time ? 600 + x * 150 : x * 150;
+
+  setTimeout(() => {
+    document.getElementsByClassName("single_project")[x].style.transform =
+      "translateY(0)";
+  }, time);
+}
+function translate_function() {
+  for (var x = 0; x < number_of_projects; x++) {
+    project_image_translate(x);
+  }
+}
 function loaded() {
+  console.log("Content Loaded");
   content_loaded = true;
-  setTimeout(allImagesLoaded, 1000);
+  if (first_time) setTimeout(allImagesLoaded, 1000);
 }
 
 let main_arr = [[], [], [], [], []];
@@ -153,13 +175,8 @@ const slide_bar_scroll_dist =
 const white = document.getElementById("white");
 const grey = document.getElementById("grey");
 const page_number = document.getElementById("page-number");
-let video = false;
-let mobile = false;
 
-let scroll_dist;
-let number_of_projects;
-let timer_scroll;
-let timer_color;
+let mobile = false;
 
 function team(input) {
   if (input == 4) video = true;
@@ -175,12 +192,14 @@ function team(input) {
 
 function team_projects(input) {
   var window_width = window.innerWidth;
-
   document.getElementsByClassName("projects")[0].scrollRight = 150;
   document.getElementsByClassName("projects")[0].innerHTML = "";
   var no_of_projects = main_arr[input].length;
   number_of_projects = no_of_projects;
   var total_width, margin, single_width;
+  if (!first_time) {
+    translate_function();
+  }
   if (window_width > 600) {
     total_width = 60 * no_of_projects;
     margin = 10;

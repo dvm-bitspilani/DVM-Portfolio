@@ -2,9 +2,9 @@
     font-family: 'test';
     src: url(../assets/fonts/Jaapokkisubtract-Regular.otf);
 } */
-html {
+/* html {
   scroll-behavior: smooth;
-}
+} */
 
 body {
   overflow-x: hidden;
@@ -602,7 +602,7 @@ textarea:focus {
   white-space: -pre-wrap; /* Opera <7 */
   white-space: -o-pre-wrap; /* Opera 7 */
 }
-}
+
 .blogDragDiv {
   z-index: 100;
   position: absolute;
