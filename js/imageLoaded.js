@@ -16,7 +16,7 @@ $(document).ready(function () {
   function imageLoaded() {
     imagesLoaded++;
     if (imagesLoaded == totalImages) {
-      allImagesLoaded();
+       setTimeout(allImagesLoaded, 1000);
     }
   }
 });

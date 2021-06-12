@@ -122,6 +122,11 @@ function left_enter_animate_icons(name, val) {
       element[2].style.opacity = 1;
       element[2].style.transform = "translateX(0)";
     }, 200);
+    setTimeout(() => {
+      element[3].classList.add("left_animate");
+      element[3].style.opacity = 1;
+      element[3].style.transform = "translateX(0)";
+    }, 300);
   }
 }
 // Change the code below if you want to add or remove blogs

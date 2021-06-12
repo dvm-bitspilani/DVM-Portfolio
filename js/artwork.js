@@ -1,3 +1,5 @@
+let wrapper_height;
+let back = document.getElementsByClassName("background")[0];
 function allImagesLoaded() {
   console.log("ALL IMAGES LOADED");
   document.getElementsByClassName("loader-video")[0].style.opacity = "0";
@@ -6,6 +8,10 @@ function allImagesLoaded() {
     document.getElementsByClassName("loader")[0].style.display = "none";
     document.getElementsByClassName("wrapper")[0].style.opacity = "1";
   }, 500);
+
+  wrapper_height = document
+    .getElementsByClassName("wrapper")[0]
+    .getBoundingClientRect().height;
 }
 document.getElementsByClassName("loader-video")[0].playbackRate = 1.3;
 
@@ -100,3 +106,25 @@ inner.forEach((inner) =>
     inner.onmousemove = onMouseMoveHandler;
   })()
 );
+
+let scroll_indicator_height =
+  document.getElementsByClassName("scroll-indicator")[0].offsetHeight;
+
+let white_line = document.getElementsByClassName("white-line")[0];
+let grey_line = document.getElementsByClassName("grey-line")[0];
+
+window.onscroll = () => {
+  if (wrapper_height == undefined || scroll_indicator_height == undefined) {
+    //console.log("no wrapper");
+    return;
+  }
+
+  let percentage = window.pageYOffset / (wrapper_height - back.offsetHeight);
+  if (percentage > 1) {
+    white_line.style.height = `${scroll_indicator_height}px`;
+    grey_line.style.height = 0;
+  } else {
+    white_line.style.height = `${percentage * scroll_indicator_height}px`;
+    grey_line.style.height = `${(1 - percentage) * scroll_indicator_height}px`;
+  }
+};

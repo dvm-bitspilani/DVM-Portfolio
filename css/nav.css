@@ -2,7 +2,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 117;
+
   padding: 0 3% 0 3%;
   /* margin: 1% 0; */
   backdrop-filter: blur(10px);
@@ -17,8 +17,10 @@ nav {
   margin: 2vh 3vw;
   width: 75px;
 } */
-.navbarTop {
+.navbarTop,
+.navbar {
   height: 10vh;
+  z-index: 117;
 }
 /* .navbarSide {
   right: 3vw;
@@ -43,7 +45,6 @@ nav {
   align-items: center;
   flex-direction: row-reverse;
   z-index: 5;
-
   /* width: */
 }
 .dotText {
@@ -165,10 +166,12 @@ nav {
 }
 
 .followContainer a {
-  color: white;
+  color: #ffffff91;
   text-decoration: solid;
   margin: 1%;
   margin-left: 0;
+  font: normal normal medium 20px/24px Gilroy;
+  letter-spacing: 1px;
 }
 
 .smallLinksHeader {
@@ -187,8 +190,10 @@ nav {
 .elementsContainer {
   display: flex;
   flex-direction: column;
-  font-size: 4.2em;
-  font-family: Gilroy-Heavy;
+  /* font-size: 4.2em;
+  font-family: Gilroy-Heavy; */
+  /* font: normal normal bold 75px/90px Gilroy-Medium; */
+  font: normal normal bold 10vh Gilroy-Medium;
 }
 .elementsContainer a {
   color: white;
@@ -235,7 +240,9 @@ nav {
     justify-content: space-evenly;
   }
   .elementsContainer {
-    font-size: 2.5em;
+    /* font-size: 2.5em; */
+
+    font: normal normal bold 40px/55px Gilroy-Medium;
     margin-top: 5vh;
     width: 80%;
   }

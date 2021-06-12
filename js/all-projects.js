@@ -1,9 +1,15 @@
 // Array containing the content
 document.getElementsByClassName("loader-video")[0].playbackRate = 1.3;
 let content_loaded = false;
+let video = false;
+let scroll_dist;
+let number_of_projects;
+let timer_scroll;
+let timer_color;
+let first_time = true;
 
 function allImagesLoaded() {
-  if (content_loaded) {
+  if (content_loaded && first_time) {
     console.log("ALL IMAGES LOADED");
     document.getElementsByClassName("loader-video")[0].style.opacity = "0";
 
@@ -11,12 +17,28 @@ function allImagesLoaded() {
       document.getElementsByClassName("loader")[0].style.display = "none";
       document.getElementsByClassName("wrapper")[0].style.opacity = "1";
     }, 500);
+    translate_function();
+    first_time = false;
   }
 }
 
+function project_image_translate(x) {
+  let time = first_time ? 600 + x * 150 : x * 150;
+
+  setTimeout(() => {
+    document.getElementsByClassName("single_project")[x].style.transform =
+      "translateY(0)";
+  }, time);
+}
+function translate_function() {
+  for (var x = 0; x < number_of_projects; x++) {
+    project_image_translate(x);
+  }
+}
 function loaded() {
+  console.log("Content Loaded");
   content_loaded = true;
-  allImagesLoaded();
+  if (first_time) setTimeout(allImagesLoaded, 1000);
 }
 
 let main_arr = [[], [], [], [], []];
@@ -26,7 +48,7 @@ function get_info() {
   return new Promise((resolve) => {
     for (var p = 0; p < information.length; p++) {
       let temp = {
-        img: information[p].main_photo_link,
+        img: information[p].hero_section_image_link,
         name: information[p].name,
         url: information[p].page_link,
       };
@@ -154,12 +176,11 @@ const white = document.getElementById("white");
 const grey = document.getElementById("grey");
 const page_number = document.getElementById("page-number");
 
-let scroll_dist;
-let number_of_projects;
-let timer_scroll;
-let timer_color;
+let mobile = false;
 
 function team(input) {
+  if (input == 4) video = true;
+  else video = false;
   for (var i = 0; i < 5; i++) {
     document.getElementsByClassName("team-name")[i].className = "team-name";
   }
@@ -171,18 +192,22 @@ function team(input) {
 
 function team_projects(input) {
   var window_width = window.innerWidth;
-
   document.getElementsByClassName("projects")[0].scrollRight = 150;
   document.getElementsByClassName("projects")[0].innerHTML = "";
   var no_of_projects = main_arr[input].length;
   number_of_projects = no_of_projects;
   var total_width, margin, single_width;
+  if (!first_time) {
+    translate_function();
+  }
   if (window_width > 600) {
     total_width = 60 * no_of_projects;
     margin = 10;
     single_width = 40;
+    mobile = false;
   } else {
     console.log("mobile");
+    mobile = true;
     total_width = 80 * no_of_projects;
     margin = 7.5;
     single_width = 65;
@@ -388,7 +413,6 @@ slider.addEventListener("touchend", () => {
   }
 });
 slider.addEventListener("touchmove", (e) => {
-  console.log("heyyyyy");
   if (!isDown) return;
   e.preventDefault();
   const x = e.touches[0].pageX - inner.offsetLeft;

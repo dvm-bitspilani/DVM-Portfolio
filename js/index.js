@@ -43,9 +43,8 @@ function allImagesLoaded() {
         window.scrollTo(0, 0);
         selectDot(0);
         const params = new URLSearchParams(window.location.search);
-        console.log(params);
+
         for (const param of params) {
-          console.log(param);
           if (param[0] === "about") toDot(1);
           else if (param[0] === "contact") toDot(6);
         }
@@ -203,7 +202,7 @@ document.addEventListener("scroll", scrollToSection);
 let loaded = () => {
   // let heading = document.getElementsByClassName("home-heading")[0];
   video_loaded = true;
-  allImagesLoaded();
+  setTimeout(allImagesLoaded, 1000);
 };
 
 // selectDot(currentPage);
@@ -382,18 +381,18 @@ const cursor = document.getElementById("cursor");
 window.addEventListener("DOMContentLoaded", () => {
   const spotlight = document.querySelector(".spotlight");
 
-  let spotlightSize = "transparent -17px, rgba(0, 0, 0, 0.9) 72px)";
+  let spotlightSize = "transparent -17px, rgba(0, 0, 0, 0.8) 72px)";
 
   window.addEventListener("mousemove", (e) => updateSpotlight(e));
 
   window.addEventListener("mousedown", (e) => {
-    spotlightSize = "transparent , rgba(0, 0, 0, 0.9) )";
+    spotlightSize = "transparent , rgba(0, 0, 0, 0.8) )";
 
     updateSpotlight(e);
   });
 
   window.addEventListener("mouseup", (e) => {
-    spotlightSize = "transparent -17px, rgba(0, 0, 0, 0.9) 72px)";
+    spotlightSize = "transparent -17px, rgba(0, 0, 0, 0.8) 72px)";
 
     updateSpotlight(e);
   });
@@ -466,6 +465,36 @@ window.addEventListener("DOMContentLoaded", () => {
 
 // Drag scroll for blogs section on landing
 
+function random_function() {
+  document.getElementsByClassName("random")[0].style.display = "flex";
+  document.getElementsByClassName("random")[0].style.opacity = "1";
+  setTimeout(() => {
+    document.getElementsByClassName("random")[0].style.transform = "scaleX(1)";
+  }, 100);
+  setTimeout(() => {
+    document.getElementsByClassName("random")[0].style.opacity = "0";
+    setTimeout(() => {
+      document.getElementsByClassName("random")[0].style.display = "none";
+      document.getElementsByClassName("random")[0].style.transform =
+        "scaleX(0)";
+    }, 600);
+  }, 2500);
+}
+let touchcount = 0;
+document
+  .getElementsByClassName("heart")[0]
+  .addEventListener("touchstart", function (e) {
+    touchcount++;
+    console.log("jij");
+    setTimeout(() => {
+      if (touchcount != 3) {
+        touchcount = 0;
+      }
+    }, 600);
+    if (touchcount == 3) {
+      random_function();
+    }
+  });
 const slider = document.querySelector(".scrolling-wrapper");
 const blogCard = document.getElementsByClassName("blogimage");
 let isDown = false;

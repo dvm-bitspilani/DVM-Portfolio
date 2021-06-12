@@ -36,13 +36,13 @@ const teams = ["AppDev", "Backend", "Design", "Frontend", "Video"];
 
 document.getElementsByClassName(
   "background"
-)[0].style.backgroundImage = `url('${info.main_photo_link}')`;
-if (info.link !== "") {
+)[0].style.backgroundImage = `url('${info.hero_section_image_link}')`;
+if (info.website_link !== "") {
   document.getElementsByClassName("link")[0].innerHTML =
-    info.link.split("://")[1];
+    info.website_link.split("://")[1];
   document
     .getElementsByClassName("show-all")[0]
-    .setAttribute("onclick", `window.open('${info.link}', '_blank')`);
+    .setAttribute("onclick", `window.open('${info.website_link}', '_blank')`);
 } else {
   if (window.innerWidth > 600) {
     document.getElementsByClassName("heading")[0].style.transform =
@@ -64,21 +64,22 @@ for (var p = 0; p < info.teams.length; p++) {
 
 document.getElementsByClassName("show-all")[0].setAttribute("target", "_blank");
 document.getElementsByClassName("date")[0].innerHTML = info.date;
-document.getElementsByClassName("main-photo")[0].src = info.main_photo_link;
-document.getElementsByClassName("long-1")[0].src = info.long_photos_link[0];
-document.getElementsByClassName("photo")[0].src = info.photos_link[0];
+document.getElementsByClassName("main-photo")[0].src =
+  info.hero_section_image_link;
+document.getElementsByClassName("long-1")[0].src = info.long_images_link[0];
+document.getElementsByClassName("photo")[0].src = info.mockups_link[0];
 //console.log("hey");
-if (info.photos_link[1]) {
-  document.getElementsByClassName("photo")[1].src = info.photos_link[1];
+if (info.mockups_link[1]) {
+  document.getElementsByClassName("photo")[1].src = info.mockups_link[1];
 } else {
   document.getElementsByClassName("photo")[1].remove();
 }
-if (info.long_photos_link.length > 1) {
-  for (var x = 1; x < info.long_photos_link.length; x++) {
+if (info.long_images_link.length > 1) {
+  for (var x = 1; x < info.long_images_link.length; x++) {
     document.getElementsByClassName(
       `long-photos-container`
     )[0].innerHTML += `<div>
-            <img class="long-${x + 1}" src="${info.long_photos_link[x]}" />
+            <img class="long-${x + 1}" src="${info.long_images_link[x]}" />
           </div>`;
   }
 } else {

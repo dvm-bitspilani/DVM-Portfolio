@@ -1,6 +1,9 @@
 .wrapper {
-  transition: opacity 0.4s ease-in;
+  transition: opacity 0.3s ease-in;
   opacity: 0;
+}
+body {
+  background-color: #050505;
 }
 .loader {
   background-color: black;
@@ -15,6 +18,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.loader > img {
+  height: 30vh;
 }
 .loader-mask {
   background: rgba(0, 0, 0);

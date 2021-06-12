@@ -119,8 +119,18 @@ body {
   color: white;
   font-family: poppins;
   flex-wrap: wrap;
+  font-size: 0.9em;
 }
-
+.aboutArtwork i {
+  opacity: 0.6;
+}
+.aboutArtwork {
+  margin-left: 1vw;
+  margin-top: -2%;
+}
+.aboutArtwork h1 {
+  margin-left: -1vw;
+}
 ::-webkit-scrollbar {
   width: 0;
 }
@@ -282,11 +292,13 @@ body {
 .links {
   width: 70%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   transition: 0.2s;
   transform: translateY(30%);
 }
-
+.links img {
+  width: 20px;
+}
 .links a {
   text-decoration: none;
 }
@@ -391,19 +403,20 @@ body {
   }
 
   .memberName {
-    font-size: 1em;
+    font-size: 1.3em;
 
     transform: translateY(-40%) scale(1);
   }
 
   .designation {
-    font-size: 0.8em;
+    font-size: 0.9em;
     transform: translateY(-50%) scale(1);
   }
 
   .links {
     width: 85%;
     z-index: 1;
+    justify-content: space-around;
     transform: translateY(0%) scale(0.9);
   }
   .links img {
@@ -436,7 +449,7 @@ body {
     letter-spacing: 0;
   }
   .artworkWrapper {
-    font-size: 0.9em;
+    font-size: 0.7em;
   }
   .column {
     padding: 5% 9%;
