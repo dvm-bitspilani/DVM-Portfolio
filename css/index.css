@@ -5,7 +5,7 @@
 /* html {
   scroll-behavior: smooth;
 } */
-html{
+html {
   scrollbar-width: none;
 }
 body {
@@ -556,8 +556,10 @@ textarea:focus {
   align-items: center;
 }
 .blogimage > img {
-  height: auto;
-  width: 100%;
+  /* height: auto;
+  width: 100%; */
+  height: 50vh;
+  width: auto;
   border-radius: 5px;
 }
 .blogimage.active {
@@ -569,8 +571,8 @@ textarea:focus {
   margin-right: -15vw;
   height: max-content;
   width: 16vw;
-  
-  padding: 3vh 3vw ;
+
+  padding: 3vh 3vw;
   border-radius: 3px;
   backdrop-filter: blur(15px);
   background-color: rgb(44 44 44 / 70%);
@@ -580,10 +582,9 @@ textarea:focus {
   background-color: rgb(44 44 44 / 86%);
 }
 .blogtitletitle {
-  
   font-size: 15px;
   width: 100%;
-  
+
   font-family: "Poppins";
   font-weight: 600;
   white-space: pre-wrap; /* CSS3 */
@@ -599,7 +600,7 @@ textarea:focus {
   font-size: 13px;
   font-family: "Poppins";
   opacity: 0.5;
-    white-space: pre-wrap; /* CSS3 */
+  white-space: pre-wrap; /* CSS3 */
   white-space: -moz-pre-wrap; /* Firefox */
   white-space: -pre-wrap; /* Opera <7 */
   white-space: -o-pre-wrap; /* Opera 7 */
@@ -1074,6 +1075,9 @@ textarea:focus {
   .form-pic {
     display: none;
   }
+  #contact {
+    min-height: 0;
+  }
   .inputs,
   .textarea {
     width: 75vw;
@@ -1200,13 +1204,16 @@ textarea:focus {
   .project {
     width: auto;
     padding: 0 20px;
+    margin-top: 3vh;
     height: max-content;
   }
   .project-heading1,
   .project-heading2 {
     font-size: 32px;
-    line-height: 94px;
-    text-align: left;
+    /* line-height: 94px; */
+    line-height: 45px;
+    margin-bottom: 3vh;
+    text-align: center;
   }
   .project-info {
     flex-direction: column;
@@ -1219,11 +1226,12 @@ textarea:focus {
     width: max-content;
   }
   .projectsFirstContainer > img {
-    height: 27vh;
+    height: auto;
+    width: 80vw;
   }
   .projectsSecondContainer {
     margin-left: 0;
-    margin-top: 7vh;
+    margin-top: 3vh;
     padding-right: 0;
     padding-bottom: 0;
     height: max-content;
@@ -1243,6 +1251,9 @@ textarea:focus {
     padding-left: 0;
     padding-right: 0;
     /* height: 30vh; */
+  }
+  .projectsSecondContainer > img {
+    width: calc(90vw - 40px);
   }
   .infoHead1,
   .infoHead2 {
@@ -1498,7 +1509,6 @@ textarea:focus {
   #blog-wrapper {
     height: max-content;
     padding-bottom: 8vh;
-    
   }
   .scrolling-wrapper {
     transform: scale(1);
@@ -1518,21 +1528,25 @@ textarea:focus {
   }
   .blogimage {
     width: calc(90vw - 24px);
-        height: max-content;
+    height: max-content;
     margin-bottom: 3vh;
+  }
+  .blogimage > img {
+    height: auto;
+    width: 100%;
   }
   .blogtitle {
     width: max-content;
-    max-width:calc(68vw - 24px);
+    max-width: calc(68vw - 24px);
     min-width: 50vw;
     padding: 3vh 6vw;
     margin-right: 0;
   }
-  .blogtitletitle{
-    font-size: .9em;
+  .blogtitletitle {
+    font-size: 0.9em;
   }
-  .blogby{
-    font-size: .8em;
+  .blogby {
+    font-size: 0.8em;
   }
   .gear-background-svg {
     top: 200vh;
