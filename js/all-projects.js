@@ -200,7 +200,7 @@ function team_projects(input) {
   if (!first_time) {
     translate_function();
   }
-  if (window_width > 600) {
+  if (window_width > 1024) {
     total_width = 60 * no_of_projects;
     margin = 10;
     single_width = 40;

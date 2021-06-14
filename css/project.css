@@ -3,9 +3,10 @@ nav {
 }
 html {
   scroll-behavior: smooth;
+  scrollbar-width: none;
 }
 body {
-  background-color: gray;
+  background-color: #050505;
   width: 100vw;
   overflow-x: hidden;
   color: white;
@@ -430,4 +431,37 @@ body::-webkit-scrollbar {
   /* .show-all:hover .show-all-arrow {
     transform: translateX(0);
   } */
+}
+
+@media all and (min-width: 601px) and (max-width: 1024px) {
+  .link {
+    margin-bottom: -1vh;
+  }
+  .cross {
+    padding: 10px;
+  }
+  .scroll-indicator {
+    width: 0.6vw;
+  }
+  .left-project-about {
+    font: italic normal normal 1.5em Poppins;
+  }
+  .smaller-text {
+    font: normal normal normal 1.3em Poppins;
+  }
+  .website-launch {
+    margin-top: 5vh;
+  }
+  .show-all {
+    font-size: 1.2em;
+  }
+  .teams-heading {
+    font: normal normal 300 1.1em Poppins;
+  }
+  .top-arrow {
+    height: 35px;
+  }
+  .top-arrow > img {
+    width: 35px;
+  }
 }
