@@ -217,7 +217,7 @@ body::-webkit-scrollbar {
   width: 0;
 }
 
-@media all and (max-width: 500px) {
+@media all and (max-width: 600px) {
   .landingSection h1 {
     font-size: 3em;
   }
@@ -251,5 +251,30 @@ body::-webkit-scrollbar {
   .artistLinks > img {
     height: 15px;
     margin-right: 5vw;
+  }
+}
+
+@media all and (min-width: 601px) and (max-width: 1024px) {
+  .artworkContainer {
+    width: 70vw;
+  }
+  .artworkSomething {
+    font-size: 1.25em;
+  }
+  .artworkName {
+    font-size: 1.8em;
+  }
+  .artistName {
+    font-size: 1.25em;
+  }
+  .artistLinks > img {
+    height: 1.5em;
+    margin-right: 4vw;
+  }
+  .landingSection h1 {
+    font-size: 7em;
+  }
+  .scroll-indicator {
+    width: 0.6vw;
   }
 }

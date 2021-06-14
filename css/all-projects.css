@@ -274,8 +274,7 @@ body {
   background-color: #3c3c3c;
   transition: ease;
 }
-
-@media all and (max-width: 600px) {
+@media all and (max-width: 1024px) {
   .background-projects {
     opacity: 0.09;
     font: normal normal bold 100px Poppins;
@@ -371,5 +370,19 @@ body {
     letter-spacing: 1.65px;
     font-size: 11px;
     text-align: center;
+  }
+}
+@media all and (min-width: 601px) and (max-width: 1024px) {
+  #page-number {
+    font-size: 20px;
+  }
+  .team-name {
+    font-size: 20px;
+  }
+  .project_name,
+  .video_name {
+    font-size: 4em;
+    line-height: normal;
+    top: -30vh;
   }
 }

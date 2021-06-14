@@ -90,7 +90,7 @@
 }
 .purple-circuit {
   transform: scaleX(0);
-  transform-origin: center ;
+  transform-origin: center;
 }
 .mousey {
   width: 20px;
@@ -236,7 +236,7 @@
     rgba(0, 0, 0, 0.85) 92px
   );
 }
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 1024px) {
   .homeBack {
     transform: scale(1.5);
   }
@@ -251,7 +251,17 @@
     display: none;
   }
 }
-
+@media all and (min-width: 601px) and (max-width: 1024px) {
+  .homeSideIcons {
+    width: 80%;
+  }
+  .dvm-logo {
+    width: 80% !important;
+  }
+  #homeLogoInner {
+    justify-content: center;
+  }
+}
 #div2 {
   text-align: center;
 

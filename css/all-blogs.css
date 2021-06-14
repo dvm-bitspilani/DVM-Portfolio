@@ -186,7 +186,7 @@ body {
     width: 25vw;
   }
 }
-@media all and (max-width: 600px) {
+@media all and (max-width: 1024px) {
   /* .ham {
     width: 20%;
     position: relative;
@@ -250,5 +250,22 @@ body {
   }
   .blogMore {
     display: none !important;
+  }
+}
+@media all and (min-width: 601px) and (max-width: 1024px) {
+  .heading {
+    font-size: 5em;
+  }
+  .blogtitle {
+    font: normal normal bold 24px/20px Poppins;
+  }
+  .blogbrief {
+    font: normal normal normal 19px/27px Poppins;
+  }
+  .blogby {
+    font: normal normal 300 19px/35px Poppins;
+  }
+  .blogdate {
+    font: normal normal normal 16px/21px Poppins;
   }
 }

@@ -1034,7 +1034,7 @@ textarea:focus {
   }
 } */
 
-@media all and (max-width: 600px) {
+@media all and (max-width: 1024px) {
   .inner-wrapper {
     margin: 2vh 0 2vh 0;
   }
@@ -1562,6 +1562,79 @@ textarea:focus {
   animation: beat 0.35s infinite alternate;
   transform-origin: center;
   margin: 0 10px;
+}
+@media all and (max-width: 1024px) and (min-width: 601px) {
+  .page {
+    padding: 40px;
+  }
+  .about-info-1,
+  .about-info-2 {
+    font: normal normal normal 1.4em / normal Poppins;
+  }
+  .icon {
+    width: 30px;
+  }
+  .about-background {
+    opacity: 0.05;
+  }
+  .about-picture {
+    background-color: #2c2c2ccc;
+  }
+  .show-all-container {
+    width: calc(99vw - 80px);
+  }
+  .show-all {
+    font-size: 1.1em;
+  }
+  .show-all-arrow {
+    height: 1.3em;
+  }
+  .infoHead1,
+  .infoHead2 {
+    font: normal normal 600 1em / normal Poppins;
+  }
+  .project-view-more {
+    font-weight: normal;
+    font-size: 1em;
+  }
+  .video {
+    height: 40vh;
+  }
+  .video-name {
+    font: normal normal 500 30px / normal Gilroy;
+  }
+  .card {
+    width: calc(90vw - 80px);
+  }
+  .blogimage {
+    width: calc(90vw - 80px);
+  }
+  .blogtitletitle {
+    font-size: 1.2em;
+  }
+  .blogby {
+    font-size: 1em;
+  }
+  .artwork-title {
+    font-size: 1.6em;
+    line-height: normal;
+  }
+  .artwork-name {
+    font-size: 1em;
+  }
+  .link-icon {
+    height: 0.8em;
+  }
+  .artwork-carousel {
+    height: 45vh;
+  }
+  .inputs {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  textarea {
+    padding: 20px 20px;
+  }
 }
 
 /* Heart beat animation */

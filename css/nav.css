@@ -221,7 +221,7 @@ nav {
   transform-origin: 0 0;
 }
 
-@media all and (max-width: 600px) {
+@media all and (max-width: 1024px) {
   .brand {
     font-size: 24px;
   }
@@ -263,5 +263,29 @@ nav {
   }
   .smallLinksText {
     display: none;
+  }
+}
+
+@media all and (min-width: 601px) and (max-width: 1024px) {
+  .elementsContainer {
+    /* font-size: 2.5em; */
+    text-align: center;
+    font: normal normal bold 5.5em / normal Gilroy-Medium;
+  }
+  .followContainer {
+    justify-content: center;
+  }
+  .smallLinksIcons {
+    margin-right: 0;
+    margin: 3vw;
+  }
+  .smallLinksIcons > img {
+    height: 40px;
+  }
+  .brand {
+    font-size: 40px;
+  }
+  .ham {
+    width: 40px;
   }
 }
