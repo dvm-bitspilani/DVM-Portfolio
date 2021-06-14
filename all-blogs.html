@@ -1,379 +1,275 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-50M47KHK7T"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
 
-      gtag("config", "G-50M47KHK7T");
-    </script>
-    <title>All Blogs</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/loader.css" />
-    <link rel="stylesheet" href="css/all-blogs.css" />
-    <link rel="stylesheet" href="css/nav.css" />
-    <link rel="stylesheet" href="css/fonts.css" />
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-50M47KHK7T"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-    <link rel="icon" href="assets/img/1x/Asset prev.png" />
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <script src="./js/fontfaceobserver.standalone.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!--Jquery for checking if images are loaded-->
-  </head>
-  <body>
-    <div class="loader">
-       <img src="./assets/img/loader.gif" class="loader-video"/>
-    </div>
-    <nav class="navbar">
-      <!-- <div class="brand">
+    gtag("config", "G-50M47KHK7T");
+  </script>
+  <title>All Blogs</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/loader.css" />
+  <link rel="stylesheet" href="css/all-blogs.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/fonts.css" />
+
+  <link rel="icon" href="assets/img/1x/Asset prev.png" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <script src="./js/fontfaceobserver.standalone.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!--Jquery for checking if images are loaded-->
+</head>
+
+<body>
+  <div class="loader">
+    <img src="./assets/img/loader.gif" class="loader-video" />
+  </div>
+  <nav class="navbar">
+    <!-- <div class="brand">
         DVM
     </div> -->
-      <div class="section-nav"></div>
-      <h1 class="brand">
-        <span class="text-wrapper">
-          <!-- <span class="line line1"></span> -->
-          <span class="letters" onclick="location.href='index.html'">DVM</span>
-          <!-- <span class="line line2"></span> -->
-        </span>
-      </h1>
+    <div class="section-nav"></div>
+    <h1 class="brand">
+      <span class="text-wrapper">
+        <!-- <span class="line line1"></span> -->
+        <span class="letters" onclick="location.href='index.html'">DVM</span>
+        <!-- <span class="line line2"></span> -->
+      </span>
+    </h1>
 
-      <div class="ham" onclick="openCloseNav()">
-        <div class="ham-line"></div>
-        <div class="ham-line"></div>
+    <div class="ham" onclick="openCloseNav()">
+      <div class="ham-line"></div>
+      <div class="ham-line"></div>
+    </div>
+  </nav>
+  <div id="navContainer">
+    <div class="followContainer">
+      <h3 class="smallLinksHeader">
+        Follow
+      </h3>
+      <a href="https://www.facebook.com/DVMBITSPilani" class="smallLinks" target="_blank">
+        <div class="smallLinksText">Facebook</div>
+        <div class="smallLinksIcons"><img src="assets/icons/facebook (2)-1@2x.png"></div>
+      </a>
+      <a href="https://www.instagram.com/dvmbitspilani/" class="smallLinks" target="_blank">
+        <div class="smallLinksText">Instagram</div>
+        <div class="smallLinksIcons"><img src="assets/icons/instagram-sketched@2x.png"></div>
+      </a>
+      <a href="https://github.com/dvm-bitspilani" class="smallLinks" target="_blank">
+        <div class="smallLinksText">Github</div>
+        <div class="smallLinksIcons"><img src="assets/icons/github.png"></div>
+      </a>
+      <a href="https://www.linkedin.com/company/dvm-bitspilani/" class="smallLinks" target="_blank">
+        <div class="smallLinksText">LinkedIn</div>
+        <div class="smallLinksIcons"><img src="assets/icons/linkedin.png"></div>
+      </a>
+    </div>
+    <div class="elementsContainer">
+      <div class="largeLinkContainer1">
+        <span class="text-wrapper">
+          <a class="largeLink1" href="index.html?about" target="_blank">About</a>
+        </span>
       </div>
-    </nav>
-    <div id="navContainer">
-      <div class="followContainer">
-            <h3 class="smallLinksHeader">
-                Follow
-            </h3>
-            <a href="https://www.facebook.com/DVMBITSPilani" class="smallLinks" target="_blank">
-                <div class="smallLinksText">Facebook</div>
-                <div class="smallLinksIcons"><img src="assets/icons/facebook (2)-1@2x.png"></div>
-            </a>
-            <a href="https://www.instagram.com/dvmbitspilani/" class="smallLinks" target="_blank">
-                <div class="smallLinksText">Instagram</div>
-                <div class="smallLinksIcons"><img src="assets/icons/instagram-sketched@2x.png"></div>
-            </a>           
-            <a href="https://github.com/dvm-bitspilani" class="smallLinks" target="_blank">
-                <div class="smallLinksText">Github</div>
-                <div class="smallLinksIcons"><img src="assets/icons/github.png"></div>
-            </a>
-            <a href="https://www.linkedin.com/company/dvm-bitspilani/" class="smallLinks" target="_blank">
-                <div class="smallLinksText">LinkedIn</div>
-                <div class="smallLinksIcons"><img src="assets/icons/linkedin.png"></div>
-            </a>
-        </div>
-      <div class="elementsContainer">
-        <div class="largeLinkContainer1">
-          <span class="text-wrapper">
-            <a class="largeLink1" href="index.html?about" target="_blank"
-              >About</a
-            >
-          </span>
-        </div>
-        <div class="largeLinkContainer2">
-          <span class="text-wrapper">
-            <a class="largeLink2" href="all-projects.html" target="_blank"
-              >Projects</a
-            >
-          </span>
-        </div>
-        <div class="largeLinkContainer3">
-          <span class="text-wrapper">
-            <a class="largeLink3" onclick="openCloseNav()">Blogs</a>
-          </span>
-        </div>
-        <div class="largeLinkContainer4">
-          <span class="text-wrapper">
-            <a class="largeLink4" href="artworks.html" target="_blank"
-              >Artworks</a
-            >
-          </span>
-        </div>
-        <div class="largeLinkContainer5">
-          <span class="text-wrapper">
-            <a class="largeLink5" href="team.html" target="_blank">Team</a>
-          </span>
-        </div>
-        <div class="largeLinkContainer6">
-          <span class="text-wrapper">
-            <a class="largeLink6" href="index.html?contact" target="_blank"
-              >Contact Us</a
-            >
-          </span>
-        </div>
-        <!-- <a href="">About</a>
+      <div class="largeLinkContainer2">
+        <span class="text-wrapper">
+          <a class="largeLink2" href="all-projects.html" target="_blank">Projects</a>
+        </span>
+      </div>
+      <div class="largeLinkContainer3">
+        <span class="text-wrapper">
+          <a class="largeLink3" onclick="openCloseNav()">Blogs</a>
+        </span>
+      </div>
+      <div class="largeLinkContainer4">
+        <span class="text-wrapper">
+          <a class="largeLink4" href="artworks.html" target="_blank">Artworks</a>
+        </span>
+      </div>
+      <div class="largeLinkContainer5">
+        <span class="text-wrapper">
+          <a class="largeLink5" href="team.html" target="_blank">Team</a>
+        </span>
+      </div>
+      <div class="largeLinkContainer6">
+        <span class="text-wrapper">
+          <a class="largeLink6" href="index.html?contact" target="_blank">Contact Us</a>
+        </span>
+      </div>
+      <!-- <a href="">About</a>
         <a href="">Work</a>
         <a href="">Blogs</a>
         <a href="">Artworks</a>
         <a href="">Achievements</a>
         <a href="">Contact Us</a> -->
-      </div>
     </div>
+  </div>
 
-    <div class="wrapper">
-      <div class="heading">Blogs</div>
-      <div class="contentWrapper" id="wrapper">
-        <div class="leftwrapper">
-          <div class="blog">
-            <div class="blogMore" id="blogMore">More</div>
-            <div class="blogimage">
-              <img
-                src="assets\img\blogpic.jpg"
-                class="blogimages"
-                onclick="window.open('blogs.html', '_blank')"
-              />
-            </div>
-            <div class="bloginfo">
-              <div
-                class="blogtitle"
-                onclick="window.open('blogs.html', '_blank')"
-              >
-                Name of the blog goes here in two lines this is two lines
-              </div>
-              <div class="blogby">by Name Surname</div>
-              <div class="blogdate">5th May 2021 * 3 min read</div>
-              <div class="blogbrief">
-                It is a well-known fact that when any discussion on lead
-                generation takes place, quality conquers over the measure.
-                Though it is clearly known fact that people do not like when
-                they are pressurized into buying something, a recent research
-                threw open some startling and revealing information.
-              </div>
-            </div>
+  <div class="wrapper">
+    <div class="heading">Blogs</div>
+    <div class="contentWrapper" id="wrapper">
+      <div class="leftwrapper">
+
+        <div class="blog">
+          <div class="blogMore" id="blogMore">More</div>
+          <div class="blogimage">
+            <img src="content-blogs/prarabdh_flutter/prarabdhaBlog.png" class="blogimages"
+              onclick="window.open('https://blog.bitsacm.in/flutter-vs-react-native/', '_blank')" />
           </div>
-          <div class="blog">
-            <div class="blogimage">
-              <img
-                src="assets\img\blogpic.jpg"
-                class="blogimages"
-                onclick="window.open('blogs.html', '_blank')"
-              />
+          <div class="bloginfo">
+            <div class="blogtitle" onclick="window.open('https://blog.bitsacm.in/flutter-vs-react-native/', '_blank')">
+              Flutter vs React Native. Which one should you choose?
             </div>
-            <div class="bloginfo">
-              <div
-                class="blogtitle"
-                onclick="window.open('blogs.html', '_blank')"
-              >
-                Name of the blog goes here in two lines this is two lines
-              </div>
-              <div class="blogby">by Name Surname</div>
-              <div class="blogdate">5th May 2021 * 3 min read</div>
-              <div class="blogbrief">
-                It is a well-known fact that when any discussion on lead
-                generation takes place, quality conquers over the measure.
-                Though it is clearly known fact that people do not like when
-                they are pressurized into buying something, a recent research
-                threw open some startling and revealing information.
-              </div>
-            </div>
-          </div>
-          <div class="blog">
-            <div class="blogimage">
-              <img
-                src="assets\img\blogpic.jpg"
-                class="blogimages"
-                onclick="window.open('blogs.html', '_blank')"
-              />
-            </div>
-            <div class="bloginfo">
-              <div
-                class="blogtitle"
-                onclick="window.open('blogs.html', '_blank')"
-              >
-                Name of the blog goes here in two lines this is two lines
-              </div>
-              <div class="blogby">by Name Surname</div>
-              <div class="blogdate">5th May 2021 * 3 min read</div>
-              <div class="blogbrief">
-                It is a well-known fact that when any discussion on lead
-                generation takes place, quality conquers over the measure.
-                Though it is clearly known fact that people do not like when
-                they are pressurized into buying something, a recent research
-                threw open some startling and revealing information.
-              </div>
-            </div>
-          </div>
-          <div class="blog">
-            <div class="blogimage">
-              <img
-                src="assets\img\blogpic.jpg"
-                class="blogimages"
-                onclick="window.open('blogs.html', '_blank')"
-              />
-            </div>
-            <div class="bloginfo">
-              <div
-                class="blogtitle"
-                onclick="window.open('blogs.html', '_blank')"
-              >
-                Name of the blog goes here in two lines this is two lines
-              </div>
-              <div class="blogby">by Name Surname</div>
-              <div class="blogdate">5th May 2021 * 3 min read</div>
-              <div class="blogbrief">
-                It is a well-known fact that when any discussion on lead
-                generation takes place, quality conquers over the measure.
-                Though it is clearly known fact that people do not like when
-                they are pressurized into buying something, a recent research
-                threw open some startling and revealing information.
-              </div>
-            </div>
-          </div>
-          <div class="blog">
-            <div class="blogimage">
-              <img
-                src="assets\img\blogpic.jpg"
-                class="blogimages"
-                onclick="window.open('blogs.html', '_blank')"
-              />
-            </div>
-            <div class="bloginfo">
-              <div
-                class="blogtitle"
-                onclick="window.open('blogs.html', '_blank')"
-              >
-                Name of the blog goes here in two lines this is two lines
-              </div>
-              <div class="blogby">by Name Surname</div>
-              <div class="blogdate">5th May 2021 * 3 min read</div>
-              <div class="blogbrief">
-                It is a well-known fact that when any discussion on lead
-                generation takes place, quality conquers over the measure.
-                Though it is clearly known fact that people do not like when
-                they are pressurized into buying something, a recent research
-                threw open some startling and revealing information.
-              </div>
+            <div class="blogby">by Prarabdh Garg</div>
+            <div class="blogdate">7th May 2020 * 5 min read</div>
+            <div class="blogbrief">
+              Thinking of developing a cross-platform app? Confused whether to choose React Native or Flutter? Which
+              among the two would scale well? Which would deliver better performance? For answers to all these questions
+              and many more, read this post!
             </div>
           </div>
         </div>
-        <div class="rightwrapper">
-          <div class="blog">
-            <div class="blogimage">
-              <img
-                src="assets\img\blogpic.jpg"
-                class="blogimages"
-                onclick="window.open('blogs.html', '_blank')"
-              />
-            </div>
-            <div class="bloginfo">
-              <div
-                class="blogtitle"
-                onclick="window.open('blogs.html', '_blank')"
-              >
-                Name of the blog goes here in two lines this is two lines
-              </div>
-              <div class="blogby">by Name Surname</div>
-              <div class="blogdate">5th May 2021 * 3 min read</div>
-              <div class="blogbrief">
-                It is a well-known fact that when any discussion on lead
-                generation takes place, quality conquers over the measure.
-                Though it is clearly known fact that people do not like when
-                they are pressurized into buying something, a recent research
-                threw open some startling and revealing information.
-              </div>
-            </div>
-          </div>
-          <div class="blog">
-            <div class="blogimage">
-              <img
-                src="assets\img\blogpic.jpg"
-                class="blogimages"
-                onclick="window.open('blogs.html', '_blank')"
-              />
-            </div>
-            <div class="bloginfo">
-              <div
-                class="blogtitle"
-                onclick="window.open('blogs.html', '_blank')"
-              >
-                Name of the blog goes here in two lines this is two lines
-              </div>
-              <div class="blogby">by Name Surname</div>
-              <div class="blogdate">5th May 2021 * 3 min read</div>
-              <div class="blogbrief">
-                It is a well-known fact that when any discussion on lead
-                generation takes place, quality conquers over the measure.
-                Though it is clearly known fact that people do not like when
-                they are pressurized into buying something, a recent research
-                threw open some startling and revealing information.
-              </div>
-            </div>
-          </div>
 
-          <div class="blog">
-            <div class="blogimage">
-              <img
-                src="assets\img\blogpic.jpg"
-                class="blogimages"
-                onclick="window.open('blogs.html', '_blank')"
-              />
-            </div>
-            <div class="bloginfo">
-              <div
-                class="blogtitle"
-                onclick="window.open('blogs.html', '_blank')"
-              >
-                Name of the blog goes here in two lines this is two lines
-              </div>
-              <div class="blogby">by Name Surname</div>
-              <div class="blogdate">5th May 2021 * 3 min read</div>
-              <div class="blogbrief">
-                It is a well-known fact that when any discussion on lead
-                generation takes place, quality conquers over the measure.
-                Though it is clearly known fact that people do not like when
-                they are pressurized into buying something, a recent research
-                threw open some startling and revealing information.
-              </div>
-            </div>
+        <div class="blog">
+          <div class="blogimage">
+            <img src="content-blogs/prandyumana_hardware/PradyumnaBlog.png" class="blogimages"
+              onclick="window.open('https://blog.bitsacm.in/how-i-got-into-hardware/', '_blank')" />
           </div>
-          <div class="blog">
-            <div class="blogimage">
-              <img
-                src="assets\img\blogpic.jpg"
-                class="blogimages"
-                onclick="window.open('blogs.html', '_blank')"
-              />
+          <div class="bloginfo">
+            <div class="blogtitle" onclick="window.open('https://blog.bitsacm.in/how-i-got-into-hardware/', '_blank')">
+
+              How I Got Into Hardware and Why You Should Give It a Try
             </div>
-            <div class="bloginfo">
-              <div
-                class="blogtitle"
-                onclick="window.open('blogs.html', '_blank')"
-              >
-                Name of the blog goes here in two lines this is two lines
-              </div>
-              <div class="blogby">by Name Surname</div>
-              <div class="blogdate">5th May 2021 * 3 min read</div>
-              <div class="blogbrief">
-                It is a well-known fact that when any discussion on lead
-                generation takes place, quality conquers over the measure.
-                Though it is clearly known fact that people do not like when
-                they are pressurized into buying something, a recent research
-                threw open some startling and revealing information.
-              </div>
+            <div class="blogby">by Pradyumna Bang</div>
+            <div class="blogdate">30th July 2020 * 4 min read</div>
+            <div class="blogbrief">
+              I had been looking at problems from a very constrained point of view. Often, problems involved dealing
+              with people or things physically – like sensing presence or providing venues for interaction. This led me
+              into explore - what did it take to build devices that solve these problems?
             </div>
           </div>
         </div>
+
+        <div class="blog">
+          <div class="blogimage">
+            <img src="content-blogs/anshal_django/anshalBlog.png" class="blogimages"
+              onclick="window.open('https://blog.bitsacm.in/using-graphql-with-diango/', '_blank')" />
+          </div>
+          <div class="bloginfo">
+            <div class="blogtitle"
+              onclick="window.open('https://blog.bitsacm.in/using-graphql-with-diango/', '_blank')">
+              Using Graphene to setup GraphQL queries with Django
+            </div>
+            <div class="blogby">by Anshal Shukla</div>
+            <div class="blogdate">8th June 2020 * 10 min read</div>
+            <div class="blogbrief">
+              If you're here, you know what GraphQL is. In this tutorial, you'll see how you can use it with Django to
+              set up a schema and a single endpoint for all your data, using graphene and graphene_django.
+            </div>
+          </div>
+
+        </div>
+
+        <div class="blog">
+          <div class="blogimage">
+            <img src="content-blogs/tirth_vim/tirthVim.jpeg" class="blogimages"
+              onclick="window.open('https://blog.bitsacm.in/setting-up-vim/', '_blank')" />
+          </div>
+          <div class="bloginfo">
+            <div class="blogtitle" onclick="window.open('https://blog.bitsacm.in/setting-up-vim/', '_blank')">
+              Setting Up a Vim You Will Love To Use
+            </div>
+            <div class="blogby">by Tirth Jain</div>
+            <div class="blogdate">25th May 2020 * 11 min read</div>
+            <div class="blogbrief">
+              So with a little bit of effort you have crossed the Vim learning curve. You have gotten used to Vim but
+              you are not able to get it to match the same level of productivity you get with something like VSCode.
+              Well, the great thing about Vim is that it is highly customisable.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="rightwrapper">
+
+        <div class="blog">
+          <div class="blogimage">
+            <img src="content-blogs/nidheesh_timetable/TimeTableNidheesh.jpeg" class="blogimages"
+              onclick="window.open('https://blog.bitsacm.in/the-time-table-generator/', '_blank')" />
+          </div>
+          <div class="bloginfo">
+            <div class="blogtitle" onclick="window.open('https://blog.bitsacm.in/the-time-table-generator/', '_blank')">
+
+              The Time Table Generator
+            </div>
+            <div class="blogby">by Nidheesh Jain & Uday Singla</div>
+            <div class="blogdate">31st Aug 2020 * 6 min read</div>
+            <div class="blogbrief">
+              The time-table fiasco is nothing new or particular to us. It is a problem that every student of BITS
+              Pilani has faced at some time or the other, and especially as a fresher when there are just too many
+              options and clashes.
+            </div>
+          </div>
+        </div>
+
+        <div class="blog">
+          <div class="blogimage">
+            <img src="content-blogs/tirth_rust/tirthRust.png" class="blogimages"
+              onclick="window.open('https://blog.bitsacm.in/writing-git-in-rust/', '_blank')" />
+          </div>
+          <div class="bloginfo">
+            <div class="blogtitle" onclick="window.open('https://blog.bitsacm.in/writing-git-in-rust/', '_blank')">
+              Writing Git in Rust
+            </div>
+            <div class="blogby">by Tirth Jain</div>
+            <div class="blogdate">5th Jan 2020 * 6 min read</div>
+            <div class="blogbrief">Git is an indispensable tool in every programmer's toolkit. Yet, most of us only know
+              barely enough to make Git work. As part of the Codecrafters challenge, I took to writing an asynchronous
+              implementation of the Git internals in Rust
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="blog">
+          <div class="blogimage">
+            <img src="content-blogs/tirth_docker/tirthDocker.jpeg" class="blogimages"
+              onclick="window.open('https://blog.bitsacm.in/django-on-docker/', '_blank')" />
+          </div>
+          <div class="bloginfo">
+            <div class="blogtitle" onclick="window.open('https://blog.bitsacm.in/django-on-docker/', '_blank')">
+
+              How To Deploy Your Django App Using Docker
+            </div>
+            <div class="blogby">by Tirth Jain</div>
+            <div class="blogdate">30th April 2020 * 11 min read</div>
+            <div class="blogbrief">
+              Getting your Django app on the internet is - pardon my language - a pain in the ass.
+              You need to daemonize your app with something like Supervisor, then you need to setup a production ready
+              database, then you need to setup a web-server using the likes of Nginx or Apache
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
-    <script src="js/all-blogs.js"></script>
-    <script src="js/navbar.js"></script>
-    <script src="js/imageLoaded.js"></script>
-  </body>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
+  <script src="js/all-blogs.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/imageLoaded.js"></script>
+</body>
+
 </html>

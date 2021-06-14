@@ -10,9 +10,6 @@ function allImagesLoaded() {
 }
 
 var image = document.getElementsByClassName("blogimages");
-new simpleParallax(image, {
-  scale: 2,
-});
 document.querySelectorAll(".blogimage").forEach((item) => {
   item.addEventListener("mouseover", function () {
     document.getElementById("blogMore").style.display = "flex";
