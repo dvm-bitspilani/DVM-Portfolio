@@ -1,86 +1,31 @@
-let main_arr = [{
-        name: "Noir Illustration",
-        image_link: "./assets/artwork/yash/noirIllustration.webp",
-        artist: "Yash Bhagat",
-        social_links: { behance: "", dribble: "https://dribbble.com/yashbhagat", insta: "https://www.instagram.com/yashb1202/" }
-    },
-    {
-        name: "Noir Illustration",
-        image_link: "./assets/artwork/yash/noirIllustration.webp",
-        artist: "Yash Bhagat",
-        social_links: { behance: "", dribble: "https://dribbble.com/yashbhagat", insta: "https://www.instagram.com/yashb1202/" }
-    },
-    {
-        name: "Noir Illustration",
-        image_link: "./assets/artwork/yash/noirIllustration.webp",
-        artist: "Yash Bhagat",
-        social_links: { behance: "", dribble: "https://dribbble.com/yashbhagat", insta: "https://www.instagram.com/yashb1202/" }
-    },
-    {
-        name: "Noir Illustration",
-        image_link: "./assets/artwork/yash/noirIllustration.webp",
-        artist: "Yash Bhagat",
-        social_links: { behance: "", dribble: "https://dribbble.com/yashbhagat", insta: "https://www.instagram.com/yashb1202/" }
-    },
-    {
-        name: "Noir Illustration",
-        image_link: "./assets/artwork/yash/noirIllustration.webp",
-        artist: "Yash Bhagat",
-        social_links: { behance: "", dribble: "https://dribbble.com/yashbhagat", insta: "https://www.instagram.com/yashb1202/" }
-    },
-    {
-      name: "Noir Illustration",
-      image_link: "./assets/artwork/yash/noirIllustration.webp",
-      artist: "Yash Bhagat",
-      social_links: { behance: "", dribble: "https://dribbble.com/yashbhagat", insta: "https://www.instagram.com/yashb1202/" }
-  },
-  {
-      name: "Noir Illustration",
-      image_link: "./assets/artwork/yash/noirIllustration.webp",
-      artist: "Yash Bhagat",
-      social_links: { behance: "", dribble: "https://dribbble.com/yashbhagat", insta: "https://www.instagram.com/yashb1202/" }
-  },
-  {
-      name: "Noir Illustration",
-      image_link: "./assets/artwork/yash/noirIllustration.webp",
-      artist: "Yash Bhagat",
-      social_links: { behance: "", dribble: "https://dribbble.com/yashbhagat", insta: "https://www.instagram.com/yashb1202/" }
-  },
-  {
-      name: "Noir Illustration",
-      image_link: "./assets/artwork/yash/noirIllustration.webp",
-      artist: "Yash Bhagat",
-      social_links: { behance: "", dribble: "https://dribbble.com/yashbhagat", insta: "https://www.instagram.com/yashb1202/" }
-  },
-  {
-      name: "Noir Illustration",
-      image_link: "./assets/artwork/yash/noirIllustration.webp",
-      artist: "Yash Bhagat",
-      social_links: { behance: "", dribble: "https://dribbble.com/yashbhagat", insta: "https://www.instagram.com/yashb1202/" }
-  }
-];
+fetch('https://bits-apogee.org/portfolio/artworks/')
+  .then(response => response.json())
+  .then(data => populate(data));
 
 let col1 = document.getElementsByClassName("column")[0];
 let col2 = document.getElementsByClassName("column")[1];
-for (var i = 0; i < main_arr.length/2; i++) {
+
+populate = main_arr => {
+  console.log(main_arr);
+  for (var i = 0; i < main_arr.length / 2; i++) {
     let artworkContainer1 = document.createElement("div");
     artworkContainer1.classList.add("artworkContainer");
     artworkContainer1.innerHTML = `
         <div class="artworkImage">
-              <img src="${main_arr[2*i].image_link}" alt="" />
+              <img src="${main_arr[2 * i].blogImageLink}" alt="" />
             </div>
             <div class="artworkSomething">something over here</div>
-            <div class="artworkName">${main_arr[2*i].name}</div>
-            <div class="artistName">By ${main_arr[2*i].artist}</div>
+            <div class="artworkName">${main_arr[2 * i].title}</div>
+            <div class="artistName">By ${main_arr[2 * i].artistName}</div>
             <div class="artistLinksContainer">
               <div class="artistLinks">
-                <img src="./assets/icons/behance.png" />
+                <a href=${main_arr[(2 * i)].BehanceLink}><img src="./assets/icons/behance.png" /></a>
               </div>
               <div class="artistLinks">
-                <img src="./assets/icons/dribble.svg" />
+                <a href=${main_arr[(2 * i)].DribbleLink}><img src="./assets/icons/dribble.svg" /></a>
               </div>
               <div class="artistLinks">
-                <img src="./assets/icons/instagram-sketched@2x.png" />
+                <a href=${main_arr[(2 * i)].InstagramLink}><img src="./assets/icons/instagram-sketched@2x.png" /></a>
               </div>
             </div>
     `;
@@ -90,22 +35,23 @@ for (var i = 0; i < main_arr.length/2; i++) {
     artworkContainer2.classList.add("artworkContainer");
     artworkContainer2.innerHTML = `
         <div class="artworkImage">
-              <img src="${main_arr[(2*i+1)].image_link}" alt="" />
+              <img src="${main_arr[(2 * i + 1)].blogImageLink}" alt="" />
             </div>
             <div class="artworkSomething">something over here</div>
-            <div class="artworkName">${main_arr[(2*i+1)].name}</div>
-            <div class="artistName">By ${main_arr[(2*i+1)].artist}</div>
+            <div class="artworkName">${main_arr[(2 * i + 1)].title}</div>
+            <div class="artistName">By ${main_arr[(2 * i + 1)].artistName}</div>
             <div class="artistLinksContainer">
               <div class="artistLinks">
-                <img src="./assets/icons/behance.png" />
+                <a href=${main_arr[(2 * i + 1)].BehanceLink}><img src="./assets/icons/behance.png" /></a>
               </div>
               <div class="artistLinks">
-                <img src="./assets/icons/dribble.svg" />
+                <a href=${main_arr[(2 * i + 1)].DribbleLink}><img src="./assets/icons/dribble.svg" /></a>
               </div>
               <div class="artistLinks">
-                <img src="./assets/icons/instagram-sketched@2x.png" />
+                <a href=${main_arr[(2 * i + 1)].InstagramLink}><img src="./assets/icons/instagram-sketched@2x.png" /></a>
               </div>
             </div>
     `;
     col2.appendChild(artworkContainer2);
+  }
 }
