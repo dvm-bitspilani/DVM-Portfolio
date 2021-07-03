@@ -241,11 +241,20 @@ function normalise(information){
     // fix images relative path
     information[x].heroSectionImageLink = "." + information[x].heroSectionImageLink
 
+    information[x].long_images_link = (information[x].long_images_link).split(", ")
+    for (var y = 0; y < information[x].long_images_link.length; y++) {
+      information[x].long_images_link[y] = "." + information[x].long_images_link[y]
+    }
+
+    information[x].mockups_link = (information[x].mockups_link).split(", ")
+    for (var y = 0; y < information[x].mockups_link.length; y++) {
+      information[x].mockups_link[y] = "." + information[x].mockups_link[y]
+    }
+
     // fix page link
     information[x].page_link = (information[x].page_link.substring("http://".length))
     information[x].page_link = (information[x].page_link.substring(0, (information[x].page_link.length - ".com".length)))
     information[x].page_link = "project.html?id=" + information[x].page_link
-    console.log(information[x].page_link)
   }
 
   // embed youtube urls for video team

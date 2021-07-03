@@ -67,7 +67,7 @@ document.getElementsByClassName("date")[0].innerHTML = info.date;
 document.getElementsByClassName("main-photo")[0].src =
   info.heroSectionImageLink;
 document.getElementsByClassName("long-1")[0].src = info.long_images_link[0];
-document.getElementsByClassName("photo")[0].src = info.mockups_link[0];
+document.getElementsByClassName("photo")[0].src =  info.mockups_link[0];
 //console.log("hey");
 if (info.mockups_link[1]) {
   document.getElementsByClassName("photo")[1].src = info.mockups_link[1];
