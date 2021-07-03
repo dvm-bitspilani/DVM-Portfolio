@@ -48,12 +48,12 @@ function get_info() {
   return new Promise((resolve) => {
     for (var p = 0; p < information.length; p++) {
       let temp = {
-        img: information[p].hero_section_image_link,
+        img: information[p].heroSectionImageLink,
         name: information[p].name,
         url: information[p].page_link,
       };
-      for (var q = 0; q < information[p].teams.length; q++) {
-        main_arr[information[p].teams[q] - 1].push(temp);
+      for (var q = 0; q < information[p].teamsInvolved.length; q++) {
+        main_arr[information[p].teamsInvolved[q] - 1].push(temp);
       }
     }
   });
