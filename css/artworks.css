@@ -164,6 +164,11 @@ body::-webkit-scrollbar {
   width: 100%;
 }
 
+.disabled { 
+  pointer-events: none; 
+  cursor: default; 
+}
+
 .artworkImage img:hover {
   transform: scale(1.15);
 }
@@ -206,7 +211,7 @@ body::-webkit-scrollbar {
   padding-bottom: 10%;
 }
 
-.artistLinks > img {
+.artistLinks img {
   height: 20px;
   margin-right: 2vw;
   opacity: 0.5;
@@ -248,7 +253,7 @@ body::-webkit-scrollbar {
   #navContainer {
     display: none;
   }
-  .artistLinks > img {
+  .artistLinks img {
     height: 15px;
     margin-right: 5vw;
   }
@@ -267,7 +272,7 @@ body::-webkit-scrollbar {
   .artistName {
     font-size: 1.25em;
   }
-  .artistLinks > img {
+  .artistLinks img {
     height: 1.5em;
     margin-right: 4vw;
   }
