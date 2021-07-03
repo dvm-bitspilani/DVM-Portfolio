@@ -230,17 +230,25 @@ function nrmTeams(teams){
 }
 
 
-
+// NORMALISATION FUNCTION ON API RESPONSE
 function normalise(information){
   for (var x = 0; x < information.length; x++){
-    const project = information[x]
-    information[x].teamsInvolved = nrmTeams(project.teamsInvolved)
+
+    // convert front/back/design
+    // Teams - 1: App, 2: Backend, 3: Design, 4: Frontend, 5: Video
+    information[x].teamsInvolved = nrmTeams(information[x].teamsInvolved)
+
+    // fix images relative path
     information[x].heroSectionImageLink = "." + information[x].heroSectionImageLink
+
+    // fix page link
     information[x].page_link = (information[x].page_link.substring("http://".length))
     information[x].page_link = (information[x].page_link.substring(0, (information[x].page_link.length - ".com".length)))
+    information[x].page_link = "project.html?id=" + information[x].page_link
     console.log(information[x].page_link)
   }
 
+  // embed youtube urls for video team
   for (var x = 0; x < information.length; x++){
     const project = information[x]
     if(information[x].teamsInvolved.includes(5)){

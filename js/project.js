@@ -36,7 +36,7 @@ const teams = ["AppDev", "Backend", "Design", "Frontend", "Video"];
 
 document.getElementsByClassName(
   "background"
-)[0].style.backgroundImage = `url('${info.hero_section_image_link}')`;
+)[0].style.backgroundImage = `url('${info.heroSectionImageLink}')`;
 if (info.website_link !== "") {
   document.getElementsByClassName("link")[0].innerHTML =
     info.website_link.split("://")[1];
@@ -52,20 +52,20 @@ if (info.website_link !== "") {
 }
 
 document.getElementsByClassName("heading")[0].innerHTML = info.name;
-document.getElementsByClassName("left-project-about")[0].innerHTML = info.text1;
-document.getElementsByClassName("smaller-text")[0].innerHTML = info.text2;
+document.getElementsByClassName("left-project-about")[0].innerHTML = info.text_1;
+document.getElementsByClassName("smaller-text")[0].innerHTML = info.text_2;
 
-for (var p = 0; p < info.teams.length; p++) {
+for (var p = 0; p < info.teamsInvolved.length; p++) {
   var div = document.createElement("div");
   div.classList.add("team");
-  div.innerHTML = teams[info.teams[p] - 1];
+  div.innerHTML = teams[info.teamsInvolved[p] - 1];
   document.getElementsByClassName("teams")[0].appendChild(div);
 }
 
 document.getElementsByClassName("show-all")[0].setAttribute("target", "_blank");
 document.getElementsByClassName("date")[0].innerHTML = info.date;
 document.getElementsByClassName("main-photo")[0].src =
-  info.hero_section_image_link;
+  info.heroSectionImageLink;
 document.getElementsByClassName("long-1")[0].src = info.long_images_link[0];
 document.getElementsByClassName("photo")[0].src = info.mockups_link[0];
 //console.log("hey");
