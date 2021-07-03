@@ -7,6 +7,14 @@ let col2 = document.getElementsByClassName("column")[1];
 
 populate = main_arr => {
   console.log(main_arr);
+  // const links_arr = [];
+  // main_arr.forEach(el => {
+  //   if (!el.BehanceLink || !el.DribbleLink || !el.InstagramLink) {
+  //     const c = main_arr.pop(el);
+  //     links_arr.push(c);
+  //   }
+  // })
+  // console.log(links_arr);
   for (var i = 0; i < main_arr.length / 2; i++) {
     let artworkContainer1 = document.createElement("div");
     artworkContainer1.classList.add("artworkContainer");
@@ -19,13 +27,13 @@ populate = main_arr => {
             <div class="artistName">By ${main_arr[2 * i].artistName}</div>
             <div class="artistLinksContainer">
               <div class="artistLinks">
-                <a href=${main_arr[(2 * i)].BehanceLink}><img src="./assets/icons/behance.png" /></a>
+                <a href=${main_arr[(2 * i)].BehanceLink} class=${main_arr[(2 * i)].BehanceLink ? "" : "disabled"}><img src="./assets/icons/behance.png" /></a>
               </div>
               <div class="artistLinks">
-                <a href=${main_arr[(2 * i)].DribbleLink}><img src="./assets/icons/dribble.svg" /></a>
+                <a href=${main_arr[(2 * i)].DribbleLink} class=${main_arr[(2 * i)].DribbleLink ? "" : "disabled"}><img src="./assets/icons/dribble.svg" /></a>
               </div>
               <div class="artistLinks">
-                <a href=${main_arr[(2 * i)].InstagramLink}><img src="./assets/icons/instagram-sketched@2x.png" /></a>
+                <a href=${main_arr[(2 * i)].InstagramLink} class=${main_arr[(2 * i)].InstagramLink ? "" : "disabled"}><img src="./assets/icons/instagram-sketched@2x.png" /></a>
               </div>
             </div>
     `;
@@ -42,13 +50,13 @@ populate = main_arr => {
             <div class="artistName">By ${main_arr[(2 * i + 1)].artistName}</div>
             <div class="artistLinksContainer">
               <div class="artistLinks">
-                <a href=${main_arr[(2 * i + 1)].BehanceLink}><img src="./assets/icons/behance.png" /></a>
+                <a href=${main_arr[(2 * i + 1)].BehanceLink} class=${main_arr[(2 * i + 1)].BehanceLink ? "" : "disabled"}><img src="./assets/icons/behance.png" /></a>
               </div>
               <div class="artistLinks">
-                <a href=${main_arr[(2 * i + 1)].DribbleLink}><img src="./assets/icons/dribble.svg" /></a>
+                <a href=${main_arr[(2 * i + 1)].DribbleLink} class=${main_arr[(2 * i + 1)].DribbleLink ? "" : "disabled"}><img src="./assets/icons/dribble.svg" /></a>
               </div>
               <div class="artistLinks">
-                <a href=${main_arr[(2 * i + 1)].InstagramLink}><img src="./assets/icons/instagram-sketched@2x.png" /></a>
+                <a href=${main_arr[(2 * i + 1)].InstagramLink} class=${main_arr[(2 * i + 1)].InstagramLink ? "" : "disabled"}><img src="./assets/icons/instagram-sketched@2x.png" /></a>
               </div>
             </div>
     `;
