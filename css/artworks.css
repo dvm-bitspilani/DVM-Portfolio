@@ -167,6 +167,7 @@ body::-webkit-scrollbar {
 .disabled { 
   pointer-events: none; 
   cursor: default; 
+  display:none
 }
 
 .artworkImage img:hover {
