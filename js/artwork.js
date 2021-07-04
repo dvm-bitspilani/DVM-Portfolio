@@ -1,4 +1,3 @@
-let wrapper_height;
 let back = document.getElementsByClassName("background")[0];
 function allImagesLoaded() {
   console.log("ALL IMAGES LOADED");
@@ -8,10 +7,6 @@ function allImagesLoaded() {
     document.getElementsByClassName("loader")[0].style.display = "none";
     document.getElementsByClassName("wrapper")[0].style.opacity = "1";
   }, 500);
-
-  wrapper_height = document
-    .getElementsByClassName("wrapper")[0]
-    .getBoundingClientRect().height;
 }
 document.getElementsByClassName("loader-video")[0].playbackRate = 1.3;
 
@@ -19,9 +14,7 @@ const scrollFullPage = () => {
   const back = document.querySelector(".background");
   window.scrollTo(0, back.offsetHeight);
 };
-
-const el = document.querySelector(".artworkImage");
-
+let el = document.querySelector(".artworkImage");
 el.addEventListener("onmouseover", (e) => {
   el.style.transform = `translate(${-e.offsetX / 10}px , ${-e.offsetY / 10}px)`;
   console.log(`translate(${-e.offsetX / 100}px , ${-e.offsetY / 100}px)`);
