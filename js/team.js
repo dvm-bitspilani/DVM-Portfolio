@@ -1,145 +1,101 @@
 const elements = document.getElementsByClassName("departmentElement");
 const teamContainer = document.querySelector(".teamContainer");
 
-const developers = [
-  [
+var ids = [1, 2, 3, 4, 5];
+const developers = ids.map(() => {
+  return [
     {
+      year: 2017,
+      members: []
+},
+
+     {
       year: 2018,
-      members: [
-        {
-          name: "Denis Lomov",
-          designation: "Frontend Developer",
-          image: "assets/members/placeholder.jfif",
-          links: {
-            insta: "adfasdf",
-            facebook: "dfdsfsdfds",
-            twitter: "dsfsdfsf",
-          },
-        },
-        {
-          name: "Denis Lomov",
-          designation: "Frontend Developer",
-          image: "assets/members/placeholder.jfif",
-          links: {
-            insta: "",
-            facebook: "",
-            twitter: "",
-          },
-        },
-        {
-          name: "Denis Lomov",
-          designation: "Frontend Developer",
-          image: "assets/members/placeholder.jfif",
-          links: {
-            insta: "",
-            facebook: "",
-            twitter: "",
-          },
-        },
-        {
-          name: "Denis Lomov",
-          designation: "Frontend Developer",
-          image: "assets/members/placeholder.jfif",
-          links: {
-            insta: "",
-            facebook: "",
-            twitter: "",
-          },
-        },
-      ],
+      members: []
+      
     },
+
     {
       year: 2019,
-      members: [
-        {
-          name: "Denis Lomov",
-          designation: "Frontend Developer",
-          image: "assets/members/placeholder.jfif",
-          links: {
-            insta: "",
-            facebook: "",
-            twitter: "",
-          },
-        },
-        {
-          name: "Denis Lomov",
-          designation: "Frontend Developer",
-          image: "assets/members/placeholder.jfif",
-          links: {
-            insta: "",
-            facebook: "",
-            twitter: "",
-          },
-        },
-        {
-          name: "Denis Lomov",
-          designation: "Frontend Developer",
-          image: "assets/members/placeholder.jfif",
-          links: {
-            insta: "",
-            facebook: "",
-            twitter: "",
-          },
-        },
-        {
-          name: "Denis Lomov",
-          designation: "Frontend Developer",
-          image: "assets/members/placeholder.jfif",
-          links: {
-            behance: "",
-            facebook: "",
-            twitter: "",
-          },
-        },
-      ],
+      members: [],
     },
-  ],
-];
+    {
+      year: 2020,
+      members: [],
+    },
+  ]
+})
 
 const social_links = {
   insta: "./assets/icons/instagram-sketched.png",
   github: "./assets/icons/github.png",
-  facebook: "./assets/icons/facebook (2).png",
   twitter: "./assets/icons/twitter.png",
   behance: "./assets/icons/behance.png",
   dribble: "./assets/icons/dribble.svg",
-};
+  linkedin: "./assets/icons/linkedin.png"
+}
+const updateTeam = async (num) => {
 
-const updateTeam = (num) => {
+
+  let loader = `<div class="loader"> <img src="./assets/img/loader.gif" class="loader-video" /></div>`;
+document.getElementsByClassName('teamContainer')[0].innerHTML = loader;
+
+   
+    for (let j = 0; j < 5; j++) {
+      let team;
+      j == 0 ? team = "Frontend" : (j==1 ? team = "AppDev":(j==2? team = "Video": (j==3 ?team= "Design": team = "Backend")));
+      for (let i = 0; i < 4; i++) {
+        
+        const mem = await fetch(`https://bits-apogee.org/portfolio/members/20${i + 17}/${team}`);
+        const data = await mem.json();
+        developers[j][i].members = data;
+       
+  
+      }
+    }
+ 
+  
   teamContainer.innerHTML = "";
 
-  developers[num].map(({ year, members }) => {
+   developers[num].map(({ year, members }) => {
     let teamName = document.createElement("h2");
     let createDiv = document.createElement("div");
-    createDiv.innerHTML = "";
-    teamName.className = "teamName";
-    teamName.innerHTML = year;
-    teamContainer.appendChild(teamName);
-    teamContainer.appendChild(createDiv);
-    createDiv.className = "teamMembers";
-    members.map(({ name, designation, image, links }) => {
-      let member = document.createElement("div");
-      member.className = "member";
-      member.innerHTML = `<div class="memberImage">
-                        <img src="${image}">
+
+     createDiv.innerHTML = "";
+     teamName.className = "teamName";
+     teamName.innerHTML= year
+     if (members.length != 0) {
+    
+       teamContainer.appendChild(teamName);
+       teamContainer.appendChild(createDiv);
+       createDiv.className = "teamMembers";
+
+       members.map(({ name, designation, PhotoLink, TwitterLink, GithubLink, DribbleLink, InstagramLink, BehanceLink, LinkedInLink }) => {
+
+         let member = document.createElement("div");
+         member.className = "member";
+         member.innerHTML = `<div class="memberImage">
+                        <img src="${PhotoLink}">
                     </div>
                     <div class="memberName hide">
                         ${name}
                     </div>
                     <div class="designation hide">
-                        ${designation}
+                        ${designation || "Team Member"} 
                     </div>
                     <div class="links hide">
-                       ${get_links_url(links)}
+                       ${get_links_url([TwitterLink, GithubLink, DribbleLink, InstagramLink, BehanceLink, LinkedInLink])}
                     </div>`;
 
-      createDiv.appendChild(member);
-    });
-    teamContainer.appendChild(createDiv);
-  });
+         createDiv.appendChild(member);
+       });
+       teamContainer.appendChild(createDiv);
+     } });
 };
 
-const teamChange = (e) => {
+
+
+const teamChange =(e) => {
   let num = 0;
 
   for (let i = 0; i < elements.length; i++) {
@@ -148,24 +104,32 @@ const teamChange = (e) => {
       num = i;
     }
   }
-
   e.classList.add("selected");
 
   updateTeam(num);
 };
 
 function get_links_url(links_array) {
+
+
   let final_string = "";
   for (let links in links_array) {
-    let temp = `
+    if (links_array[links] != null) {
+      let site;
+    links==0?site=social_links.twitter:(links==1?site=social_links.github:(links==2?site=social_links.dribble:(links==3?site=social_links.insta:(links==4?site=social_links.behance:site=social_links.linkedin))))
+      let temp =
+        `
       <a href="${links_array[links]}">
-          <img src="${social_links[links]}">
+          <img src="${site}">
       </a>
     `;
-    final_string += temp;
+      final_string += temp;
+    }
   }
   return final_string;
 }
+
+
 // Select option
 
 var x, i, j, l, ll, selElmnt, a, b, c;
@@ -224,6 +188,7 @@ for (i = 0; i < l; i++) {
     this.classList.toggle("select-arrow-active");
   });
 }
+
 
 function closeAllSelect(elmnt) {
   /* A function that will close all select boxes in the document,
