@@ -231,9 +231,9 @@ body {
 }
 
 .memberImage {
-  width: 100%;
+  width: 200px;
 
-  height: 265px;
+  height: 240px;
 
   display: flex;
 
@@ -263,7 +263,7 @@ body {
 
   letter-spacing: 3px;
 
-  font-size: 1.3em;
+  font-size: 1.;
 
   font-family: "Poppins-SemiBold";
 
@@ -321,7 +321,7 @@ body {
 }
 
 .member:hover .memberImage {
-  filter: grayscale(100%) brightness(1);
+  filter: grayscale(0%) brightness(1);
 }
 
 .custom-select {
