@@ -35,6 +35,11 @@ const social_links = {
   linkedin: "./assets/icons/linkedin.png"
 }
 const updateTeam = async (num) => {
+
+
+  let loader = `<div class="loader"> <img src="./assets/img/loader.gif" class="loader-video" /></div>`;
+document.getElementsByClassName('teamContainer')[0].innerHTML = loader;
+
    
     for (let j = 0; j < 5; j++) {
       let team;
