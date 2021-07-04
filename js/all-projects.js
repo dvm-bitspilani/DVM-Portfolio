@@ -1,61 +1,124 @@
-// Array containing the content
+const teams = ["AppDev", "Backend", "Design", "Frontend", "Video"];
+
 document.getElementsByClassName("loader-video")[0].playbackRate = 1.3;
-let content_loaded = false;
-let video = false;
-let scroll_dist;
-let number_of_projects;
-let timer_scroll;
-let timer_color;
-let first_time = true;
-
-function allImagesLoaded() {
-  if (content_loaded && first_time) {
-    console.log("ALL IMAGES LOADED");
-    document.getElementsByClassName("loader-video")[0].style.opacity = "0";
-
+  let content_loaded = false;
+  let video = false;
+  let scroll_dist;
+  let number_of_projects;
+  let timer_scroll;
+  let timer_color;
+  let first_time = true;
+  
+  function allImagesLoaded() {
+    if (content_loaded && first_time) {
+      console.log("ALL IMAGES LOADED");
+      document.getElementsByClassName("loader-video")[0].style.opacity = "0";
+  
+      setTimeout(() => {
+        document.getElementsByClassName("loader")[0].style.display = "none";
+        document.getElementsByClassName("wrapper")[0].style.opacity = "1";
+      }, 500);
+      translate_function();
+      first_time = false;
+    }
+  }
+  
+  function project_image_translate(x) {
+    let time = first_time ? 600 + x * 150 : x * 150;
+  
     setTimeout(() => {
-      document.getElementsByClassName("loader")[0].style.display = "none";
-      document.getElementsByClassName("wrapper")[0].style.opacity = "1";
-    }, 500);
-    translate_function();
-    first_time = false;
+      document.getElementsByClassName("single_project")[x].style.transform =
+        "translateY(0)";
+    }, time);
   }
-}
-
-function project_image_translate(x) {
-  let time = first_time ? 600 + x * 150 : x * 150;
-
-  setTimeout(() => {
-    document.getElementsByClassName("single_project")[x].style.transform =
-      "translateY(0)";
-  }, time);
-}
-function translate_function() {
-  for (var x = 0; x < number_of_projects; x++) {
-    project_image_translate(x);
+  function translate_function() {
+    for (var x = 0; x < number_of_projects; x++) {
+      project_image_translate(x);
+    }
   }
-}
-function loaded() {
-  console.log("Content Loaded");
-  content_loaded = true;
-  if (first_time) setTimeout(allImagesLoaded, 1000);
+  function loaded() {
+    console.log("Content Loaded");
+    content_loaded = true;
+    if (first_time) setTimeout(allImagesLoaded, 1000);
+  }
+  
+
+// Normalisation Functions for API Data
+function nrmTeams(teams){
+  const arr = [];
+  if (teams.includes("App")) arr.push(1)
+  if (teams.includes("Back")) arr.push(2)
+  if (teams.includes("Design")) arr.push(3)
+  if (teams.includes("Front")) arr.push(4)
+  if (teams.includes("Video")) arr.push(5)
+  return arr;
 }
 
+
+// NORMALISATION FUNCTION ON API RESPONSE
+function normalise(information){
+  for (var x = 0; x < information.length; x++){
+
+    // convert front/back/design
+    // Teams - 1: App, 2: Backend, 3: Design, 4: Frontend, 5: Video
+    information[x].teamsInvolved = nrmTeams(information[x].teamsInvolved)
+
+    // fix images relative path
+    information[x].heroSectionImageLink = "." + information[x].heroSectionImageLink
+
+    information[x].long_images_link = (information[x].long_images_link).split(", ")
+    for (var y = 0; y < information[x].long_images_link.length; y++) {
+      information[x].long_images_link[y] = "." + information[x].long_images_link[y]
+    }
+
+    information[x].mockups_link = (information[x].mockups_link).split(", ")
+    for (var y = 0; y < information[x].mockups_link.length; y++) {
+      information[x].mockups_link[y] = "." + information[x].mockups_link[y]
+    }
+
+    // fix page link
+    information[x].page_link = (information[x].page_link.substring("http://".length))
+    information[x].page_link = (information[x].page_link.substring(0, (information[x].page_link.length - ".com".length)))
+    information[x].page_link = "project.html?id=" + information[x].page_link
+  }
+
+  // embed youtube urls for video team
+  for (var x = 0; x < information.length; x++){
+    const project = information[x]
+    if(information[x].teamsInvolved.includes(5)){
+      information[x].website_link = (information[x].website_link.substring("http://".length))
+      information[x].website_link = (information[x].website_link.substring(0, (information[x].website_link.length - ".com".length)))
+      information[x].page_link = information[x].website_link
+    }
+  }
+  return information;
+}
+
+const fetchUrl = "https://bits-apogee.org/portfolio/projects/";
+
+fetch(fetchUrl)
+  .then(response => response.json())
+  .then(data => populate(data));
+
+populate = inform => {
+  var info;
+  info = normalise(inform)
+
+// Array containing the conten
 let main_arr = [[], [], [], [], []];
 function get_info() {
-  // bake your code here
-
   return new Promise((resolve) => {
-    for (var p = 0; p < information.length; p++) {
+    for (var p = 0; p < info.length; p++) {
       let temp = {
-        img: information[p].heroSectionImageLink,
-        name: information[p].name,
-        url: information[p].page_link,
+        img: info[p].heroSectionImageLink,
+        name: info[p].name,
+        url: info[p].page_link,
       };
-      for (var q = 0; q < information[p].teamsInvolved.length; q++) {
-        main_arr[information[p].teamsInvolved[q] - 1].push(temp);
+      for (var q = 0; q < info[p].teamsInvolved.length; q++) {
+        main_arr[info[p].teamsInvolved[q] - 1].push(temp);
       }
     }
+  console.log(main_arr)
   });
 }
 
@@ -154,6 +217,8 @@ function get_info() {
 // ];
 
 // Constant Variables
+
+
 
 async function main() {
   const main_r = await get_info();
@@ -614,4 +679,5 @@ for (const param of params) {
 }
 if (!already_called) {
   team(0);
+}
 }

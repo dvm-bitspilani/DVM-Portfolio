@@ -371,3 +371,4 @@ var information = [{
 }]
 
 information = normalise(information)
+console.log(information)
