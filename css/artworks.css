@@ -164,10 +164,10 @@ body::-webkit-scrollbar {
   width: 100%;
 }
 
-.disabled { 
-  pointer-events: none; 
-  cursor: default; 
-  display:none
+.disabled {
+  pointer-events: none;
+  cursor: default;
+  display: none;
 }
 
 .artworkImage img:hover {
@@ -243,6 +243,9 @@ body::-webkit-scrollbar {
     width: 80vw;
     margin-bottom: 5vh;
   }
+  .artworkImage {
+    filter: grayscale(0);
+  }
   .column {
     padding-top: 0;
     width: 80vw;
@@ -276,6 +279,9 @@ body::-webkit-scrollbar {
   .artistLinks img {
     height: 1.5em;
     margin-right: 4vw;
+  }
+  .artworkImage {
+    filter: grayscale(0);
   }
   .landingSection h1 {
     font-size: 7em;

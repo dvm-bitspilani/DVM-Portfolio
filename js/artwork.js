@@ -1,4 +1,3 @@
-let wrapper_height;
 let back = document.getElementsByClassName("background")[0];
 function allImagesLoaded() {
   console.log("ALL IMAGES LOADED");
@@ -8,10 +7,6 @@ function allImagesLoaded() {
     document.getElementsByClassName("loader")[0].style.display = "none";
     document.getElementsByClassName("wrapper")[0].style.opacity = "1";
   }, 500);
-
-  wrapper_height = document
-    .getElementsByClassName("wrapper")[0]
-    .getBoundingClientRect().height;
 }
 document.getElementsByClassName("loader-video")[0].playbackRate = 1.3;
 

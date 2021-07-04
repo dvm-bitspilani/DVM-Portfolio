@@ -144,7 +144,7 @@ body {
   background: #2c2c2c;
 
   display: flex;
-
+  border-radius: 4px;
   width: 80%;
 
   justify-content: space-between;
@@ -258,16 +258,16 @@ body {
 
 .memberName {
   text-transform: uppercase;
-
+  text-shadow: 0px 3px 6px #00000033;
   color: #2196f3;
 
   letter-spacing: 3px;
 
-  font-size: 1.;
+  font-size: 1;
 
   font-family: "Poppins-SemiBold";
 
-  transform: translateY(-40%) scale(0.2);
+  transform: translateY(30%) scale(0.2);
 
   transform-origin: bottom left;
   text-align: center;
@@ -277,7 +277,7 @@ body {
 .designation {
   font-family: "Poppins";
 
-  transform: translateY(0%);
+  transform: translateY(20%);
 
   font-size: 0.9em;
 
@@ -295,7 +295,7 @@ body {
   display: flex;
   justify-content: space-evenly;
   transition: 0.2s;
-  transform: translateY(30%);
+  transform: translateY(50%);
 }
 .links img {
   width: 20px;
@@ -309,15 +309,15 @@ body {
 }
 
 .member:hover .memberName {
-  transform: translateY(-40%) scale(1);
+  transform: translateY(0%) scale(1);
 }
 
 .member:hover .designation {
-  transform: translateY(-50%) scale(1);
+  transform: translateY(-10%) scale(1);
 }
 
 .member:hover .links {
-  transform: translateY(0%);
+  transform: translateY(20%);
 }
 
 .member:hover .memberImage {
@@ -388,11 +388,34 @@ body {
 .select-items div:hover,
 .same-as-selected {
   background-color: rgba(0, 0, 0, 0.1);
+  background-color: hsl(240deg 8% 93%);
+  color: #2c2c2c !important;
 }
-
+.memberTopLine {
+  display: none;
+}
 @media only screen and (max-width: 1024px) {
   .member {
     width: 33%;
+    height: max-content;
+    overflow: hidden;
+  }
+  .memberTopLine {
+    display: flex;
+    content: "";
+
+    background: #2196f3;
+    /* left: 50%; */
+    width: 1.5px;
+    border-radius: 0.75px;
+    height: 20px;
+    transform: scaleY(0);
+    transform-origin: top;
+    z-index: 1;
+    transition: 0.2s;
+  }
+  .member:hover .memberTopLine {
+    transform: scaleY(2);
   }
   .artworkWrapper {
     font-size: 1em;
@@ -408,20 +431,31 @@ body {
   .memberName {
     font-size: 1.3em;
 
-    transform: translateY(-40%) scale(1);
+    /* transform: translateY(-40%) scale(1); */
+    transform: scale(1) translateY(10%);
   }
+
   .select-items div,
   .select-selected {
     padding: 2%;
   }
   .designation {
     font-size: 1em;
-    transform: translateY(-50%) scale(1);
+    /* transform: translateY(-50%) scale(1); */
+    transform: scale(1) translateY(10%);
+  }
+  .member:hover .memberName {
+    transform: translateY(0%) scale(1);
+  }
+
+  .member:hover .designation {
+    transform: translateY(0%) scale(1);
   }
 
   .links {
-    width: 85%;
+    width: 100%;
     z-index: 1;
+    margin-top: 10px;
     justify-content: space-evenly;
     transform: translateY(0%) scale(0.9);
   }
