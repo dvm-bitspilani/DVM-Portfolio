@@ -1,7 +1,7 @@
 fetch('https://bits-apogee.org/portfolio/artworks/')
   .then(response => response.json())
   .then(data => populate(data));
-
+console.log('kaise')
 let col1 = document.getElementsByClassName("column")[0];
 let col2 = document.getElementsByClassName("column")[1];
 

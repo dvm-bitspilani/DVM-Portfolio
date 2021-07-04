@@ -19,9 +19,7 @@ const scrollFullPage = () => {
   const back = document.querySelector(".background");
   window.scrollTo(0, back.offsetHeight);
 };
-
-const el = document.querySelector(".artworkImage");
-
+let el = document.querySelector(".artworkImage");
 el.addEventListener("onmouseover", (e) => {
   el.style.transform = `translate(${-e.offsetX / 10}px , ${-e.offsetY / 10}px)`;
   console.log(`translate(${-e.offsetX / 100}px , ${-e.offsetY / 100}px)`);
