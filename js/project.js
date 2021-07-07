@@ -1,49 +1,58 @@
-// // Normalisation Functions for API Data
-// function nrmTeams(teams){
-//   const arr = [];
-//   if (teams.includes("App")) arr.push(1)
-//   if (teams.includes("Back")) arr.push(2)
-//   if (teams.includes("Design")) arr.push(3)
-//   if (teams.includes("Front")) arr.push(4)
-//   if (teams.includes("Video")) arr.push(5)
-//   return arr;
-// }
+function nrmTeams(teams){
+  const arr = [];
+  if (teams.includes("App")) arr.push(1)
+  if (teams.includes("Back")) arr.push(2)
+  if (teams.includes("Design")) arr.push(3)
+  if (teams.includes("Front")) arr.push(4)
+  if (teams.includes("Video")) arr.push(5)
+  return arr;
+}
 
 
-// // NORMALISATION FUNCTION ON API RESPONSE
-// function normalise(information){
-//     // convert front/back/design
-//     // Teams - 1: App, 2: Backend, 3: Design, 4: Frontend, 5: Video
-//     information.teamsInvolved = nrmTeams(information.teamsInvolved)
+// NORMALISATION FUNCTION ON API RESPONSE
+function normalise(information){
+  for (var x = 0; x < information.length; x++){
 
-//     // fix images relative path
-//     information.heroSectionImageLink = "." + information.heroSectionImageLink
+    // convert front/back/design
+    // Teams - 1: App, 2: Backend, 3: Design, 4: Frontend, 5: Video
+    information[x].teamsInvolved = nrmTeams(information[x].teamsInvolved)
 
-//     information.long_images_link = (information.long_images_link).split(", ")
-//     for (var y = 0; y < information.long_images_link.length; y++) {
-//       information.long_images_link[y] = "." + information.long_images_link[y]
-//     }
+    // fix images relative path
+    information[x].heroSectionImageLink = "." + information[x].heroSectionImageLink
 
-//     information.mockups_link = (information.mockups_link).split(", ")
-//     for (var y = 0; y < information.mockups_link.length; y++) {
-//       information.mockups_link[y] = "." + information.mockups_link[y]
-//     }
+    information[x].long_images_link = (information[x].long_images_link).split(", ")
+    for (var y = 0; y < information[x].long_images_link.length; y++) {
+      information[x].long_images_link[y] = "." + information[x].long_images_link[y]
+    }
 
-//     // fix page link
-//     information.page_link = (information.page_link.substring("http://".length))
-//     information.page_link = (information.page_link.substring(0, (information.page_link.length - ".com".length)))
-//     information.page_link = "project.html?id=" + information.page_link
+    information[x].mockups_link = (information[x].mockups_link).split(", ")
+    for (var y = 0; y < information[x].mockups_link.length; y++) {
+      information[x].mockups_link[y] = "." + information[x].mockups_link[y]
+    }
 
-//     if(information.teamsInvolved.includes(5)){
-//       information.website_link = (information.website_link.substring("http://".length))
-//       information.website_link = (information.website_link.substring(0, (information.website_link.length - ".com".length)))
-//       information.page_link = information.website_link
-//     }
+    // fix page link
+    information[x].page_link = (information[x].page_link.substring("http://".length))
+    information[x].page_link = (information[x].page_link.substring(0, (information[x].page_link.length - ".com".length)))
+    information[x].page_link = "project.html?id=" + information[x].page_link
+  }
+
+  // embed youtube urls for video team
+  for (var x = 0; x < information.length; x++){
+    const project = information[x]
+    if(information[x].teamsInvolved.includes(5)){
+      information[x].website_link = (information[x].website_link.substring("http://".length))
+      information[x].website_link = (information[x].website_link.substring(0, (information[x].website_link.length - ".com".length)))
+      information[x].page_link = information[x].website_link
+    }
+  }
+  return information;
+}
+
+
+
+
   
-//   return information;
-// }
-
-
+const teams = ["AppDev", "Backend", "Design", "Frontend", "Video"];
 
 
 let wrapper_height;
@@ -72,15 +81,56 @@ const scrollFullPage = () => {
   window.scrollTo(0, back.offsetHeight);
 };
 
+
+
 const params = new URLSearchParams(window.location.search);
 let id;
 for (const param of params) {
-  id = parseInt(param[1]) - 1;
+  id = parseInt(param[1] - 1);
   //console.log(param[1]);
 }
 
-const info = information[id];
-const teams = ["AppDev", "Backend", "Design", "Frontend", "Video"];
+
+let info = {};
+function get_info() {
+  // bake your code here
+
+  async function getJSONAsync(){
+
+    // The await keyword saves us from having to write a .then() block.
+    let json = await fetch('https://bits-apogee.org/portfolio/projects/');
+    let resp = await json.json()
+  
+    // The result of the GET request is available in the json variable.
+    // We return it just like in a regular synchronous function.
+    return resp;
+  }
+  
+  getJSONAsync().then( function(result) {
+    var information = result;
+    console.log(information)
+    
+    information = normalise(information)
+    console.log(information)
+
+    information = information[id]
+    console.log(information)
+
+  return new Promise((resolve) => {
+    info = information;
+  });
+
+});
+}
+
+
+async function main() {
+  const main_r = await get_info();
+}
+
+main();
+
+
 
 document.getElementsByClassName(
   "background"

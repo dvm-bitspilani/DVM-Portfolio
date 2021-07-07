@@ -50,9 +50,6 @@ function normalise(information){
 }
 
 
-
-
-
 // Array containing the content
 document.getElementsByClassName("loader-video")[0].playbackRate = 1.3;
 let content_loaded = false;
