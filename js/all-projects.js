@@ -1,48 +1,3 @@
-const teams = ["AppDev", "Backend", "Design", "Frontend", "Video"];
-
-document.getElementsByClassName("loader-video")[0].playbackRate = 1.3;
-  let content_loaded = false;
-  let video = false;
-  let scroll_dist;
-  let number_of_projects;
-  let timer_scroll;
-  let timer_color;
-  let first_time = true;
-  
-  function allImagesLoaded() {
-    if (content_loaded && first_time) {
-      console.log("ALL IMAGES LOADED");
-      document.getElementsByClassName("loader-video")[0].style.opacity = "0";
-  
-      setTimeout(() => {
-        document.getElementsByClassName("loader")[0].style.display = "none";
-        document.getElementsByClassName("wrapper")[0].style.opacity = "1";
-      }, 500);
-      translate_function();
-      first_time = false;
-    }
-  }
-  
-  function project_image_translate(x) {
-    let time = first_time ? 600 + x * 150 : x * 150;
-  
-    setTimeout(() => {
-      document.getElementsByClassName("single_project")[x].style.transform =
-        "translateY(0)";
-    }, time);
-  }
-  function translate_function() {
-    for (var x = 0; x < number_of_projects; x++) {
-      project_image_translate(x);
-    }
-  }
-  function loaded() {
-    console.log("Content Loaded");
-    content_loaded = true;
-    if (first_time) setTimeout(allImagesLoaded, 1000);
-  }
-  
-
 // Normalisation Functions for API Data
 function nrmTeams(teams){
   const arr = [];
@@ -79,7 +34,7 @@ function normalise(information){
     // fix page link
     information[x].page_link = (information[x].page_link.substring("http://".length))
     information[x].page_link = (information[x].page_link.substring(0, (information[x].page_link.length - ".com".length)))
-    information[x].page_link = "project.html?id=" + information[x].page_link
+    information[x].page_link = "project.html?id=" + x
   }
 
   // embed youtube urls for video team
@@ -94,134 +49,108 @@ function normalise(information){
   return information;
 }
 
-const fetchUrl = "https://bits-apogee.org/portfolio/projects/";
 
-fetch(fetchUrl)
-  .then(response => response.json())
-  .then(data => populate(data));
+// Array containing the content
+document.getElementsByClassName("loader-video")[0].playbackRate = 1.3;
+let video = false;
+let scroll_dist;
+let number_of_projects;
+let timer_scroll;
+let timer_color;
+let content_loaded = false;
+let first_time = true;
 
-populate = inform => {
-  var info;
-  info = normalise(inform)
+function allImagesLoaded() {
+  if (content_loaded && first_time) {
+    console.log("ALL IMAGES LOADED");
+    document.getElementsByClassName("loader-video")[0].style.opacity = "0";
 
-// Array containing the conten
-let main_arr = [[], [], [], [], []];
-function get_info() {
-  return new Promise((resolve) => {
-    for (var p = 0; p < info.length; p++) {
-      let temp = {
-        img: info[p].heroSectionImageLink,
-        name: info[p].name,
-        url: info[p].page_link,
-      };
-      for (var q = 0; q < info[p].teamsInvolved.length; q++) {
-        main_arr[info[p].teamsInvolved[q] - 1].push(temp);
-      }
-    }
-  console.log(main_arr)
-  });
+    setTimeout(() => {
+      document.getElementsByClassName("loader")[0].style.display = "none";
+      document.getElementsByClassName("wrapper")[0].style.opacity = "1";
+    }, 500);
+    translate_function();
+    first_time = false;
+  }
 }
 
-// main_arr = [
-//   [
-//     {
-//       img: "/Android/1.jpg",
-//       name: "Android 1",
-//       url: "",
-//     },
-//     {
-//       img: "/Android/2.jpg",
-//       name: "Android 2",
-//       url: "",
-//     },
-//     {
-//       img: "/Android/3.jpg",
-//       name: "Android 3",
-//       url: "",
-//     },
-//     {
-//       img: "/Android/4.jpg",
-//       name: "Android 4",
-//       url: "",
-//     },
-//   ],
-//   [
-//     {
-//       img: "/Backend/1.jpg",
-//       name: "Backend 1",
-//       url: "",
-//     },
-//     {
-//       img: "/Backend/2.jpg",
-//       name: "Backend 2",
-//       url: "",
-//     },
-//     {
-//       img: "/Backend/3.jpg",
-//       name: "Backend 3",
-//       url: "",
-//     },
-//   ],
-//   [
-//     {
-//       img: "/Design/1.jpg",
-//       name: "Design 1",
-//       url: "",
-//     },
-//     {
-//       img: "/Design/2.jpg",
-//       name: "Design 2",
-//       url: "",
-//     },
-//     {
-//       img: "/Design/3.jpg",
-//       name: "Design 3",
-//       url: "",
-//     },
-//     {
-//       img: "/Design/4.jpg",
-//       name: "Design 4",
-//       url: "",
-//     },
-//   ],
-//   [
-//     {
-//       img: "/Frontend/1.jpg",
-//       name: "Frontend 1",
-//       url: "",
-//     },
-//     {
-//       img: "/Frontend/2.jpg",
-//       name: "Frontend 2",
-//       url: "",
-//     },
-//     {
-//       img: "/Frontend/3.jpg",
-//       name: "Frontend 3",
-//       url: "",
-//     },
-//   ],
+function project_image_translate(x) {
+  let time = first_time ? 600 + x * 150 : x * 150;
 
-//   [
-//     {
-//       img: "/Video/1.jpg",
-//       name: "Video 1",
-//       url: "",
-//     },
-//     {
-//       img: "/Video/2.jpg",
-//       name: "Video 2",
-//       url: "",
-//     },
-//   ],
-// ];
+  setTimeout(() => {
+    document.getElementsByClassName("single_project")[x].style.transform =
+      "translateY(0)";
+  }, time);
+}
+function translate_function() {
+  for (var x = 0; x < number_of_projects; x++) {
+    project_image_translate(x);
+  }
+}
+function loaded() {
+  console.log("Content Loaded");
+  content_loaded = true;
+  if (first_time) setTimeout(allImagesLoaded, 1000);
+}
 
-// Constant Variables
+let main_arr = [[], [], [], [], []];
 
+async function get_info() {
+  // bake your code here
+
+  // async function getJSONAsync(){
+
+  //   // The await keyword saves us from having to write a .then() block.
+    let json = await fetch('https://bits-apogee.org/portfolio/projects/');
+    let result = await json.json()
+  
+    // The result of the GET request is available in the json variable.
+    // We return it just like in a regular synchronous function.
+    // return resp;
+  
+  // getJSONAsync().then( function(result) {
+    var information = result;
+    console.log(information)
+    
+    information = normalise(information)
+    console.log(information)
+  
+
+  // return new Promise((resolve) => {
+    for (var p = 0; p < information.length; p++) {
+      let temp = {
+        img: information[p].heroSectionImageLink,
+        name: information[p].name,
+        url: information[p].page_link,
+      };
+      for (var q = 0; q < information[p].teamsInvolved.length; q++) {
+        main_arr[information[p].teamsInvolved[q] - 1].push(temp);
+      }
+    }
+    console.log(main_arr)
+  // });
+}
+// });
+// }
 
 
 async function main() {
   const main_r = await get_info();
+
+  let already_called = false;
+  
+  console.log("random")
+
+  const params = new URLSearchParams(window.location.search);
+  for (const param of params) {
+    if (param[0] == "videos") {
+      team(4);
+      already_called = true;
+    }
+  }
+  if (!already_called) {
+    team(0);
+  }
 }
 
 main();
@@ -668,16 +597,16 @@ function timer() {
 
 // Starting off with Frontend Displayed if there's no videos param in the url
 
-let already_called = false;
+// let already_called = false;
 
-const params = new URLSearchParams(window.location.search);
-for (const param of params) {
-  if (param[0] == "videos") {
-    team(4);
-    already_called = true;
-  }
-}
-if (!already_called) {
-  team(0);
-}
-}
+// const params = new URLSearchParams(window.location.search);
+// for (const param of params) {
+//   if (param[0] == "videos") {
+//     team(4);
+//     already_called = true;
+//   }
+// }
+// if (!already_called) {
+//   team(0);
+// }
+

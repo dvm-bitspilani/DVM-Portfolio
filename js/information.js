@@ -1,64 +1,64 @@
-// var information;
+// // var information;
 
-// async function getPosts() {
-//   information = await fetch('https://bits-apogee.org/portfolio/projects')
-//   .then(response => response.json())
-//   .then(data => {
-//     return data
-//   });
+// // async function getPosts() {
+// //   information = await fetch('https://bits-apogee.org/portfolio/projects')
+// //   .then(response => response.json())
+// //   .then(data => {
+// //     return data
+// //   });
+// // }
+
+
+// // Normalisation Functions for API Data
+// function nrmTeams(teams){
+//   const arr = [];
+//   if (teams.includes("App")) arr.push(1)
+//   if (teams.includes("Back")) arr.push(2)
+//   if (teams.includes("Design")) arr.push(3)
+//   if (teams.includes("Front")) arr.push(4)
+//   if (teams.includes("Video")) arr.push(5)
+//   return arr;
 // }
 
 
-// Normalisation Functions for API Data
-function nrmTeams(teams){
-  const arr = [];
-  if (teams.includes("App")) arr.push(1)
-  if (teams.includes("Back")) arr.push(2)
-  if (teams.includes("Design")) arr.push(3)
-  if (teams.includes("Front")) arr.push(4)
-  if (teams.includes("Video")) arr.push(5)
-  return arr;
-}
+// // NORMALISATION FUNCTION ON API RESPONSE
+// function normalise(information){
+//   for (var x = 0; x < information.length; x++){
 
+//     // convert front/back/design
+//     // Teams - 1: App, 2: Backend, 3: Design, 4: Frontend, 5: Video
+//     information[x].teamsInvolved = nrmTeams(information[x].teamsInvolved)
 
-// NORMALISATION FUNCTION ON API RESPONSE
-function normalise(information){
-  for (var x = 0; x < information.length; x++){
+//     // fix images relative path
+//     information[x].heroSectionImageLink = "." + information[x].heroSectionImageLink
 
-    // convert front/back/design
-    // Teams - 1: App, 2: Backend, 3: Design, 4: Frontend, 5: Video
-    information[x].teamsInvolved = nrmTeams(information[x].teamsInvolved)
+//     information[x].long_images_link = (information[x].long_images_link).split(", ")
+//     for (var y = 0; y < information[x].long_images_link.length; y++) {
+//       information[x].long_images_link[y] = "." + information[x].long_images_link[y]
+//     }
 
-    // fix images relative path
-    information[x].heroSectionImageLink = "." + information[x].heroSectionImageLink
+//     information[x].mockups_link = (information[x].mockups_link).split(", ")
+//     for (var y = 0; y < information[x].mockups_link.length; y++) {
+//       information[x].mockups_link[y] = "." + information[x].mockups_link[y]
+//     }
 
-    information[x].long_images_link = (information[x].long_images_link).split(", ")
-    for (var y = 0; y < information[x].long_images_link.length; y++) {
-      information[x].long_images_link[y] = "." + information[x].long_images_link[y]
-    }
+//     // fix page link
+//     information[x].page_link = (information[x].page_link.substring("http://".length))
+//     information[x].page_link = (information[x].page_link.substring(0, (information[x].page_link.length - ".com".length)))
+//     information[x].page_link = "project.html?id=" + information[x].page_link
+//   }
 
-    information[x].mockups_link = (information[x].mockups_link).split(", ")
-    for (var y = 0; y < information[x].mockups_link.length; y++) {
-      information[x].mockups_link[y] = "." + information[x].mockups_link[y]
-    }
-
-    // fix page link
-    information[x].page_link = (information[x].page_link.substring("http://".length))
-    information[x].page_link = (information[x].page_link.substring(0, (information[x].page_link.length - ".com".length)))
-    information[x].page_link = "project.html?id=" + information[x].page_link
-  }
-
-  // embed youtube urls for video team
-  for (var x = 0; x < information.length; x++){
-    const project = information[x]
-    if(information[x].teamsInvolved.includes(5)){
-      information[x].website_link = (information[x].website_link.substring("http://".length))
-      information[x].website_link = (information[x].website_link.substring(0, (information[x].website_link.length - ".com".length)))
-      information[x].page_link = information[x].website_link
-    }
-  }
-  return information;
-}
+//   // embed youtube urls for video team
+//   for (var x = 0; x < information.length; x++){
+//     const project = information[x]
+//     if(information[x].teamsInvolved.includes(5)){
+//       information[x].website_link = (information[x].website_link.substring("http://".length))
+//       information[x].website_link = (information[x].website_link.substring(0, (information[x].website_link.length - ".com".length)))
+//       information[x].page_link = information[x].website_link
+//     }
+//   }
+//   return information;
+// }
 
 var information = [{
   "name": "Armageddon 20 Website",
@@ -370,5 +370,7 @@ var information = [{
   "page_link": "http://1.com"
 }]
 
-information = normalise(information)
-console.log(information)
+// console.log(information)
+
+// information = normalise(information)
+// console.log(information)
