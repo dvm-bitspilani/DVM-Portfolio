@@ -1643,11 +1643,16 @@ textarea:focus {
     transform: scale(1.2);
   }
 }
-
+#section07_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 #section07 {
   position: absolute;
   top: calc(95vh - 3 * 17px);
-  left: calc(50vw - 0.706 * 12px);
+  /* left: calc(50vw - 0.706 * 12px); */
 }
 #section07 a span {
   position: absolute;
