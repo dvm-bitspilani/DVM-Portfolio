@@ -1646,7 +1646,7 @@ textarea:focus {
 
 #section07 {
   position: absolute;
-  top: 90vh;
+  top: calc(95vh - 3 * 17px);
   left: calc(50vw - 0.706 * 12px);
 }
 #section07 a span {

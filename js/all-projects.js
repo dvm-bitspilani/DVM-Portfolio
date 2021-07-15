@@ -1,54 +1,62 @@
 // Normalisation Functions for API Data
-function nrmTeams(teams){
+function nrmTeams(teams) {
   const arr = [];
-  if (teams.includes("App")) arr.push(1)
-  if (teams.includes("Back")) arr.push(2)
-  if (teams.includes("Design")) arr.push(3)
-  if (teams.includes("Front")) arr.push(4)
-  if (teams.includes("Video")) arr.push(5)
+  if (teams.includes("App")) arr.push(1);
+  if (teams.includes("Back")) arr.push(2);
+  if (teams.includes("Design")) arr.push(3);
+  if (teams.includes("Front")) arr.push(4);
+  if (teams.includes("Video")) arr.push(5);
   return arr;
 }
 
-
 // NORMALISATION FUNCTION ON API RESPONSE
-function normalise(information){
-  for (var x = 0; x < information.length; x++){
-
+function normalise(information) {
+  for (var x = 0; x < information.length; x++) {
     // convert front/back/design
     // Teams - 1: App, 2: Backend, 3: Design, 4: Frontend, 5: Video
-    information[x].teamsInvolved = nrmTeams(information[x].teamsInvolved)
+    information[x].teamsInvolved = nrmTeams(information[x].teamsInvolved);
 
     // fix images relative path
     // information[x].heroSectionImageLink = "." + information[x].heroSectionImageLink
 
-    information[x].long_images_link = (information[x].long_images_link).split(", ")
+    information[x].long_images_link =
+      information[x].long_images_link.split(", ");
     // for (var y = 0; y < information[x].long_images_link.length; y++) {
     //   information[x].long_images_link[y] = "." + information[x].long_images_link[y]
     // }
 
-    information[x].mockups_link = (information[x].mockups_link).split(", ")
+    information[x].mockups_link = information[x].mockups_link.split(", ");
     // for (var y = 0; y < information[x].mockups_link.length; y++) {
     //   information[x].mockups_link[y] = "." + information[x].mockups_link[y]
     // }
 
     // fix page link
-    information[x].page_link = (information[x].page_link.substring("http://".length))
-    information[x].page_link = (information[x].page_link.substring(0, (information[x].page_link.length - ".com".length)))
-    information[x].page_link = "project.html?id=" + x
+    information[x].page_link = information[x].page_link.substring(
+      "http://".length
+    );
+    information[x].page_link = information[x].page_link.substring(
+      0,
+      information[x].page_link.length - ".com".length
+    );
+    information[x].page_link = "project.html?id=" + x;
   }
 
   // embed youtube urls for video team
-  for (var x = 0; x < information.length; x++){
-    const project = information[x]
-    if(information[x].teamsInvolved.includes(5)){
-      information[x].website_link = (information[x].website_link.substring("http://".length))
-      information[x].website_link = (information[x].website_link.substring(0, (information[x].website_link.length - ".com".length)))
-      information[x].page_link = information[x].website_link
+  for (var x = 0; x < information.length; x++) {
+    const project = information[x];
+    if (information[x].teamsInvolved.includes(5)) {
+      information[x].website_link = information[x].website_link.substring(
+        "http://".length
+      );
+      information[x].website_link = information[x].website_link.substring(
+        0,
+        information[x].website_link.length - ".com".length
+      );
+      information[x].page_link = information[x].website_link;
     }
   }
   return information;
 }
-
 
 // Array containing the content
 document.getElementsByClassName("loader-video")[0].playbackRate = 1.3;
@@ -88,7 +96,7 @@ function translate_function() {
   }
 }
 function loaded() {
-  console.log("Content Loaded");
+  //console.log("Content Loaded");
   content_loaded = true;
   if (first_time) setTimeout(allImagesLoaded, 1000);
 }
@@ -101,45 +109,43 @@ async function get_info() {
   // async function getJSONAsync(){
 
   //   // The await keyword saves us from having to write a .then() block.
-    let json = await fetch('https://bits-apogee.org/portfolio/projects/');
-    let result = await json.json()
-  
-    // The result of the GET request is available in the json variable.
-    // We return it just like in a regular synchronous function.
-    // return resp;
-  
+  let json = await fetch("https://bits-apogee.org/portfolio/projects/");
+  let result = await json.json();
+
+  // The result of the GET request is available in the json variable.
+  // We return it just like in a regular synchronous function.
+  // return resp;
+
   // getJSONAsync().then( function(result) {
-    var information = result;
-    console.log(information)
-    
-    information = normalise(information)
-    console.log(information)
-  
+  var information = result;
+  //console.log(information);
+
+  information = normalise(information);
 
   // return new Promise((resolve) => {
-    for (var p = 0; p < information.length; p++) {
-      let temp = {
-        img: information[p].heroSectionImageLink,
-        name: information[p].name,
-        url: information[p].page_link,
-      };
-      for (var q = 0; q < information[p].teamsInvolved.length; q++) {
-        main_arr[information[p].teamsInvolved[q] - 1].push(temp);
-      }
+  for (var p = 0; p < information.length; p++) {
+    let temp = {
+      img: information[p].heroSectionImageLink,
+      name: information[p].name,
+      url: information[p].page_link,
+      date: information[p].date,
+    };
+    for (var q = 0; q < information[p].teamsInvolved.length; q++) {
+      main_arr[information[p].teamsInvolved[q] - 1].push(temp);
     }
-    console.log(main_arr)
+  }
+  //console.log(main_arr);
   // });
 }
 // });
 // }
 
-
 async function main() {
   const main_r = await get_info();
 
   let already_called = false;
-  
-  console.log("random")
+
+  //console.log("random");
 
   const params = new URLSearchParams(window.location.search);
   for (const param of params) {
@@ -200,12 +206,13 @@ function team_projects(input) {
     single_width = 40;
     mobile = false;
   } else {
-    console.log("mobile");
+    //console.log("mobile");
     mobile = true;
     total_width = 80 * no_of_projects;
     margin = 7.5;
     single_width = 65;
   }
+  //console.log(main_arr[input]);
 
   document.getElementsByClassName("projects")[0].style.width =
     total_width + "vw";
@@ -224,6 +231,13 @@ function team_projects(input) {
       `;
     }
   } else {
+    // SOrting Projects by their dates
+    main_arr[input].sort(function (a, b) {
+      // Turn your strings into dates, and then subtract them
+      // to get a value that is either negative, positive, or zero.
+
+      return new Date(b.date) - new Date(a.date);
+    });
     for (var i = 0; i < no_of_projects; i++) {
       var div = document.createElement("div");
       div.setAttribute("class", "single_project");
@@ -431,9 +445,9 @@ slider.addEventListener("touchmove", (e) => {
 // Slider for touch devices
 
 const touchDownHandler = function (e) {
-  //console.log("Hello");
+  ////console.log("Hello");
   x = e.touches[0].clientX;
-  //console.log(e);
+  ////console.log(e);
   ele.classList.add("active");
   slider.classList.add("active");
   for (var i = 0; i < number_of_projects; i++) {
@@ -447,10 +461,10 @@ const touchDownHandler = function (e) {
 };
 
 const touchMoveHandler = function (e) {
-  // console.log("mobile moved");
+  // //console.log("mobile moved");
   const dx = e.touches[0].clientX - x;
   var ele_offset = ele.offsetLeft + dx;
-  // console.log(e.touches[0].clientX, x);
+  // //console.log(e.touches[0].clientX, x);
   if (ele_offset > right_limit || ele_offset < left_limit) {
     return;
   }
@@ -488,9 +502,9 @@ function left_right(input) {
   var distance_from_left = parseFloat(
     parseFloat(ele.style.left) - left_limit
   ).toFixed(2);
-  // console.log("Distance fro left", distance_from_left);
-  // console.log("MF", mulitplying_factor);
-  // console.log("total_dist", slide_bar_scroll_dist);
+  // //console.log("Distance fro left", distance_from_left);
+  // //console.log("MF", mulitplying_factor);
+  // //console.log("total_dist", slide_bar_scroll_dist);
 
   if (input == "l") {
     var temp = distance_from_left / mulitplying_factor;
@@ -544,7 +558,7 @@ function move(direction, to_position, mulitplying_factor) {
   ele.style.left = `${left_limit + to_position * mulitplying_factor}px`;
   // inner.scrollLeft =
   //   ((left_limit + to_position * mulitplying_factor) / slide_bar_scroll_dist) *
-  // console.log("to position", to_position);
+  // //console.log("to position", to_position);
   //   scroll_dist;
   // if (direction == "l") {
   //   inner.scrollLeft =
@@ -555,12 +569,12 @@ function move(direction, to_position, mulitplying_factor) {
   //   } else {
   //     inner.scrollLeft =
   //       inner.scrollLeft + scroll_dist / (number_of_projects - 1);
-  //     console.log(scroll_dist / (number_of_projects - 1));
+  //     //console.log(scroll_dist / (number_of_projects - 1));
   //   }
   // }
   inner.scrollLeft = (to_position * scroll_dist) / (number_of_projects - 1);
   white.style.width = "0%";
-  //console.log(to_position);
+  ////console.log(to_position);
   grey.style.width = "100%";
   timer();
   setTimeout(() => {
@@ -595,8 +609,6 @@ function timer() {
   }, 5000);
 }
 
-// Starting off with Frontend Displayed if there's no videos param in the url
-
 // let already_called = false;
 
 // const params = new URLSearchParams(window.location.search);
@@ -609,4 +621,3 @@ function timer() {
 // if (!already_called) {
 //   team(0);
 // }
-
