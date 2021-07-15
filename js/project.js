@@ -20,12 +20,12 @@ function normalise(information){
     // fix images relative path
     // information[x].heroSectionImageLink = "." + information[x].heroSectionImageLink
 
-    // information[x].long_images_link = (information[x].long_images_link).split(", ")
+    information[x].long_images_link = (information[x].long_images_link).split(", ")
     // for (var y = 0; y < information[x].long_images_link.length; y++) {
     //   information[x].long_images_link[y] = "." + information[x].long_images_link[y]
     // }
 
-    // information[x].mockups_link = (information[x].mockups_link).split(", ")
+    information[x].mockups_link = (information[x].mockups_link).split(", ")
     // for (var y = 0; y < information[x].mockups_link.length; y++) {
     //   information[x].mockups_link[y] = "." + information[x].mockups_link[y]
     // }
