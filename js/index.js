@@ -485,7 +485,7 @@ document
   .getElementsByClassName("heart")[0]
   .addEventListener("touchstart", function (e) {
     touchcount++;
-    console.log("jij");
+
     setTimeout(() => {
       if (touchcount != 3) {
         touchcount = 0;

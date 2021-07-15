@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  overflow: hidden;
 }
 .container {
   width: 100vw;
@@ -161,7 +162,7 @@ body {
   color: white;
   font-weight: 900;
 
-  top: -20vh;
+  top: -27vh;
   font-size: 3em;
   pointer-events: none;
 }

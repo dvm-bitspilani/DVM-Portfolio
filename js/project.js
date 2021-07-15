@@ -1,113 +1,126 @@
-let wrapper_height;
-  document.getElementsByClassName("loader-video")[0].playbackRate = 1.3;
-  function allImagesLoaded() {
-    //console.log("ALL IMAGES LOADED");
+function nrmTeams(teams) {
+  const arr = [];
+  if (teams.includes("App")) arr.push(1);
+  if (teams.includes("Back")) arr.push(2);
+  if (teams.includes("Design")) arr.push(3);
+  if (teams.includes("Front")) arr.push(4);
+  if (teams.includes("Video")) arr.push(5);
+  return arr;
+}
+
+// NORMALISATION FUNCTION ON API RESPONSE
+function normalise(information) {
+  for (var x = 0; x < information.length; x++) {
+    // convert front/back/design
+    // Teams - 1: App, 2: Backend, 3: Design, 4: Frontend, 5: Video
+    information[x].teamsInvolved = nrmTeams(information[x].teamsInvolved);
+
+    // fix images relative path
+    // information[x].heroSectionImageLink = "." + information[x].heroSectionImageLink
+
+    information[x].long_images_link =
+      information[x].long_images_link.split(", ");
+    // for (var y = 0; y < information[x].long_images_link.length; y++) {
+    //   information[x].long_images_link[y] = "." + information[x].long_images_link[y]
+    // }
+
+    information[x].mockups_link = information[x].mockups_link.split(", ");
+    // for (var y = 0; y < information[x].mockups_link.length; y++) {
+    //   information[x].mockups_link[y] = "." + information[x].mockups_link[y]
+    // }
+
+    // fix page link
+    information[x].page_link = information[x].page_link.substring(
+      "http://".length
+    );
+    information[x].page_link = information[x].page_link.substring(
+      0,
+      information[x].page_link.length - ".com".length
+    );
+    information[x].page_link = "project.html?id=" + x;
+  }
+
+  // embed youtube urls for video team
+  for (var x = 0; x < information.length; x++) {
+    const project = information[x];
+    if (information[x].teamsInvolved.includes(5)) {
+      information[x].website_link = information[x].website_link.substring(
+        "http://".length
+      );
+      information[x].website_link = information[x].website_link.substring(
+        0,
+        information[x].website_link.length - ".com".length
+      );
+      information[x].page_link = information[x].website_link;
+    }
+  }
+  return information;
+}
+
+function loaded() {
+  //console.log("Content Loaded");
+  content_loaded = true;
+  if (first_time) setTimeout(allImagesLoaded, 1000);
+}
+
+let content_loaded = false;
+let first_time = true;
+
+function allImagesLoaded() {
+  if (content_loaded && first_time) {
+    console.log("ALL IMAGES LOADED");
     document.getElementsByClassName("loader-video")[0].style.opacity = "0";
 
     setTimeout(() => {
       document.getElementsByClassName("loader")[0].style.display = "none";
       document.getElementsByClassName("wrapper")[0].style.opacity = "1";
     }, 500);
+    first_time = false;
 
     wrapper_height = document
       .getElementsByClassName("wrapper")[0]
       .getBoundingClientRect().height;
-    //console.log(wrapper_height);
   }
-
-  document.getElementsByClassName("navbar")[0].style.backgroundColor =
-    "transparent";
-  document.getElementsByClassName("navbar")[0].style.backdropFilter = "blur(0px)";
-  let back = document.getElementsByClassName("background")[0];
-
-
-
-// Normalisation Functions for API Data
-function nrmTeams(teams){
-  const arr = [];
-  if (teams.includes("App")) arr.push(1)
-  if (teams.includes("Back")) arr.push(2)
-  if (teams.includes("Design")) arr.push(3)
-  if (teams.includes("Front")) arr.push(4)
-  if (teams.includes("Video")) arr.push(5)
-  return arr;
 }
 
+const teams = ["AppDev", "Backend", "Design", "Frontend", "Video"];
 
-// NORMALISATION FUNCTION ON API RESPONSE
-function normalise(information){
-    // convert front/back/design
-    // Teams - 1: App, 2: Backend, 3: Design, 4: Frontend, 5: Video
-    information.teamsInvolved = nrmTeams(information.teamsInvolved)
+let wrapper_height;
+document.getElementsByClassName("loader-video")[0].playbackRate = 1.3;
+document.getElementsByClassName("navbar")[0].style.backgroundColor =
+  "transparent";
+document.getElementsByClassName("navbar")[0].style.backdropFilter = "blur(0px)";
+let back = document.getElementsByClassName("background")[0];
 
-    // fix images relative path
-    information.heroSectionImageLink = "." + information.heroSectionImageLink
-
-    information.long_images_link = (information.long_images_link).split(", ")
-    for (var y = 0; y < information.long_images_link.length; y++) {
-      information.long_images_link[y] = "." + information.long_images_link[y]
-    }
-
-    information.mockups_link = (information.mockups_link).split(", ")
-    for (var y = 0; y < information.mockups_link.length; y++) {
-      information.mockups_link[y] = "." + information.mockups_link[y]
-    }
-
-    // fix page link
-    information.page_link = (information.page_link.substring("http://".length))
-    information.page_link = (information.page_link.substring(0, (information.page_link.length - ".com".length)))
-    information.page_link = "project.html?id=" + information.page_link
-
-    if(information.teamsInvolved.includes(5)){
-      information.website_link = (information.website_link.substring("http://".length))
-      information.website_link = (information.website_link.substring(0, (information.website_link.length - ".com".length)))
-      information.page_link = information.website_link
-    }
-  
-  return information;
-}
-
+const scrollFullPage = () => {
+  window.scrollTo(0, back.offsetHeight);
+};
 
 const params = new URLSearchParams(window.location.search);
 let id;
 for (const param of params) {
   id = parseInt(param[1]);
-  //console.log(param[1]);
 }
 
-const fetchUrl = "https://bits-apogee.org/portfolio/project/" + id;
+async function get_info() {
+  let json = await fetch("https://bits-apogee.org/portfolio/projects/");
+  let result = await json.json();
 
-fetch(fetchUrl)
-  .then(response => response.json())
-  .then(data => populate(data));
+  var information = result;
 
+  information = normalise(information);
+  //console.log(information);
 
-populate = info2 => {
-  console.log(info2)
-  var info;
-  info = normalise(info2)
-  console.log(info)
+  information = information[id];
+  //console.log(information);
 
-  
-
-  // const params = new URLSearchParams(window.location.search);
-  // let id;
-  // for (const param of params) {
-  //   id = parseInt(param[1]) - 1;
-  //   //console.log(param[1]);
-  // }
-
-  const scrollFullPage = () => {
-    window.scrollTo(0, back.offsetHeight);
-  };
-
-  // const info = information[id];
-  const teams = ["AppDev", "Backend", "Design", "Frontend", "Video"];
+  info = information;
+  //console.log(info);
 
   document.getElementsByClassName(
     "background"
   )[0].style.backgroundImage = `url('${info.heroSectionImageLink}')`;
-  if (info.website_link !== "") {
+  if (!info.website_link.includes("null")) {
     document.getElementsByClassName("link")[0].innerHTML =
       info.website_link.split("://")[1];
     document
@@ -122,7 +135,8 @@ populate = info2 => {
   }
 
   document.getElementsByClassName("heading")[0].innerHTML = info.name;
-  document.getElementsByClassName("left-project-about")[0].innerHTML = info.text_1;
+  document.getElementsByClassName("left-project-about")[0].innerHTML =
+    info.text_1;
   document.getElementsByClassName("smaller-text")[0].innerHTML = info.text_2;
 
   for (var p = 0; p < info.teamsInvolved.length; p++) {
@@ -132,13 +146,15 @@ populate = info2 => {
     document.getElementsByClassName("teams")[0].appendChild(div);
   }
 
-  document.getElementsByClassName("show-all")[0].setAttribute("target", "_blank");
+  document
+    .getElementsByClassName("show-all")[0]
+    .setAttribute("target", "_blank");
   document.getElementsByClassName("date")[0].innerHTML = info.date;
   document.getElementsByClassName("main-photo")[0].src =
     info.heroSectionImageLink;
   document.getElementsByClassName("long-1")[0].src = info.long_images_link[0];
-  document.getElementsByClassName("photo")[0].src =  info.mockups_link[0];
-  //console.log("hey");
+  document.getElementsByClassName("photo")[0].src = info.mockups_link[0];
+  ////console.log("hey");
   if (info.mockups_link[1]) {
     document.getElementsByClassName("photo")[1].src = info.mockups_link[1];
   } else {
@@ -149,40 +165,51 @@ populate = info2 => {
       document.getElementsByClassName(
         `long-photos-container`
       )[0].innerHTML += `<div>
-              <img class="long-${x + 1}" src="${info.long_images_link[x]}" />
-            </div>`;
+                <img class="long-${x + 1}" src="${info.long_images_link[x]}" />
+              </div>`;
     }
   } else {
     document.getElementsByClassName("long-photos-container")[0].remove();
   }
-
-  let scroll_indicator_height =
-    document.getElementsByClassName("scroll-indicator")[0].offsetHeight;
-
-  let white_line = document.getElementsByClassName("white-line")[0];
-  let grey_line = document.getElementsByClassName("grey-line")[0];
-  //console.log(wrapper_height - back.offsetHeight);
-  window.onscroll = () => {
-    document.getElementsByClassName("top-arrow")[0].style.display =
-      window.pageYOffset > 100 ? "block" : "none";
-
-    if (window.pageYOffset > 50) {
-      document.getElementsByClassName("navbar")[0].style.backgroundColor = "";
-      document.getElementsByClassName("navbar")[0].style.backdropFilter =
-        "blur(10px)";
-    }
-    if (wrapper_height == undefined || scroll_indicator_height == undefined) {
-      //console.log("no wrapper");
-      return;
-    }
-
-    let percentage = window.pageYOffset / (wrapper_height - back.offsetHeight);
-    if (percentage > 1) {
-      white_line.style.height = `${scroll_indicator_height}px`;
-      grey_line.style.height = 0;
-    } else {
-      white_line.style.height = `${percentage * scroll_indicator_height}px`;
-      grey_line.style.height = `${(1 - percentage) * scroll_indicator_height}px`;
-    }
-  };
 }
+
+async function main() {
+  const main_r = await get_info();
+  loaded();
+  //console.log("loaded function");
+}
+
+main();
+
+let scroll_indicator_height =
+  document.getElementsByClassName("scroll-indicator")[0].offsetHeight;
+
+let white_line = document.getElementsByClassName("white-line")[0];
+let grey_line = document.getElementsByClassName("grey-line")[0];
+
+window.onscroll = () => {
+  document.getElementsByClassName("top-arrow")[0].style.display =
+    window.pageYOffset > 100 ? "block" : "none";
+
+  if (window.pageYOffset > 50) {
+    document.getElementsByClassName("navbar")[0].style.backgroundColor = "";
+    document.getElementsByClassName("navbar")[0].style.backdropFilter =
+      "blur(10px)";
+  }
+  if (wrapper_height == undefined || scroll_indicator_height == undefined) {
+    ////console.log("no wrapper");
+    return;
+  }
+  wrapper_height = document
+    .getElementsByClassName("wrapper")[0]
+    .getBoundingClientRect().height;
+
+  let percentage = window.pageYOffset / (wrapper_height - back.offsetHeight);
+  if (percentage > 1) {
+    white_line.style.height = `${scroll_indicator_height}px`;
+    grey_line.style.height = 0;
+  } else {
+    white_line.style.height = `${percentage * scroll_indicator_height}px`;
+    grey_line.style.height = `${(1 - percentage) * scroll_indicator_height}px`;
+  }
+};

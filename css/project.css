@@ -103,15 +103,24 @@ body::-webkit-scrollbar {
   justify-content: flex-end;
   align-items: center;
 }
+.link_heading_container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: calc(-5vh - 26px);
+}
 .heading {
   text-align: center;
   font: normal normal bold 3em Gilroy ☞;
   letter-spacing: 0px;
+  /* margin-bottom: 15vh; */
   color: #ffffff;
   text-shadow: 0px 3px 6px #00000033;
   opacity: 1;
   font-family: poppins-semibold;
-  font-size: 8em;
+  font-size: 6em;
 }
 .link {
   font: normal normal bold 3em Gilroy ☞;
@@ -122,10 +131,10 @@ body::-webkit-scrollbar {
   font-family: poppins-semibold;
   font-size: 1.4em;
   opacity: 0.64;
-  margin-bottom: -5vh;
+  margin-bottom: -1em;
 }
 .cross {
-  margin-top: 25vh;
+  /* margin-top: 25vh; */
   /* position: absolute; */
   margin-bottom: 5vh;
   font-family: gilroy-bold;
@@ -363,7 +372,7 @@ body::-webkit-scrollbar {
     margin-bottom: 0;
   }
   .cross {
-    margin-top: 45vh;
+    /* margin-top: 45vh; */
   }
   #project-about {
     flex-direction: column;

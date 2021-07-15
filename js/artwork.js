@@ -18,7 +18,7 @@ let col1 = document.getElementsByClassName("column")[0];
 let col2 = document.getElementsByClassName("column")[1];
 let wrapper_height;
 populate = (main_arr) => {
-  console.log(main_arr);
+  // ////console.log(main_arr);
   for (var i = 0; i < main_arr.length / 2; i++) {
     let artworkContainer1 = document.createElement("div");
     artworkContainer1.classList.add("artworkContainer");
@@ -31,27 +31,29 @@ populate = (main_arr) => {
             <div class="artistName">By ${main_arr[2 * i].artistName}</div>
             <div class="artistLinksContainer">
               <div class="artistLinks">
-                <a href=${main_arr[2 * i].BehanceLink} class=${
+                <a target='_blank' href=${main_arr[2 * i].BehanceLink} class=${
       main_arr[2 * i].BehanceLink ? "" : "disabled"
     }><img src="./assets/icons/behance.png" /></a>
               </div>
               <div class="artistLinks">
-                <a href=${main_arr[2 * i].DribbleLink} class=${
+                <a target='_blank' href=${main_arr[2 * i].DribbleLink} class=${
       main_arr[2 * i].DribbleLink ? "" : "disabled"
     }><img src="./assets/icons/dribble.svg" /></a>
               </div>
               <div class="artistLinks">
-                <a href=${main_arr[2 * i].InstagramLink} class=${
+                <a target='_blank' href=${
+                  main_arr[2 * i].InstagramLink
+                } class=${
       main_arr[2 * i].InstagramLink ? "" : "disabled"
     }><img src="./assets/icons/instagram-sketched@2x.png" /></a>
               </div>
               <div class="artistLinks">
-                <a href=${main_arr[2 * i].LinkedInLink} class=${
+                <a target='_blank' href=${main_arr[2 * i].LinkedInLink} class=${
       main_arr[2 * i].LinkedInLink ? "" : "disabled"
     }><img src="./assets/icons/linkedin.png" /></a>
               </div>
               <div class="artistLinks">
-                <a href=${main_arr[2 * i].GithubLink} class=${
+                <a target='_blank' href=${main_arr[2 * i].GithubLink} class=${
       main_arr[2 * i].GithubLink ? "" : "disabled"
     }><img src="./assets/icons/github.png" /></a>
               </div>
@@ -72,27 +74,37 @@ populate = (main_arr) => {
             <div class="artistName">By ${main_arr[2 * i + 1].artistName}</div>
             <div class="artistLinksContainer">
               <div class="artistLinks">
-                <a href=${main_arr[2 * i + 1].BehanceLink} class=${
+                <a target='_blank' href=${
+                  main_arr[2 * i + 1].BehanceLink
+                } class=${
       main_arr[2 * i + 1].BehanceLink ? "" : "disabled"
     }><img src="./assets/icons/behance.png" /></a>
               </div>
               <div class="artistLinks">
-                <a href=${main_arr[2 * i + 1].DribbleLink} class=${
+                <a target='_blank' href=${
+                  main_arr[2 * i + 1].DribbleLink
+                } class=${
       main_arr[2 * i + 1].DribbleLink ? "" : "disabled"
     }><img src="./assets/icons/dribble.svg" /></a>
               </div>
               <div class="artistLinks">
-                <a href=${main_arr[2 * i + 1].InstagramLink} class=${
+                <a target='_blank' href=${
+                  main_arr[2 * i + 1].InstagramLink
+                } class=${
       main_arr[2 * i + 1].InstagramLink ? "" : "disabled"
     }><img src="./assets/icons/instagram-sketched@2x.png" /></a>
               </div>
               <div class="artistLinks">
-                <a href=${main_arr[2 * i + 1].LinkedInLink} class=${
+                <a target='_blank' href=${
+                  main_arr[2 * i + 1].LinkedInLink
+                } class=${
       main_arr[2 * i + 1].LinkedInLink ? "" : "disabled"
     }><img src="./assets/icons/linkedin.png" /></a>
               </div>
               <div class="artistLinks">
-                <a href=${main_arr[2 * i + 1].GithubLink} class=${
+                <a target='_blank' href=${
+                  main_arr[2 * i + 1].GithubLink
+                } class=${
       main_arr[2 * i + 1].GithubLink ? "" : "disabled"
     }><img src="./assets/icons/github.png" /></a>
             </div>
@@ -103,11 +115,11 @@ populate = (main_arr) => {
   wrapper_height = document
     .getElementsByClassName("wrapper")[0]
     .getBoundingClientRect().height;
-  console.log(wrapper_height);
+  ////console.log(wrapper_height);
 
   let el = document.querySelector(".artworkImage");
   el.addEventListener("onmouseover", (e) => {
-    console.log("dmmo");
+    ////console.log("dmmo");
     el_mouseover(el, e);
   });
 };
@@ -119,16 +131,16 @@ const scrollFullPage = () => {
 
 // while (wrapper_height == undefined) {
 //   // Do nothing
-//   console.log(document.querySelector(".artworkImage"));
+//   //console.log(document.querySelector(".artworkImage"));
 //   if (document.querySelector(".artworkImage")) {
 //     el = document.querySelector(".artworkImage");
 //   }
 // }
 
 function el_mouseover(el, e) {
-  console.log("kokokok");
+  //console.log("kokokok");
   el.style.transform = `translate(${-e.offsetX / 10}px , ${-e.offsetY / 10}px)`;
-  console.log(`translate(${-e.offsetX / 100}px , ${-e.offsetY / 100}px)`);
+  //console.log(`translate(${-e.offsetX / 100}px , ${-e.offsetY / 100}px)`);
 }
 
 let inner = document.querySelectorAll(".artworkImage");
@@ -147,7 +159,7 @@ inner.forEach((inner) =>
         let e = event || window.event;
         this.x = e.clientX - this._x;
         this.y = e.offsetY - this._y;
-        // console.log(this)
+        // //console.log(this)
       },
       setOrigin: function (e) {
         this._x = e.offsetLeft + Math.floor(e.offsetWidth / 2);
@@ -196,7 +208,7 @@ inner.forEach((inner) =>
     };
 
     let updateTransformStyle = function (x, y) {
-      // console.log(x)
+      // //console.log(x)
       let style = "translateX(" + -10 * x + "px) translateY(" + -10 * y + "px)";
       inner.children[0].style.transform =
         "translateX(" + 10 * x + "px) translateY(" + 10 * y + "px) scale(1.15)";
@@ -219,10 +231,12 @@ let grey_line = document.getElementsByClassName("grey-line")[0];
 
 window.onscroll = () => {
   if (wrapper_height == undefined || scroll_indicator_height == undefined) {
-    //console.log("no wrapper");
+    ////console.log("no wrapper");
     return;
   }
-
+  wrapper_height = document
+    .getElementsByClassName("wrapper")[0]
+    .getBoundingClientRect().height;
   let percentage = window.pageYOffset / (wrapper_height - back.offsetHeight);
   if (percentage > 1) {
     white_line.style.height = `${scroll_indicator_height}px`;
