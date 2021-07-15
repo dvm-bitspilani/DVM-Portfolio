@@ -34,7 +34,7 @@ function normalise(information){
     // fix page link
     information[x].page_link = (information[x].page_link.substring("http://".length))
     information[x].page_link = (information[x].page_link.substring(0, (information[x].page_link.length - ".com".length)))
-    information[x].page_link = "project.html?id=" + information[x].page_link
+    information[x].page_link = "project.html?id=" + x
   }
 
   // embed youtube urls for video team
@@ -52,12 +52,12 @@ function normalise(information){
 
 // Array containing the content
 document.getElementsByClassName("loader-video")[0].playbackRate = 1.3;
-let content_loaded = false;
 let video = false;
 let scroll_dist;
 let number_of_projects;
 let timer_scroll;
 let timer_color;
+let content_loaded = false;
 let first_time = true;
 
 function allImagesLoaded() {
