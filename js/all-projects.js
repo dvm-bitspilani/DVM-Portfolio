@@ -94,21 +94,21 @@ function loaded() {
 }
 
 let main_arr = [[], [], [], [], []];
-function get_info() {
+
+async function get_info() {
   // bake your code here
 
-  async function getJSONAsync(){
+  // async function getJSONAsync(){
 
-    // The await keyword saves us from having to write a .then() block.
+  //   // The await keyword saves us from having to write a .then() block.
     let json = await fetch('https://bits-apogee.org/portfolio/projects/');
-    let resp = await json.json()
+    let result = await json.json()
   
     // The result of the GET request is available in the json variable.
     // We return it just like in a regular synchronous function.
-    return resp;
-  }
+    // return resp;
   
-  getJSONAsync().then( function(result) {
+  // getJSONAsync().then( function(result) {
     var information = result;
     console.log(information)
     
@@ -116,7 +116,7 @@ function get_info() {
     console.log(information)
   
 
-  return new Promise((resolve) => {
+  // return new Promise((resolve) => {
     for (var p = 0; p < information.length; p++) {
       let temp = {
         img: information[p].heroSectionImageLink,
@@ -127,14 +127,30 @@ function get_info() {
         main_arr[information[p].teamsInvolved[q] - 1].push(temp);
       }
     }
-  });
-
-});
+    console.log(main_arr)
+  // });
 }
+// });
+// }
 
 
 async function main() {
   const main_r = await get_info();
+
+  let already_called = false;
+  
+  console.log("random")
+
+  const params = new URLSearchParams(window.location.search);
+  for (const param of params) {
+    if (param[0] == "videos") {
+      team(4);
+      already_called = true;
+    }
+  }
+  if (!already_called) {
+    team(0);
+  }
 }
 
 main();
@@ -581,16 +597,16 @@ function timer() {
 
 // Starting off with Frontend Displayed if there's no videos param in the url
 
-let already_called = false;
+// let already_called = false;
 
-const params = new URLSearchParams(window.location.search);
-for (const param of params) {
-  if (param[0] == "videos") {
-    team(4);
-    already_called = true;
-  }
-}
-if (!already_called) {
-  team(0);
-}
+// const params = new URLSearchParams(window.location.search);
+// for (const param of params) {
+//   if (param[0] == "videos") {
+//     team(4);
+//     already_called = true;
+//   }
+// }
+// if (!already_called) {
+//   team(0);
+// }
 
