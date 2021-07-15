@@ -98,7 +98,7 @@ function translate_function() {
 function loaded() {
   //console.log("Content Loaded");
   content_loaded = true;
-  if (first_time) setTimeout(allImagesLoaded, 1000);
+  if (first_time) allImagesLoaded();
 }
 
 let main_arr = [[], [], [], [], []];
@@ -238,6 +238,7 @@ function team_projects(input) {
 
       return new Date(b.date) - new Date(a.date);
     });
+    console.log(main_arr[input]);
     for (var i = 0; i < no_of_projects; i++) {
       var div = document.createElement("div");
       div.setAttribute("class", "single_project");
@@ -546,7 +547,7 @@ function move(direction, to_position, mulitplying_factor) {
   ele.classList.add("active");
   slider.classList.add("active");
   inner.classList.add("active");
-
+  console.log(main_arr);
   for (var i = 0; i < number_of_projects; i++) {
     document
       .getElementsByClassName("single_project")
