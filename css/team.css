@@ -251,7 +251,7 @@ body {
 }
 
 .memberImage img {
-  width:230px
+  width:230px;
   height: 100%;
   -webkit-user-drag: none;
   -webkit-user-select: none;
