@@ -10,7 +10,7 @@ function allImagesLoaded() {
 }
 document.getElementsByClassName("loader-video")[0].playbackRate = 1.3;
 
-fetch("https://bits-apogee.org/portfolio/artworks/")
+fetch("http://bits-dvm.org/portfolio/artworks/")
   .then((response) => response.json())
   .then((data) => populate(data));
 
