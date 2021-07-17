@@ -109,7 +109,7 @@ async function get_info() {
   // async function getJSONAsync(){
 
   //   // The await keyword saves us from having to write a .then() block.
-  let json = await fetch("https://bits-apogee.org/portfolio/projects/");
+  let json = await fetch("http://bits-dvm.org/portfolio/projects/");
   let result = await json.json();
 
   // The result of the GET request is available in the json variable.

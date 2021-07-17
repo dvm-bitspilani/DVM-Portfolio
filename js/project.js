@@ -103,7 +103,7 @@ for (const param of params) {
 }
 
 async function get_info() {
-  let json = await fetch("https://bits-apogee.org/portfolio/projects/");
+  let json = await fetch("http://bits-dvm.org/portfolio/projects/");
   let result = await json.json();
 
   var information = result;
