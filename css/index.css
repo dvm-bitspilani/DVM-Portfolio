@@ -940,7 +940,8 @@ textarea:focus {
 .projectsFirstContainer {
   display: flex;
   /* overflow: hidden; */
-  margin-left: 10vw;
+  margin-left: 7vw;
+  margin-right: 3vw;
   font-family: Poppins, Gilroy;
   width: 40vw;
   overflow: hidden;
@@ -984,7 +985,8 @@ textarea:focus {
   width: 40vw;
   padding-bottom: 5%;
   /* height: 70vh; */
-  margin-right: 10vw;
+  margin-right: 7vw;
+  margin-left: 3vw;
   font-family: Poppins, Gilroy;
 }
 

@@ -465,6 +465,25 @@ window.addEventListener("DOMContentLoaded", () => {
 
 // Drag scroll for blogs section on landing
 
+// Assigning view more in selected projects it's link
+
+async function assign_selected_projects_link() {
+ // console.log("hello");
+  let json = await fetch("https://bits-dvm.org/portfolio/projects/");
+  let result = await json.json();
+
+  let selected_projects_name = document.getElementsByClassName("proj-head");
+ // console.log(selected_projects_name.length);
+  for (var i = 0; i < selected_projects_name.length; i++) {
+    let found = result.findIndex((ele) => {
+      return ele.name == selected_projects_name[i].innerHTML;
+    });
+    document.getElementsByClassName("project-view-more")[
+      i
+    ].href = `project.html?id=${found}`;
+  }
+}
+
 function random_function() {
   document.getElementsByClassName("random")[0].style.display = "flex";
   document.getElementsByClassName("random")[0].style.opacity = "1";
@@ -559,3 +578,4 @@ slider.addEventListener("mousemove", (e) => {
 //   slider.scrollLeft = scrollLeft - walk;
 //   console.log(walk);
 // });
+assign_selected_projects_link();
