@@ -70,7 +70,7 @@ const updateTeam = async (num) => {
       : (team = "Backend");
     for (let i = 0; i < 4; i++) {
       const mem = await fetch(
-        `http://bits-dvm.org/portfolio/members/20${i + 17}/${team}`
+        `https://bits-dvm.org/portfolio/members/20${i + 17}/${team}`
       );
       const data = await mem.json();
       developers[j][i].members = data;
