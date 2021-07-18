@@ -468,12 +468,12 @@ window.addEventListener("DOMContentLoaded", () => {
 // Assigning view more in selected projects it's link
 
 async function assign_selected_projects_link() {
-  console.log("hello");
+ // console.log("hello");
   let json = await fetch("https://bits-dvm.org/portfolio/projects/");
   let result = await json.json();
 
   let selected_projects_name = document.getElementsByClassName("proj-head");
-  console.log(selected_projects_name.length);
+ // console.log(selected_projects_name.length);
   for (var i = 0; i < selected_projects_name.length; i++) {
     let found = result.findIndex((ele) => {
       return ele.name == selected_projects_name[i].innerHTML;
