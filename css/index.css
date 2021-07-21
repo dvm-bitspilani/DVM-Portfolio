@@ -651,7 +651,7 @@ textarea:focus {
 .artwork-container {
   position: relative;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: space-evenly;
   /* top: 20vh; */
   width: 100%;
@@ -713,20 +713,23 @@ textarea:focus {
 }
 
 .artwork-title-container {
-  height: 20vh;
+  height: max-content;
   overflow: hidden;
+  overflow-x: visible;
   z-index: 10;
-  width: 30vw;
+  width: max-content;
 }
 
 .artwork-title {
   top: 0;
-  width: 30vw;
+  width: max-content;
   font-family: "Poppins";
-  height: 20vh;
+  height: max-content;
   /* font-size: 7vh; */
   font-size: 50px;
-  line-height: 76px;
+  padding-top: 10vh;
+  padding-bottom: 3vh;
+  line-height: 60px;
   display: none;
 }
 
@@ -1391,6 +1394,7 @@ textarea:focus {
     font-size: 18px;
     line-height: 27px;
     display: none;
+    padding: 0;
   }
 
   .artwork-name-container {
