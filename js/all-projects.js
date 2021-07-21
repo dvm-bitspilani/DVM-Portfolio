@@ -1,10 +1,10 @@
 // Normalisation Functions for API Data
 function nrmTeams(teams) {
   const arr = [];
-  if (teams.includes("App")) arr.push(1);
-  if (teams.includes("Back")) arr.push(2);
-  if (teams.includes("Design")) arr.push(3);
-  if (teams.includes("Front")) arr.push(4);
+  if (teams.includes("App")) arr.push(3);
+  if (teams.includes("Back")) arr.push(4);
+  if (teams.includes("Design")) arr.push(1);
+  if (teams.includes("Front")) arr.push(2);
   if (teams.includes("Video")) arr.push(5);
   return arr;
 }
