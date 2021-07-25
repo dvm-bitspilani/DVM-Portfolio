@@ -283,7 +283,7 @@ body::-webkit-scrollbar {
   margin-right: 3vw;
   width: 21px;
   /* border-radius: 50%; */
-  content: "";
+  /* content: ""; */
   /* background-color: white; */
   /* opacity: 0; */
   /* transform: translateX(100px); */
@@ -931,6 +931,7 @@ textarea:focus {
 .mobile22 {
   opacity: 0;
   transform: translateX(100px);
+  width: 40vw;
 }
 
 .project-info {
