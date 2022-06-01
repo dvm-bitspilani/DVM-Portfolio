@@ -32,6 +32,10 @@ const developers = ids.map(() => {
       year: 2020,
       members: [],
     },
+    {
+      year: 2021,
+      members: [],
+    },
   ];
 });
 
@@ -68,7 +72,7 @@ const updateTeam = async (num) => {
       : j == 3
       ? (team = "Design")
       : (team = "Backend");
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 5; i++) {
       const mem = await fetch(
         `https://bits-dvm.org/portfolio/members/20${i + 17}/${team}`
       );
