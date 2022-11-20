@@ -1,238 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-50M47KHK7T"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
 
-      gtag("config", "G-50M47KHK7T");
-    </script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width= device-width, initial-scale = 1" />
-    <title>Our Team</title>
-    <link rel="stylesheet" href="css/loader.css" />
-    <link href="css/nav.css" rel="stylesheet" type="text/css" />
-    <link href="css/team.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="css/fonts.css" />
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-50M47KHK7T"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-    <link rel="icon" href="assets/img/1x/Asset prev.png" />
+    gtag("config", "G-50M47KHK7T");
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width= device-width, initial-scale = 1" />
+  <title>Our Team</title>
+  <link rel="stylesheet" href="css/loader.css" />
+  <link href="css/nav.css" rel="stylesheet" type="text/css" />
+  <link href="css/team.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="css/fonts.css" />
 
-    <script src="./js/fontfaceobserver.standalone.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!--Jquery for checking if images are loaded-->
-  </head>
-  <body onload="updateTeam(0)">
-    <div class="loader">
-      <img src="./assets/img/loader.gif" class="loader-video" />
-    </div>
-    <nav class="navbar">
-      <!-- <div class="brand">
+  <link rel="icon" href="assets/img/1x/Asset prev.png" />
+
+  <script src="./js/fontfaceobserver.standalone.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!--Jquery for checking if images are loaded-->
+</head>
+
+<body onload="updateTeam(0)">
+  <div class="loader">
+    <img src="./assets/img/loader.gif" class="loader-video" />
+  </div>
+  <nav class="navbar">
+    <!-- <div class="brand">
         DVM
     </div> -->
-      <div class="section-nav"></div>
-      <h1 class="brand">
-        <span class="text-wrapper">
-          <!-- <span class="line line1"></span> -->
-          <span class="letters" onclick="location.href='index.html'">DVM</span>
-          <!-- <span class="line line2"></span> -->
-        </span>
-      </h1>
+    <div class="section-nav"></div>
+    <h1 class="brand">
+      <span class="text-wrapper">
+        <!-- <span class="line line1"></span> -->
+        <span class="letters" onclick="location.href='index.html'">DVM</span>
+        <!-- <span class="line line2"></span> -->
+      </span>
+    </h1>
 
-      <div class="ham" onclick="openCloseNav()">
-        <div class="ham-line"></div>
-        <div class="ham-line"></div>
+    <div class="ham" onclick="openCloseNav()">
+      <div class="ham-line"></div>
+      <div class="ham-line"></div>
+    </div>
+  </nav>
+  <div id="navContainer">
+    <div class="followContainer">
+      <h3 class="smallLinksHeader">Follow</h3>
+      <a href="https://www.facebook.com/DVMBITSPilani" class="smallLinks" target="_blank">
+        <div class="smallLinksText">Facebook</div>
+        <div class="smallLinksIcons">
+          <img src="assets/icons/facebook (2)-1@2x.png" />
+        </div>
+      </a>
+      <a href="https://www.instagram.com/dvmbitspilani/" class="smallLinks" target="_blank">
+        <div class="smallLinksText">Instagram</div>
+        <div class="smallLinksIcons">
+          <img src="assets/icons/instagram-sketched@2x.png" />
+        </div>
+      </a>
+      <a href="https://github.com/dvm-bitspilani" class="smallLinks" target="_blank">
+        <div class="smallLinksText">Github</div>
+        <div class="smallLinksIcons">
+          <img src="assets/icons/github.png" />
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/company/dvm-bitspilani/" class="smallLinks" target="_blank">
+        <div class="smallLinksText">LinkedIn</div>
+        <div class="smallLinksIcons">
+          <img src="assets/icons/linkedin.png" />
+        </div>
+      </a>
+    </div>
+    <div class="elementsContainer">
+      <div class="largeLinkContainer1">
+        <span class="text-wrapper">
+          <a class="largeLink1" href="index.html?about" target="_blank">About</a>
+        </span>
       </div>
-    </nav>
-    <div id="navContainer">
-      <div class="followContainer">
-        <h3 class="smallLinksHeader">Follow</h3>
-        <a
-          href="https://www.facebook.com/DVMBITSPilani"
-          class="smallLinks"
-          target="_blank"
-        >
-          <div class="smallLinksText">Facebook</div>
-          <div class="smallLinksIcons">
-            <img src="assets/icons/facebook (2)-1@2x.png" />
-          </div>
-        </a>
-        <a
-          href="https://www.instagram.com/dvmbitspilani/"
-          class="smallLinks"
-          target="_blank"
-        >
-          <div class="smallLinksText">Instagram</div>
-          <div class="smallLinksIcons">
-            <img src="assets/icons/instagram-sketched@2x.png" />
-          </div>
-        </a>
-        <a
-          href="https://github.com/dvm-bitspilani"
-          class="smallLinks"
-          target="_blank"
-        >
-          <div class="smallLinksText">Github</div>
-          <div class="smallLinksIcons">
-            <img src="assets/icons/github.png" />
-          </div>
-        </a>
-        <a
-          href="https://www.linkedin.com/company/dvm-bitspilani/"
-          class="smallLinks"
-          target="_blank"
-        >
-          <div class="smallLinksText">LinkedIn</div>
-          <div class="smallLinksIcons">
-            <img src="assets/icons/linkedin.png" />
-          </div>
-        </a>
+      <div class="largeLinkContainer2">
+        <span class="text-wrapper">
+          <a class="largeLink2" href="all-projects.html" target="_blank">Projects</a>
+        </span>
       </div>
-      <div class="elementsContainer">
-        <div class="largeLinkContainer1">
-          <span class="text-wrapper">
-            <a class="largeLink1" href="index.html?about" target="_blank"
-              >About</a
-            >
-          </span>
-        </div>
-        <div class="largeLinkContainer2">
-          <span class="text-wrapper">
-            <a class="largeLink2" href="all-projects.html" target="_blank"
-              >Projects</a
-            >
-          </span>
-        </div>
-        <div class="largeLinkContainer3">
-          <span class="text-wrapper">
-            <a class="largeLink3" href="all-blogs.html" target="_blank"
-              >Blogs</a
-            >
-          </span>
-        </div>
-        <div class="largeLinkContainer4">
-          <span class="text-wrapper">
-            <a class="largeLink4" href="artworks.html" target="_blank"
-              >Artworks</a
-            >
-          </span>
-        </div>
-        <div class="largeLinkContainer5">
-          <span class="text-wrapper">
-            <a class="largeLink5" onclick="openCloseNav()">Team</a>
-          </span>
-        </div>
-        <div class="largeLinkContainer6">
-          <span class="text-wrapper">
-            <a class="largeLink6" href="index.html?contact" target="_blank"
-              >Contact Us</a
-            >
-          </span>
-        </div>
-        <!-- <a href="">About</a>
+      <div class="largeLinkContainer3">
+        <span class="text-wrapper">
+          <a class="largeLink3" href="all-blogs.html" target="_blank">Blogs</a>
+        </span>
+      </div>
+      <div class="largeLinkContainer4">
+        <span class="text-wrapper">
+          <a class="largeLink4" href="artworks.html" target="_blank">Artworks</a>
+        </span>
+      </div>
+      <div class="largeLinkContainer5">
+        <span class="text-wrapper">
+          <a class="largeLink5" onclick="openCloseNav()">Team</a>
+        </span>
+      </div>
+      <div class="largeLinkContainer6">
+        <span class="text-wrapper">
+          <a class="largeLink6" href="index.html?contact" target="_blank">Contact Us</a>
+        </span>
+      </div>
+      <!-- <a href="">About</a>
         <a href="">Work</a>
         <a href="">Blogs</a>
         <a href="">Artworks</a>
         <a href="">Achievements</a>
         <a href="">Contact Us</a> -->
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="background"></div>
+    <div class="landingSection">
+      <h1>WE ARE DVM</h1>
+      <div class="cross" onclick="scrollFullPage()">
+        <div class="crossLine" style="transform: rotate(45deg)"></div>
+        <div class="crossLine" style="transform: rotate(-45deg)"></div>
       </div>
     </div>
-    <div class="wrapper">
-      <div class="background"></div>
-      <div class="landingSection">
-        <h1>WE ARE DVM</h1>
-        <div class="cross" onclick="scrollFullPage()">
-          <div class="crossLine" style="transform: rotate(45deg)"></div>
-          <div class="crossLine" style="transform: rotate(-45deg)"></div>
+    <div class="artworkWrapper">
+      <div class="aboutArtwork" onclick="console.log('Yo')">
+        <h1>About our Teams</h1>
+        <b>Front-End Team -</b><i>
+          Responsible for creating and maintaining the fests’ main and
+          sub-websites. We also build and handle various event management
+          portals and web applications like e-wallets.</i><br /><br />
+        <b>App Development Team -</b><i>
+          The app team builds and deploys the apps, Android and iOS, to keep
+          the fest experience smooth and hassle-free. We provide platforms for
+          cashless payment, event registration, and everything that keeps the
+          fest going. </i><br /><br />
+        <b>Back-End Team -</b><i>
+          The backend team provides the server-side infrastructure behind
+          every app/website for the fest. Right from registration of
+          participants to managing wallet transactions, everything that
+          involves servers is handled by us. </i><br /><br />
+        <b>Video Team -</b><i>
+          The video team works with motion graphics, 3D modeling, animation,
+          and editing software to create teasers, promos, trailers, and
+          curtain raisers for the fests. </i><br /><br />
+        <b>Design Team -</b><i>
+          The design team is responsible for creating website and mobile user
+          interfaces for the fests. It is also responsible for creating the
+          accompanying graphics. </i><br /><br />
+      </div>
+      <div class="departments">
+        <div class="departmentElement selected" onclick="teamChange(this)">
+          Frontend Developers
+        </div>
+        <div class="departmentElement" onclick="teamChange(this)">
+          App Developers
+        </div>
+        <div class="departmentElement" onclick="teamChange(this)">
+          Video Team
+        </div>
+        <div class="departmentElement" onclick="teamChange(this)">
+          Design Team
+        </div>
+        <div class="departmentElement" onclick="teamChange(this)">
+          Backend Developers
         </div>
       </div>
-      <div class="artworkWrapper">
-        <div class="aboutArtwork" onclick="console.log('Yo')">
-          <h1>About our Teams</h1>
-          <b>Front-End Team -</b
-          ><i>
-            Responsible for creating and maintaining the fests’ main and
-            sub-websites. We also build and handle various event management
-            portals and web applications like e-wallets.</i
-          ><br /><br />
-          <b>App Development Team -</b
-          ><i>
-            The app team builds and deploys the apps, Android and iOS, to keep
-            the fest experience smooth and hassle-free. We provide platforms for
-            cashless payment, event registration, and everything that keeps the
-            fest going. </i
-          ><br /><br />
-          <b>Back-End Team -</b
-          ><i>
-            The backend team provides the server-side infrastructure behind
-            every app/website for the fest. Right from registration of
-            participants to managing wallet transactions, everything that
-            involves servers is handled by us. </i
-          ><br /><br />
-          <b>Video Team -</b
-          ><i>
-            The video team works with motion graphics, 3D modeling, animation,
-            and editing software to create teasers, promos, trailers, and
-            curtain raisers for the fests. </i
-          ><br /><br />
-          <b>Design Team -</b
-          ><i>
-            The design team is responsible for creating website and mobile user
-            interfaces for the fests. It is also responsible for creating the
-            accompanying graphics. </i
-          ><br /><br />
-        </div>
-        <div class="departments">
-          <div class="departmentElement selected" onclick="teamChange(this)">
+
+      <div class="custom-select">
+        <select onchange="console.log('Yo')">
+          <option value="0" onclick="console.log('Yo')">
             Frontend Developers
-          </div>
-          <div class="departmentElement" onclick="teamChange(this)">
-            App Developers
-          </div>
-          <div class="departmentElement" onclick="teamChange(this)">
-            Video Team
-          </div>
-          <div class="departmentElement" onclick="teamChange(this)">
-            Design Team
-          </div>
-          <div class="departmentElement" onclick="teamChange(this)">
+          </option>
+          <option value="1" onclick="updateTeam(0)">
+            Frontend Developers
+          </option>
+          <option value="5" onclick="updateTeam(1)">App Developers</option>
+          <option value="2" onclick="updateTeam(2)">Video Team</option>
+          <option value="3" onclick="updateTeam(3)">Design Team</option>
+          <option value="4" onclick="updateTeam(4)">
             Backend Developers
-          </div>
-        </div>
-
-        <div class="custom-select">
-          <select onchange="console.log('Yo')">
-            <option value="0" onclick="console.log('Yo')">
-              Frontend Developers
-            </option>
-            <option value="1" onclick="updateTeam(0)">
-              Frontend Developers
-            </option>
-            <option value="5" onclick="updateTeam(1)">App Developers</option>
-            <option value="2" onclick="updateTeam(2)">Video Team</option>
-            <option value="3" onclick="updateTeam(3)">Design Team</option>
-            <option value="4" onclick="updateTeam(4)">
-              Backend Developers
-            </option>
-          </select>
-        </div>
-
-        <div class="teamContainer"></div>
+          </option>
+        </select>
       </div>
+
+      <div class="teamContainer"></div>
     </div>
-    <!-- <script src="js/artwork.js"></script> -->
-    <script src="js/team.js"></script>
-    <script src="js/navbar.js"></script>
-    <script src="js/imageLoaded.js"></script>
-  </body>
+  </div>
+  <!-- <script src="js/artwork.js"></script> -->
+  <script src="js/team.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/imageLoaded.js"></script>
+</body>
+
 </html>
 
 <!-- <!DOCTYPE html> -->
