@@ -36,6 +36,10 @@ const developers = ids.map(() => {
       year: 2021,
       members: [],
     },
+    {
+      year: 2022,
+      members: [],
+    },
   ];
 });
 
