@@ -76,7 +76,7 @@ const updateTeam = async (num) => {
       : j == 3
       ? (team = "Design")
       : (team = "Backend");
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 6; i++) {
       const mem = await fetch(
         `https://bits-dvm.org/portfolio/members/20${i + 17}/${team}`
       );
