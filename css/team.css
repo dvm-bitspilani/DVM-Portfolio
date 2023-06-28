@@ -434,6 +434,10 @@ body {
 
     /* transform: translateY(-40%) scale(1); */
     transform: scale(1) translateY(10%);
+    height: 60px;
+display: flex;
+justify-content: center;
+align-items: center;
   }
 
   .select-items div,
@@ -444,6 +448,10 @@ body {
     font-size: 1em;
     /* transform: translateY(-50%) scale(1); */
     transform: scale(1) translateY(10%);
+    height: 60px;
+display: flex;
+align-items: center;
+justify-content: center;
   }
   .member:hover .memberName {
     transform: translateY(0%) scale(1);
@@ -504,6 +512,7 @@ body {
   }
   .designation {
     font-size: 0.9em;
+    height: 30px;
   }
   .artworkImage img {
     width: 100%;
@@ -515,3 +524,4 @@ body {
     display: none;
   }
 }
+
