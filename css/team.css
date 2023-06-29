@@ -401,6 +401,7 @@ body {
     height: max-content;
     overflow: hidden;
   }
+
   .memberTopLine {
     display: flex;
     content: "";
@@ -428,6 +429,9 @@ body {
   .hide {
     opacity: 1;
   }
+  .memberImage{
+    transition: 0s;
+  }
 
   .memberName {
     font-size: 1.3em;
@@ -438,6 +442,7 @@ body {
 display: flex;
 justify-content: center;
 align-items: center;
+transition: 0s;
   }
 
   .select-items div,
@@ -452,6 +457,7 @@ align-items: center;
 display: flex;
 align-items: center;
 justify-content: center;
+transition: 0s;
   }
   .member:hover .memberName {
     transform: translateY(0%) scale(1);
@@ -467,6 +473,7 @@ justify-content: center;
     margin-top: 10px;
     justify-content: space-evenly;
     transform: translateY(0%) scale(0.9);
+    transition: 0s;
   }
   .links img {
     width: 20px;
